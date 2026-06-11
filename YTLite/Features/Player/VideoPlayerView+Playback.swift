@@ -13,6 +13,9 @@ extension VideoPlayerView {
         addPlayerObservers()
         updatePlayPauseIcon()
         setupPiP()
+        if playbackSpeed != 1.0 {
+            newPlayer.rate = playbackSpeed
+        }
     }
 
     func detach() {
@@ -24,6 +27,7 @@ extension VideoPlayerView {
         hideSkipButton()
         sponsorSegments = []
         seekBar.setSegments([])
+        speedOverlay.isHidden = true
     }
 
     func setSponsorSegments(

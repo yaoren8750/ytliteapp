@@ -186,6 +186,26 @@ extension PlayerIcons {
 // MARK: - Skip icon
 
 extension PlayerIcons {
+    static func speed() -> UIImage {
+        draw(size: CGSize(width: 24, height: 24)) { _ in
+            let attrs: [NSAttributedString.Key: Any] = [
+                .font: UIFont.boldSystemFont(ofSize: 11),
+                .foregroundColor: UIColor.white
+            ]
+            let str = NSAttributedString(
+                string: "1x",
+                attributes: attrs
+            )
+            let sz = str.size()
+            str.draw(at: CGPoint(
+                x: (24 - sz.width) / 2,
+                y: (24 - sz.height) / 2
+            ))
+        }
+    }
+}
+
+extension PlayerIcons {
     private static func skipIcon(forward: Bool) -> UIImage {
         draw(size: CGSize(width: 44, height: 44)) { _ in
             let cx: CGFloat = 22

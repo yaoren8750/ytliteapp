@@ -70,6 +70,9 @@ extension VideoPlayerView {
                 ? 1
                 : 0
         }
+        if !visible {
+            speedOverlay.isHidden = true
+        }
     }
 
     func scheduleAutoHide() {

@@ -58,6 +58,7 @@ final class VideoPlayerView: UIView {
     let settingsButton = UIButton(type: .system)
     let pipButton = UIButton(type: .system)
     let ccButton = UIButton(type: .system)
+    let speedButton = UIButton(type: .system)
     var pipController: AVPictureInPictureController?
     let rewindButton = UIButton(type: .system)
     let playPauseButton = UIButton(type: .system)
@@ -127,6 +128,50 @@ final class VideoPlayerView: UIView {
 
     var subtitleCues: [SubtitleCue] = []
     var onCCTapped: (() -> Void)?
+
+    // MARK: - Playback Speed
+
+    var playbackSpeed: Float = 1.0 {
+        didSet {
+            player?.rate = playbackSpeed
+            updateSpeedButtonTitle()
+        }
+    }
+
+    let speedOverlay: UIView = {
+        let overlay = UIView()
+        overlay.backgroundColor = UIColor.black
+            .withAlphaComponent(0.85)
+        overlay.layer.cornerRadius = 8
+        overlay.layer.masksToBounds = true
+        overlay.isHidden = true
+        overlay.translatesAutoresizingMaskIntoConstraints = false
+        return overlay
+    }()
+
+    let speedSlider: UISlider = {
+        let slider = UISlider()
+        slider.minimumValue = 0.25
+        slider.maximumValue = 2.0
+        slider.value = 1.0
+        slider.minimumTrackTintColor = .white
+        slider.maximumTrackTintColor = UIColor.white
+            .withAlphaComponent(0.3)
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        return slider
+    }()
+
+    let speedLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = UIFont.monospacedDigitSystemFont(
+            ofSize: 14,
+            weight: .semibold
+        )
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     // MARK: - State
 

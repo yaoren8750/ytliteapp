@@ -144,6 +144,7 @@ extension VideoPlayerView {
         controlsView.addSubview(settingsButton)
         configurePipButton()
         configureCCButton()
+        configureSpeedButton()
         activateTopBarConstraints()
     }
 
@@ -176,6 +177,89 @@ extension VideoPlayerView {
         )
         controlsView.addSubview(ccButton)
         setupSubtitleLabel()
+    }
+
+    private func configureSpeedButton() {
+        speedButton.tintColor = .white
+        speedButton.titleLabel?.font = UIFont.systemFont(
+            ofSize: 10,
+            weight: .bold
+        )
+        speedButton.setTitleColor(.white, for: .normal)
+        speedButton.layer.borderColor = UIColor.white
+            .withAlphaComponent(0.6).cgColor
+        speedButton.layer.borderWidth = 1
+        speedButton.layer.cornerRadius = 4
+        speedButton.translatesAutoresizingMaskIntoConstraints = false
+        speedButton.addTarget(
+            self,
+            action: #selector(speedTapped),
+            for: .touchUpInside
+        )
+        controlsView.addSubview(speedButton)
+        setupSpeedOverlay()
+        updateSpeedButtonTitle()
+    }
+
+    private func setupSpeedOverlay() {
+        addSubview(speedOverlay)
+        speedOverlay.addSubview(speedLabel)
+        speedOverlay.addSubview(speedSlider)
+        speedLabel.text = "Normal"
+        speedSlider.addTarget(
+            self,
+            action: #selector(speedSliderChanged(_:)),
+            for: .valueChanged
+        )
+        speedSlider.addTarget(
+            self,
+            action: #selector(speedSliderReleased(_:)),
+            for: [.touchUpInside, .touchUpOutside]
+        )
+        activateSpeedOverlayConstraints()
+    }
+
+    private func activateSpeedOverlayConstraints() {
+        NSLayoutConstraint.activate([
+            speedOverlay.topAnchor.constraint(
+                equalTo: speedButton.bottomAnchor,
+                constant: 8
+            ),
+            speedOverlay.centerXAnchor.constraint(
+                equalTo: speedButton.centerXAnchor
+            ),
+            speedOverlay.widthAnchor.constraint(
+                equalToConstant: 220
+            ),
+            speedOverlay.heightAnchor.constraint(
+                equalToConstant: 60
+            )
+        ])
+        activateSpeedContentConstraints()
+    }
+
+    private func activateSpeedContentConstraints() {
+        NSLayoutConstraint.activate([
+            speedLabel.topAnchor.constraint(
+                equalTo: speedOverlay.topAnchor,
+                constant: 8
+            ),
+            speedLabel.centerXAnchor.constraint(
+                equalTo: speedOverlay.centerXAnchor
+            ),
+            speedSlider.topAnchor.constraint(
+                equalTo: speedLabel.bottomAnchor,
+                constant: 4
+            ),
+            speedSlider.leadingAnchor.constraint(
+                equalTo: speedOverlay.leadingAnchor,
+                constant: 16
+            ),
+            speedSlider.trailingAnchor.constraint(
+                equalTo: speedOverlay.trailingAnchor,
+                constant: -16
+            )
+        ])
     }
 
     private func styleCCButton() {
@@ -214,6 +298,7 @@ extension VideoPlayerView {
         activateSettingsConstraints()
         activatePipConstraints()
         activateCCConstraints()
+        activateSpeedConstraints()
     }
 
     private func activateSettingsConstraints() {
@@ -253,6 +338,23 @@ extension VideoPlayerView {
             ),
             ccButton.widthAnchor.constraint(equalToConstant: 32),
             ccButton.heightAnchor.constraint(equalToConstant: 22)
+        ])
+    }
+
+    private func activateSpeedConstraints() {
+        NSLayoutConstraint.activate([
+            speedButton.centerYAnchor.constraint(
+                equalTo: settingsButton.centerYAnchor
+            ),
+            speedButton.trailingAnchor.constraint(
+                equalTo: ccButton.leadingAnchor, constant: -4
+            ),
+            speedButton.widthAnchor.constraint(
+                equalToConstant: 36
+            ),
+            speedButton.heightAnchor.constraint(
+                equalToConstant: 22
+            )
         ])
     }
 
