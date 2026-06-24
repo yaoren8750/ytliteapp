@@ -61,6 +61,11 @@ protocol ChannelService: AnyObject {
         channelId: String,
         completion: @escaping (Result<ChannelPage, Error>) -> Void
     )
+    func enrichChannelInfo(
+        channelId: String,
+        tvInfo: ChannelInfo,
+        onEnriched: @escaping (ChannelInfo) -> Void
+    )
 }
 
 struct ChannelBrowseAction {

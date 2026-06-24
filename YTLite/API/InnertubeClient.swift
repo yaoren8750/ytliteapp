@@ -152,6 +152,24 @@ extension InnertubeClient {
         }
     }
 
+    func enrichChannelInfo(
+        channelId: String,
+        tvInfo: ChannelInfo,
+        onEnriched: @escaping (ChannelInfo) -> Void
+    ) {
+        OAuthClient.shared.validToken { [weak self] token in
+            guard case .success(let tok) = token, let self else {
+                return
+            }
+            self.fetchWebChannelEnrichment(
+                channelId: channelId,
+                token: tok,
+                tvInfo: tvInfo,
+                onEnriched: onEnriched
+            )
+        }
+    }
+
     func sendLike(videoId: String, completion: @escaping (Result<Void, Error>) -> Void) {
         sendVote(endpoint: "like/like", videoId: videoId, completion: completion)
     }

@@ -176,10 +176,20 @@ final class ChannelViewController: VideosViewController {
         case .success(let page):
             applyChannelPage(page)
             loadCurrentTab()
+            enrichFromWeb(pageInfo: page)
         case .failure(let error):
             AppLog.channel("load failed \(channelId): \(error)")
             finishLoadingMore()
             errorLabel.isHidden = !videos.isEmpty
+        }
+    }
+
+    private func enrichFromWeb(pageInfo: ChannelPage) {
+        client.enrichChannelInfo(
+            channelId: channelId,
+            tvInfo: pageInfo.info
+        ) { [weak self] info in
+            self?.applyChannelInfo(info)
         }
     }
 

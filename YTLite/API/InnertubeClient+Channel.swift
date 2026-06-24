@@ -51,27 +51,49 @@ extension InnertubeClient {
         }
         var tvBody = tvContext
         tvBody["browseId"] = channelId
-        guard let tvData = try? JSONSerialization.data(
-            withJSONObject: tvBody
-        ) else {
+        guard let tvData = try? JSONSerialization.data(withJSONObject: tvBody) else {
             completion(.failure(APIError.decodingFailed))
             return
         }
-        let webSnapshot = fireWebChannelRequest(
-            url: url,
-            channelId: channelId
-        )
-        api.post(
-            url: url,
-            body: tvData,
-            headers: authHeaders(token: token)
-        ) { result in
-            Self.handleChannelPageResponse(
+        api.post(url: url, body: tvData, headers: authHeaders(token: token)) { result in
+            guard let page = Self.handleChannelPageTVOnly(
                 result,
-                channelId: channelId,
-                webSnapshot: webSnapshot,
-                completion: completion
+                channelId: channelId
+            ) else {
+                completion(.failure(APIError.decodingFailed))
+                return
+            }
+            completion(.success(page))
+        }
+    }
+
+    func fetchWebChannelEnrichment(
+        channelId: String,
+        token: String,
+        tvInfo: ChannelInfo,
+        onEnriched: @escaping (ChannelInfo) -> Void
+    ) {
+        let browseURL = "\(baseURL)\(InnertubeEndpoint.browse)"
+        guard let url = URL(string: browseURL) else {
+            return
+        }
+        var webBody = webContext
+        webBody["browseId"] = channelId
+        guard let webData = try? JSONSerialization.data(withJSONObject: webBody) else {
+            return
+        }
+        api.post(url: url, body: webData, headers: anonHeaders()) { result in
+            guard case .success(let wData) = result,
+                  let wJson = try? JSONSerialization.jsonObject(with: wData) as? [String: Any],
+                  let webInfo = Self.parseChannelInfo(wJson, fallbackChannelId: channelId)
+            else { return }
+            let merged = Self.mergeWebChannelInfo(
+                tvInfo: tvInfo,
+                webInfo: webInfo
             )
+            DispatchQueue.main.async {
+                onEnriched(merged)
+            }
         }
     }
 }
@@ -79,8 +101,6 @@ extension InnertubeClient {
 // MARK: - Private Channel Helpers
 
 private extension InnertubeClient {
-    typealias WebSnapshot = () -> Result<Data, Error>?
-
     static func extractClientName(
         from context: [String: Any]
     ) -> String {
@@ -89,38 +109,26 @@ private extension InnertubeClient {
         return client?["clientName"] as? String ?? "unknown"
     }
 
-    static func handleChannelPageResponse(
+    static func handleChannelPageTVOnly(
         _ result: Result<Data, Error>,
-        channelId: String,
-        webSnapshot: WebSnapshot,
-        completion: @escaping (Result<ChannelPage, Error>) -> Void
-    ) {
+        channelId: String
+    ) -> ChannelPage? {
         guard let tvInfo = parseTVChannelData(
             result,
             channelId: channelId
         ),
             let tvJson = parseTVJson(from: result)
         else {
-            forwardChannelError(result, completion: completion)
-            return
+            return nil
         }
         let page = parsePageJSON(tvJson)
         let subState = parseSubscribeState(tvJson)
-        let finalInfo = mergeWebChannelInfo(
-            tvInfo: tvInfo,
-            channelId: channelId,
-            webSnapshot: webSnapshot
-        )
-        logChannelResult(finalInfo)
-        completion(
-            .success(
-                ChannelPage(
-                    info: finalInfo,
-                    videosPage: page,
-                    subscribeButtonText: subState.text,
-                    isSubscribed: subState.isSubscribed
-                )
-            )
+        logChannelResult(tvInfo)
+        return ChannelPage(
+            info: tvInfo,
+            videosPage: page,
+            subscribeButtonText: subState.text,
+            isSubscribed: subState.isSubscribed
         )
     }
 
@@ -148,35 +156,11 @@ private extension InnertubeClient {
         ) as? [String: Any]
     }
 
-    static func forwardChannelError(
-        _ result: Result<Data, Error>,
-        completion: @escaping (Result<ChannelPage, Error>) -> Void
-    ) {
-        AppLog.innertube("channel page parse failed")
-        if case .failure(let err) = result {
-            completion(.failure(err))
-        } else {
-            completion(.failure(APIError.decodingFailed))
-        }
-    }
-
     static func mergeWebChannelInfo(
         tvInfo: ChannelInfo,
-        channelId: String,
-        webSnapshot: WebSnapshot
+        webInfo: ChannelInfo
     ) -> ChannelInfo {
-        guard case .success(let wData) = webSnapshot(),
-              let wJson = try? JSONSerialization.jsonObject(
-                  with: wData
-              ) as? [String: Any],
-              let webInfo = parseChannelInfo(
-                  wJson,
-                  fallbackChannelId: channelId
-              )
-        else {
-            return tvInfo
-        }
-        return ChannelInfo(
+        ChannelInfo(
             id: tvInfo.id,
             title: tvInfo.title.isEmpty ? webInfo.title : tvInfo.title,
             avatarURL: tvInfo.avatarURL ?? webInfo.avatarURL,
@@ -197,37 +181,5 @@ private extension InnertubeClient {
             "parsed: title='\(info.title)' subs='\(subs)' "
                 + "banner=\(hasBanner) verified=\(info.isVerified)"
         )
-    }
-
-    func fireWebChannelRequest(
-        url: URL,
-        channelId: String
-    ) -> WebSnapshot {
-        var webBody = webContext
-        webBody["browseId"] = channelId
-        let webData = try? JSONSerialization.data(
-            withJSONObject: webBody
-        )
-        let lock = NSLock()
-        var webResult: Result<Data, Error>?
-        var webDone = false
-        if let webData {
-            api.post(
-                url: url,
-                body: webData,
-                headers: anonHeaders()
-            ) { result in
-                lock.lock()
-                webResult = result
-                webDone = true
-                lock.unlock()
-            }
-        }
-        return {
-            lock.lock()
-            let snapshot = webDone ? webResult : nil
-            lock.unlock()
-            return snapshot
-        }
     }
 }

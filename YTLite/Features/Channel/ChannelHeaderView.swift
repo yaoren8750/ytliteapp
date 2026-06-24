@@ -51,6 +51,7 @@ final class ChannelHeaderView: UIView {
         subscribersLabel.text = info.subscriberCountText
         verifiedBadgeView.isHidden = !info.isVerified
         loadImage(info.avatarURL, into: avatarView)
+        AppLog.channel("Banner URL: \(info.bannerURL ?? "nil")")
         loadImage(info.bannerURL, into: bannerImageView)
     }
 
