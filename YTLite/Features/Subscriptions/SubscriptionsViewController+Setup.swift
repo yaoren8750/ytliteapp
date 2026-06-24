@@ -10,11 +10,8 @@ extension SubscriptionsViewController {
             showSignInPrompt(true)
             return
         }
-        let firstVisit = !ScreenVisitTracker.hasVisited("subscriptions")
         cache.loadSubscriptionsFeed { [weak self] cachedPage in
-            self?.handleCachedSubscriptions(
-                cachedPage, firstVisit: firstVisit
-            )
+            self?.handleCachedSubscriptions(cachedPage)
         }
     }
 
@@ -137,14 +134,20 @@ extension SubscriptionsViewController {
             seenVideoIds.insert($0.id).inserted
         }
         if !newVideos.isEmpty {
-            let sorted = newVideos.sorted {
-                sortDate(for: $0) > sortDate(for: $1)
-            }
-            videos = mergeSortedVideos(videos, sorted)
+            videos.append(contentsOf: newVideos)
         }
         continuationToken = page.continuation
         isLoadingMore = false
         tableView.reloadData()
+        logVisibleVideos()
+    }
+
+    func logVisibleVideos() {
+        let visible = tableView.indexPathsForVisibleRows ?? []
+        let items = visible.compactMap { videos[$0.row] }
+        let summary = items.map { "\($0.id) \($0.title)" }
+            .joined(separator: " | ")
+        AppLog.subs("visible [\(items.count)]: \(summary)")
     }
 
     func finishLoadingMore() {
@@ -168,41 +171,9 @@ private extension SubscriptionsViewController {
             isLoadingInitial = false
             spinner.stopAnimating()
             setPage(cachedPage)
-            if firstVisit {
-                ScreenVisitTracker.markVisited("subscriptions")
-                fetchSubscriptionsInBackground()
-            }
         } else {
             AppLog.subs("no cache → network")
             loadFeed()
-        }
-    }
-
-    private func fetchSubscriptionsInBackground() {
-        let t0 = Date()
-        service.fetchSubscriptionFeed { [weak self] result in
-            DispatchQueue.main.async {
-                guard let self else {
-                    return
-                }
-                let ms = Int(Date().timeIntervalSince(t0) * 1_000)
-                switch result {
-                case .success(let page):
-                    AppLog.subs("background fetch done \(ms)ms videos=\(page.videos.count)")
-                    if let existing = self.cache.cachedSubscriptionsFeed() {
-                        let merged = AppCache.mergeFeeds(
-                            existing: existing, fresh: page
-                        )
-                        self.cache.setSubscriptionsFeed(merged)
-                        self.setPage(merged)
-                    } else {
-                        self.cache.setSubscriptionsFeed(page)
-                        self.setPage(page)
-                    }
-                case .failure(let err):
-                    AppLog.subs("background fetch failed \(ms)ms: \(err)")
-                }
-            }
         }
     }
 

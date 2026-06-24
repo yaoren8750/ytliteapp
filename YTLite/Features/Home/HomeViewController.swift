@@ -88,7 +88,6 @@ class HomeViewController: VideosViewController {
     }
 
     private func loadCachedOrFetchFeed() {
-        let firstVisit = !ScreenVisitTracker.hasVisited("home")
         cache.loadHomeFeed { [weak self] cachedPage in
             guard let self else {
                 return
@@ -101,39 +100,6 @@ class HomeViewController: VideosViewController {
             } else {
                 AppLog.home("no cache → loading from network")
                 self.loadFeed()
-                return
-            }
-            if firstVisit {
-                ScreenVisitTracker.markVisited("home")
-                self.fetchInBackground()
-            }
-        }
-    }
-
-    private func fetchInBackground() {
-        let t0 = Date()
-        service.fetchHomeFeed { [weak self] result in
-            DispatchQueue.main.async {
-                guard let self else {
-                    return
-                }
-                let ms = Int(Date().timeIntervalSince(t0) * 1_000)
-                switch result {
-                case .success(let page):
-                    AppLog.home("background fetch done \(ms)ms videos=\(page.videos.count)")
-                    if let existing = self.cache.cachedHomeFeed() {
-                        let merged = AppCache.mergeFeeds(
-                            existing: existing, fresh: page
-                        )
-                        self.cache.setHomeFeed(merged)
-                        self.setPage(merged)
-                    } else {
-                        self.cache.setHomeFeed(page)
-                        self.setPage(page)
-                    }
-                case .failure(let err):
-                    AppLog.home("background fetch failed \(ms)ms: \(err)")
-                }
             }
         }
     }
