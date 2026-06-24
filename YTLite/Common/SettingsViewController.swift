@@ -213,8 +213,17 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
 
     private func makeShowShortsCell() -> UITableViewCell {
         let isOn = UserDefaults.standard.bool(forKey: UserDefaultsKeys.Feed.showShorts)
-        return makeToggleCell("Show Shorts", isOn: isOn) {
-            UserDefaults.standard.set($0, forKey: UserDefaultsKeys.Feed.showShorts)
+        return makeToggleCell(
+            "Show YouTube Shorts in Subscriptions",
+            isOn: isOn
+        ) {
+            UserDefaults.standard.set(
+                $0, forKey: UserDefaultsKeys.Feed.showShorts
+            )
+            NotificationCenter.default.post(
+                name: .showShortsSettingDidChange,
+                object: nil
+            )
         }
     }
 

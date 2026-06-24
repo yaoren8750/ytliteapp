@@ -19,4 +19,7 @@ extension Notification.Name {
     static let tokenDidRefresh = Notification.Name(
         "tokenDidRefresh"
     )
+    static let showShortsSettingDidChange = Notification.Name(
+        "showShortsSettingDidChange"
+    )
 }

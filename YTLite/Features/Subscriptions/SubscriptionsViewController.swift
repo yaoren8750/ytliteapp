@@ -54,6 +54,12 @@ class SubscriptionsViewController: UIViewController {
             name: ThemeManager.didChangeNotification,
             object: nil
         )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleShowShortsChange),
+            name: .showShortsSettingDidChange,
+            object: nil
+        )
         ToolbarManager.shared.install(in: self)
         observeTokenRefresh()
         loadInitialContent()
@@ -70,6 +76,12 @@ class SubscriptionsViewController: UIViewController {
 
     @objc
     func handleRefresh() {
+        cache.clearSubscriptionsFeed()
+        loadFeed()
+    }
+
+    @objc
+    func handleShowShortsChange() {
         cache.clearSubscriptionsFeed()
         loadFeed()
     }
