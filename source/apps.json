@@ -14,7 +14,7 @@
         {
           "version": "1.2.0",
           "date": "2026-06-29T12:21:09Z",
-          "localizedDescription": "See release notes on GitHub",
+          "localizedDescription": "New Features\n- Videos now start instantly — PO token generation moved from startup to on-demand\n- YouTube Mix playlists — play mixes as ordered video queues\n- Flexible cache system with configurable image/feed cache durations\n- Cross-device watch progress sync via server\n- Periodic OAuth token refresh every 12 hours\n- Auto-refresh token on 401 before showing auth screen\n\nImprovements\n- Home feed scroll performance: image downsampling, prefetching, layout fixes\n- Resume playback: videos watched 97%+ now start from the beginning\n- Duration parsing from badge overlays, views/date for co-authored videos\n- Thumbnail refresh from FEhistory\n- Renamed \"Show Shorts\" to \"Show YouTube Shorts\"\n\nBug Fixes\n- Black screen after background sleep + playback recovery\n- Channel banner race condition: load TV data first, enrich with WEB metadata in background\n- Missing back button when opening channel from History in Library tab\n- Subscriptions page jumping on pagination — videos now append without re-sorting\n- Channel avatar for mix videos",
           "downloadURL": "https://github.com/verback2308/YTLite/releases/download/1.2.0/YTLite_1.2.0.ipa",
           "size": 4273637,
           "minOSVersion": "12.0"
@@ -22,7 +22,7 @@
       ],
       "version": "1.2.0",
       "versionDate": "2026-06-29T12:21:09Z",
-      "versionDescription": "See release notes on GitHub",
+      "versionDescription": "New Features\n- Videos now start instantly — PO token generation moved from startup to on-demand\n- YouTube Mix playlists — play mixes as ordered video queues\n- Flexible cache system with configurable image/feed cache durations\n- Cross-device watch progress sync via server\n- Periodic OAuth token refresh every 12 hours\n- Auto-refresh token on 401 before showing auth screen\n\nImprovements\n- Home feed scroll performance: image downsampling, prefetching, layout fixes\n- Resume playback: videos watched 97%+ now start from the beginning\n- Duration parsing from badge overlays, views/date for co-authored videos\n- Thumbnail refresh from FEhistory\n- Renamed \"Show Shorts\" to \"Show YouTube Shorts\"\n\nBug Fixes\n- Black screen after background sleep + playback recovery\n- Channel banner race condition: load TV data first, enrich with WEB metadata in background\n- Missing back button when opening channel from History in Library tab\n- Subscriptions page jumping on pagination — videos now append without re-sorting\n- Channel avatar for mix videos",
       "downloadURL": "https://github.com/verback2308/YTLite/releases/download/1.2.0/YTLite_1.2.0.ipa",
       "localizedDescription": "A lightweight YouTube client for iOS 12+. No ads, no tracking. Features: SponsorBlock, Return YouTube Dislike, 1080p playback, background audio, PiP, subtitles, and more.",
       "iconURL": "https://raw.githubusercontent.com/verback2308/YTLite/main/source/icon.png",
