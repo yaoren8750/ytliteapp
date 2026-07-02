@@ -132,7 +132,8 @@ extension WatchViewController {
 
     /// Warm up PoToken for autoplay next video while current is playing
     private func prefetchNextVideoPoToken(_ page: WatchPage) {
-        guard let nextId = page.nextVideo?.id else {
+        guard PlaybackSource.selected == .onesie,
+              let nextId = page.nextVideo?.id else {
             return
         }
         WebPoTokenService.shared.fetchSessionToken(

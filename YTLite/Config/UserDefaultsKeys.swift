@@ -1,3 +1,5 @@
+import Foundation
+
 /// Centralised UserDefaults key namespace.
 /// All keys used in the app must be declared here to prevent typos and collisions.
 enum UserDefaultsKeys {
@@ -41,5 +43,36 @@ enum UserDefaultsKeys {
     enum Player {
         static let backgroundPlayback = "player_backgroundPlayback"
         static let pipEnabled = "player_pipEnabled"
+    }
+
+    enum Debug {
+        static let playbackSource = "debug_playbackSource"
+    }
+}
+
+// MARK: - PlaybackSource
+
+enum PlaybackSource: String, CaseIterable {
+    case androidVR = "android_vr"
+    case progressive = "progressive"
+    case onesie = "onesie"
+
+    static var selected: PlaybackSource {
+        let raw = UserDefaults.standard.string(
+            forKey: UserDefaultsKeys.Debug.playbackSource
+        )
+        return raw.flatMap(PlaybackSource.init)
+            ?? .androidVR
+    }
+
+    var displayName: String {
+        switch self {
+        case .androidVR:
+            return "Android VR (default)"
+        case .progressive:
+            return "Progressive (360p)"
+        case .onesie:
+            return "TVHTML5 (Onesie)"
+        }
     }
 }

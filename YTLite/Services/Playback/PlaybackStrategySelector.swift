@@ -16,11 +16,25 @@ enum PlaybackStrategySelector {
     static func select(
         for info: DirectPlaybackInfo
     ) -> PlaybackStrategy? {
-        let selected = strategies.first { $0.canHandle(info) }
+        let source = PlaybackSource.selected
+        let selected: PlaybackStrategy?
+        if source == .progressive {
+            selected = ProgressiveUpgradeStrategy()
+                .canHandle(info)
+                ? ProgressiveUpgradeStrategy()
+                : nil
+        } else {
+            selected = strategies.first {
+                $0.canHandle(info)
+            }
+        }
         let name = selected.map {
             String(describing: type(of: $0))
         } ?? "none"
-        AppLog.player("Strategy selected: \(name)")
+        AppLog.player(
+            "Strategy selected: \(name)"
+                + " (source: \(source.rawValue))"
+        )
         return selected
     }
 }

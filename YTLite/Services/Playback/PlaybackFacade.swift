@@ -86,14 +86,16 @@ extension PlaybackFacade {
         cancellationToken: CancellationToken,
         client: DirectPlaybackClient = .androidVR
     ) {
+        let effectiveClient = PlaybackSource.selected == .onesie
+            ? .web : client
         currentVideoId = videoId
         currentApiClient = apiClient
-        activeDirectPlaybackClient = client
+        activeDirectPlaybackClient = effectiveClient
         context?.updateStatusLabel("Minting PoToken...")
         fetchPoTokenAndPlay(
             PlaybackPipelineContext(
                 videoId: videoId,
-                client: client,
+                client: effectiveClient,
                 cancellationToken: cancellationToken,
                 apiClient: apiClient
             )

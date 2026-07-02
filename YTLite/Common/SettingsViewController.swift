@@ -9,6 +9,7 @@ final class SettingsViewController: UIViewController {
         case imageCacheEnabled, imageCacheDays
         case clearCache, rydEnabled
         case sponsorBlockEnabled, sponsorBlockSettings
+        case playbackSource
         case shareLog
     }
     private struct Section {
@@ -52,7 +53,13 @@ final class SettingsViewController: UIViewController {
             Section(header: "Cache", footer: nil, rows: cacheRows),
             Section(header: "Return YouTube Dislike", footer: rydFooter, rows: [.rydEnabled]),
             Section(header: "SponsorBlock", footer: sbFooter, rows: sponsorBlockRows),
-            Section(header: "Debug", footer: nil, rows: [.shareLog]),
+            Section(
+                header: "Debug",
+                footer: "Force a specific playback source."
+                    + " Normally Android VR is used"
+                    + " with automatic fallback.",
+                rows: [.playbackSource, .shareLog]
+            ),
             Section(header: nil, footer: appVersionFooter, rows: [])
         ]
     }
@@ -188,6 +195,11 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             return makeDisclosureCell("SponsorBlock Settings")
         case .shareLog:
             return makeDisclosureCell("Share Debug Log")
+        case .playbackSource:
+            return makeDisclosureCell(
+                "Playback Source",
+                value: PlaybackSource.selected.displayName
+            )
         }
     }
 
@@ -206,6 +218,8 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             showSponsorBlockSettings()
         case .shareLog:
             shareDebugLog()
+        case .playbackSource:
+            showPlaybackSourcePicker()
         default:
             break
         }
@@ -344,6 +358,36 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             sheet.addAction(action)
         }
         sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        configureCenteredPopover(sheet)
+        present(sheet, animated: true)
+    }
+
+    private func showPlaybackSourcePicker() {
+        let sheet = UIAlertController(
+            title: "Playback Source",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        let current = PlaybackSource.selected
+        for source in PlaybackSource.allCases {
+            let action = UIAlertAction(
+                title: source.displayName,
+                style: .default
+            ) { _ in
+                UserDefaults.standard.set(
+                    source.rawValue,
+                    forKey: UserDefaultsKeys.Debug.playbackSource
+                )
+                self.tableView.reloadData()
+            }
+            if source == current {
+                action.setValue(true, forKey: "checked")
+            }
+            sheet.addAction(action)
+        }
+        sheet.addAction(
+            UIAlertAction(title: "Cancel", style: .cancel)
+        )
         configureCenteredPopover(sheet)
         present(sheet, animated: true)
     }
