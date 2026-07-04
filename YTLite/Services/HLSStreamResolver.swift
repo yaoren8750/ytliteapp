@@ -101,11 +101,13 @@ final class HLSStreamResolver {
         error: Error,
         completion: @escaping (Result<ResolvedHLS, Error>) -> Void
     ) {
-        guard attempt < 2 else {
+        guard attempt < 3 else {
             completion(.failure(error))
             return
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 0.4) { [weak self] in
+        // Back off a little more each try — the page needs a moment to warm up.
+        let delay = 0.8 * Double(attempt + 1)
+        DispatchQueue.global().asyncAfter(deadline: .now() + delay) { [weak self] in
             self?.resolve(
                 videoId: videoId, attempt: attempt + 1, completion: completion
             )

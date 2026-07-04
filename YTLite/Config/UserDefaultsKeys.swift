@@ -76,4 +76,15 @@ enum PlaybackSource: String, CaseIterable {
             return "WebView HLS (kids/dubbed)"
         }
     }
+
+    var sourceKind: VideoSourceKind {
+        switch self {
+        case .androidVR:
+            return .androidVR
+        case .progressive:
+            return .progressive
+        case .webViewHLS:
+            return .webViewHLS
+        }
+    }
 }

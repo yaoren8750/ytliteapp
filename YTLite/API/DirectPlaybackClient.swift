@@ -88,6 +88,25 @@ enum DirectPlaybackClient: Equatable, CustomStringConvertible {
         }
     }
 
+    /// Normalises a signed media URL for direct playback: replaces `pot`/`cver`
+    /// query params with this client's values (the segment CDN requires a
+    /// matching client version, plus `pot` when a token is available).
+    func directURL(baseURL: URL, poToken: String?) -> URL {
+        guard var components = URLComponents(
+            url: baseURL, resolvingAgainstBaseURL: false
+        ) else {
+            return baseURL
+        }
+        var items = components.queryItems ?? []
+        items.removeAll { $0.name == "pot" || $0.name == "cver" }
+        if let poToken, !poToken.isEmpty {
+            items.append(URLQueryItem(name: "pot", value: poToken))
+        }
+        items.append(URLQueryItem(name: "cver", value: clientVersion))
+        components.queryItems = items
+        return components.url ?? baseURL
+    }
+
     /// Build HTTP headers for stream requests (AVPlayer asset loading, direct URL fetches)
     func streamHeaders(visitorData: String?) -> [String: String] {
         var headers: [String: String] = [

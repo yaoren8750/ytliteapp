@@ -7,8 +7,9 @@ import Foundation
 /// WatchViewController conforms to this protocol.
 protocol PlaybackContext: AnyObject {
     func attachPlayer(url: URL)
-    /// Attaches a source-prepared item, retaining its resource loader.
-    func attachPrepared(_ prepared: PreparedPlayback)
+    /// Attaches a source-prepared item, retaining its resource loader; seeks to
+    /// `resumeAt` when set (quality switches keep the current position).
+    func attachPrepared(_ prepared: PreparedPlayback, resumeAt: CMTime?)
     func attachDirectPlayer(
         url: URL,
         visitorData: String?,

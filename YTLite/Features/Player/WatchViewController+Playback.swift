@@ -21,27 +21,7 @@ extension WatchViewController {
         client: DirectPlaybackClient,
         poToken: String?
     ) -> URL {
-        guard var components = URLComponents(
-            url: baseURL,
-            resolvingAgainstBaseURL: false
-        ) else {
-            return baseURL
-        }
-        var items = components.queryItems ?? []
-        items.removeAll {
-            $0.name == "pot" || $0.name == "cver"
-        }
-        if let pot = poToken, !pot.isEmpty {
-            items.append(
-                URLQueryItem(name: "pot", value: pot)
-            )
-        }
-        items.append(URLQueryItem(
-            name: "cver",
-            value: client.clientVersion
-        ))
-        components.queryItems = items
-        return components.url ?? baseURL
+        client.directURL(baseURL: baseURL, poToken: poToken)
     }
 
     func attachComposedPlayer(

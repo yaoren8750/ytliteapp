@@ -328,7 +328,7 @@ extension PlaybackFacade {
             || (info.videoURL != nil && info.audioURL != nil)
     }
 
-    private func fetchWatchtimeAndTrack() {
+    func fetchWatchtimeAndTrack() {
         guard let videoId = currentVideoId,
               let apiClient = currentApiClient
         else {

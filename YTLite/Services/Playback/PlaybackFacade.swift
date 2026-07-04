@@ -91,34 +91,10 @@ extension PlaybackFacade {
     ) {
         currentVideoId = videoId
         currentApiClient = apiClient
-        if PlaybackSource.selected == .webViewHLS {
-            startWebViewHLS(
-                videoId: videoId,
-                cancellationToken: cancellationToken
-            )
-            return
-        }
-        activeDirectPlaybackClient = client
-        context?.updateStatusLabel("Minting PoToken...")
-        fetchPoTokenAndPlay(
-            PlaybackPipelineContext(
-                videoId: videoId,
-                client: client,
-                cancellationToken: cancellationToken,
-                apiClient: apiClient
-            )
-        )
-    }
-
-    /// Resolves a JS-context HLS manifest via URLSession + JSContext n-solving
-    /// and plays it through the n-rewriting proxy.
-    private func startWebViewHLS(
-        videoId: String,
-        cancellationToken: CancellationToken
-    ) {
-        activeDirectPlaybackClient = .web
-        let source = WebViewHLSSource()
+        let source = DefaultVideoSourceFactory(apiClient: apiClient)
+            .make(kind: PlaybackSource.selected.sourceKind)
         activeVideoSource = source
+        activeDirectPlaybackClient = source.kind == .webViewHLS ? .web : client
         context?.updateStatusLabel("Resolving stream...")
         source.loadPlayback(
             videoId: videoId,
@@ -139,12 +115,16 @@ extension PlaybackFacade {
     ) {
         switch result {
         case .success(let prepared):
+            let kind = activeVideoSource?.kind
             let count = activeVideoSource?.availableQualities.count ?? 0
-            AppLog.player("webViewHLS: playing via source, \(count) qualities")
-            context?.attachPrepared(prepared)
+            AppLog.player(
+                "source \(String(describing: kind)) playing, \(count) qualities"
+            )
+            context?.attachPrepared(prepared, resumeAt: nil)
+            fetchWatchtimeAndTrack()
         case .failure(let error):
-            AppLog.player("webViewHLS failed: \(error)")
-            context?.showPlaybackError("HLS resolve failed.")
+            AppLog.player("source playback failed: \(error)")
+            context?.showPlaybackError("Playback failed.")
         }
     }
 
