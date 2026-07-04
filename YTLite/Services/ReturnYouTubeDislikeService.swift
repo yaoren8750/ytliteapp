@@ -33,7 +33,10 @@ final class ReturnYouTubeDislikeService {
         get { UserDefaults.standard.bool(forKey: UserDefaultsKeys.RYD.registered) }
         set { UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.RYD.registered) }
     }
-    private init() {}
+    private let transport: HTTPTransport
+    init(transport: HTTPTransport = ServiceContainer.transport) {
+        self.transport = transport
+    }
 }
 
 extension ReturnYouTubeDislikeService {
@@ -61,11 +64,8 @@ extension ReturnYouTubeDislikeService {
         guard let url = URL(string: "\(baseURL)/votes?videoId=\(videoId)") else {
             completion(.failure(NSError(domain: "RYD", code: 0))); return
         }
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error {
-                completion(.failure(error)); return
-            }
-            guard let data,
+        transport.send(HTTPRequest(method: .get, url: url), cancellationToken: nil) { result in
+            guard let data = try? result.get().data,
                   let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
                   let likes = json["likes"] as? Int,
                   let dislikes = json["dislikes"] as? Int,
@@ -76,7 +76,6 @@ extension ReturnYouTubeDislikeService {
             }
             completion(.success(RYDVotes(likes: likes, dislikes: dislikes, rating: rating)))
         }
-        task.resume()
     }
     func reportVote(videoId: String, value: Int) {
         let uid = userId
@@ -93,34 +92,33 @@ extension ReturnYouTubeDislikeService {
             }
         }
     }
-    private func buildJSONRequest(url: URL, body: [String: Any]) -> URLRequest {
-        var req = URLRequest(url: url)
-        req.httpMethod = "POST"
-        req.setValue(HTTPHeaderValue.contentTypeJSON, forHTTPHeaderField: HTTPHeader.contentType)
-        req.httpBody = try? JSONSerialization.data(withJSONObject: body)
-        return req
+    private func buildJSONRequest(url: URL, body: [String: Any]) -> HTTPRequest {
+        HTTPRequest(
+            method: .post,
+            url: url,
+            headers: [HTTPHeader.contentType: HTTPHeaderValue.contentTypeJSON],
+            body: try? JSONSerialization.data(withJSONObject: body)
+        )
     }
     private func register(userId: String, completion: @escaping (Bool) -> Void) {
         AppLog.ryd("registering userId=\(userId.prefix(8))...")
         guard let url = URL(string: "\(baseURL)/puzzle/registration?userId=\(userId)") else {
             completion(false); return
         }
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+        transport.send(
+            HTTPRequest(method: .get, url: url),
+            cancellationToken: nil
+        ) { [weak self] result in
             self?.handleRegistrationResponse(
-                data: data, error: error, userId: userId, completion: completion
+                data: try? result.get().data, userId: userId, completion: completion
             )
         }
-        task.resume()
     }
     private func handleRegistrationResponse(
         data: Data?,
-        error: Error?,
         userId: String,
         completion: @escaping (Bool) -> Void
     ) {
-        if let error {
-            AppLog.ryd("reg GET error: \(error)"); completion(false); return
-        }
         guard let data,
               let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
               let challengeB64 = json["challenge"] as? String,
@@ -159,16 +157,16 @@ extension ReturnYouTubeDislikeService {
             "solution": puzzle.solution.base64EncodedString()
         ]
         let req = buildJSONRequest(url: url, body: body)
-        let task = URLSession.shared.dataTask(with: req) { [weak self] data, response, _ in
-            let status = (response as? HTTPURLResponse)?.statusCode ?? 0
-            let raw = data.flatMap { String(data: $0, encoding: .utf8) } ?? "?"
+        transport.send(req, cancellationToken: nil) { [weak self] result in
+            let response = try? result.get()
+            let status = response?.status ?? 0
+            let raw = response.flatMap { String(data: $0.data, encoding: .utf8) } ?? "?"
             AppLog.ryd("reg POST status=\(status) response=\(raw)")
             if status == 200 {
                 self?.registrationConfirmed = true
                 completion(true)
             } else { completion(false) }
         }
-        task.resume()
     }
     private func sendVoteRequest(
         userId: String,
@@ -181,11 +179,11 @@ extension ReturnYouTubeDislikeService {
         }
         let body: [String: Any] = ["userId": userId, "videoId": videoId, "value": value]
         let req = buildJSONRequest(url: url, body: body)
-        let task = URLSession.shared.dataTask(with: req) { [weak self] data, response, error in
-            let code = (response as? HTTPURLResponse)?.statusCode ?? 0
-            if let error {
-                AppLog.ryd("vote step1 error: \(error)"); return
+        transport.send(req, cancellationToken: nil) { [weak self] result in
+            guard case .success(let response) = result else {
+                AppLog.ryd("vote step1 error: \(result)"); return
             }
+            let code = response.status
             if code == 401 && retryCount > 0 {
                 AppLog.ryd("vote got 401, re-registering...")
                 self?.registrationConfirmed = false
@@ -199,10 +197,9 @@ extension ReturnYouTubeDislikeService {
                 return
             }
             self?.solveVoteChallenge(
-                data: data, statusCode: code, userId: userId, videoId: videoId
+                data: response.data, statusCode: code, userId: userId, videoId: videoId
             )
         }
-        task.resume()
     }
     private func solveVoteChallenge(
         data: Data?,
@@ -248,16 +245,15 @@ extension ReturnYouTubeDislikeService {
             "difficulty": puzzle.difficulty, "solution": puzzle.solution.base64EncodedString()
         ]
         let req = buildJSONRequest(url: url, body: body)
-        let task = URLSession.shared.dataTask(with: req) { data, response, error in
-            let status = (response as? HTTPURLResponse)?.statusCode ?? 0
-            let raw = data.flatMap { String(data: $0.prefix(200), encoding: .utf8) } ?? "?"
-            if let error {
+        transport.send(req, cancellationToken: nil) { result in
+            switch result {
+            case .failure(let error):
                 AppLog.ryd("confirmVote error: \(error)")
-            } else {
-                AppLog.ryd("confirmVote status=\(status) response=\(raw)")
+            case .success(let response):
+                let raw = String(data: response.data.prefix(200), encoding: .utf8) ?? "?"
+                AppLog.ryd("confirmVote status=\(response.status) response=\(raw)")
             }
         }
-        task.resume()
     }
     private func solvePuzzle(
         challenge: Data,

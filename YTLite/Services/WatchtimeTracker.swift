@@ -7,6 +7,7 @@ import Foundation
 final class WatchtimeTracker {
     private static let pingInterval: TimeInterval = 15
     private let cpn: String = WatchtimeTracker.makeCPN()
+    private let transport: HTTPTransport
     private var pingTimer: Timer?
     private var urls: WatchtimeURLs?
     private var videoId: String?
@@ -15,6 +16,10 @@ final class WatchtimeTracker {
     /// Provides current playback position (seconds).
     /// Set by the host view controller before or after start().
     var timeProvider: (() -> TimeInterval)?
+
+    init(transport: HTTPTransport = ServiceContainer.transport) {
+        self.transport = transport
+    }
 
     private static func makeCPN() -> String {
         let chars = "abcdefghijklmnopqrstuvwxyz"
@@ -112,22 +117,18 @@ final class WatchtimeTracker {
         guard let url = URL(string: urlStr) else {
             return
         }
-        OAuthClient.shared.validToken { result in
-            var req = URLRequest(url: url)
+        OAuthClient.shared.validToken { [weak self] result in
+            var headers: [String: String] = [:]
             if case let .success(token) = result {
-                req.setValue(
-                    "Bearer \(token)",
-                    forHTTPHeaderField: "Authorization"
-                )
+                headers[HTTPHeader.authorization] = "Bearer \(token)"
             }
-            let task = URLSession.shared.dataTask(
-                with: req
-            ) { _, response, _ in
-                let code = (response as? HTTPURLResponse)?
-                    .statusCode ?? 0
+            self?.transport.send(
+                HTTPRequest(method: .get, url: url, headers: headers),
+                cancellationToken: nil
+            ) { result in
+                let code = (try? result.get().status) ?? 0
                 AppLog.log("Watchtime", "ping response \(code)")
             }
-            task.resume()
         }
     }
 }

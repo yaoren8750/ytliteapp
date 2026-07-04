@@ -34,17 +34,16 @@ extension HLSStreamResolver {
             completion(nil)
             return
         }
-        var request = URLRequest(url: endpoint, timeoutInterval: 15)
-        request.httpMethod = "POST"
-        request.setValue(
-            HTTPHeaderValue.contentTypeJSON,
-            forHTTPHeaderField: HTTPHeader.contentType
+        let request = HTTPRequest(
+            method: .post,
+            url: endpoint,
+            headers: [HTTPHeader.contentType: HTTPHeaderValue.contentTypeJSON],
+            body: body
         )
-        request.httpBody = body
         AppLog.player("hlsResolve: remote solving n via \(endpoint.host ?? "")")
-        let task = URLSession.shared.dataTask(with: request) { data, _, _ in
+        transport.send(request, cancellationToken: nil) { result in
+            let data = try? result.get().data
             completion(Self.parseRemoteSolved(data: data, unsolved: unsolved))
         }
-        task.resume()
     }
 }

@@ -1,9 +1,16 @@
 import Foundation
 
 enum ServiceContainer {
+    /// The app-wide HTTP transport: the URLSession core wrapped in decorators
+    /// (logging now; authorizing/retrying to follow). Every service should route
+    /// through this rather than touching URLSession directly.
+    static let transport: HTTPTransport = LoggingTransport(
+        AuthorizingTransport(URLSessionTransport())
+    )
+
     // Single InnertubeClient instance shared across all service protocols.
     // Each property is typed to the narrowest protocol the caller needs — DIP in action.
-    private static let client = InnertubeClient()
+    private static let client = InnertubeClient(transport: transport)
 
     static var feed: FeedService { client }
     static var history: HistoryService { client }

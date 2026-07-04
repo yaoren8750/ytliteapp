@@ -1,118 +1,54 @@
 import Foundation
 
-class APIClient {
-    @discardableResult
+/// Thin JSON-plane convenience over `HTTPTransport`. Kept as a narrow
+/// data-oriented facade (`get`/`post` returning `Data`) that the Innertube
+/// request executor builds on. All actual networking + status mapping lives in
+/// the injected transport.
+final class APIClient {
+    private let transport: HTTPTransport
+
+    init(transport: HTTPTransport = URLSessionTransport()) {
+        self.transport = transport
+    }
+
+    /// JSON-plane status policy: any non-2xx becomes an `APIError`.
+    private static func jsonData(
+        from result: Result<HTTPResponse, Error>
+    ) -> Result<Data, Error> {
+        result.flatMap { response in
+            if let error = APIError.from(status: response.status) {
+                return .failure(error)
+            }
+            return .success(response.data)
+        }
+    }
+
     func get(
         url: URL,
         headers: [String: String] = [:],
         cancellationToken: CancellationToken? = nil,
         completion: @escaping (Result<Data, Error>) -> Void
-    ) -> URLSessionDataTask {
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        headers.forEach { request.setValue($1, forHTTPHeaderField: $0) }
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            self.handleResponse(
-                data: data,
-                response: response,
-                error: error,
-                completion: completion
-            )
+    ) {
+        transport.send(
+            HTTPRequest(method: .get, url: url, headers: headers),
+            cancellationToken: cancellationToken
+        ) { result in
+            completion(Self.jsonData(from: result))
         }
-        cancellationToken?.register(task)
-        task.resume()
-        return task
     }
 
-    @discardableResult
     func post(
         url: URL,
         body: Data,
         headers: [String: String] = [:],
         cancellationToken: CancellationToken? = nil,
         completion: @escaping (Result<Data, Error>) -> Void
-    ) -> URLSessionDataTask {
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.httpBody = body
-        headers.forEach { request.setValue($1, forHTTPHeaderField: $0) }
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            self.handleResponse(
-                data: data,
-                response: response,
-                error: error,
-                completion: completion
-            )
-        }
-        cancellationToken?.register(task)
-        task.resume()
-        return task
-    }
-
-    private func handleResponse(
-        data: Data?,
-        response: URLResponse?,
-        error: Error?,
-        completion: @escaping (Result<Data, Error>) -> Void
     ) {
-        if isCancelled(error) {
-            return
-        }
-
-        if let transportError = wrapTransportError(error) {
-            completion(.failure(transportError))
-            return
-        }
-
-        guard let httpResponse = response as? HTTPURLResponse else {
-            completion(.failure(APIError.invalidResponse))
-            return
-        }
-
-        if let statusError = responseError(for: httpResponse.statusCode) {
-            completion(.failure(statusError))
-            return
-        }
-
-        guard let data else {
-            completion(.failure(APIError.noData))
-            return
-        }
-
-        completion(.success(data))
-    }
-
-    private func isCancelled(_ error: Error?) -> Bool {
-        guard let error else {
-            return false
-        }
-        return (error as NSError).code == NSURLErrorCancelled
-    }
-
-    private func wrapTransportError(_ error: Error?) -> APIError? {
-        guard let error else {
-            return nil
-        }
-        return .transport(error)
-    }
-
-    private func responseError(for statusCode: Int) -> APIError? {
-        switch statusCode {
-        case 200 ... 299:
-            return nil
-        case 401:
-            OAuthClient.shared.tryRefreshIfNeeded()
-            return .unauthorized
-        case 403:
-            return .forbidden
-        case 429:
-            return .rateLimited
-        case 500 ... 599:
-            return .serverError(code: statusCode)
-        default:
-            return .invalidResponse
+        transport.send(
+            HTTPRequest(method: .post, url: url, headers: headers, body: body),
+            cancellationToken: cancellationToken
+        ) { result in
+            completion(Self.jsonData(from: result))
         }
     }
 }
@@ -128,4 +64,22 @@ enum APIError: Error {
     case rateLimited
     case serverError(code: Int)
     case transport(Error)
+
+    /// Maps an HTTP status code to an error, or nil for 2xx.
+    static func from(status: Int) -> APIError? {
+        switch status {
+        case 200 ... 299:
+            return nil
+        case 401:
+            return .unauthorized
+        case 403:
+            return .forbidden
+        case 429:
+            return .rateLimited
+        case 500 ... 599:
+            return .serverError(code: status)
+        default:
+            return .invalidResponse
+        }
+    }
 }

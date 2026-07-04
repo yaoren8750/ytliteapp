@@ -15,13 +15,16 @@ final class SignatureTimestampService {
         attributes: .concurrent
     )
 
+    private let transport: HTTPTransport
+
     private var _cached: Int?
     private var cached: Int? {
         get { queue.sync { _cached } }
         set { queue.async(flags: .barrier) { self._cached = newValue } }
     }
 
-    init() {
+    init(transport: HTTPTransport = ServiceContainer.transport) {
+        self.transport = transport
         loadFromDefaults()
     }
 
@@ -76,15 +79,16 @@ final class SignatureTimestampService {
             completion(nil)
             return
         }
-        let task = URLSession.shared.dataTask(
-            with: url
-        ) { [weak self] data, _, _ in
+        transport.send(
+            HTTPRequest(method: .get, url: url),
+            cancellationToken: nil
+        ) { [weak self] result in
             guard let self else {
                 completion(nil)
                 return
             }
-            if let data,
-               let html = String(data: data, encoding: .utf8),
+            if case .success(let response) = result,
+               let html = String(data: response.data, encoding: .utf8),
                let ts = self.extractSTS(from: html) {
                 AppLog.log("SigTS", "signatureTimestamp=\(ts)")
                 self.cached = ts
@@ -98,7 +102,6 @@ final class SignatureTimestampService {
                 )
             }
         }
-        task.resume()
     }
 
     private func extractSTS(from html: String) -> Int? {

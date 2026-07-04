@@ -31,7 +31,11 @@ final class HLSStreamResolver {
         "Version/17.5 Safari/605.1.15"
     ].joined(separator: " ")
 
-    private init() {}
+    let transport: HTTPTransport
+
+    init(transport: HTTPTransport = ServiceContainer.transport) {
+        self.transport = transport
+    }
 
     static func firstMatch(in text: String, pattern: String) -> String? {
         guard let regex = try? NSRegularExpression(pattern: pattern) else {
@@ -112,27 +116,26 @@ final class HLSStreamResolver {
         url: URL,
         completion: @escaping (Result<String, Error>) -> Void
     ) {
-        var request = URLRequest(url: url)
-        request.setValue(
-            desktopSafariUA, forHTTPHeaderField: HTTPHeader.userAgent
-        )
-        request.setValue("SOCS=CAI", forHTTPHeaderField: "Cookie")
-        request.setValue(
-            "en-US,en;q=0.9", forHTTPHeaderField: HTTPHeader.acceptLanguage
-        )
-        let task = URLSession.shared.dataTask(with: request) { data, _, error in
-            if let error {
+        let headers = [
+            HTTPHeader.userAgent: desktopSafariUA,
+            "Cookie": "SOCS=CAI",
+            HTTPHeader.acceptLanguage: "en-US,en;q=0.9"
+        ]
+        transport.send(
+            HTTPRequest(method: .get, url: url, headers: headers),
+            cancellationToken: nil
+        ) { result in
+            switch result {
+            case .failure(let error):
                 completion(.failure(error))
-                return
+            case .success(let response):
+                if let text = String(data: response.data, encoding: .utf8) {
+                    completion(.success(text))
+                } else {
+                    completion(.failure(ResolverError.badResponse))
+                }
             }
-            guard let data,
-                  let text = String(data: data, encoding: .utf8) else {
-                completion(.failure(ResolverError.badResponse))
-                return
-            }
-            completion(.success(text))
         }
-        task.resume()
     }
 
     // MARK: Pipeline steps

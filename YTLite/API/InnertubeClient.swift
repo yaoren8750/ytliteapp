@@ -2,13 +2,17 @@
 import Foundation
 
 final class InnertubeClient: VideoService, ChannelTabService {
-    let api = APIClient()
+    let api: APIClient
     let session = InnertubeSession()
 
     var baseURL: String { session.baseURL }
     var webContext: [String: Any] { session.webContext }
     var tvContext: [String: Any] { session.tvContext }
     var androidContext: [String: Any] { session.androidContext }
+
+    init(transport: HTTPTransport = URLSessionTransport()) {
+        self.api = APIClient(transport: transport)
+    }
 }
 
 // MARK: - VideoService

@@ -31,7 +31,11 @@ final class SponsorBlockService {
         set { UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.SponsorBlock.enabled) }
     }
 
-    private init() {}
+    private let transport: HTTPTransport
+
+    init(transport: HTTPTransport = ServiceContainer.transport) {
+        self.transport = transport
+    }
 
     // MARK: - Per-category settings
 
@@ -68,17 +72,12 @@ final class SponsorBlockService {
             return
         }
         AppLog.sponsorBlock("fetching segments for \(videoId) url=\(url)")
-        URLSession.shared
-            .dataTask(with: url) { data, resp, err in
-                let result = self.processResponse(
-                    data: data,
-                    response: resp,
-                    error: err,
-                    videoId: videoId
-                )
-                completion(result)
-            }
-            .resume()
+        transport.send(
+            HTTPRequest(method: .get, url: url),
+            cancellationToken: nil
+        ) { result in
+            completion(self.processResult(result, videoId: videoId))
+        }
     }
 
     // MARK: - Private helpers
@@ -101,25 +100,31 @@ final class SponsorBlockService {
         return comps.url
     }
 
-    private func processResponse(
-        data: Data?,
-        response: URLResponse?,
-        error: Error?,
+    private func processResult(
+        _ result: Result<HTTPResponse, Error>,
         videoId: String
     ) -> Result<[SponsorBlockSegment], Error> {
-        if let error {
+        switch result {
+        case .failure(let error):
             return .failure(error)
+        case .success(let response):
+            return processResponse(response, videoId: videoId)
         }
-        let code = (response as? HTTPURLResponse)?.statusCode ?? 0
+    }
+
+    private func processResponse(
+        _ response: HTTPResponse,
+        videoId: String
+    ) -> Result<[SponsorBlockSegment], Error> {
+        let code = response.status
         if code == 404 {
             AppLog.sponsorBlock("no segments for \(videoId)")
             return .success([])
         }
-        guard let data,
-              let arr = try? JSONSerialization
-                  .jsonObject(with: data) as? [[String: Any]]
+        guard let arr = try? JSONSerialization
+            .jsonObject(with: response.data) as? [[String: Any]]
         else {
-            logParseFailure(code: code, data: data)
+            logParseFailure(code: code, data: response.data)
             return .failure(sbError("Parse error (\(code))", code: 1))
         }
         let segments = parseSegments(from: arr)
