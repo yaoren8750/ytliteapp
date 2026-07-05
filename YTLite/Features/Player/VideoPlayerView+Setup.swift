@@ -16,6 +16,29 @@ extension VideoPlayerView {
         layer.addSublayer(bottomGradientLayer)
         setupControls()
         addGestureRecognizers()
+        addLifecycleObservers()
+    }
+
+    /// Unavailable controls stay visible but disabled, so the top-bar
+    /// layout never shifts and the user sees the feature exists.
+    func setControlAvailability(_ button: UIButton, available: Bool) {
+        button.isEnabled = available
+        button.alpha = available ? 1 : 0.4
+    }
+
+    private func addLifecycleObservers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(appWillResignActive),
+            name: UIApplication.willResignActiveNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(appDidBecomeActive),
+            name: UIApplication.didBecomeActiveNotification,
+            object: nil
+        )
     }
 
     // MARK: - Gesture Recognizers
@@ -160,20 +183,17 @@ extension VideoPlayerView {
             action: #selector(pipTapped),
             for: .touchUpInside
         )
-        let supported = AVPictureInPictureController
-            .isPictureInPictureSupported()
-        let key = UserDefaultsKeys.Player.pipEnabled
-        let enabled = UserDefaults.standard.object(
-            forKey: key
-        ) as? Bool ?? true
-        pipButton.isHidden = !supported || !enabled
+        setControlAvailability(
+            pipButton,
+            available: isPiPAvailable
+        )
         controlsView.addSubview(pipButton)
     }
 
     private func configureCCButton() {
         styleCCButton()
         ccButton.translatesAutoresizingMaskIntoConstraints = false
-        ccButton.isHidden = true
+        setControlAvailability(ccButton, available: false)
         ccButton.addTarget(
             self,
             action: #selector(ccTapped),

@@ -1,5 +1,14 @@
 import AVFoundation
 import MediaPlayer
+import UIKit
+
+/// What a playback session shows on the lock screen / Control Center.
+struct NowPlayingMetadata {
+    let title: String
+    let channelName: String
+    let duration: TimeInterval
+    let artworkURL: URL?
+}
 
 /// Manages Now Playing info and remote command handling (Control Center, AirPods, lock screen).
 final class NowPlayingService {
@@ -7,23 +16,21 @@ final class NowPlayingService {
 
     private weak var player: AVPlayer?
     private var commandTokens: [(MPRemoteCommand, Any)] = []
+    private var artworkURL: URL?
+    private let transport: HTTPTransport
 
-    private init() {}
+    private init(transport: HTTPTransport = ServiceContainer.mediaTransport) {
+        self.transport = transport
+    }
 
     func beginSession(
         player: AVPlayer,
-        title: String,
-        channelName: String,
-        duration: TimeInterval
+        metadata: NowPlayingMetadata
     ) {
         self.player = player
-        publishInfo(
-            title: title,
-            channelName: channelName,
-            duration: duration,
-            position: 0
-        )
+        publishInfo(metadata: metadata, position: 0)
         registerCommands()
+        loadArtwork(url: metadata.artworkURL)
     }
 
     func updatePosition(_ position: TimeInterval) {
@@ -39,23 +46,53 @@ final class NowPlayingService {
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
         removeCommands()
         player = nil
+        artworkURL = nil
     }
 
     // MARK: - Private
 
     private func publishInfo(
-        title: String,
-        channelName: String,
-        duration: TimeInterval,
+        metadata: NowPlayingMetadata,
         position: TimeInterval
     ) {
         MPNowPlayingInfoCenter.default().nowPlayingInfo = [
-            MPMediaItemPropertyTitle: title,
-            MPMediaItemPropertyArtist: channelName,
-            MPMediaItemPropertyPlaybackDuration: duration,
+            MPMediaItemPropertyTitle: metadata.title,
+            MPMediaItemPropertyArtist: metadata.channelName,
+            MPMediaItemPropertyPlaybackDuration: metadata.duration,
             MPNowPlayingInfoPropertyElapsedPlaybackTime: position,
             MPNowPlayingInfoPropertyPlaybackRate: player?.rate ?? 1
         ]
+    }
+
+    private func loadArtwork(url: URL?) {
+        artworkURL = url
+        guard let url else {
+            return
+        }
+        transport.send(
+            HTTPRequest(method: .get, url: url),
+            cancellationToken: nil
+        ) { [weak self] result in
+            guard let data = try? result.get().data,
+                  let image = UIImage(data: data) else {
+                return
+            }
+            DispatchQueue.main.async {
+                self?.publishArtwork(image, for: url)
+            }
+        }
+    }
+
+    private func publishArtwork(_ image: UIImage, for url: URL) {
+        // The session may have moved to another video while downloading.
+        guard url == artworkURL,
+              var info = MPNowPlayingInfoCenter.default().nowPlayingInfo else {
+            return
+        }
+        info[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(
+            boundsSize: image.size
+        ) { _ in image }
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = info
     }
 
     private func registerCommands() {

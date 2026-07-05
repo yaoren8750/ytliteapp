@@ -7,7 +7,7 @@ final class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = ThemeManager.shared.background
         setupUI()
     }
 
@@ -19,7 +19,7 @@ final class SplashViewController: UIViewController {
     // MARK: - UI
 
     private func setupUI() {
-        logoView.image = UIImage(named: "LaunchIcon")
+        logoView.image = UIImage(named: "LaunchLogo")
         logoView.contentMode = .scaleAspectFit
         logoView.translatesAutoresizingMaskIntoConstraints = false
         logoView.alpha = 0
@@ -29,7 +29,7 @@ final class SplashViewController: UIViewController {
             logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             logoView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
-            logoView.heightAnchor.constraint(equalTo: logoView.widthAnchor)
+            logoView.heightAnchor.constraint(equalTo: logoView.widthAnchor, multiplier: 0.7)
         ])
     }
 

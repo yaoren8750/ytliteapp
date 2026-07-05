@@ -15,6 +15,7 @@ final class WebViewHLSSource: VideoSource {
     private let proxyQueueLabel = "com.ytvlite.hlsproxy"
     private var manifestURL: URL?
     private var nSolver: (unsolved: String, solved: String)?
+    private var captions: [SubtitleTrack] = []
     private var activeLoader: HLSProxyLoader?
 
     init(resolver: HLSStreamResolver = .shared) {
@@ -47,6 +48,20 @@ final class WebViewHLSSource: VideoSource {
         }
         let auto = VideoQuality(id: "auto", label: "Auto", height: nil, fps: nil)
         return [auto] + heights
+    }
+
+    /// Applies the user's default-quality setting: the best variant not
+    /// exceeding the cap; Auto when no cap is set.
+    static func preferredQuality(
+        from qualities: [VideoQuality],
+        maxHeight: Int?
+    ) -> VideoQuality? {
+        guard let maxHeight else {
+            return qualities.first
+        }
+        let capped = qualities.first { ($0.height ?? .max) <= maxHeight }
+        // Nothing at or below the cap → the smallest variant beats Auto.
+        return capped ?? qualities.last
     }
 
     func loadPlayback(
@@ -84,14 +99,19 @@ final class WebViewHLSSource: VideoSource {
     ) {
         manifestURL = resolved.manifestURL
         nSolver = resolved.nSolver
+        captions = resolved.captions
         resolver.fetchText(url: resolved.manifestURL) { [weak self] result in
             guard let self else {
                 return
             }
             let manifest = (try? result.get()) ?? ""
             self.availableQualities = Self.parseQualities(from: manifest)
-            self.currentQuality = self.availableQualities.first
-            guard let prepared = self.buildPlayback(height: nil) else {
+            let preferred = Self.preferredQuality(
+                from: self.availableQualities,
+                maxHeight: VideoQualityStore.maxHeight
+            )
+            self.currentQuality = preferred
+            guard let prepared = self.buildPlayback(height: preferred?.height) else {
                 completion(.failure(HLSStreamResolver.ResolverError.noManifest))
                 return
             }
@@ -113,7 +133,9 @@ final class WebViewHLSSource: VideoSource {
             loader, queue: DispatchQueue(label: proxyQueueLabel)
         )
         return PreparedPlayback(
-            item: AVPlayerItem(asset: asset), resourceLoader: loader
+            item: AVPlayerItem(asset: asset),
+            resourceLoader: loader,
+            captions: captions
         )
     }
 }

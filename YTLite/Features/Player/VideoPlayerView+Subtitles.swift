@@ -42,7 +42,7 @@ extension VideoPlayerView {
         _ tracks: [SubtitleTrack],
         activeLanguage: String?
     ) {
-        ccButton.isHidden = tracks.isEmpty
+        setControlAvailability(ccButton, available: !tracks.isEmpty)
         ccButton.isSelected = activeLanguage != nil
     }
 

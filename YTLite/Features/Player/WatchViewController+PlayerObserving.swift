@@ -98,9 +98,12 @@ extension WatchViewController {
         if let player = videoPlayerView?.player {
             NowPlayingService.shared.beginSession(
                 player: player,
-                title: initialVideo.title,
-                channelName: initialVideo.channelName,
-                duration: duration
+                metadata: NowPlayingMetadata(
+                    title: initialVideo.title,
+                    channelName: initialVideo.channelName,
+                    duration: duration,
+                    artworkURL: URL(string: initialVideo.thumbnailURL)
+                )
             )
         }
     }

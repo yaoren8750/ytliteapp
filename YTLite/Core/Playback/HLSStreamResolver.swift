@@ -14,6 +14,7 @@ import Foundation
 struct ResolvedHLS {
     let manifestURL: URL
     let nSolver: (unsolved: String, solved: String)?
+    let captions: [SubtitleTrack]
 }
 
 final class HLSStreamResolver {
@@ -32,6 +33,13 @@ final class HLSStreamResolver {
     ].joined(separator: " ")
 
     let transport: HTTPTransport
+
+    // Memoized solve results and player JS — solving is expensive (base.js
+    // download + JS run on-device, or a round-trip to the remote solver),
+    // while n values and the player script repeat across videos.
+    private var solvedNCache: [String: String] = [:]
+    private var playerJSCache: (path: String, text: String)?
+    private let cacheLock = NSLock()
 
     init(transport: HTTPTransport = ServiceContainer.transport) {
         self.transport = transport
@@ -161,42 +169,86 @@ final class HLSStreamResolver {
         let jsPath = Self.firstMatch(
             in: html, pattern: "\"jsUrl\":\"([^\"]+base\\.js)\""
         )
-        AppLog.player("hlsResolve: manifest ok, jsUrl=\(jsPath ?? "nil")")
+        let captions = InnertubeClient.extractCaptionTracks(fromWatchHTML: html)
+        AppLog.player(
+            "hlsResolve: manifest ok, jsUrl=\(jsPath ?? "nil"),"
+                + " captions=\(captions.count)"
+        )
+        finishResolve(
+            manifestURL: manifestURL,
+            jsPath: jsPath,
+            captions: captions,
+            completion: completion
+        )
+    }
+
+    private func finishResolve(
+        manifestURL: URL,
+        jsPath: String?,
+        captions: [SubtitleTrack],
+        completion: @escaping (Result<ResolvedHLS, Error>) -> Void
+    ) {
         fetchText(url: manifestURL) { [weak self] result in
             guard let self else {
                 return
             }
             let manifestText = (try? result.get()) ?? ""
-            self.solveThenFinish(
-                manifestURL: manifestURL,
+            self.solveIfNeeded(
                 manifestText: manifestText,
-                jsPath: jsPath,
-                completion: completion
-            )
+                jsPath: jsPath
+            ) { mapping in
+                completion(.success(ResolvedHLS(
+                    manifestURL: manifestURL,
+                    nSolver: mapping,
+                    captions: captions
+                )))
+            }
         }
     }
 
-    private func solveThenFinish(
-        manifestURL: URL,
+    private func solveIfNeeded(
         manifestText: String,
         jsPath: String?,
-        completion: @escaping (Result<ResolvedHLS, Error>) -> Void
+        completion: @escaping ((unsolved: String, solved: String)?) -> Void
     ) {
         guard let unsolved = Self.firstMatch(
             in: manifestText, pattern: "/n/([A-Za-z0-9_-]{10,})/"
         ) else {
             AppLog.player("hlsResolve: no n in manifest; serving as-is")
-            completion(.success(
-                ResolvedHLS(manifestURL: manifestURL, nSolver: nil)
-            ))
+            completion(nil)
             return
         }
         solveN(unsolved: unsolved, jsPath: jsPath) { solved in
-            let mapping = solved.map { (unsolved, $0) }
             AppLog.player("hlsResolve: n \(unsolved) -> \(solved ?? "nil")")
-            completion(.success(
-                ResolvedHLS(manifestURL: manifestURL, nSolver: mapping)
-            ))
+            completion(solved.map { (unsolved, $0) })
         }
+    }
+}
+
+// MARK: - Solver caches (used by the Solve/Remote extensions)
+
+extension HLSStreamResolver {
+    func cachedSolvedN(for key: String) -> String? {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return solvedNCache[key]
+    }
+
+    func storeSolvedN(_ solved: String, for key: String) {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        solvedNCache[key] = solved
+    }
+
+    func cachedPlayerJS(path: String) -> String? {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return playerJSCache?.path == path ? playerJSCache?.text : nil
+    }
+
+    func storePlayerJS(_ text: String, path: String) {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        playerJSCache = (path, text)
     }
 }

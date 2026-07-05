@@ -1,45 +1,67 @@
 import Foundation
 
 extension InnertubeClient {
-    static func parseSearchFeed(
+    /// Parses both the initial search response and continuation responses
+    /// into videos plus the next-page token.
+    static func parseSearchPage(
         _ data: Data
-    ) -> [Video] {
-        guard let items = searchFeedItems(from: data)
+    ) -> SearchPage {
+        guard let json = try? JSONSerialization
+            .jsonObject(with: data) as? [String: Any]
         else {
-            return []
+            return SearchPage(videos: [], continuation: nil)
         }
-        return items.compactMap { parseVideoRenderer($0) }
+        let sections = initialSearchSections(json)
+            ?? continuationSearchSections(json)
+            ?? []
+        var videos: [Video] = []
+        var token: String?
+        for section in sections {
+            if let items = (section["itemSectionRenderer"]
+                as? [String: Any])?["contents"] as? [[String: Any]] {
+                videos += items.compactMap { parseVideoRenderer($0) }
+            } else if let renderer = section["continuationItemRenderer"]
+                as? [String: Any] {
+                token = renderer.digString(
+                    "continuationEndpoint",
+                    "continuationCommand",
+                    "token"
+                )
+            }
+        }
+        return SearchPage(videos: videos, continuation: token)
     }
 }
 
 private extension InnertubeClient {
-    static func searchFeedItems(
-        from data: Data
+    static func initialSearchSections(
+        _ json: [String: Any]
     ) -> [[String: Any]]? {
-        guard let json = try? JSONSerialization
-            .jsonObject(with: data) as? [String: Any]
+        json.digArray(
+            "contents",
+            "twoColumnSearchResultsRenderer",
+            "primaryContents",
+            "sectionListRenderer",
+            "contents"
+        )
+    }
+
+    static func continuationSearchSections(
+        _ json: [String: Any]
+    ) -> [[String: Any]]? {
+        guard let commands = json["onResponseReceivedCommands"]
+            as? [[String: Any]]
         else {
             return nil
         }
-        let contents = json["contents"] as? [String: Any]
-        let twoCol = contents?[
-            "twoColumnSearchResultsRenderer"
-        ] as? [String: Any]
-        let primary = twoCol?[
-            "primaryContents"
-        ] as? [String: Any]
-        let sectionList = primary?[
-            "sectionListRenderer"
-        ] as? [String: Any]
-        let sections = sectionList?[
-            "contents"
-        ] as? [[String: Any]]
-        let section = sections?.first?[
-            "itemSectionRenderer"
-        ] as? [String: Any]
-        return section?[
-            "contents"
-        ] as? [[String: Any]]
+        return commands
+            .compactMap {
+                $0.digArray(
+                    "appendContinuationItemsAction",
+                    "continuationItems"
+                )
+            }
+            .first
     }
 
     static func parseVideoRenderer(

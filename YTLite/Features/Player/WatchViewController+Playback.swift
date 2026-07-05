@@ -52,14 +52,12 @@ extension WatchViewController {
         playerContainer.addSubview(playerView)
         applyEdgeConstraints(playerView, to: playerContainer)
         videoPlayerView = playerView
-        if !captionTracks.isEmpty {
-            playerView.setCaptionTracks(
-                captionTracks,
-                activeLanguage: activeSubtitleLanguage
-            )
-            playerView.onCCTapped = { [weak self] in
-                self?.showSubtitlePicker()
-            }
+        playerView.setCaptionTracks(
+            captionTracks,
+            activeLanguage: activeSubtitleLanguage
+        )
+        playerView.onCCTapped = { [weak self] in
+            self?.showSubtitlePicker()
         }
         return playerView
     }

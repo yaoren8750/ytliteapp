@@ -96,5 +96,9 @@ class ThemeManager {
         let tab = UITabBar.appearance()
         tab.barStyle = barStyle
         tab.tintColor = isDark ? .white : accent
+
+        // Appearance only affects fields created afterwards; long-lived
+        // fields (e.g. the search bar) re-apply it on theme change.
+        UITextField.appearance().keyboardAppearance = isDark ? .dark : .default
     }
 }

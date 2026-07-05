@@ -36,22 +36,34 @@ extension HLSStreamResolver {
         return URL(string: "https://www.youtube.com" + jsPath)
     }
 
-    /// Solves the n-throttling signature. Tries the on-device JSContext solver
-    /// (iOS 14+) first, then falls back to the remote solver (required on iOS
-    /// 12/13, where base.js ES2020 syntax cannot be parsed on-device).
+    /// Solves the n-throttling signature. Results are memoized per
+    /// (player JS, n) — repeated values skip solving entirely. Tries the
+    /// on-device JSContext solver (iOS 14+) first, then falls back to the
+    /// remote solver (required on iOS 12/13, where base.js ES2020 syntax
+    /// cannot be parsed on-device).
     func solveN(
         unsolved: String,
         jsPath: String?,
         completion: @escaping (String?) -> Void
     ) {
+        let cacheKey = "\(jsPath ?? "")|\(unsolved)"
+        if let cached = cachedSolvedN(for: cacheKey) {
+            AppLog.player("hlsResolve: n cache hit")
+            completion(cached)
+            return
+        }
         solveOnDevice(unsolved: unsolved, jsPath: jsPath) { [weak self] solved in
             if let solved {
+                self?.storeSolvedN(solved, for: cacheKey)
                 completion(solved)
                 return
             }
-            self?.solveRemote(
-                unsolved: unsolved, jsPath: jsPath, completion: completion
-            )
+            self?.solveRemote(unsolved: unsolved, jsPath: jsPath) { solved in
+                if let solved {
+                    self?.storeSolvedN(solved, for: cacheKey)
+                }
+                completion(solved)
+            }
         }
     }
 
@@ -69,15 +81,29 @@ extension HLSStreamResolver {
             completion(nil)
             return
         }
+        if let cached = cachedPlayerJS(path: jsPath) {
+            runSolverAsync(baseJS: cached, unsolved: unsolved, completion: completion)
+            return
+        }
         fetchText(url: baseURL) { [weak self] result in
-            guard let self, case .success(let baseJS) = result else {
+            guard let self, case let .success(baseJS) = result else {
                 completion(nil)
                 return
             }
-            DispatchQueue.global(qos: .userInitiated).async {
-                let solved = self.runSolver(baseJS: baseJS, unsolved: unsolved)
-                completion(solved)
-            }
+            storePlayerJS(baseJS, path: jsPath)
+            runSolverAsync(
+                baseJS: baseJS, unsolved: unsolved, completion: completion
+            )
+        }
+    }
+
+    private func runSolverAsync(
+        baseJS: String,
+        unsolved: String,
+        completion: @escaping (String?) -> Void
+    ) {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            completion(self?.runSolver(baseJS: baseJS, unsolved: unsolved))
         }
     }
 

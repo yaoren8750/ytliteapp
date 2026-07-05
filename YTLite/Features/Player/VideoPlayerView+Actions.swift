@@ -175,6 +175,16 @@ extension VideoPlayerView {
 // MARK: - Icon Updates
 
 extension VideoPlayerView {
+    /// Whether PiP is possible at all: device support + the user setting.
+    var isPiPAvailable: Bool {
+        let supported = AVPictureInPictureController
+            .isPictureInPictureSupported()
+        let enabled = UserDefaults.standard.object(
+            forKey: UserDefaultsKeys.Player.pipEnabled
+        ) as? Bool ?? true
+        return supported && enabled
+    }
+
     func updatePlayPauseIcon() {
         let isPlaying = (player?.rate ?? 0) > 0
         let icon = isPlaying
@@ -199,19 +209,43 @@ extension VideoPlayerView {
     }
 
     func setupPiP() {
-        let supported = AVPictureInPictureController
-            .isPictureInPictureSupported()
-        let key = UserDefaultsKeys.Player.pipEnabled
-        let enabled = UserDefaults.standard.object(
-            forKey: key
-        ) as? Bool ?? true
-        guard supported, enabled else {
+        setControlAvailability(
+            pipButton,
+            available: isPiPAvailable
+        )
+        guard isPiPAvailable else {
+            // Also drops a controller created before the user
+            // disabled the setting — it would otherwise keep
+            // serving the (reused) player layer.
+            pipController = nil
+            return
+        }
+        guard pipController == nil else {
             return
         }
         pipController = AVPictureInPictureController(
             playerLayer: playerLayer
         )
         pipController?.delegate = self
+    }
+
+    /// The system auto-starts PiP when the app backgrounds while a video
+    /// layer is fullscreen. PiP here is button-only: drop the controller
+    /// while inactive (unless the user already started PiP) and recreate
+    /// it when the app is active again.
+    @objc
+    func appWillResignActive() {
+        guard pipController?.isPictureInPictureActive != true else {
+            return
+        }
+        pipController = nil
+    }
+
+    @objc
+    func appDidBecomeActive() {
+        if player != nil {
+            setupPiP()
+        }
     }
 
     @objc

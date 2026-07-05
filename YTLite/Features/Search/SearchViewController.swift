@@ -1,19 +1,21 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-    private let service: SearchService
-    private let channelViewControllerFactory: (
+    let service: SearchService
+    let channelViewControllerFactory: (
         String,
         String
     ) -> UIViewController
-    private let videoRouter: VideoRouter
-    private var results: [Video] = []
+    let videoRouter: VideoRouter
+    private(set) var results: [Video] = []
     private var lastQuery: String = ""
     private var activeSearchQuery: String?
     private var searchCancellationToken = CancellationToken()
+    private var continuationToken: String?
+    private var isLoadingNextPage = false
 
     private let searchBar = UISearchBar()
-    private let tableView = UITableView()
+    let tableView = UITableView()
     private let refreshControl = UIRefreshControl()
 
     init(
@@ -116,6 +118,7 @@ class SearchViewController: UIViewController {
         tableView.separatorColor = theme.separator
         searchBar.barStyle = theme.barStyle
         searchBar.backgroundColor = theme.background
+        searchBar.keyboardAppearance = theme.isDark ? .dark : .default
         tableView.reloadData()
     }
 
@@ -127,7 +130,11 @@ class SearchViewController: UIViewController {
         }
         search(query: lastQuery)
     }
+}
 
+// MARK: - Search flow
+
+extension SearchViewController {
     private func search(query: String) {
         let normalizedQuery = query.trimmingCharacters(
             in: .whitespacesAndNewlines
@@ -140,6 +147,7 @@ class SearchViewController: UIViewController {
         let cancellationToken = beginSearch(for: normalizedQuery)
         service.search(
             query: normalizedQuery,
+            continuation: nil,
             cancellationToken: cancellationToken
         ) { [weak self] result in
             DispatchQueue.main.async {
@@ -152,7 +160,37 @@ class SearchViewController: UIViewController {
                 ) else {
                     return
                 }
-                self.applySearchResult(result)
+                self.applySearchResult(result, append: false)
+            }
+        }
+    }
+
+    func loadNextPage() {
+        guard let token = continuationToken,
+              !isLoadingNextPage,
+              !lastQuery.isEmpty else {
+            return
+        }
+        isLoadingNextPage = true
+        let query = lastQuery
+        let cancellationToken = searchCancellationToken
+        service.search(
+            query: query,
+            continuation: token,
+            cancellationToken: cancellationToken
+        ) { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self else {
+                    return
+                }
+                self.isLoadingNextPage = false
+                guard self.shouldApplyResult(
+                    for: query,
+                    cancellationToken: cancellationToken
+                ) else {
+                    return
+                }
+                self.applySearchResult(result, append: true)
             }
         }
     }
@@ -166,14 +204,21 @@ class SearchViewController: UIViewController {
         return cancellationToken
     }
 
-    private func applySearchResult(_ result: Result<[Video], Error>) {
+    private func applySearchResult(
+        _ result: Result<SearchPage, Error>,
+        append: Bool
+    ) {
         refreshControl.endRefreshing()
         switch result {
-        case .success(let videos):
-            results = videos
+        case .success(let page):
+            results = append ? results + page.videos : page.videos
+            continuationToken = page.continuation
             tableView.reloadData()
         case .failure(let error):
-            presentSearchError(error)
+            // Silently keep the current page when a next-page load fails.
+            if !append {
+                presentSearchError(error)
+            }
         }
     }
 
@@ -204,10 +249,14 @@ class SearchViewController: UIViewController {
         activeSearchQuery = nil
         lastQuery = ""
         results = []
+        continuationToken = nil
+        isLoadingNextPage = false
         refreshControl.endRefreshing()
         tableView.reloadData()
     }
 }
+
+// MARK: - UISearchBarDelegate
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -225,54 +274,5 @@ extension SearchViewController: UISearchBarDelegate {
         if searchText.isEmpty {
             clearSearchResults()
         }
-    }
-}
-
-extension SearchViewController: UITableViewDataSource {
-    func tableView(
-        _ tableView: UITableView,
-        numberOfRowsInSection section: Int
-    ) -> Int {
-        results.count
-    }
-
-    func tableView(
-        _ tableView: UITableView,
-        cellForRowAt indexPath: IndexPath
-    ) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: SubscriptionVideoCell.reuseId,
-            for: indexPath
-        ) as? SubscriptionVideoCell else {
-            return UITableViewCell()
-        }
-        let video = results[indexPath.row]
-        cell.configure(with: video)
-        cell.onChannelTap = { [weak self] in
-            guard let self else {
-                return
-            }
-            guard let channelId = video.channelId else {
-                return
-            }
-            self.navigationController?.pushViewController(
-                self.channelViewControllerFactory(
-                    channelId,
-                    video.channelName
-                ),
-                animated: true
-            )
-        }
-        return cell
-    }
-}
-
-extension SearchViewController: UITableViewDelegate {
-    func tableView(
-        _ tableView: UITableView,
-        didSelectRowAt indexPath: IndexPath
-    ) {
-        let video = results[indexPath.row]
-        videoRouter.open(video: video, from: self)
     }
 }

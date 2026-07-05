@@ -88,15 +88,20 @@ extension InnertubeClient {
 
     func search(
         query: String,
+        continuation: String? = nil,
         cancellationToken: CancellationToken? = nil,
-        completion: @escaping (Result<[Video], Error>) -> Void
+        completion: @escaping (Result<SearchPage, Error>) -> Void
     ) {
         guard let url = URL(string: "\(baseURL)/search") else {
             completion(.failure(APIError.invalidURL))
             return
         }
         var body = webContext
-        body["query"] = query
+        if let continuation {
+            body["continuation"] = continuation
+        } else {
+            body["query"] = query
+        }
         guard let bodyData = try? JSONSerialization.data(withJSONObject: body) else {
             completion(.failure(APIError.decodingFailed))
             return
@@ -112,7 +117,7 @@ extension InnertubeClient {
             case .failure(let error):
                 completion(.failure(error))
             case .success(let data):
-                completion(.success(InnertubeClient.parseSearchFeed(data)))
+                completion(.success(InnertubeClient.parseSearchPage(data)))
             }
         }
     }

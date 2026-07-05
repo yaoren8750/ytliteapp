@@ -171,39 +171,41 @@ extension WatchViewController {
     }
 
     func makeMinimizeButton() -> UIBarButtonItem {
-        if #available(iOS 13.0, *) {
-            let cfg = UIImage.SymbolConfiguration(weight: .semibold)
-            let img = UIImage(
-                systemName: "chevron.down",
-                withConfiguration: cfg
-            )
-            return UIBarButtonItem(
-                image: img,
-                style: .plain,
-                target: self,
-                action: #selector(closeTapped)
-            )
-        } else {
-            return makeTextBarButton(title: "⌄")
-        }
+        makeChevronButton(
+            systemName: "chevron.down",
+            fallbackTitle: "⌄"
+        )
     }
 
     func makeBackButton() -> UIBarButtonItem {
-        if #available(iOS 13.0, *) {
-            let cfg = UIImage.SymbolConfiguration(weight: .semibold)
-            let img = UIImage(
-                systemName: "chevron.left",
-                withConfiguration: cfg
-            )
-            return UIBarButtonItem(
-                image: img,
-                style: .plain,
-                target: self,
-                action: #selector(closeTapped)
-            )
-        } else {
-            return makeTextBarButton(title: "‹")
+        makeChevronButton(
+            systemName: "chevron.left",
+            fallbackTitle: "‹"
+        )
+    }
+
+    private func makeChevronButton(
+        systemName: String,
+        fallbackTitle: String
+    ) -> UIBarButtonItem {
+        guard #available(iOS 13.0, *) else {
+            return makeTextBarButton(title: fallbackTitle)
         }
+        let cfg = UIImage.SymbolConfiguration(weight: .semibold)
+        let img = UIImage(
+            systemName: systemName,
+            withConfiguration: cfg
+        )
+        let item = UIBarButtonItem(
+            image: img,
+            style: .plain,
+            target: self,
+            action: #selector(closeTapped)
+        )
+        // A plain bar item image sits ~8pt further from the edge than the
+        // system back indicator used on every other screen; shift to match.
+        item.imageInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 8)
+        return item
     }
 
     private func makeTextBarButton(

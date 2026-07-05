@@ -38,10 +38,12 @@ protocol HistoryService: AnyObject {
 }
 
 protocol SearchService: AnyObject {
+    /// Pass `continuation` from the previous page to fetch the next one.
     func search(
         query: String,
+        continuation: String?,
         cancellationToken: CancellationToken?,
-        completion: @escaping (Result<[Video], Error>) -> Void
+        completion: @escaping (Result<SearchPage, Error>) -> Void
     )
 }
 
@@ -202,10 +204,11 @@ typealias VideoService =
 extension SearchService {
     func search(
         query: String,
-        completion: @escaping (Result<[Video], Error>) -> Void
+        completion: @escaping (Result<SearchPage, Error>) -> Void
     ) {
         search(
             query: query,
+            continuation: nil,
             cancellationToken: nil,
             completion: completion
         )
