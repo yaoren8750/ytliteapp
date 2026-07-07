@@ -212,30 +212,34 @@ extension WatchViewController {
     func playerItemDidPlayToEnd(
         _ notification: Notification
     ) {
-        if queue.hasNext {
-            guard let next = queue.advanceToNext() else {
-                return
-            }
+        // Queue playback (mix/playlist) jumps straight to the next entry —
+        // the countdown overlay is suggestion-autoplay only. The queue is
+        // peeked, not advanced: navigation syncs it via seekTo.
+        if let next = queue.nextVideo {
+            AppLog.player("playToEnd: queue next=\(next.id)")
             DispatchQueue.main.async { [weak self] in
                 self?.navigateTo(next)
             }
-        } else {
-            guard let nextVideo =
-                watchPage?.nextVideo
-            else {
+            return
+        }
+        guard let nextVideo = watchPage?.nextVideo else {
+            AppLog.player("playToEnd: no next video")
+            return
+        }
+        // applicationState is main-thread-only and this notification can
+        // arrive off-main — read it inside the hop.
+        DispatchQueue.main.async { [weak self] in
+            guard let self else {
                 return
             }
-            let isActive =
-                UIApplication.shared.applicationState
-                    == .active
-            DispatchQueue.main.async { [weak self] in
-                if isActive {
-                    self?.showAutoplayOverlay(
-                        for: nextVideo
-                    )
-                } else {
-                    self?.navigateTo(nextVideo)
-                }
+            let active = UIApplication.shared.applicationState == .active
+            AppLog.player(
+                "playToEnd: suggestion=\(nextVideo.id) active=\(active)"
+            )
+            if active {
+                self.showAutoplayOverlay(for: nextVideo)
+            } else {
+                self.navigateTo(nextVideo)
             }
         }
     }

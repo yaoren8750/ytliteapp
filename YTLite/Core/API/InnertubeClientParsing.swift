@@ -10,7 +10,10 @@ extension InnertubeClient {
         )
         let sub = parseSubscribeState(json)
         let likeInfo = parseWatchLikeInfo(json)
-        let pivot = parsePivotPlaylist(json: json)
+        let pivot = parsePivotPlaylist(
+            json: json,
+            currentVideoId: fb.id
+        )
         return WatchPage(
             video: resolvedVideo(
                 fb, from: json, channel: ch

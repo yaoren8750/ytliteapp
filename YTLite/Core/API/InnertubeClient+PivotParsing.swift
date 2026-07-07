@@ -4,49 +4,39 @@ import Foundation
 
 extension InnertubeClient {
     static func parsePivotPlaylist(
-        json: [String: Any]
+        json: [String: Any],
+        currentVideoId: String
     )
         -> (title: String, videos: [Video])? {
-        guard let first = extractFirstPivotSection(
-            from: json
-        ) else {
-            return nil
+        // The pivot now carries generic 3-item suggestion shelves for EVERY
+        // video (server change, 2026-07). Only a shelf that contains the
+        // currently watched video is an active playlist/mix queue — those
+        // come from watchNext requests carrying a playlistId.
+        for section in pivotSections(from: json) {
+            let videos = extractPivotVideos(from: section)
+            guard videos.contains(where: { $0.id == currentVideoId }) else {
+                continue
+            }
+            return (extractPivotTitle(from: section), videos)
         }
-        let videos = extractPivotVideos(
-            from: first
-        )
-        guard !videos.isEmpty else {
-            return nil
-        }
-        let title = extractPivotTitle(from: first)
-        return (title, videos)
+        return nil
     }
 }
 
 // MARK: - Private Helpers
 
 private extension InnertubeClient {
-    static func extractFirstPivotSection(
+    static func pivotSections(
         from json: [String: Any]
     )
-        -> [String: Any]? {
-        guard let contents = json["contents"]
-            as? [String: Any],
-            let column = contents[
-                "singleColumnWatchNextResults"
-            ] as? [String: Any],
-            let pivot = column["pivot"]
-            as? [String: Any],
-            let sectionList = pivot[
-                "sectionListRenderer"
-            ] as? [String: Any],
-            let sections = sectionList["contents"]
-            as? [[String: Any]],
-            let first = sections.first
-        else {
-            return nil
-        }
-        return first
+        -> [[String: Any]] {
+        json.digArray(
+            "contents",
+            "singleColumnWatchNextResults",
+            "pivot",
+            "sectionListRenderer",
+            "contents"
+        ) ?? []
     }
 
     static func extractPivotVideos(
@@ -78,8 +68,10 @@ private extension InnertubeClient {
         -> String {
         let shelf = section["shelfRenderer"]
             as? [String: Any]
-        let header = shelf?["header"]
-            as? [String: Any]
+        // Current responses put the header under `headerRenderer`;
+        // older ones used `header`.
+        let header = shelf?["headerRenderer"] as? [String: Any]
+            ?? shelf?["header"] as? [String: Any]
         let titleRenderer = header?[
             "playlistShelfHeaderRenderer"
         ] as? [String: Any]

@@ -4,6 +4,10 @@ import UIKit
 
 extension WatchViewController {
     func showAutoplayOverlay(for video: Video) {
+        AppLog.player(
+            "autoplay overlay: showing for \(video.id),"
+                + " fullscreen=\(videoPlayerView?.isFullscreen == true)"
+        )
         autoplayOverlay?.removeFromSuperview()
         let overlay = makeAutoplayOverlay(for: video)
         if let pv = videoPlayerView, pv.isFullscreen {

@@ -13,6 +13,12 @@ final class PlaybackQueue {
         videos.first
     }
 
+    /// The upcoming video without advancing — navigation syncs the queue
+    /// itself via `seekTo` once the next page loads.
+    var nextVideo: Video? {
+        hasNext ? videos[1] : nil
+    }
+
     private init() {}
 
     func setQueue(
@@ -21,14 +27,6 @@ final class PlaybackQueue {
     ) {
         self.videos = videos
         self.playlistTitle = title
-    }
-
-    func advanceToNext() -> Video? {
-        guard hasNext else {
-            return nil
-        }
-        videos.removeFirst()
-        return videos.first
     }
 
     func seekTo(videoId: String) {
