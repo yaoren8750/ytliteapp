@@ -1,0 +1,78 @@
+name: Build IPA
+
+# Every push to main builds the IPA and creates a DRAFT release with it
+# attached. Publishing the draft (manually, after reviewing the notes) fires
+# publish-source.yml, which updates source/apps.json — so the source never
+# points at a download URL that isn't live yet.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "source/**"
+      - "**.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # tags for version computation, full history for build number
+
+      - name: Configure local build settings
+        run: cp Config/Local.xcconfig.example Config/Local.xcconfig
+
+      - name: Compute release version
+        id: version
+        run: |
+          git fetch --tags --force --quiet
+          MARKETING=$(sed -n 's/.*MARKETING_VERSION = \([^;]*\);.*/\1/p' \
+            YTLite.xcodeproj/project.pbxproj | head -1)
+          MAJOR_MINOR=$(echo "$MARKETING" | cut -d. -f1,2)
+          PATCH=$(echo "$MARKETING" | cut -d. -f3)
+          PATCH=${PATCH:-0}
+          VERSION="$MAJOR_MINOR.$PATCH"
+          # MARKETING_VERSION is a floor: while its tag is already released,
+          # bump the patch. Drafts don't create tags, so a pending draft is
+          # simply replaced by the next build instead of burning a version.
+          while git rev-parse -q --verify "refs/tags/$VERSION" >/dev/null; do
+            PATCH=$((PATCH + 1))
+            VERSION="$MAJOR_MINOR.$PATCH"
+          done
+          BUILD=$(git rev-list --count HEAD)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
+          echo "Version $VERSION, build $BUILD (project has $MARKETING)"
+
+      - name: Build IPA
+        env:
+          IPA_VERSION: ${{ steps.version.outputs.version }}
+          BUILD_NUMBER: ${{ steps.version.outputs.build }}
+          UPDATE_SOURCE: "0"
+          XCODEBUILD_EXTRA_ARGS: CODE_SIGNING_ALLOWED=NO
+        run: ./make_ipa.sh
+
+      - name: Create draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          # Replace a stale draft for the same version, if any
+          # (published releases have tags, so they never match here).
+          gh api "repos/${{ github.repository }}/releases" --paginate \
+            --jq ".[] | select(.draft and .tag_name == \"$VERSION\") | .id" |
+            while read -r id; do
+              echo "Deleting stale draft release $id"
+              gh api -X DELETE "repos/${{ github.repository }}/releases/$id"
+            done
+          gh release create "$VERSION" "YTLite_${VERSION}.ipa" \
+            --draft \
+            --title "$VERSION" \
+            --generate-notes \
+            --target "$GITHUB_SHA"
+          echo "Draft release $VERSION created — edit the notes and publish it"
