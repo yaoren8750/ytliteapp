@@ -4,7 +4,8 @@ import UIKit
 /// Settings popup presented as a sheet from the toolbar.
 final class SettingsViewController: UIViewController {
     private enum Row {
-        case theme, quality, backgroundPlayback, pipEnabled, hideStatusBar, showShorts
+        case theme, autoDarkStart, autoDarkEnd
+        case quality, backgroundPlayback, pipEnabled, hideStatusBar, showShorts
         case persistCache, feedCacheDays
         case imageCacheEnabled, imageCacheDays
         case clearCache, rydEnabled
@@ -44,8 +45,12 @@ final class SettingsViewController: UIViewController {
             cacheRows.append(.imageCacheDays)
         }
         cacheRows.append(.clearCache)
+        var themeRows: [Row] = [.theme]
+        if showsAutoHours {
+            themeRows.append(contentsOf: [.autoDarkStart, .autoDarkEnd])
+        }
         return [
-            Section(header: "Theme", footer: nil, rows: [.theme]),
+            Section(header: "Theme", footer: themeFooter, rows: themeRows),
             Section(
                 header: "Playback",
                 footer: nil,
@@ -68,6 +73,27 @@ final class SettingsViewController: UIViewController {
             ),
             Section(header: nil, footer: appVersionFooter, rows: [])
         ]
+    }
+
+    /// iOS 12 auto mode is hour-scheduled; iOS 13+ follows the system.
+    private var showsAutoHours: Bool {
+        guard ThemeManager.shared.themeMode == .auto else {
+            return false
+        }
+        if #available(iOS 13.0, *) {
+            return false
+        }
+        return true
+    }
+
+    private var themeFooter: String? {
+        guard ThemeManager.shared.themeMode == .auto else {
+            return nil
+        }
+        if #available(iOS 13.0, *) {
+            return "Auto follows the system appearance."
+        }
+        return "Auto switches to the dark theme between the hours below."
     }
 
     private var appVersionFooter: String {
@@ -149,6 +175,16 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         switch sections[indexPath.section].rows[indexPath.row] {
         case .theme:
             return makeThemeCell()
+        case .autoDarkStart:
+            return makeDisclosureCell(
+                "Dark Theme From",
+                value: hourLabel(ThemeManager.shared.autoDarkStartHour)
+            )
+        case .autoDarkEnd:
+            return makeDisclosureCell(
+                "Dark Theme Until",
+                value: hourLabel(ThemeManager.shared.autoDarkEndHour)
+            )
         case .quality:
             return makeDisclosureCell("Default Quality", value: VideoQualityStore.displayName)
         case .backgroundPlayback:
@@ -232,6 +268,9 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let row = sections[indexPath.section].rows[indexPath.row]
         if handleDebugSelection(row) {
+            return
+        }
+        if handleThemeSelection(row) {
             return
         }
         switch row {
@@ -348,6 +387,54 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         let modes: [ThemeMode] = [.dark, .light, .auto]
         let idx = seg.selectedSegmentIndex
         ThemeManager.shared.themeMode = idx >= 0 && idx < modes.count ? modes[idx] : .auto
+    }
+
+    private func hourLabel(_ hour: Int) -> String {
+        String(format: "%02d:00", hour)
+    }
+
+    private func handleThemeSelection(_ row: Row) -> Bool {
+        switch row {
+        case .autoDarkStart:
+            showAutoHourPicker(isStart: true)
+        case .autoDarkEnd:
+            showAutoHourPicker(isStart: false)
+        default:
+            return false
+        }
+        return true
+    }
+
+    private func showAutoHourPicker(isStart: Bool) {
+        let sheet = UIAlertController(
+            title: isStart ? "Dark Theme From" : "Dark Theme Until",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        let manager = ThemeManager.shared
+        let current = isStart
+            ? manager.autoDarkStartHour
+            : manager.autoDarkEndHour
+        for hour in 0..<24 {
+            let action = UIAlertAction(
+                title: hourLabel(hour),
+                style: .default
+            ) { [weak self] _ in
+                if isStart {
+                    ThemeManager.shared.autoDarkStartHour = hour
+                } else {
+                    ThemeManager.shared.autoDarkEndHour = hour
+                }
+                self?.tableView.reloadData()
+            }
+            if hour == current {
+                action.setValue(true, forKey: "checked")
+            }
+            sheet.addAction(action)
+        }
+        sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        configureCenteredPopover(sheet)
+        present(sheet, animated: true)
     }
 
     private func showQualityPicker() {

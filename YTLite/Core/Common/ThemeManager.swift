@@ -28,6 +28,12 @@ class ThemeManager {
     private(set) var barStyle: UIBarStyle = .black
     private(set) var statusBarStyle: UIStatusBarStyle = .lightContent
 
+    /// What `isDark` resolved to when the palette was last rebuilt — lets
+    /// `refreshAutoTheme` detect that the auto answer changed over time.
+    private var resolvedDark = true
+    /// iOS 12 only: fires at the next schedule boundary while the app runs.
+    private var boundaryTimer: Timer?
+
     var themeMode: ThemeMode {
         get {
             let raw = UserDefaults.standard.string(
@@ -39,6 +45,7 @@ class ThemeManager {
             UserDefaults.standard.set(newValue.rawValue, forKey: UserDefaultsKeys.Theme.mode)
             rebuildCache()
             applyGlobal()
+            scheduleBoundaryRefresh()
             NotificationCenter.default.post(name: ThemeManager.didChangeNotification, object: nil)
         }
     }
@@ -51,15 +58,71 @@ class ThemeManager {
             case .light:
                 return false
             case .auto:
-                let hour = Calendar.current.component(.hour, from: Date())
-                return !(hour >= 7 && hour < 19)
+                return autoResolvesDark
             }
         }
         set { themeMode = newValue ? .dark : .light }
     }
 
+    /// Auto mode: the system appearance where it exists (iOS 13+), a
+    /// user-configurable hour schedule on iOS 12 (Night Shift's schedule has
+    /// no public API).
+    private var autoResolvesDark: Bool {
+        if #available(iOS 13.0, *) {
+            return UIScreen.main.traitCollection.userInterfaceStyle == .dark
+        }
+        return Self.scheduleSaysDark(
+            hour: Calendar.current.component(.hour, from: Date()),
+            start: autoDarkStartHour,
+            end: autoDarkEndHour
+        )
+    }
+
+    /// Hour (0–23) when the iOS 12 auto schedule turns dark. Default 19.
+    var autoDarkStartHour: Int {
+        get {
+            UserDefaults.standard.object(
+                forKey: UserDefaultsKeys.Theme.autoDarkStartHour
+            ) as? Int ?? 19
+        }
+        set {
+            UserDefaults.standard.set(
+                newValue, forKey: UserDefaultsKeys.Theme.autoDarkStartHour
+            )
+            refreshAutoTheme()
+        }
+    }
+
+    /// Hour (0–23) when the iOS 12 auto schedule turns light again. Default 7.
+    var autoDarkEndHour: Int {
+        get {
+            UserDefaults.standard.object(
+                forKey: UserDefaultsKeys.Theme.autoDarkEndHour
+            ) as? Int ?? 7
+        }
+        set {
+            UserDefaults.standard.set(
+                newValue, forKey: UserDefaultsKeys.Theme.autoDarkEndHour
+            )
+            refreshAutoTheme()
+        }
+    }
+
     private init() {
         rebuildCache()
+        scheduleBoundaryRefresh()
+    }
+
+    /// Dark between `start` and `end` hours, wrapping past midnight
+    /// (19 → 7 means dark evenings and nights). Equal hours = never dark.
+    static func scheduleSaysDark(hour: Int, start: Int, end: Int) -> Bool {
+        if start == end {
+            return false
+        }
+        if start < end {
+            return hour >= start && hour < end
+        }
+        return hour >= start || hour < end
     }
 
     /// The one nav-chevron style used everywhere: the global back indicator
@@ -70,8 +133,55 @@ class ThemeManager {
         return UIImage(systemName: systemName, withConfiguration: cfg)
     }
 
+    /// Re-evaluates auto mode (schedule boundary crossed, system appearance
+    /// changed, app foregrounded) and republishes the theme when the answer
+    /// flipped. No-op outside auto mode or when nothing changed.
+    func refreshAutoTheme() {
+        scheduleBoundaryRefresh()
+        guard themeMode == .auto, isDark != resolvedDark else {
+            return
+        }
+        rebuildCache()
+        applyGlobal()
+        NotificationCenter.default.post(
+            name: ThemeManager.didChangeNotification, object: nil
+        )
+    }
+
+    private func scheduleBoundaryRefresh() {
+        boundaryTimer?.invalidate()
+        boundaryTimer = nil
+        if #available(iOS 13.0, *) {
+            return
+        }
+        guard themeMode == .auto else {
+            return
+        }
+        let now = Date()
+        let next = [autoDarkStartHour, autoDarkEndHour]
+            .compactMap {
+                Calendar.current.nextDate(
+                    after: now,
+                    matching: DateComponents(hour: $0, minute: 0),
+                    matchingPolicy: .nextTime
+                )
+            }
+            .min()
+        guard let next else {
+            return
+        }
+        let timer = Timer(
+            fire: next.addingTimeInterval(1), interval: 0, repeats: false
+        ) { [weak self] _ in
+            self?.refreshAutoTheme()
+        }
+        RunLoop.main.add(timer, forMode: .common)
+        boundaryTimer = timer
+    }
+
     private func rebuildCache() {
         let dark = isDark
+        resolvedDark = dark
         background    = dark ? .black : UIColor(white: 0.96, alpha: 1)
         surface       = dark ? UIColor(white: 0.1, alpha: 1) : .white
         primaryText   = dark ? .white : UIColor(white: 0.1, alpha: 1)

@@ -5,6 +5,8 @@ import Foundation
 enum UserDefaultsKeys {
     enum Theme {
         static let mode = "themeMode"
+        static let autoDarkStartHour = "theme_autoDarkStartHour"
+        static let autoDarkEndHour = "theme_autoDarkEndHour"
     }
 
     enum VideoQuality {

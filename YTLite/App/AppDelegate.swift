@@ -43,6 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        // Auto theme can go stale in the background (schedule boundary or a
+        // system appearance change while suspended).
+        ThemeManager.shared.refreshAutoTheme()
+    }
+
     private func configureSharedDependencies() {
         UserProfileStore.shared.configure(
             accountService: dependencies.accountService
