@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = makeSplashViewController()
         window?.makeKeyAndVisible()
+        applyWindowTheme()
 
         NotificationCenter.default.addObserver(
             self,
@@ -27,7 +28,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             name: .authorizationRequired,
             object: nil
         )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(applyWindowTheme),
+            name: ThemeManager.didChangeNotification,
+            object: nil
+        )
         return true
+    }
+
+    /// System-drawn elements (table section headers/footers, switches,
+    /// segmented controls, alerts) resolve dynamic colors from the window's
+    /// trait, not the app palette — keep the two in sync.
+    @objc
+    private func applyWindowTheme() {
+        if #available(iOS 13.0, *) {
+            window?.overrideUserInterfaceStyle =
+                ThemeManager.shared.isDark ? .dark : .light
+        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

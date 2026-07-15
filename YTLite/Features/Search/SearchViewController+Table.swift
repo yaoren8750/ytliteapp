@@ -109,6 +109,15 @@ extension SearchViewController: UITableViewDelegate {
 
     func tableView(
         _ tableView: UITableView,
+        willDisplayHeaderView view: UIView,
+        forSection section: Int
+    ) {
+        (view as? UITableViewHeaderFooterView)?.textLabel?.textColor =
+            ThemeManager.shared.secondaryText
+    }
+
+    func tableView(
+        _ tableView: UITableView,
         heightForRowAt indexPath: IndexPath
     ) -> CGFloat {
         panelMode == .hidden

@@ -169,6 +169,22 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         sections[section].footer
     }
+    func tableView(
+        _ tableView: UITableView,
+        willDisplayHeaderView view: UIView,
+        forSection section: Int
+    ) {
+        (view as? UITableViewHeaderFooterView)?.textLabel?.textColor =
+            ThemeManager.shared.secondaryText
+    }
+    func tableView(
+        _ tableView: UITableView,
+        willDisplayFooterView view: UIView,
+        forSection section: Int
+    ) {
+        (view as? UITableViewHeaderFooterView)?.textLabel?.textColor =
+            ThemeManager.shared.secondaryText
+    }
 
     // swiftlint:disable:next cyclomatic_complexity function_body_length
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
