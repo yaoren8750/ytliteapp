@@ -62,6 +62,10 @@ extension InnertubeClient {
             "metadata",
             RendererKey.tileMetadata
         )
+        if meta == nil,
+           let video = parseCarouselTile(tile, videoId: videoId) {
+            return video
+        }
         let title = simpleText(
             from: meta?[JSONKey.title]
         ) ?? ""

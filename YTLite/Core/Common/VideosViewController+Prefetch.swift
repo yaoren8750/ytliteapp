@@ -9,10 +9,12 @@ extension VideosViewController: UICollectionViewDataSourcePrefetching {
             return
         }
         for indexPath in indexPaths {
-            guard indexPath.item < videos.count else {
+            guard indexPath.section < sections.count,
+                  indexPath.item < sections[indexPath.section].videos.count
+            else {
                 continue
             }
-            let video = videos[indexPath.item]
+            let video = video(at: indexPath)
             if let url = URL(string: video.thumbnailURL) {
                 ThumbnailImageView.prefetch(url: url)
             }

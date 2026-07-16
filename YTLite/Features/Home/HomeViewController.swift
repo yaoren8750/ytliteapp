@@ -1,8 +1,29 @@
 import UIKit
 
 class HomeViewController: VideosViewController {
-    private let service: FeedService
+    let service: FeedService
     private let cache: AppCache
+    /// Per-shelf continuation queue collected from parsed pages. When the
+    /// section list runs out (~100 videos), pages get their continuation
+    /// backfilled from here so scrolling keeps going (the Recommended
+    /// shelf alone is effectively endless).
+    var shelfQueue: [ShelfContinuation] = []
+    /// True once pagination switched from the section list to shelf
+    /// tokens. Failures then skip to the next shelf instead of
+    /// retrying (a dead shelf token would stall the scroll forever).
+    var isDrainingShelves = false
+    /// Title of the shelf currently being drained — labels its pages.
+    var drainTitle: String?
+    let categories = HomeCategory.all
+    var selectedCategoryIndex = 0
+    /// Bumped on every category switch / refresh; async completions
+    /// compare it so a stale response can't overwrite the new feed.
+    var feedGeneration = 0
+    /// Session-lifetime cache so tab switches don't refetch.
+    var categoryCache: [String: FeedPage] = [:]
+    var isChipBarHidden = false
+    private var lastScrollY: CGFloat = 0
+    lazy var chipBar = ChipBarView()
 
     override var columns: Int {
         if UIDevice.current.userInterfaceIdiom == .phone {
@@ -15,7 +36,7 @@ class HomeViewController: VideosViewController {
         return width > view.bounds.height ? 3 : 2
     }
 
-    private lazy var errorLabel: UILabel = {
+    lazy var errorLabel: UILabel = {
         let label = UILabel()
         label.text = "Couldn't load feed\nPull down to retry"
         label.textColor = .lightGray
@@ -27,7 +48,7 @@ class HomeViewController: VideosViewController {
         return label
     }()
 
-    private lazy var signInEmptyView: SignInEmptyStateView = {
+    lazy var signInEmptyView: SignInEmptyStateView = {
         let emptyView = SignInEmptyStateView(message: "Sign in to see your recommendations")
         emptyView.isHidden = true
         emptyView.onSignIn = { [weak self] in self?.toolbarOpenProfile() }
@@ -56,26 +77,11 @@ class HomeViewController: VideosViewController {
         title = "Home"
         AppLog.home("viewDidLoad")
         setupEmptyViews()
+        setupChipBar()
         setupToolbar()
         observeSignOut()
         observeTokenRefresh()
         loadCachedOrFetchFeed()
-    }
-
-    private func setupEmptyViews() {
-        view.addSubview(errorLabel)
-        view.addSubview(signInEmptyView)
-        NSLayoutConstraint.activate([
-            errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            errorLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
-            errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
-
-            signInEmptyView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            signInEmptyView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
-            signInEmptyView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            signInEmptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
-        ])
     }
 
     private func observeSignOut() {
@@ -87,7 +93,7 @@ class HomeViewController: VideosViewController {
         )
     }
 
-    private func loadCachedOrFetchFeed() {
+    func loadCachedOrFetchFeed() {
         cache.loadHomeFeed { [weak self] cachedPage in
             guard let self else {
                 return
@@ -96,7 +102,8 @@ class HomeViewController: VideosViewController {
                 AppLog.home("cache-hit → showing \(cachedPage.videos.count) videos instantly")
                 self.isLoadingInitial = false
                 self.spinner.stopAnimating()
-                self.setPage(cachedPage)
+                self.resetShelfDrain()
+                self.setPage(self.enqueueShelves(from: cachedPage))
             } else {
                 AppLog.home("no cache → loading from network")
                 self.loadFeed()
@@ -112,14 +119,45 @@ class HomeViewController: VideosViewController {
     private func handleSignOut() {
         ScreenVisitTracker.reset()
         cache.clearHomeFeed()
+        categoryCache = [:]
         setPage(FeedPage(videos: [], continuation: nil))
         toolbarRefreshProfileButton()
-        loadFeed()
+        chipBar.setSelected(0)
+        selectCategory(at: 0)
     }
 
     override func handleRefresh() {
-        cache.clearHomeFeed()
-        loadFeed()
+        feedGeneration += 1
+        if let browseId = categories[selectedCategoryIndex].browseId {
+            categoryCache[browseId] = nil
+            loadCategory(browseId)
+        } else {
+            cache.clearHomeFeed()
+            loadFeed()
+        }
+    }
+
+    override func handleScroll(_ scrollView: UIScrollView) {
+        let top = scrollView.adjustedContentInset.top
+        let y = scrollView.contentOffset.y + top
+        defer {
+            lastScrollY = y
+        }
+        if y <= 8 {
+            setChipBarHidden(false)
+        } else if y - lastScrollY > 4 {
+            setChipBarHidden(true)
+        } else if y - lastScrollY < -4 {
+            setChipBarHidden(false)
+        }
+    }
+
+    private func showFeedError() {
+        if OAuthClient.shared.isAnonymous {
+            signInEmptyView.isHidden = false
+        } else {
+            errorLabel.isHidden = false
+        }
     }
 
     func loadFeed() {
@@ -127,9 +165,11 @@ class HomeViewController: VideosViewController {
         AppLog.home("network fetch start")
         errorLabel.isHidden = true
         signInEmptyView.isHidden = true
+        resetShelfDrain()
+        let generation = feedGeneration
         service.fetchHomeFeed { [weak self] result in
             DispatchQueue.main.async {
-                guard let self else {
+                guard let self, self.feedGeneration == generation else {
                     return
                 }
                 let ms = Int(Date().timeIntervalSince(t0) * 1_000)
@@ -139,15 +179,11 @@ class HomeViewController: VideosViewController {
                 case .success(let page):
                     AppLog.home("network fetch done \(ms)ms videos=\(page.videos.count)")
                     self.cache.setHomeFeed(page)
-                    self.setPage(page)
+                    self.setPage(self.enqueueShelves(from: page))
                 case .failure(let err):
                     AppLog.home("network fetch failed \(ms)ms: \(err)")
                     self.setPage(FeedPage(videos: [], continuation: nil))
-                    if OAuthClient.shared.isAnonymous {
-                        self.signInEmptyView.isHidden = false
-                    } else {
-                        self.errorLabel.isHidden = false
-                    }
+                    self.showFeedError()
                 }
             }
         }
@@ -159,13 +195,21 @@ class HomeViewController: VideosViewController {
             return
         }
 
+        let generation = feedGeneration
         service.fetchNextPage(continuation: continuation) { [weak self] result in
             DispatchQueue.main.async {
+                guard let self, self.feedGeneration == generation else {
+                    return
+                }
                 switch result {
                 case .success(let page):
-                    self?.appendPage(page)
+                    self.appendPage(self.enqueueShelves(from: page))
+                case .failure where self.isDrainingShelves:
+                    self.appendPage(self.backfilled(
+                        FeedPage(videos: [], continuation: nil)
+                    ))
                 case .failure:
-                    self?.finishLoadingMore()
+                    self.finishLoadingMore()
                 }
             }
         }

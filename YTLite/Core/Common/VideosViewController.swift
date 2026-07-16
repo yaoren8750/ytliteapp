@@ -1,26 +1,33 @@
 import UIKit
 
+/// A titled group of videos rendered as one collection-view section.
+struct VideoSection {
+    let title: String?
+    var videos: [Video]
+}
+
 class VideosViewController: UIViewController {
     // MARK: - Type Properties
 
-    private static let skeletonCount = 9
+    static let skeletonCount = 9
 
     // MARK: - Instance Properties
 
     var columns: Int { 5 }
 
-    private(set) var videos: [Video] = []
+    private(set) var sections: [VideoSection] = []
     private(set) var collectionView: UICollectionView?
     let channelViewControllerFactory: (String, String) -> UIViewController
     let videoRouter: VideoRouter
     let spinner = UIActivityIndicatorView(style: .white)
     var isLoadingInitial = true
+    var isLoadingMore = false
 
     private var continuationToken: String?
-    private var isLoadingMore = false
     private var seenVideoIds: Set<String> = []
 
     var currentContinuation: String? { continuationToken }
+    var videoCount: Int { sections.reduce(0) { $0 + $1.videos.count } }
 
     init(
         channelViewControllerFactory: @escaping (
@@ -86,10 +93,7 @@ class VideosViewController: UIViewController {
             collectionViewLayout: layout
         )
         cv.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        cv.register(
-            VideoCell.self,
-            forCellWithReuseIdentifier: VideoCell.reuseId
-        )
+        registerViews(in: cv)
         cv.dataSource = self
         cv.delegate = self
         cv.prefetchDataSource = self
@@ -106,37 +110,17 @@ class VideosViewController: UIViewController {
         collectionView = cv
     }
 
-    @objc
-    func handleRefresh() {}
-
-    func handleScroll(_ scrollView: UIScrollView) {}
-
-    func openChannel(for video: Video) {
-        guard let channelId = video.channelId else {
-            return
-        }
-        navigationController?.pushViewController(
-            channelViewControllerFactory(
-                channelId,
-                video.channelName
-            ),
-            animated: true
+    private func registerViews(in cv: UICollectionView) {
+        cv.register(
+            VideoCell.self,
+            forCellWithReuseIdentifier: VideoCell.reuseId
+        )
+        cv.register(
+            VideoSectionHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: VideoSectionHeaderView.reuseId
         )
     }
-
-    func openVideo(_ video: Video) {
-        videoRouter.open(
-            video: video,
-            from: self
-        )
-    }
-
-    func endRefreshing() {
-        collectionView?.refreshControl?.endRefreshing()
-    }
-
-    // Override in subclasses to load next page
-    func handleLoadMore() {}
 
     private func setupSpinner() {
         spinner.translatesAutoresizingMaskIntoConstraints = false
@@ -150,6 +134,23 @@ class VideosViewController: UIViewController {
             )
         ])
         spinner.startAnimating()
+    }
+
+    @objc
+    func handleRefresh() {}
+
+    func handleScroll(_ scrollView: UIScrollView) {}
+
+    // Override in subclasses to load next page
+    func handleLoadMore() {}
+
+    // Kept in the class body (not the extension) so subclasses can
+    // override it.
+    func openVideo(_ video: Video) {
+        videoRouter.open(
+            video: video,
+            from: self
+        )
     }
 
     func updateItemSize() {
@@ -184,111 +185,98 @@ class VideosViewController: UIViewController {
         view.backgroundColor = theme.background
         collectionView?.backgroundColor = theme.background
     }
+}
+
+// MARK: - Page Management
+
+extension VideosViewController {
+    func video(at indexPath: IndexPath) -> Video {
+        sections[indexPath.section].videos[indexPath.item]
+    }
+
+    /// Number of videos after the given index path (for the
+    /// load-more trigger).
+    func videosRemaining(after indexPath: IndexPath) -> Int {
+        var remaining = sections[indexPath.section].videos.count
+            - indexPath.item - 1
+        for section in sections.dropFirst(indexPath.section + 1) {
+            remaining += section.videos.count
+        }
+        return remaining
+    }
+
+    func openChannel(for video: Video) {
+        guard let channelId = video.channelId else {
+            return
+        }
+        navigationController?.pushViewController(
+            channelViewControllerFactory(
+                channelId,
+                video.channelName
+            ),
+            animated: true
+        )
+    }
+
+    func endRefreshing() {
+        collectionView?.refreshControl?.endRefreshing()
+    }
+
+    /// Splits the page's videos into sections following its shelf
+    /// partition, deduplicating against already-shown videos.
+    private func makeSections(from page: FeedPage) -> [VideoSection] {
+        let shelves = page.shelves
+            ?? [FeedShelf(title: nil, count: page.videos.count)]
+        var result: [VideoSection] = []
+        var index = 0
+        for shelf in shelves {
+            let end = min(index + shelf.count, page.videos.count)
+            let slice = page.videos[index..<end].filter {
+                seenVideoIds.insert($0.id).inserted
+            }
+            index = end
+            if !slice.isEmpty {
+                result.append(
+                    VideoSection(title: shelf.title, videos: slice)
+                )
+            }
+        }
+        let rest = page.videos.dropFirst(index).filter {
+            seenVideoIds.insert($0.id).inserted
+        }
+        if !rest.isEmpty {
+            result.append(VideoSection(title: nil, videos: rest))
+        }
+        return result
+    }
 
     func setPage(_ page: FeedPage) {
         isLoadingInitial = false
         seenVideoIds = []
-        videos = []
-        let newVideos = page.videos.filter {
-            seenVideoIds.insert($0.id).inserted
-        }
-        videos.append(contentsOf: newVideos)
+        sections = makeSections(from: page)
         continuationToken = page.continuation
         isLoadingMore = false
         collectionView?.reloadData()
     }
 
     func appendPage(_ page: FeedPage) {
-        let newVideos = page.videos.filter {
-            seenVideoIds.insert($0.id).inserted
-        }
-        let insertStart = videos.count
-        videos.append(contentsOf: newVideos)
+        let newSections = makeSections(from: page)
+        let insertStart = sections.count
+        sections.append(contentsOf: newSections)
         continuationToken = page.continuation
         isLoadingMore = false
 
         if isLoadingInitial {
             isLoadingInitial = false
             collectionView?.reloadData()
-        } else {
-            let indexPaths =
-                (insertStart..<videos.count).map {
-                    IndexPath(item: $0, section: 0)
-                }
-            collectionView?.insertItems(at: indexPaths)
+        } else if !newSections.isEmpty {
+            collectionView?.insertSections(
+                IndexSet(insertStart..<sections.count)
+            )
         }
     }
 
     func finishLoadingMore() {
         isLoadingMore = false
-    }
-}
-
-extension VideosViewController: UICollectionViewDataSource {
-    func collectionView(
-        _ collectionView: UICollectionView,
-        numberOfItemsInSection section: Int
-    ) -> Int {
-        isLoadingInitial
-            ? VideosViewController.skeletonCount
-            : videos.count
-    }
-
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell {
-        guard let cell = collectionView
-            .dequeueReusableCell(
-                withReuseIdentifier: VideoCell.reuseId,
-                for: indexPath
-            ) as? VideoCell
-        else {
-            return UICollectionViewCell()
-        }
-        cell.forceGridLayout = true
-        if isLoadingInitial {
-            cell.configureSkeleton()
-            return cell
-        }
-        let video = videos[indexPath.item]
-        cell.configure(with: video)
-        cell.onChannelTap = { [weak self] in
-            self?.openChannel(for: video)
-        }
-        return cell
-    }
-}
-
-extension VideosViewController: UICollectionViewDelegate {
-    func collectionView(
-        _ collectionView: UICollectionView,
-        didSelectItemAt indexPath: IndexPath
-    ) {
-        guard !isLoadingInitial else {
-            return
-        }
-        openVideo(videos[indexPath.item])
-    }
-
-    func collectionView(
-        _ collectionView: UICollectionView,
-        willDisplay cell: UICollectionViewCell,
-        forItemAt indexPath: IndexPath
-    ) {
-        guard !isLoadingMore,
-              continuationToken != nil,
-              indexPath.item >= videos.count - 4
-        else {
-            return
-        }
-        isLoadingMore = true
-        handleLoadMore()
-    }
-
-    func scrollViewDidScroll(
-        _ scrollView: UIScrollView
-    ) {
-        handleScroll(scrollView)
     }
 }

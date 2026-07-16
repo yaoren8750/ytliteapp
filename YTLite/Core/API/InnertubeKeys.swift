@@ -81,6 +81,15 @@ enum BrowseID {
     static let history       = "FEhistory"
     static let library       = "FEmy_youtube"
     static let trending      = "FEtrending"
+
+    // TVHTML5 category destinations — same page shape as home,
+    // single-shot (no continuations). Trending/Music return 400 on TV.
+    static let liveDestination     = "FElive_destination"
+    static let newsDestination     = "FEnews_destination"
+    static let gamingDestination   = "FEgaming_destination"
+    static let sportsDestination   = "FEsports_destination"
+    static let learningDestination = "FElearning_destination"
+    static let fashionDestination  = "FEfashion_destination"
 }
 
 // MARK: - Innertube API endpoint paths

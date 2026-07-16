@@ -100,7 +100,7 @@ extension ChannelViewController {
         switch result {
         case .success(let tabPage):
             setPage(tabPage.feedPage)
-            errorLabel.isHidden = !videos.isEmpty
+            errorLabel.isHidden = videoCount > 0
             applyFilterChips(tabPage.filterChips)
         case .failure(let error):
             AppLog.channel("tab load failed \(channelId): \(error)")

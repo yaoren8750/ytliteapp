@@ -26,6 +26,17 @@ extension InnertubeClient {
         }
     }
 
+    func fetchCategoryFeed(
+        browseId: String,
+        completion: @escaping (Result<FeedPage, Error>) -> Void
+    ) {
+        if OAuthClient.shared.isAnonymous {
+            executeBrowseAnonymous(browseId: browseId, completion: completion)
+        } else {
+            authenticatedBrowse(browseId: browseId, completion: completion)
+        }
+    }
+
     func fetchSubscriptionFeed(completion: @escaping (Result<FeedPage, Error>) -> Void) {
         withValidToken(completion: completion) { client, token in
             client.subscriptionsBrowse(

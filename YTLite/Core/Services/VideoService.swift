@@ -1,11 +1,32 @@
 import Foundation
 
+/// A titled run of videos inside a page. `count` consecutive videos
+/// of `FeedPage.videos` belong to this shelf, in order.
+struct FeedShelf: Codable {
+    let title: String?
+    let count: Int
+}
+
+/// A shelf's "more of this row" token, kept with the shelf title so
+/// drained pages can stay labeled in the UI.
+struct ShelfContinuation: Codable {
+    let title: String?
+    let token: String
+}
+
 struct FeedPage: Codable {
     let videos: [Video]
-    let continuation: String?
+    var continuation: String?
     /// Subscribed channels found in the page (TV subscriptions
     /// responses include a channel row). Nil for other feeds.
     var channels: [SubscribedChannel]?
+    /// Shelf partition of `videos` (for section headers). Nil means
+    /// one untitled section.
+    var shelves: [FeedShelf]?
+    /// Per-shelf continuation tokens. The TV home section list ends
+    /// after ~6 pages (~100 videos); these keep the feed scrolling
+    /// once it is exhausted.
+    var shelfContinuations: [ShelfContinuation]?
 }
 
 // MARK: - ISP-compliant service protocols
@@ -15,6 +36,12 @@ struct FeedPage: Codable {
 
 protocol FeedService: AnyObject {
     func fetchHomeFeed(
+        completion: @escaping (Result<FeedPage, Error>) -> Void
+    )
+    /// One-shot TV category page (`BrowseID.*Destination`) — same shape
+    /// as the home feed but without continuations.
+    func fetchCategoryFeed(
+        browseId: String,
         completion: @escaping (Result<FeedPage, Error>) -> Void
     )
     func fetchSubscriptionFeed(

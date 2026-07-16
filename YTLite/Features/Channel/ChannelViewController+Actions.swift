@@ -22,7 +22,7 @@ extension ChannelViewController {
         cache.setChannelPage(enriched, channelId: channelId)
         cache.setChannelInfo(page.info, channelId: channelId)
         setPage(enriched.videosPage)
-        errorLabel.isHidden = !videos.isEmpty
+        errorLabel.isHidden = videoCount > 0
         if let cv = collectionView {
             handleScroll(cv)
         }

@@ -38,7 +38,7 @@ extension ChannelViewController {
         case .failure(let error):
             AppLog.channel("load failed \(channelId): \(error)")
             finishLoadingMore()
-            errorLabel.isHidden = !videos.isEmpty
+            errorLabel.isHidden = videoCount > 0
         }
     }
 

@@ -36,6 +36,37 @@ extension InnertubeClient {
         )
     }
 
+    /// TILE_STYLE_YTLR_CAROUSEL (the Live destination's spotlight
+    /// rail) keeps its metadata in onFocusCommand →
+    /// updateCarouselHeaderCommand instead of tileMetadataRenderer.
+    static func parseCarouselTile(
+        _ tile: [String: Any],
+        videoId: String
+    ) -> Video? {
+        guard let spotlight = carouselSpotlight(in: tile),
+              let title = simpleText(from: spotlight[JSONKey.title])
+        else {
+            return nil
+        }
+        let byline = carouselByline(in: spotlight)
+        let thumb = resolveTileThumb(videoId: videoId, tile: tile)
+        let isLive = tile.digString(
+            "onSelectCommand", "watchEndpoint", "ustreamerConfig"
+        ) != nil
+        return Video(
+            id: videoId,
+            title: title,
+            channelId: nil,
+            channelName: byline.name,
+            channelAvatarURL: byline.avatarURL,
+            thumbnailURL: thumb.url,
+            viewCount: nil,
+            publishedAt: nil,
+            duration: nil,
+            isLive: isLive
+        )
+    }
+
     static func checkOverlayLive(
         _ overlaysAny: Any?
     ) -> Bool {
@@ -52,6 +83,49 @@ extension InnertubeClient {
 
 // MARK: - Private Tile Helpers
 private extension InnertubeClient {
+    static func carouselSpotlight(
+        in tile: [String: Any]
+    ) -> [String: Any]? {
+        let commands = tile.digDict(
+            "onFocusCommand", "commandExecutorCommand"
+        )?["commands"] as? [[String: Any]] ?? []
+        for command in commands {
+            if let spotlight = command.digDict(
+                "updateCarouselHeaderCommand",
+                "spotlight",
+                "entityMetadataRenderer"
+            ) {
+                return spotlight
+            }
+        }
+        return nil
+    }
+
+    static func carouselByline(
+        in spotlight: [String: Any]
+    ) -> (name: String, avatarURL: String?) {
+        let bylines = spotlight["bylines"] as? [[String: Any]] ?? []
+        let items = (bylines.first?[RendererKey.line] as? [String: Any])?[
+            JSONKey.items
+        ] as? [[String: Any]] ?? []
+        var name = ""
+        var avatarURL: String?
+        for item in items {
+            guard let lineItem = item[RendererKey.lineItem]
+                as? [String: Any]
+            else {
+                continue
+            }
+            if let text = simpleText(from: lineItem[JSONKey.text]) {
+                name = text
+            }
+            if avatarURL == nil {
+                avatarURL = lineItem.thumbnailURL()
+            }
+        }
+        return (name, avatarURL)
+    }
+
     static func extractTileChannel(
         from lines: [[String: Any]]
     ) -> (name: String, items: [[String: Any]]) {

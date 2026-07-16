@@ -53,21 +53,26 @@ extension InnertubeClient {
     ) -> FeedPage {
         let sections = slr["contents"]
             as? [[String: Any]] ?? []
-        var videos: [Video] = []
         let showShorts = UserDefaults.standard.bool(
             forKey: UserDefaultsKeys.Feed.showShorts
         )
+        var acc = ShelfAccumulator()
         for section in sections {
             appendSection(
                 section,
                 showShorts: showShorts,
-                into: &videos
+                into: &acc
             )
         }
-        return FeedPage(
-            videos: videos,
+        var page = FeedPage(
+            videos: acc.videos,
             continuation: nextContToken(slr)
         )
+        page.shelves =
+            acc.shelves.isEmpty ? nil : acc.shelves
+        page.shelfContinuations =
+            acc.continuations.isEmpty ? nil : acc.continuations
+        return page
     }
 }
 
@@ -88,6 +93,10 @@ private extension InnertubeClient {
         if let rgc = cc["richGridContinuation"]
             as? [String: Any] {
             return parseRichGridCont(rgc)
+        }
+        if let hlc = cc["horizontalListContinuation"]
+            as? [String: Any] {
+            return parseHorizontalListCont(hlc)
         }
         AppLog.innertube(
             "parsePageJSON: unknown continuation"
@@ -192,94 +201,5 @@ private extension InnertubeClient {
                 + " \(tabs.count) tabs"
                 + " [\(titles.prefix(8).joined(separator: " | "))…]"
         )
-    }
-
-    static func appendSection(
-        _ section: [String: Any],
-        showShorts: Bool,
-        into videos: inout [Video]
-    ) {
-        guard let shelf = section["shelfRenderer"]
-            as? [String: Any],
-            let sc = shelf["content"] as? [String: Any]
-        else {
-            AppLog.innertube(
-                "sectionList: skipping section"
-                    + " keys=\(section.keys.sorted())"
-            )
-            return
-        }
-        if !showShorts && isShortsShelf(shelf) {
-            return
-        }
-        let before = videos.count
-        appendShelfVideos(from: sc, into: &videos)
-        let title = shelfTitle(shelf) ?? "? header="
-            + (shelf.digDict("headerRenderer")?.keys.sorted() ?? [])
-            .joined(separator: ",")
-        AppLog.innertube(
-            "shelf '\(title)': +\(videos.count - before) videos"
-        )
-    }
-
-    static func shelfTitle(
-        _ shelf: [String: Any]
-    ) -> String? {
-        if let title = shelf.runsText("title") {
-            return title
-        }
-        let header = shelf.digDict(
-            "headerRenderer", "shelfHeaderRenderer"
-        )
-        if let title = header?.runsText("title") {
-            return title
-        }
-        let lockup = header?.digDict(
-            "avatarLockup", "avatarLockupRenderer"
-        )
-        return lockup?.runsText("title")
-    }
-
-    static func isShortsShelf(
-        _ shelf: [String: Any]
-    ) -> Bool {
-        let lockup = shelf.digDict(
-            "headerRenderer",
-            "shelfHeaderRenderer",
-            "avatarLockup",
-            "avatarLockupRenderer"
-        )
-        let icon = lockup?["icon"] as? [String: Any]
-        if let iconType = icon?["iconType"] as? String,
-           iconType.contains("SHORTS") {
-            return true
-        }
-        let title = lockup?["title"] as? [String: Any]
-        let runs = title?["runs"] as? [[String: Any]]
-        let text = runs?.first?["text"] as? String
-        return text?.lowercased() == "shorts"
-    }
-
-    static func appendShelfVideos(
-        from shelfContent: [String: Any],
-        into videos: inout [Video]
-    ) {
-        let keys = [
-            "horizontalListRenderer",
-            "verticalListRenderer",
-            "gridRenderer"
-        ]
-        for key in keys {
-            let rd = shelfContent[key]
-                as? [String: Any]
-            if let items = rd?["items"]
-                as? [[String: Any]] {
-                videos.append(
-                    contentsOf:
-                        VideoRendererParserChain
-                        .videos(from: items)
-                )
-            }
-        }
     }
 }
