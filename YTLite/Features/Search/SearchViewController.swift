@@ -8,6 +8,10 @@ class SearchViewController: UIViewController {
     ) -> UIViewController
     let videoRouter: VideoRouter
     var results: [Video] = []
+    var filters = SearchFilters()
+    let filtersButton = UIBarButtonItem(
+        title: "Filters", style: .plain, target: nil, action: nil
+    )
     var lastQuery: String = ""
     var activeSearchQuery: String?
     var searchCancellationToken = CancellationToken()
@@ -45,6 +49,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search"
+        setupFiltersButton()
         setupSearchBar()
         setupTableView()
         applyTheme()

@@ -17,6 +17,7 @@ extension SearchViewController {
         let cancellationToken = beginSearch(for: normalizedQuery)
         service.search(
             query: normalizedQuery,
+            filters: filters,
             continuation: nil,
             cancellationToken: cancellationToken
         ) { [weak self] result in
@@ -46,6 +47,7 @@ extension SearchViewController {
         let cancellationToken = searchCancellationToken
         service.search(
             query: query,
+            filters: nil,
             continuation: token,
             cancellationToken: cancellationToken
         ) { [weak self] result in

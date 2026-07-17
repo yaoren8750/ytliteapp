@@ -9,6 +9,7 @@ extension SearchService {
     ) {
         search(
             query: query,
+            filters: nil,
             continuation: nil,
             cancellationToken: nil,
             completion: completion
