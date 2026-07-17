@@ -6,27 +6,14 @@ extension WatchViewController: VideoPlayerViewDelegate {
     func videoPlayerViewDidTapSettings(
         _ playerView: VideoPlayerView
     ) {
-        let alert = UIAlertController(
+        presentPlayerMenu(
             title: "Playback settings",
-            message: nil,
-            preferredStyle: .actionSheet
+            items: [
+                PlayerMenuItem(title: "Quality") { [weak self] in
+                    self?.showQualityPicker()
+                }
+            ]
         )
-        alert.addAction(
-            UIAlertAction(
-                title: "Quality",
-                style: .default
-            ) { [weak self] _ in
-                self?.showQualityPicker()
-            }
-        )
-        alert.addAction(
-            UIAlertAction(title: "Cancel", style: .cancel)
-        )
-        configurePopover(
-            for: alert,
-            sourceView: playerView
-        )
-        present(alert, animated: true)
     }
 
     func videoPlayerViewDidTapFullscreen(_ playerView: VideoPlayerView) {
@@ -118,23 +105,6 @@ extension WatchViewController: VideoPlayerViewDelegate {
         setNeedsStatusBarAppearanceUpdate()
         setNeedsUpdateOfHomeIndicatorAutoHidden()
         updateLayoutForSize()
-    }
-
-    func configurePopover(
-        for alert: UIAlertController,
-        sourceView: UIView?
-    ) {
-        guard let pop = alert.popoverPresentationController,
-              let source = sourceView else {
-            return
-        }
-        pop.sourceView = source
-        pop.sourceRect = CGRect(
-            x: source.bounds.maxX - 50,
-            y: 20,
-            width: 1,
-            height: 1
-        )
     }
 }
 

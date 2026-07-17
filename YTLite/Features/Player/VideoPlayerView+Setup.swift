@@ -75,6 +75,7 @@ extension VideoPlayerView {
             action: #selector(handleSwipeDown)
         )
         swipeDown.direction = .down
+        swipeDown.delegate = self
         addGestureRecognizer(swipeDown)
     }
 
@@ -486,5 +487,23 @@ extension VideoPlayerView {
                 equalToConstant: 44
             )
         ])
+    }
+}
+
+// MARK: - System edge-swipe guard
+
+extension VideoPlayerView: UIGestureRecognizerDelegate {
+    /// Notification Center / Control Center swipes start at the very top of
+    /// the screen and can still reach the app — a swipe-down beginning there
+    /// is meant for the system shade, not for exiting fullscreen. Only the
+    /// swipe-down recognizer has its delegate set to this view.
+    func gestureRecognizer(
+        _ gestureRecognizer: UIGestureRecognizer,
+        shouldReceive touch: UITouch
+    ) -> Bool {
+        guard isFullscreen, let window else {
+            return true
+        }
+        return touch.location(in: window).y > 60
     }
 }
