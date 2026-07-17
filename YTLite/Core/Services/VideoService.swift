@@ -73,9 +73,12 @@ protocol HistoryService: AnyObject {
 }
 
 protocol SearchService: AnyObject {
-    /// Pass `continuation` from the previous page to fetch the next one.
+    // Pass `continuation` from the previous page to fetch the next one
+    // (filters are baked into it — they only apply to the first page).
+    // swiftlint:disable:next function_parameter_count
     func search(
         query: String,
+        filters: SearchFilters?,
         continuation: String?,
         cancellationToken: CancellationToken?,
         completion: @escaping (Result<SearchPage, Error>) -> Void
@@ -92,9 +95,12 @@ protocol PlaylistService: AnyObject {
     func fetchPlaylists(
         completion: @escaping (Result<[Playlist], Error>) -> Void
     )
+    /// Playlist contents arrive in 15-video pages; pass the previous
+    /// page's `continuation` to fetch the next one.
     func fetchPlaylistVideos(
         playlistId: String,
-        completion: @escaping (Result<[Video], Error>) -> Void
+        continuation: String?,
+        completion: @escaping (Result<FeedPage, Error>) -> Void
     )
 }
 

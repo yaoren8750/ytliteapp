@@ -30,32 +30,32 @@ extension InnertubeClient {
 
     func executePlaylistVideosFetch(
         playlistId: String,
+        continuation: String?,
         token: String,
-        completion: @escaping (Result<[Video], Error>) -> Void
+        completion: @escaping (Result<FeedPage, Error>) -> Void
     ) {
         var body = tvContext
-        body["browseId"] = "VL\(playlistId)"
+        if let continuation {
+            body[JSONKey.continuation] = continuation
+        } else {
+            body[JSONKey.browseId] = "VL\(playlistId)"
+        }
         execute(
             urlString: "\(baseURL)\(InnertubeEndpoint.browse)",
             body: body,
             headers: authHeaders(token: token),
             logTag: "playlistVideos(\(playlistId))"
-        ) { json -> [Video]? in
-            let items = Self.playlistVideoItems(from: json)
-            let videos: [Video] = items.compactMap { item in
-                guard let tile = item["tileRenderer"] as? [String: Any],
-                      let header = tile["header"] as? [String: Any],
-                      let thr = header["tileHeaderRenderer"] as? [String: Any],
-                      thr["thumbnailOverlays"] != nil
-                else {
-                    return nil
-                }
-                return InnertubeClient.parseTileRenderer(tile)
-            }
+        ) { json -> FeedPage? in
+            let list = Self.playlistVideoList(from: json)
+            let videos = Self.playlistVideos(from: list)
+            let next = Self.playlistContinuation(from: list)
             AppLog.innertube(
                 "playlist \(playlistId): \(videos.count) videos"
+                    + " cont=\(next != nil)"
             )
-            return videos.isEmpty ? nil : videos
+            return videos.isEmpty
+                ? nil
+                : FeedPage(videos: videos, continuation: next)
         } completion: { completion($0) }
     }
 }
@@ -100,9 +100,16 @@ private extension InnertubeClient {
         )
     }
 
-    static func playlistVideoItems(
+    /// The list renderer for both shapes: page one nests it under the
+    /// browse surface, continuation pages return it at the top level.
+    static func playlistVideoList(
         from json: [String: Any]
-    ) -> [[String: Any]] {
+    ) -> [String: Any]? {
+        if let continued = (
+            json["continuationContents"] as? [String: Any]
+        )?["playlistVideoListContinuation"] as? [String: Any] {
+            return continued
+        }
         let contents = json["contents"] as? [String: Any]
         let browse = contents?["tvBrowseRenderer"] as? [String: Any]
         let rightCol = browse?["content"] as? [String: Any]
@@ -110,97 +117,38 @@ private extension InnertubeClient {
         let surfaceContent = surface?["content"] as? [String: Any]
         let twoCol = surfaceContent?["twoColumnRenderer"] as? [String: Any]
         let right = twoCol?["rightColumn"] as? [String: Any]
-        let listRenderer = right?["playlistVideoListRenderer"] as? [String: Any]
-        return listRenderer?["contents"] as? [[String: Any]] ?? []
+        return right?["playlistVideoListRenderer"] as? [String: Any]
     }
 
-    static func extractPlaylistIdFromParams(
-        _ params: String
-    ) -> String? {
-        guard let urlDecoded = params.removingPercentEncoding,
-              let data = Data(
-                  base64Encoded: urlDecoded,
-                  options: .ignoreUnknownCharacters
-              )
-        else {
-            return nil
-        }
-        let bytes = [UInt8](data)
-        var offset = 0
-        while offset < bytes.count {
-            let tagResult = decodeVarint(bytes: bytes, offset: &offset)
-            let fieldNum = tagResult >> 3
-            let wireType = tagResult & 0x7
-            switch wireType {
-            case 0:
-                skipVarint(bytes: bytes, offset: &offset)
-            case 2:
-                if let id = decodeLengthDelimited(
-                    bytes: bytes,
-                    offset: &offset,
-                    fieldNum: fieldNum
-                ) {
-                    return id
-                }
-            default:
+    static func playlistVideos(
+        from list: [String: Any]?
+    ) -> [Video] {
+        let items = list?["contents"] as? [[String: Any]] ?? []
+        return items.compactMap { item in
+            guard let tile = item["tileRenderer"] as? [String: Any],
+                  let header = tile["header"] as? [String: Any],
+                  let thr = header["tileHeaderRenderer"] as? [String: Any],
+                  thr["thumbnailOverlays"] != nil
+            else {
                 return nil
             }
-        }
-        return nil
-    }
-
-    static func decodeVarint(
-        bytes: [UInt8],
-        offset: inout Int
-    ) -> UInt64 {
-        var value: UInt64 = 0
-        var shift = 0
-        while offset < bytes.count {
-            let byte = bytes[offset]
-            offset += 1
-            value |= UInt64(byte & 0x7f) << shift
-            shift += 7
-            if byte & 0x80 == 0 {
-                break
-            }
-        }
-        return value
-    }
-
-    static func skipVarint(
-        bytes: [UInt8],
-        offset: inout Int
-    ) {
-        while offset < bytes.count {
-            let byte = bytes[offset]
-            offset += 1
-            if byte & 0x80 == 0 {
-                break
-            }
+            return InnertubeClient.parseTileRenderer(tile)
         }
     }
 
-    static func decodeLengthDelimited(
-        bytes: [UInt8],
-        offset: inout Int,
-        fieldNum: UInt64
+    static func playlistContinuation(
+        from list: [String: Any]?
     ) -> String? {
-        guard offset < bytes.count else {
-            return nil
-        }
-        let len = Int(bytes[offset])
-        offset += 1
-        guard offset + len <= bytes.count else {
-            return nil
-        }
-        let slice = bytes[offset..<offset + len]
-        if fieldNum == 70,
-           let id = String(bytes: slice, encoding: .utf8),
-           id.hasPrefix("PL") || id == "LL" {
-            return id
-        }
-        offset += len
-        return nil
+        let continuations = list?["continuations"] as? [[String: Any]]
+        let next = continuations?.first?["nextContinuationData"]
+            as? [String: Any]
+        return next?["continuation"] as? String
+    }
+
+    static func playlistVideoItems(
+        from json: [String: Any]
+    ) -> [[String: Any]] {
+        playlistVideoList(from: json)?["contents"] as? [[String: Any]] ?? []
     }
 
     func handlePlaylistsFetchResult(

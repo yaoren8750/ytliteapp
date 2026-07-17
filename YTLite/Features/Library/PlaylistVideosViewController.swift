@@ -12,6 +12,8 @@ final class PlaylistVideosViewController: UIViewController {
     private let videoRouter: VideoRouter
     private var videos: [Video] = []
     private var isLoading = true
+    private var continuationToken: String?
+    private var isLoadingMore = false
     private let tableView = UITableView()
     private let spinner = UIActivityIndicatorView(style: .white)
     private let emptyLabel = UILabel()
@@ -125,7 +127,11 @@ final class PlaylistVideosViewController: UIViewController {
 
     private func loadVideos() {
         isLoading = true
-        service.fetchPlaylistVideos(playlistId: playlist.id) { [weak self] result in
+        continuationToken = nil
+        service.fetchPlaylistVideos(
+            playlistId: playlist.id,
+            continuation: nil
+        ) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self else {
                     return
@@ -134,10 +140,11 @@ final class PlaylistVideosViewController: UIViewController {
                 self.spinner.stopAnimating()
                 self.tableView.refreshControl?.endRefreshing()
                 switch result {
-                case .success(let list):
-                    self.videos = list
-                    self.emptyLabel.isHidden = !list.isEmpty
-                    if list.isEmpty {
+                case .success(let page):
+                    self.videos = page.videos
+                    self.continuationToken = page.continuation
+                    self.emptyLabel.isHidden = !page.videos.isEmpty
+                    if page.videos.isEmpty {
                         self.emptyLabel.text = "No videos in this playlist"
                     }
                     self.tableView.reloadData()
@@ -147,6 +154,32 @@ final class PlaylistVideosViewController: UIViewController {
                     self.emptyLabel.isHidden = false
                     self.tableView.reloadData()
                 }
+            }
+        }
+    }
+
+    /// Appends the next 15-video page once scrolling nears the end.
+    private func loadMoreVideos() {
+        guard let token = continuationToken,
+              !isLoadingMore, !isLoading else {
+            return
+        }
+        isLoadingMore = true
+        service.fetchPlaylistVideos(
+            playlistId: playlist.id,
+            continuation: token
+        ) { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self else {
+                    return
+                }
+                self.isLoadingMore = false
+                guard case .success(let page) = result else {
+                    return
+                }
+                self.continuationToken = page.continuation
+                self.videos += page.videos
+                self.tableView.reloadData()
             }
         }
     }
@@ -198,6 +231,19 @@ extension PlaylistVideosViewController: UITableViewDataSource, UITableViewDelega
             )
         }
         return cell
+    }
+
+    func tableView(
+        _ tableView: UITableView,
+        willDisplay cell: UITableViewCell,
+        forRowAt indexPath: IndexPath
+    ) {
+        guard !isLoading else {
+            return
+        }
+        if indexPath.row >= videos.count - 4 {
+            loadMoreVideos()
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

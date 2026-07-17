@@ -84,11 +84,13 @@ extension InnertubeClient {
 
     func fetchPlaylistVideos(
         playlistId: String,
-        completion: @escaping (Result<[Video], Error>) -> Void
+        continuation: String? = nil,
+        completion: @escaping (Result<FeedPage, Error>) -> Void
     ) {
         withValidToken(completion: completion) { client, token in
             client.executePlaylistVideosFetch(
                 playlistId: playlistId,
+                continuation: continuation,
                 token: token,
                 completion: completion
             )
@@ -120,6 +122,7 @@ extension InnertubeClient {
 
     func search(
         query: String,
+        filters: SearchFilters? = nil,
         continuation: String? = nil,
         cancellationToken: CancellationToken? = nil,
         completion: @escaping (Result<SearchPage, Error>) -> Void
@@ -128,12 +131,9 @@ extension InnertubeClient {
             completion(.failure(APIError.invalidURL))
             return
         }
-        var body = webContext
-        if let continuation {
-            body["continuation"] = continuation
-        } else {
-            body["query"] = query
-        }
+        let body = searchBody(
+            query: query, filters: filters, continuation: continuation
+        )
         guard let bodyData = try? JSONSerialization.data(withJSONObject: body) else {
             completion(.failure(APIError.decodingFailed))
             return
@@ -152,6 +152,23 @@ extension InnertubeClient {
                 completion(.success(InnertubeClient.parseSearchPage(data)))
             }
         }
+    }
+
+    private func searchBody(
+        query: String,
+        filters: SearchFilters?,
+        continuation: String?
+    ) -> [String: Any] {
+        var body = webContext
+        if let continuation {
+            body["continuation"] = continuation
+        } else {
+            body["query"] = query
+            if let params = filters?.encodedParams {
+                body["params"] = params
+            }
+        }
+        return body
     }
 
     func fetchChannelInfo(
