@@ -29,4 +29,8 @@ enum ServiceContainer {
 
     /// Legacy accessor — prefer narrow protocols above for new code.
     static var video: VideoService { client }
+
+    /// Content-language/region preferences for Innertube requests
+    /// (localization plan Phase 2 points `InnertubeContexts` here).
+    static let localePreferences: LocalePreferences = DefaultLocalePreferences()
 }

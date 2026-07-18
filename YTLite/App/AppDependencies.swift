@@ -11,6 +11,7 @@ struct AppDependencies {
     let engagementService: EngagementService
     let accountService: AccountService
     let subscribedChannelsService: SubscribedChannelsService
+    let localePreferences: LocalePreferences
 
     static func live() -> AppDependencies {
         AppDependencies(
@@ -23,7 +24,8 @@ struct AppDependencies {
             watchService: ServiceContainer.watch,
             engagementService: ServiceContainer.engagement,
             accountService: ServiceContainer.account,
-            subscribedChannelsService: ServiceContainer.subscribedChannels
+            subscribedChannelsService: ServiceContainer.subscribedChannels,
+            localePreferences: ServiceContainer.localePreferences
         )
     }
 

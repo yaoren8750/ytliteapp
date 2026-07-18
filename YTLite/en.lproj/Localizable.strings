@@ -1,0 +1,42 @@
+/*
+  YTLite — English (development language).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Playback settings";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Quality";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Audio track";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Stats for nerds";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Subtitles";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Off";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Loading %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Resolving stream...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Playback failed.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Quality switch failed.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Audio track switch failed.";

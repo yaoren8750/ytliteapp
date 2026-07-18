@@ -1,0 +1,44 @@
+import Foundation
+
+/// UI languages the app ships `.lproj` bundles for. Adding a language =
+/// adding its case + a translated `Localizable.strings`
+/// (see docs/plans/localization.md, Phase 4). RTL languages are deferred
+/// until a leading/trailing constraint audit.
+enum AppLanguage: String, CaseIterable {
+    case english = "en"
+
+    /// The user's in-app override, nil = follow the system language.
+    static var override: AppLanguage? {
+        get {
+            let stored = UserDefaults.standard.string(
+                forKey: UserDefaultsKeys.Localization.appLanguage
+            )
+            return stored.flatMap(AppLanguage.init(rawValue:))
+        }
+        set {
+            UserDefaults.standard.set(
+                newValue?.rawValue,
+                forKey: UserDefaultsKeys.Localization.appLanguage
+            )
+            LocalizationManager.shared.reload()
+        }
+    }
+
+    /// The effective UI language: the override, else the closest supported
+    /// match to the system language, else English.
+    static var effective: AppLanguage {
+        if let override {
+            return override
+        }
+        let preferred = Locale.preferredLanguages.first ?? "en"
+        return AppLanguage(rawValue: String(preferred.prefix(2))) ?? .english
+    }
+
+    /// Native-script name for the future settings picker.
+    var displayName: String {
+        switch self {
+        case .english:
+            "English"
+        }
+    }
+}
