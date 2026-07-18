@@ -41,14 +41,17 @@ When Google dropped support for the official YouTube app on older devices, there
 
 ## Features
 
-- **Video playback** — up to 1080p 60fps
+- **Video playback** — up to 1080p 60fps on every device; 2K/4K on hardware with AV1 decode (iPhone 15 Pro and newer, M3+ iPads)
 - **Kids content** — plays videos the standard API sources refuse, via a dedicated playback source
+- **Pinch to zoom** — fill the screen in fullscreen with a pinch, or turn on Zoom to Fill to do it automatically
 - **Background audio** — continue listening with the screen off
+- **Media controls** — play/pause and next/previous video from Control Center, the lock screen and headphones
 - **Picture-in-Picture** — watch while using other apps
 - **SponsorBlock** — skip sponsored segments automatically
 - **Return YouTube Dislike** — see dislike counts again
 - **Subtitles** — full subtitle/caption support with VTT parsing
-- **Search & browse** — live suggestions, recent-search history, home feed, trending, channel pages, playlists
+- **Search & browse** — live suggestions, recent-search history, filters (sort, upload date, type, duration), channel pages, playlists
+- **Smart home feed** — endless recommendations with category chips read from your feed's shelves
 - **Subscriptions** — follow channels with a local subscription feed
 - **Watch history** — progress indicators, synced across devices
 - **Autoplay** — automatically play the next related video
@@ -210,7 +213,7 @@ YTLite/
 Playback is built on a single `VideoSource` abstraction — each way of playing a video implements the same interface and owns both stream resolution and quality selection. `PlaybackFacade` just asks a factory for the configured source, calls `loadPlayback`, and hands the prepared `AVPlayerItem` to the player shell. The sources:
 
 1. **Auto** *(default)* — Composite: tries Android VR first, transparently falls back to Mobile Web when a video fails to resolve or start.
-2. **Android VR** — Streams via YouTube's Innertube API; adaptive formats (360p–1080p) are converted from DASH SIDX byte ranges into an HLS playlist for native `AVPlayer`, with progressive/native-HLS fallbacks.
+2. **Android VR** — Streams via YouTube's Innertube API; adaptive formats (360p–1080p AVC, up to 4K AV1 on supported hardware) are converted from DASH SIDX byte ranges into an HLS playlist for native `AVPlayer`, with progressive/native-HLS fallbacks.
 3. **Mobile Web** — Handles videos the Android VR client refuses (e.g. kids content). Stream URLs require solving JavaScript challenges from the player page; that step is delegated to the helper server (see above), everything else stays on-device.
 4. **Progressive** — Direct 360p MP4 URL for the restricted case (e.g. server-side A/B experiments).
 
