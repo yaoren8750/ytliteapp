@@ -92,6 +92,14 @@ protocol VideoSource: AnyObject {
         _ track: AudioTrack,
         completion: @escaping (Result<PreparedPlayback, Error>) -> Void
     )
+
+    /// Fetches audio-track metadata WITHOUT preparing playback — lets a
+    /// composite discover dubs on a fallback source in the background while
+    /// another source plays. Sources that never list dubs return `[]`.
+    func probeAudioTracks(
+        videoId: String,
+        completion: @escaping ([AudioTrack]) -> Void
+    )
 }
 
 extension VideoSource {
@@ -115,6 +123,13 @@ extension VideoSource {
                     "Audio track selection not supported"
             ]
         )))
+    }
+
+    func probeAudioTracks(
+        videoId: String,
+        completion: @escaping ([AudioTrack]) -> Void
+    ) {
+        completion([])
     }
 }
 

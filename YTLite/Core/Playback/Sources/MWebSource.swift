@@ -36,6 +36,9 @@ final class MWebSource: VideoSource {
     /// The audio format playback is built with — the user-picked dub, or the
     /// default-track pick (`info.dashAudioFormat`) until one is chosen.
     private(set) var currentAudioFormat: DashFormatInfo?
+    /// Track picked from IOS-probe metadata before any mweb /player fetch —
+    /// consumed by [[updateAudioTrackState]] so the first build starts on it.
+    var pendingAudioTrackId: String?
 
     let apiClient: WatchService
     let poTokenService: PoTokenProvider
@@ -109,41 +112,6 @@ final class MWebSource: VideoSource {
         solveThenBuild(info: info, video: format, audio: audio, completion: completion)
     }
 
-    func selectAudioTrack(
-        _ track: AudioTrack,
-        completion: @escaping (Result<PreparedPlayback, Error>) -> Void
-    ) {
-        guard let info,
-              let audio = info.allDashAudioFormats.first(
-                  where: { $0.audioTrackId == track.id }
-              ),
-              let video = currentVideoFormat(info: info) else {
-            completion(.failure(Self.noStreamError))
-            return
-        }
-        currentAudioFormat = audio
-        currentAudioTrack = track
-        // Probe path never minted a pot; without one every range 403s (rqh=1).
-        if poToken == nil, let videoId = currentVideoId {
-            mintPot(videoId: videoId)
-        }
-        solveThenBuild(info: info, video: video, audio: audio, completion: completion)
-    }
-
-    /// The video format matching the active quality (falls back to the
-    /// default pick) — audio-track switches keep the current quality.
-    private func currentVideoFormat(
-        info: DirectPlaybackInfo
-    ) -> DashFormatInfo? {
-        if let quality = currentQuality,
-           let format = info.allDashVideoFormats.first(
-               where: { "\($0.itag)" == quality.id }
-           ) {
-            return format
-        }
-        return info.dashVideoFormat
-    }
-
     func updateQualityState(from info: DirectPlaybackInfo) {
         self.info = info
         liveHLS.reset()
@@ -154,26 +122,17 @@ final class MWebSource: VideoSource {
         updateAudioTrackState(from: info)
     }
 
-    private func updateAudioTrackState(from info: DirectPlaybackInfo) {
-        currentAudioFormat = info.dashAudioFormat
-        availableAudioTracks = info.allDashAudioFormats.compactMap { format in
-            format.audioTrackId.map {
-                AudioTrack(
-                    id: $0,
-                    displayName: format.audioTrackName ?? $0,
-                    isDefault: format.audioIsDefault
-                )
-            }
-        }
-        currentAudioTrack = availableAudioTracks.first {
-            $0.id == info.dashAudioFormat?.audioTrackId
-        } ?? availableAudioTracks.first { $0.isDefault }
-        if !availableAudioTracks.isEmpty {
-            let ids = availableAudioTracks.map(\.id).joined(separator: ",")
-            AppLog.player(
-                "mwebSource: \(availableAudioTracks.count) audio tracks [\(ids)]"
-            )
-        }
+    /// `private(set)` keeps the audio-track setters in this file — the
+    /// audio-track extension (probe/selection) publishes its state through
+    /// here, mirroring [[applyLiveQualityState]].
+    func setAudioTrackState(
+        available: [AudioTrack],
+        current: AudioTrack?,
+        format: DashFormatInfo?
+    ) {
+        availableAudioTracks = available
+        currentAudioTrack = current
+        currentAudioFormat = format
     }
 
     /// `private(set)` keeps the quality setters in this file — the live

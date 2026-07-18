@@ -159,6 +159,14 @@ struct DirectPlaybackInfo {
     let captionTracks: [SubtitleTrack]
 }
 
+/// Distinct audio-track (dub) metadata from a /player response — the listing
+/// only, no playable formats attached.
+struct AudioTrackInfo {
+    let id: String
+    let displayName: String
+    let isDefault: Bool
+}
+
 struct WatchtimeURLs {
     let playbackURL: String
     let watchtimeURL: String
