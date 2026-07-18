@@ -26,6 +26,15 @@ struct VideoQuality: Equatable {
     let fps: Int?
 }
 
+/// A selectable audio track (dub), expressed source-agnostically.
+struct AudioTrack: Equatable {
+    /// YouTube's track id, e.g. "ru.3".
+    let id: String
+    /// Localized display name, e.g. "Russian".
+    let displayName: String
+    let isDefault: Bool
+}
+
 /// A ready-to-play result handed back to the player shell. The shell attaches
 /// `item` and retains `resourceLoader` for the item's lifetime.
 struct PreparedPlayback {
@@ -58,6 +67,12 @@ protocol VideoSource: AnyObject {
     var currentQuality: VideoQuality? { get }
     /// Active codec/itag pair for the stats overlay, when the source knows it.
     var currentCodecs: String? { get }
+    /// Whether this source exposes an audio-track (dub) menu.
+    var supportsAudioTrackSelection: Bool { get }
+    /// Audio tracks for the currently loaded video (empty = single-audio).
+    var availableAudioTracks: [AudioTrack] { get }
+    /// The active audio track, if the source knows it.
+    var currentAudioTrack: AudioTrack? { get }
 
     /// Resolves the video and produces a ready-to-play result.
     func loadPlayback(
@@ -71,10 +86,36 @@ protocol VideoSource: AnyObject {
         _ quality: VideoQuality,
         completion: @escaping (Result<PreparedPlayback, Error>) -> Void
     )
+
+    /// Switches the audio track; the source rebuilds playback its own way.
+    func selectAudioTrack(
+        _ track: AudioTrack,
+        completion: @escaping (Result<PreparedPlayback, Error>) -> Void
+    )
 }
 
 extension VideoSource {
     var currentCodecs: String? { nil }
+
+    // Audio-track selection is opt-in: sources whose client never returns
+    // dub tracks (android_vr, progressive) inherit the disabled default.
+    var supportsAudioTrackSelection: Bool { availableAudioTracks.count > 1 }
+    var availableAudioTracks: [AudioTrack] { [] }
+    var currentAudioTrack: AudioTrack? { nil }
+
+    func selectAudioTrack(
+        _ track: AudioTrack,
+        completion: @escaping (Result<PreparedPlayback, Error>) -> Void
+    ) {
+        completion(.failure(NSError(
+            domain: "VideoSource",
+            code: 0,
+            userInfo: [
+                NSLocalizedDescriptionKey:
+                    "Audio track selection not supported"
+            ]
+        )))
+    }
 }
 
 /// Creates the right `VideoSource` for a kind (abstract factory).

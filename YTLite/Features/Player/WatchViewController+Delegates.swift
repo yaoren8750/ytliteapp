@@ -7,19 +7,27 @@ extension WatchViewController: VideoPlayerViewDelegate {
         _ playerView: VideoPlayerView
     ) {
         let statsOn = statsOverlay != nil
-        presentPlayerMenu(
-            title: "Playback settings",
-            items: [
-                PlayerMenuItem(title: "Quality") { [weak self] in
-                    self?.showQualityPicker()
-                },
-                PlayerMenuItem(
-                    title: statsOn ? "✓ Stats for nerds" : "Stats for nerds"
-                ) { [weak self] in
-                    self?.toggleStatsOverlay()
+        var items = [
+            PlayerMenuItem(title: "Quality") { [weak self] in
+                self?.showQualityPicker()
+            }
+        ]
+        if playbackFacade.activeVideoSource?
+            .supportsAudioTrackSelection == true {
+            items.append(
+                PlayerMenuItem(title: "Audio track") { [weak self] in
+                    self?.showAudioTrackPicker()
                 }
-            ]
+            )
+        }
+        items.append(
+            PlayerMenuItem(
+                title: statsOn ? "✓ Stats for nerds" : "Stats for nerds"
+            ) { [weak self] in
+                self?.toggleStatsOverlay()
+            }
         )
+        presentPlayerMenu(title: "Playback settings", items: items)
     }
 
     func videoPlayerViewDidTapFullscreen(_ playerView: VideoPlayerView) {

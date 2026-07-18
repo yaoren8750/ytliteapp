@@ -227,7 +227,9 @@ private extension InnertubeClient {
         xSt: Int,
         xEnd: Int
     ) -> DashFormatInfo {
-        DashFormatInfo(
+        let track = fmt["audioTrack"]
+            as? [String: Any]
+        return DashFormatInfo(
             url: url,
             itag: itag,
             mimeType: fmtMimeType(fmt),
@@ -244,7 +246,13 @@ private extension InnertubeClient {
             fps: fmt["fps"] as? Int,
             qualityLabel: fmt["qualityLabel"] as? String,
             sigChallenge: fmt[sigChallengeKey] as? String,
-            sigParam: fmt[sigParamKey] as? String
+            sigParam: fmt[sigParamKey] as? String,
+            audioTrackId: track?["id"] as? String,
+            audioTrackName: track?["displayName"]
+                as? String,
+            audioIsDefault:
+                (track?["audioIsDefault"] as? Bool)
+                    ?? false
         )
     }
     // swiftlint:enable function_parameter_count
@@ -272,6 +280,42 @@ private extension InnertubeClient {
                 start.upperBound..<end.lowerBound
             ]
         )
+    }
+
+    /// Best audio/mp4 format per distinct audio track (dub). Dubbed videos
+    /// ship each language at several bitrates — keep the top one per track
+    /// id. Videos without track metadata produce an empty list (no picker).
+    static func buildAllDashAudio(
+        from adaptive: [[String: Any]]
+    ) -> [DashFormatInfo] {
+        var bestPerTrack: [String: DashFormatInfo] = [:]
+        adaptive
+            .filter {
+                fmtDirectURL($0) != nil
+                    && fmtMimeType($0).contains("audio/mp4")
+            }
+            .compactMap(buildDashInfo)
+            .forEach { format in
+                guard let trackId = format.audioTrackId else {
+                    return
+                }
+                if let seen = bestPerTrack[trackId],
+                   seen.bitrate >= format.bitrate {
+                    return
+                }
+                bestPerTrack[trackId] = format
+            }
+        // Only one distinct track = nothing to switch between.
+        guard bestPerTrack.count > 1 else {
+            return []
+        }
+        return bestPerTrack.values.sorted { lhs, rhs in
+            if lhs.audioIsDefault != rhs.audioIsDefault {
+                return lhs.audioIsDefault
+            }
+            return (lhs.audioTrackName ?? "")
+                < (rhs.audioTrackName ?? "")
+        }
     }
 
     static func buildAllDashVideo(
@@ -318,6 +362,9 @@ private extension InnertubeClient {
         let allDash = buildAllDashVideo(
             from: adaptive
         )
+        let allAudio = buildAllDashAudio(
+            from: adaptive
+        )
         let duration = extractDuration(selected: selected)
         return buildPlaybackPart1(
             urls: urls,
@@ -326,6 +373,7 @@ private extension InnertubeClient {
             dV: dashVideo,
             dA: dashAudio,
             allDash: allDash,
+            allAudio: allAudio,
             dur: duration,
             json: json
         )
@@ -340,6 +388,7 @@ private extension InnertubeClient {
         dV: DashFormatInfo?,
         dA: DashFormatInfo?,
         allDash: [DashFormatInfo],
+        allAudio: [DashFormatInfo],
         dur: Double?,
         json: [String: Any]
     ) -> DirectPlaybackInfo {
@@ -381,6 +430,7 @@ private extension InnertubeClient {
             dashVideoFormat: dV,
             dashAudioFormat: dA,
             allDashVideoFormats: allDash,
+            allDashAudioFormats: allAudio,
             duration: dur,
             playbackTrackingURLs: trackingURLs,
             captionTracks: captions

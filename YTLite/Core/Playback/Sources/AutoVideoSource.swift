@@ -19,6 +19,9 @@ final class AutoVideoSource: VideoSource {
     var availableQualities: [VideoQuality] { active.availableQualities }
     var currentQuality: VideoQuality? { active.currentQuality }
     var currentCodecs: String? { active.currentCodecs }
+    var supportsAudioTrackSelection: Bool { active.supportsAudioTrackSelection }
+    var availableAudioTracks: [AudioTrack] { active.availableAudioTracks }
+    var currentAudioTrack: AudioTrack? { active.currentAudioTrack }
 
     init(primary: VideoSource, makeFallback: @escaping () -> VideoSource) {
         self.primary = primary
@@ -63,6 +66,13 @@ final class AutoVideoSource: VideoSource {
         completion: @escaping (Result<PreparedPlayback, Error>) -> Void
     ) {
         active.selectQuality(quality, completion: completion)
+    }
+
+    func selectAudioTrack(
+        _ track: AudioTrack,
+        completion: @escaping (Result<PreparedPlayback, Error>) -> Void
+    ) {
+        active.selectAudioTrack(track, completion: completion)
     }
 
     // MARK: - Private

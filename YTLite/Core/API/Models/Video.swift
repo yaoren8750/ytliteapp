@@ -123,6 +123,12 @@ struct DashFormatInfo {
     let sigChallenge: String?
     /// Query-param name for the solved signature (`sp` from the cipher).
     let sigParam: String?
+    /// `audioTrack` metadata on dubbed audio formats — nil on video formats
+    /// and on videos without dubs. `audioTrackId` is YouTube's track id
+    /// ("ru.3"), `audioTrackName` its localized display name ("Russian").
+    let audioTrackId: String?
+    let audioTrackName: String?
+    let audioIsDefault: Bool
 }
 
 struct DirectPlaybackInfo {
@@ -144,6 +150,10 @@ struct DirectPlaybackInfo {
     let dashVideoFormat: DashFormatInfo?
     let dashAudioFormat: DashFormatInfo?
     let allDashVideoFormats: [DashFormatInfo]
+    /// Best audio/mp4 format per distinct audio track (dub) — one entry per
+    /// language, sorted default-first. Empty when the video has no track
+    /// metadata (single-audio videos still populate `dashAudioFormat`).
+    let allDashAudioFormats: [DashFormatInfo]
     let duration: Double?
     let playbackTrackingURLs: WatchtimeURLs?
     let captionTracks: [SubtitleTrack]
