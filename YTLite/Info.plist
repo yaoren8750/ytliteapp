@@ -46,6 +46,7 @@
 		<string>ml</string>
 		<string>mn</string>
 		<string>mr</string>
+		<string>ms</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
