@@ -51,6 +51,7 @@ enum AppLanguage: String, CaseIterable {
     case dutch = "nl"
     case norwegian = "no"
     case punjabi = "pa"
+    case polish = "pl"
 
     /// The user's in-app override, nil = follow the system language.
     static var override: AppLanguage? {
@@ -185,6 +186,8 @@ enum AppLanguage: String, CaseIterable {
             "Norsk"
         case .punjabi:
             "ਪੰਜਾਬੀ"
+        case .polish:
+            "Polski"
         }
     }
 }

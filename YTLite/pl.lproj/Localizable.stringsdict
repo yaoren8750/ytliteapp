@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Czas trwania pamięci podręcznej; używane jako „N dzień/dni/dnia" w komórkach i wyborach ustawień -->
+	<key>settings.daysCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@days@</string>
+		<key>days</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d dzień</string>
+			<key>few</key>
+			<string>%d dni</string>
+			<key>many</key>
+			<string>%d dni</string>
+			<key>other</key>
+			<string>%d dnia</string>
+		</dict>
+	</dict>
+	<!-- Metadane kafelka playlisty; „N wideo" -->
+	<key>common.videosCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@videos@</string>
+		<key>videos</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d wideo</string>
+			<key>few</key>
+			<string>%d wideo</string>
+			<key>many</key>
+			<string>%d wideo</string>
+			<key>other</key>
+			<string>%d wideo</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

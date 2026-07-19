@@ -1,0 +1,371 @@
+/*
+  YTLite — Polski.
+
+  Klucze są stabilnym API: nigdy ich nie zmieniaj — klucz zostanie utracony
+  we wszystkich tłumaczeniach. Komentarze podają kontekst tłumaczeniowy.
+  Pozycyjne znaki zastępcze (%1$@) muszą być zachowane dosłownie w tłumaczeniach.
+*/
+
+/* ===== Player: menu ustawień ===== */
+
+/* Tytuł menu koła zębatego w odtwarzaczu */
+"player.menu.settings" = "Ustawienia odtwarzania";
+/* Element menu + tytuł wyboru: jakość wideo */
+"player.menu.quality" = "Jakość";
+/* Element menu + tytuł wyboru: ścieżka dźwiękowa (dubbing) */
+"player.menu.audioTrack" = "Ścieżka dźwiękowa";
+/* Element menu: przełącza nakładkę statystyk odtwarzania */
+"player.menu.stats" = "Statystyki dla geeków";
+/* Tytuł wyboru: napisy */
+"player.menu.subtitles" = "Napisy";
+
+/* ===== Player: wybory ===== */
+
+/* Wybór napisów: wyłącza napisy */
+"player.subtitles.off" = "Wył.";
+/* Sufiks przy automatycznie generowanych ścieżkach napisów, np. „English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Sufiks przy AI automatycznie dubbingowanych ścieżkach dźwiękowych, np. „Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: stan / błędy ===== */
+
+/* Etykietka stanu przy przełączaniu; %1$@ = etykieta jakości lub nazwa ścieżki */
+"player.status.loading" = "Ładowanie %1$@…";
+/* Etykietka stanu przy rozwiązywaniu adresu URL strumienia */
+"player.status.resolving" = "Rozwiązywanie strumienia…";
+/* Wyświetla się, gdy nie można odtworzyć wideo */
+"player.error.playback" = "Odtwarzanie nie powiodło się.";
+/* Wyświetla się przy niepowodzeniu przełączenia jakości (odtwarzanie kontynuuje) */
+"player.error.qualitySwitch" = "Przełączenie jakości nie powiodło się.";
+/* Wyświetla się przy niepowodzeniu przełączenia ścieżki dźwiękowej (odtwarzanie kontynuuje) */
+"player.error.audioTrackSwitch" = "Przełączenie ścieżki dźwiękowej nie powiodło się.";
+
+/* ===== Wspólne ===== */
+
+/* Przycisk subskrybuj, stan niezsubskrybowano */
+"common.subscribe" = "Subskrybuj";
+/* Przycisk subskrybuj, stan zsubskrybowano */
+"common.subscribed" = "Subskrybujesz";
+/* Wspólna akcja anuluj */
+"common.cancel" = "Anuluj";
+/* Wspólny przycisk potwierdzenia */
+"common.ok" = "OK";
+/* Wspólna akcja zapisz */
+"common.save" = "Zapisz";
+/* Wspólna akcja gotowe */
+"common.done" = "Gotowe";
+/* Domyślny tytuł/etykietka kafelka playlistu */
+"common.playlist" = "Playlista";
+/* Tytuł zakładki Biblioteka */
+"library.title" = "Biblioteka";
+
+/* ===== Player: stan ===== */
+
+/* Etykietka stanu, gdy odtwarzacz przygotowuje pierwsze wideo */
+"player.status.preparing" = "Przygotowywanie wideo…";
+/* Etykietka stanu przy ponownym rozwiązywaniu wygasłego adresu URL strumienia */
+"player.status.refreshing" = "Odświeżanie strumienia…";
+
+/* ===== Player: strona odtwarzania ===== */
+
+/* Rozwija opis wideo */
+"player.description.more" = "Więcej";
+/* Zwija opis wideo */
+"player.description.less" = "Mniej";
+/* Pasek działań: udostępnij wideo */
+"player.action.share" = "Udostępnij";
+/* Pasek działań: zapisz do playlistu */
+"player.action.save" = "Zapisz";
+/* Pasek działań: pobierz */
+"player.action.download" = "Pobierz";
+
+/* ===== Player: komentarze ===== */
+
+/* Nagłówek sekcji komentarzy */
+"player.comments.title" = "Komentarze";
+/* Nagłówek komentarzy z liczbą; %1$d = liczba komentarzy */
+"player.comments.titleCount" = "Komentarze (%1$d)";
+/* Wyświetla się podczas ładowania komentarzy */
+"player.comments.loading" = "Ładowanie komentarzy…";
+/* Wyświetla się, gdy żądanie komentarzy nie powiodło się */
+"player.comments.unavailable" = "Komentarze niedostępne";
+/* Wyświetla się, gdy strona odtwarzania nie załadowała wystarczających danych do pobrania komentarzy */
+"player.comments.unavailableYet" = "Komentarze nie są jeszcze dostępne.";
+/* Przycisk załaduj więcej komentarzy */
+"player.comments.loadMore" = "Załaduj więcej komentarzy";
+/* Wiersz autora przypiętego komentarza; %1$@ = nazwa autora */
+"player.comments.pinned" = "%1$@ • Przypięto";
+/* Liczba polubień komentarza; %1$@ = sformatowana liczba */
+"player.comments.likes" = "%1$@ polubień";
+/* Liczba odpowiedzi na komentarz; %1$@ = sformatowana liczba */
+"player.comments.replies" = "%1$@ odpowiedzi";
+
+/* ===== Player: nakładka automatycznego odtwarzania ===== */
+
+/* Nagłówek nad propozycją kolejnego wideo */
+"player.autoplay.upNext" = "Następne";
+/* Odtwarza proponowane wideo natychmiast, pomija odliczanie */
+"player.autoplay.playNow" = "Odtwórz teraz";
+
+/* ===== Player: sekcja powiązana ===== */
+
+/* Nagłówek nienazwanej kolejki/playlistu automatycznego odtwarzania */
+"player.related.mix" = "Mix";
+/* Nagłówek sekcji powiązanych wideo */
+"player.related.title" = "Powiązane";
+/* Etykietka stanu przy krytycznym błędzie odtwarzania; %1$@ = opis błędu */
+"player.error.withMessage" = "Błąd odtwarzania: %1$@";
+
+/* ===== Player: prędkość ===== */
+
+/* Prędkość odtwarzania 1x */
+"player.speed.normal" = "Normalna";
+
+/* ===== SponsorBlock ===== */
+
+/* Przycisk pomiń; %1$@ = zlokalizowana nazwa kategorii, np. „Skip Sponsor" */
+"sponsorblock.skip" = "Pomiń %1$@";
+
+/* Opcje zachowania pomijania (ustawienie dla każdej kategorii) */
+"sponsorblock.behavior.autoSkip" = "Automatycznie pomijaj";
+"sponsorblock.behavior.showButton" = "Pokaż przycisk";
+"sponsorblock.behavior.disabled" = "Wyłącz";
+
+/* Stopka pod sekcją SponsorBlock (przypisanie projektu) */
+"sponsorblock.attribution" = "Obsługiwane przez SponsorBlock (sponsor.ajay.app) — otwarty projekt społecznościowy.";
+/* Nagłówek nad ustawieniami pomijania dla poszczególnych kategorii */
+"sponsorblock.segmentCategories" = "Kategorie segmentów";
+
+/* Nazwy kategorii (terminy projektu SponsorBlock) i ich opisy */
+"sponsorblock.category.sponsor.name" = "Sponsor";
+"sponsorblock.category.sponsor.description" = "Płatna promocja, płatne polecenia i bezpośrednie reklamy. Nie dla autopromocji lub bezpłatnych wzmianek o ulubionych przyczynach/twórcach/stronach/produktach.";
+"sponsorblock.category.selfpromo.name" = "Niepłatna/autopromocja";
+"sponsorblock.category.selfpromo.description" = "Podobne do „sponsor", ale niepłatne lub autopromocja. Obejmuje sekcje o merchandise, darowiznach lub informacjach o współpracy.";
+"sponsorblock.category.exclusive_access.name" = "Ekskluzywny dostęp";
+"sponsorblock.category.exclusive_access.description" = "Tylko do oznaczania całych wideo. Używane, gdy wideo prezentuje produkt, usługę lub lokalizację, do której otrzymano bezpłatny lub dotowany dostęp.";
+"sponsorblock.category.interaction.name" = "Przypomnienie interakcji (Subskrybuj)";
+"sponsorblock.category.interaction.description" = "Gdy w środku treści jest krótkie przypomnienie o polubieniu, subskrybowaniu lub obserwowaniu. Jeśli jest długie lub dotyczy czegoś konkretnego, powinno być w sekcji autopromocji.";
+"sponsorblock.category.highlight.name" = "Wyróżniony moment";
+"sponsorblock.category.highlight.description" = "Część wideo, której szuka większość osób. Podobne do komentarzy „Wideo zaczyna się w x".";
+"sponsorblock.category.intro.name" = "Przerwa/Animacja wstępna";
+"sponsorblock.category.intro.description" = "Interwał bez faktycznych treści. Może to być pauza, statyczna klatka lub powtarzająca się animacja. Nie powinno być używane do przejść zawierających informacje.";
+"sponsorblock.category.outro.name" = "Karty końcowe/Napisy końcowe";
+"sponsorblock.category.outro.description" = "Napisy końcowe lub gdy pojawiają się karty końcowe YouTube. Nie dla podsumowań z informacjami.";
+"sponsorblock.category.preview.name" = "Podgląd/Przegląd";
+"sponsorblock.category.preview.description" = "Zbiór klipów pokazujących, co nadchodzi w tym wideo lub innych wideo w serii, gdzie wszystkie informacje są później powtórzone w wideo.";
+"sponsorblock.category.filler.name" = "Dygresje żarty";
+"sponsorblock.category.filler.description" = "Sceny dygresyjne lub żarty, które nie są potrzebne do zrozumienia głównej treści wideo. Nie powinno obejmować segmentów zapewniających kontekst lub szczegóły.";
+"sponsorblock.category.music_offtopic.name" = "Sekcja niemuzyczna";
+"sponsorblock.category.music_offtopic.description" = "Tylko dla teledysków. Część niemuzyczna teledysku.";
+"sponsorblock.category.chapter.name" = "Rozdział";
+"sponsorblock.category.chapter.description" = "Własne nazwy sekcji wideo.";
+
+/* ===== Ustawienia ===== */
+
+/* Tytuł arkusza ustawień */
+"settings.title" = "Ustawienia";
+
+/* Nagłówki sekcji */
+"settings.section.theme" = "Motyw";
+"settings.section.playback" = "Odtwarzanie";
+"settings.section.home" = "Strona główna";
+"settings.section.cache" = "Pamięć podręczna";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Debugowanie";
+
+/* Stopki sekcji */
+"settings.footer.themeAutoSystem" = "Automatycznie śledzi wygląd systemu.";
+"settings.footer.themeAutoHours" = "Automatycznie przełącza na ciemny motyw w podanych godzinach.";
+"settings.footer.playback" = "Zoom to Fill automatycznie skaluje wideo w trybie pełnoekranowym, aby nie pozostały czarne paski. Szczipnięcie w odtwarzaczu nadpisuje to dla poszczególnych wideo.";
+"settings.footer.home" = "Jak wyświetlane są półki rekomendacji: ciągła siatka lub poziome półki w stylu TV.";
+"settings.footer.ryd" = "Liczby dyslików są obsługiwane przez Return YouTube Dislike (returnyoutubedislike.com) — otwarty projekt społecznościowy.";
+"settings.footer.debug" = "Wymusza określone źródło odtwarzania. Zwykle używany jest Android VR z automatycznym fallbackiem. Serwer solverów zasila źródło Mobile Web + pot (minting pot i n-solving na iOS 12–13).";
+
+/* Wiersze motywów; etykiety segmentów trybów ciemny/jasny/automatyczny */
+"settings.row.theme" = "Motyw";
+"settings.theme.dark" = "Ciemny";
+"settings.theme.light" = "Jasny";
+"settings.theme.auto" = "Automatyczny";
+/* Wybieraki godzin ograniczające planowany tryb ciemny iOS 12 */
+"settings.row.darkFrom" = "Ciemny motyw od";
+"settings.row.darkUntil" = "Ciemny motyw do";
+
+/* Wiersze odtwarzania */
+"settings.row.defaultQuality" = "Domyślna jakość";
+/* Element „Auto" wyboru domyślnej jakości (zapisana wartość pozostaje po angielsku) */
+"settings.quality.auto" = "Auto";
+"settings.row.backgroundPlayback" = "Odtwarzanie w tle";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "Ukryj pasek stanu w trybie pełnoekranowym";
+"settings.row.zoomToFill" = "Zoom to Fill w trybie pełnoekranowym";
+"settings.row.showShorts" = "Pokazuj YouTube Shorts w subskrypcjach";
+
+/* Wiersze układu strony głównej + nazwy opcji */
+"settings.row.homeLayout" = "Układ strony głównej";
+"settings.homeLayout.grid" = "Zwykła siatka";
+"settings.homeLayout.rails" = "Półki";
+
+/* Wiersze pamięci podręcznej */
+"settings.row.feedCache" = "Pamięć podręczna feedu";
+"settings.row.feedCacheDuration" = "Czas trwania pamięci podręcznej feedu";
+"settings.row.imageCache" = "Pamięć podręczna obrazów";
+"settings.row.imageCacheDuration" = "Czas trwania pamięci podręcznej obrazów";
+"settings.row.clearCache" = "Wyczyść całą pamięć podręczną";
+/* Alert po wyczyszczeniu wszystkich pamięci podręcznych */
+"settings.cache.clearedTitle" = "Pamięć podręczna wyczyszczona";
+"settings.cache.clearedMessage" = "Cała pamięć podręczna została wyczyszczona.";
+
+/* Wiersze integracji */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "Ustawienia SponsorBlock";
+
+/* Wiersze debugowania (wartości pozostają techniczne/angielskie) */
+"settings.row.playbackSource" = "Źródło odtwarzania";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Udostępnij log debugowania";
+/* Alert URL serwera solverów */
+"settings.solver.message" = "URL serwera solverów.";
+"settings.solver.reset" = "Przywróć domyślne";
+/* Sufiks wyświetlany po URL solverów, gdy jest domyślny wbudowany */
+"settings.solver.defaultSuffix" = " (domyślny)";
+/* Alert, gdy nie ma jeszcze logów debugowania */
+"settings.log.noneTitle" = "Brak logów";
+"settings.log.noneMessage" = "Brak dostępnych logów debugowania.";
+
+/* ===== Profil ===== */
+
+"profile.title" = "Profil";
+"profile.signOut" = "Wyloguj się";
+"profile.clearImageCache" = "Wyczyść pamięć podręczną obrazów";
+"profile.imageCacheCleared" = "Pamięć podręczna obrazów wyczyszczona.";
+
+/* ===== Wyszukiwanie ===== */
+
+"search.title" = "Szukaj";
+/* Zastępczy tekst pola wyszukiwania */
+"search.placeholder" = "Szukaj na YouTube";
+/* Nagłówek nad listą ostatnich wyszukiwań */
+"search.recent" = "Ostatnie wyszukiwania";
+/* Przycisk paska filtrów; wersja kropkowana oznacza aktywne filtry */
+"search.filters" = "Filtry";
+"search.filters.active" = "Filtry •";
+/* Tytuł arkusza filtrów + akcja resetowania */
+"search.filters.title" = "Filtry wyszukiwania";
+"search.filters.reset" = "Zresetuj filtry";
+/* Wiersze filtrów; %1$@ = bieżąca wartość */
+"search.filters.sort" = "Sortowanie: %1$@";
+"search.filters.date" = "Data: %1$@";
+"search.filters.type" = "Typ: %1$@";
+"search.filters.duration" = "Czas trwania: %1$@";
+/* Tytuły podarkuszy */
+"search.filters.sortTitle" = "Sortuj wg";
+"search.filters.dateTitle" = "Data przesłania";
+"search.filters.typeTitle" = "Typ";
+"search.filters.durationTitle" = "Czas trwania";
+
+/* Wartości opcji filtrów */
+"search.sort.relevance" = "Trafność";
+"search.sort.rating" = "Ocena";
+"search.sort.uploadDate" = "Data przesłania";
+"search.sort.viewCount" = "Liczba wyświetleń";
+"search.date.any" = "Dowolny czas";
+"search.date.lastHour" = "Ostatnia godzina";
+"search.date.today" = "Dzisiaj";
+"search.date.thisWeek" = "Ten tydzień";
+"search.date.thisMonth" = "Ten miesiąc";
+"search.date.thisYear" = "Ten rok";
+"search.type.any" = "Dowolny typ";
+"search.type.video" = "Wideo";
+"search.type.channel" = "Kanał";
+"search.type.playlist" = "Playlista";
+"search.duration.any" = "Dowolny czas trwania";
+"search.duration.short" = "Poniżej 4 min";
+"search.duration.medium" = "4–20 min";
+"search.duration.long" = "Powyżej 20 min";
+
+/* ===== Strona główna ===== */
+
+"home.title" = "Strona główna";
+/* Chip resetujący doiefiltrowanego feedu */
+"home.category.all" = "Wszystko";
+/* Statyczne chipy kategorii (tytuły półek serwera przychodzą już zlokalizowane) */
+"home.category.live" = "Na żywo";
+"home.category.news" = "Wiadomości";
+"home.category.gaming" = "Gry";
+"home.category.sports" = "Sport";
+"home.category.learning" = "Edukacja";
+"home.category.fashion" = "Moda";
+/* Pusty stan błędu (dwa wiersze) */
+"home.error.loadFailed" = "Nie udało się załadować feedu\nPrzeciągnij w dół, aby spróbować ponownie";
+/* Pusty stan niezalogowanego użytkownika */
+"home.signIn" = "Zaloguj się, aby zobaczyć rekomendacje";
+
+/* ===== Kanał ===== */
+
+/* Pasek zakładek kanału */
+"channel.tab.videos" = "Filmy";
+"channel.tab.live" = "Na żywo";
+"channel.tab.playlists" = "Playlisty";
+/* Arkusz O kanale */
+"channel.about.title" = "O kanale";
+"channel.about.close" = "Zamknij";
+"channel.about.subscribers" = "Subskrybenci";
+"channel.about.videos" = "Filmy";
+"channel.about.description" = "Opis";
+"channel.about.contact" = "Kontakt";
+
+/* ===== Biblioteka ===== */
+
+"library.history" = "Historia";
+"library.downloads" = "Pobrane";
+"library.playlists" = "Playlisty";
+"library.downloads.comingSoon" = "Pobieranie wkrótce dostępne";
+"library.history.signIn" = "Zaloguj się, aby zobaczyć historię oglądania";
+"library.history.empty" = "Nie znaleziono historii oglądania";
+"library.history.loadFailed" = "Nie udało się załadować historii";
+"library.playlists.signIn" = "Zaloguj się, aby zobaczyć swoje playlisty";
+"library.playlists.loadFailed" = "Nie udało się załadować playlist";
+"library.playlist.empty" = "Brak wideo w tej playliście";
+"library.playlist.loadFailed" = "Nie udało się załadować playlisty";
+
+/* ===== Subskrypcje ===== */
+
+"subscriptions.title" = "Subskrypcje";
+"subscriptions.all" = "Wszystkie subskrypcje";
+/* Przycisk „Wszystko" na pasku avatarów kanałów */
+"subscriptions.allButton" = "Wszystko";
+"subscriptions.signIn" = "Zaloguj się, aby zobaczyć swoje subskrypcje";
+
+/* ===== Konto (arkusz paska narzędzi) ===== */
+
+/* Domyślna nazwa konta, gdy profil nie ma żadnej */
+"account.fallbackName" = "Konto";
+"account.signIn" = "Zaloguj się";
+"account.signOut" = "Wyloguj się";
+"account.notSignedIn" = "Niezalogowany";
+
+/* Wspólny tytuł alertu błędu */
+"common.error" = "Błąd";
+/* Ekran kanału nie załadował się */
+"channel.unavailable" = "Kanał niedostępny";
+
+/* ===== Ustawienia: sekcja języka ===== */
+
+"settings.section.language" = "Język";
+"settings.footer.language" = "Język aplikacji zmienia interfejs. Język treści zmienia tytuły, wyszukiwanie i feedy (YouTube tłumaczy metadane po stronie serwera, jak oficjalna aplikacja). Zmiany w pełni zastosowują się po restarcie aplikacji.";
+/* Wiersze */
+"settings.row.appLanguage" = "Język aplikacji";
+"settings.row.contentLanguage" = "Język treści";
+"settings.row.region" = "Region";
+/* Opcja wyboru następująca po języku/regionali urządzenia */
+"settings.language.system" = "Systemowy";
+/* Alert po zmianie ustawienia języka */
+"settings.language.restartTitle" = "Wymagany restart";
+"settings.language.restartMessage" = "Zmiany w pełni zastosowują się po restarcie aplikacji.";
+
+/* Added during review merge */
+"sponsorblock.category.selfpromo.description" = "Podobne do „sponsora”, ale dotyczy bezpłatnej promocji lub autopromocji: merch, dotacje lub informacje o współpracy.";
+"sponsorblock.category.highlight.description" = "Część filmu, której szuka większość widzów. Podobne do komentarzy „film zaczyna się od x”.";
