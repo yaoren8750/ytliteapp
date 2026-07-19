@@ -1,0 +1,367 @@
+/*
+  YTLite — Bulgarian (Български).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Настройки на възпроизвеждане";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Качество";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Аудио пътечка";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Статистика за напреднали";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Субтитри";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Изключено";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (авто)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Зареждане %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Разрешаване на потока...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Възпроизвеждането е неуспешно.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Смяната на качеството е неуспешна.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Смяната на аудио пътечката е неуспешна.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Абониране";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Абониран";
+/* Generic cancel action */
+"common.cancel" = "Отказ";
+/* Generic confirmation button */
+"common.ok" = "ОК";
+/* Generic save action */
+"common.save" = "Запазване";
+/* Generic done action */
+"common.done" = "Готово";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Плейлист";
+/* Library tab title */
+"library.title" = "Библиотека";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Подготовка на видеото...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Обновяване на потока...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Повече";
+/* Collapses the video description */
+"player.description.less" = "По-малко";
+/* Action bar: share the video */
+"player.action.share" = "Споделяне";
+/* Action bar: save to playlist */
+"player.action.save" = "Запазване";
+/* Action bar: download */
+"player.action.download" = "Изтегляне";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Коментари";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Коментари (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Зареждане на коментари...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Коментарите не са налични";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Коментарите все още не са налични.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Зареждане на повече коментари";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • Закрепен";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ харесвания";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ отговора";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Следващо";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Възпроизвеждане сега";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Микс";
+/* Header of the related-videos section */
+"player.related.title" = "Подобни";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Грешка при възпроизвеждане: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Нормално";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Пропускане %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Автоматично пропускане";
+"sponsorblock.behavior.showButton" = "Показване на бутон";
+"sponsorblock.behavior.disabled" = "Изключване";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "На базата на SponsorBlock (sponsor.ajay.app) — открит общностен проект.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Категории на сегментите";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Спонсор";
+"sponsorblock.category.sponsor.description" = "Платена промоция, платени партньорства и директна реклама. Не за самопромоция или безплатни подкрепления на каузи/създатели/уебсайтове/продукти.";
+"sponsorblock.category.selfpromo.name" = "Безплатна/Самопромоция";
+"sponsorblock.category.selfpromo.description" = "Подобно на \"спонсор\", но безплатно или самопромоция. Включва секции за стоки, дарения или информация за сътрудничество.";
+"sponsorblock.category.exclusive_access.name" = "Ексклузивен достъп";
+"sponsorblock.category.exclusive_access.description" = "Само за етикетиране на цели видеа. Използва се, когато видеото показва продукт, услуга или място, за което са получили безплатен или субсидиран достъп.";
+"sponsorblock.category.interaction.name" = "Напомняне за действие (Абониране)";
+"sponsorblock.category.interaction.description" = "Когато има кратко напомняне за харесване, абониране или последване сред съдържанието. Ако е дълго или за нещо конкретно, трябва да е в секцията за самопромоция.";
+"sponsorblock.category.highlight.name" = "Основна част";
+"sponsorblock.category.highlight.description" = "Частта от видеото, която повечето хора търсят. Подобно на коментарите \"Видеото започва от x\".";
+"sponsorblock.category.intro.name" = "Междудействие/Встъпителна анимация";
+"sponsorblock.category.intro.description" = "Интервал без реално съдържание. Може да е пауза, статичен кадър или повтаряща се анимация. Не трябва да се използва за преходи с информация.";
+"sponsorblock.category.outro.name" = "Крайни карти/Титри";
+"sponsorblock.category.outro.description" = "Титри или когато се появят крайните карти на YouTube. Не за заключения с информация.";
+"sponsorblock.category.preview.name" = "Преглед/Обобщение";
+"sponsorblock.category.preview.description" = "Колекция от клипове, показващи какво предстои в това видео или други видеа в поредица, където цялата информация се повтаря по-късно.";
+"sponsorblock.category.filler.name" = "Отклонения/Шеги";
+"sponsorblock.category.filler.description" = "Странични сцени или шеги, които не са необходими за разбиране на основното съдържание на видеото. Не трябва да включва сегменти, предоставящи контекст или допълнителни.details.";
+"sponsorblock.category.music_offtopic.name" = "Не-музикална секция";
+"sponsorblock.category.music_offtopic.description" = "Само за музикални видеа. Не-музикалната част на музикално видео.";
+"sponsorblock.category.chapter.name" = "Глава";
+"sponsorblock.category.chapter.description" = "Потребителски именувани секции на видеото.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Настройки";
+
+/* Section headers */
+"settings.section.theme" = "Тема";
+"settings.section.playback" = "Възпроизвеждане";
+"settings.section.home" = "Начало";
+"settings.section.cache" = "Кеш";
+"settings.section.ryd" = "Връщане на YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Отстраняване на грешки";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Автоматично следва системната тема.";
+"settings.footer.themeAutoHours" = "Автоматично преминава към тъмна тема в посочените часове.";
+"settings.footer.playback" = "Зумиране за запълване автоматично мащабира видеото в пълен екран, без да остават черни ленти. Щипката в плейъра го променя за всяко видео.";
+"settings.footer.home" = "Как се показват рафтовете с препоръки: една непрекъсната мрежа или хоризонтални релси в стил ТВ.";
+"settings.footer.ryd" = "Броят на нехаресванията се осигурява от Return YouTube Dislike (returnyoutubedislike.com) — открит общностен проект.";
+"settings.footer.debug" = "Принудително избиране на конкретен източник на възпроизвеждане. Обикновено се използва Android VR с автоматичен fallback. Сървърът за решаване осигурява източника Mobile Web + pot (създаване на pot и n-решаване на iOS 12–13).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Тема";
+"settings.theme.dark" = "Тъмна";
+"settings.theme.light" = "Светла";
+"settings.theme.auto" = "Автоматична";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Тъмна тема от";
+"settings.row.darkUntil" = "Тъмна тема до";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Основно качество";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Автоматично";
+"settings.row.backgroundPlayback" = "Фоново възпроизвеждане";
+"settings.row.pip" = "Картина в картина";
+"settings.row.hideStatusBar" = "Скриване на лентата за състояние в пълен екран";
+"settings.row.zoomToFill" = "Зумиране за запълване в пълен екран";
+"settings.row.showShorts" = "Показване на YouTube Shorts в абонаментите";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Оформление на началото";
+"settings.homeLayout.grid" = "Обикновена мрежа";
+"settings.homeLayout.rails" = "Рафтови релси";
+
+/* Cache rows */
+"settings.row.feedCache" = "Кеш на емисията";
+"settings.row.feedCacheDuration" = "Продължителност на кеша на емисията";
+"settings.row.imageCache" = "Кеш на изображенията";
+"settings.row.imageCacheDuration" = "Продължителност на кеша на изображенията";
+"settings.row.clearCache" = "Изчистване на целия кеш";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Кешът е изчистен";
+"settings.cache.clearedMessage" = "Целият кеш е изчистен.";
+
+/* Integration rows */
+"settings.row.ryd" = "Връщане на YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "Настройки на SponsorBlock";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Източник на възпроизвеждане";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Споделяне на дневник за отстраняване на грешки";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL адрес на сървъра за решаване.";
+"settings.solver.reset" = "Нулиране до стойност по подразбиране";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (по подразбиране)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Няма дневници";
+"settings.log.noneMessage" = "Все още няма налични дневници за отстраняване на грешки.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Профил";
+"profile.signOut" = "Излизане";
+"profile.clearImageCache" = "Изчистване на кеша на изображенията";
+"profile.imageCacheCleared" = "Кешът на изображенията е изчистен.";
+
+/* ===== Search ===== */
+
+"search.title" = "Търсене";
+/* Search bar placeholder */
+"search.placeholder" = "Търсене в YouTube";
+/* Header above the recent-search list */
+"search.recent" = "Последни търсения";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Филтри";
+"search.filters.active" = "Филтри •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Филтри за търсене";
+"search.filters.reset" = "Нулиране на филтрите";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Сортиране: %1$@";
+"search.filters.date" = "Дата: %1$@";
+"search.filters.type" = "Тип: %1$@";
+"search.filters.duration" = "Продължителност: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Сортиране по";
+"search.filters.dateTitle" = "Дата на качване";
+"search.filters.typeTitle" = "Тип";
+"search.filters.durationTitle" = "Продължителност";
+
+/* Filter option values */
+"search.sort.relevance" = "Релевантност";
+"search.sort.rating" = "Оценка";
+"search.sort.uploadDate" = "Дата на качване";
+"search.sort.viewCount" = "Брой гледания";
+"search.date.any" = "По всяко време";
+"search.date.lastHour" = "Последният час";
+"search.date.today" = "Днес";
+"search.date.thisWeek" = "Тази седмица";
+"search.date.thisMonth" = "Този месец";
+"search.date.thisYear" = "Тази година";
+"search.type.any" = "Всеки тип";
+"search.type.video" = "Видео";
+"search.type.channel" = "Канал";
+"search.type.playlist" = "Плейлист";
+"search.duration.any" = "Всяка продължителност";
+"search.duration.short" = "Под 4 мин";
+"search.duration.medium" = "4–20 мин";
+"search.duration.long" = "Над 20 мин";
+
+/* ===== Home ===== */
+
+"home.title" = "Начало";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Всички";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "На живо";
+"home.category.news" = "Новини";
+"home.category.gaming" = "Игри";
+"home.category.sports" = "Спорт";
+"home.category.learning" = "Обучение";
+"home.category.fashion" = "Мода";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Неуспешно зареждане на емисията\nИзтеглете надолу за повторен опит";
+/* Signed-out empty state */
+"home.signIn" = "Влезте, за да видите вашите препоръки";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Видеа";
+"channel.tab.live" = "На живо";
+"channel.tab.playlists" = "Плейлисти";
+/* About sheet */
+"channel.about.title" = "Относно";
+"channel.about.close" = "Затваряне";
+"channel.about.subscribers" = "Абонати";
+"channel.about.videos" = "Видеа";
+"channel.about.description" = "Описание";
+"channel.about.contact" = "Контакт";
+
+/* ===== Library ===== */
+
+"library.history" = "История";
+"library.downloads" = "Изтегляния";
+"library.playlists" = "Плейлисти";
+"library.downloads.comingSoon" = "Изтеглянията идват скоро";
+"library.history.signIn" = "Влезте, за да видите вашата история на гледане";
+"library.history.empty" = "Няма намерена история на гледане";
+"library.history.loadFailed" = "Неуспешно зареждане на историята";
+"library.playlists.signIn" = "Влезте, за да видите вашите плейлисти";
+"library.playlists.loadFailed" = "Неуспешно зареждане на плейлистите";
+"library.playlist.empty" = "Няма видеа в този плейлист";
+"library.playlist.loadFailed" = "Неуспешно зареждане на плейлиста";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Абонаменти";
+"subscriptions.all" = "Всички абонаменти";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Всички";
+"subscriptions.signIn" = "Влезте, за да видите вашите абонаменти";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Акаунт";
+"account.signIn" = "Влизане";
+"account.signOut" = "Излизане";
+"account.notSignedIn" = "Не сте влезли";
+
+/* Generic error alert title */
+"common.error" = "Грешка";
+/* Channel screen failed to load */
+"channel.unavailable" = "Каналът не е наличен";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Език";
+"settings.footer.language" = "Езикът на приложението променя интерфейса. Езикът на съдържанието променя заглавията, търсенето и емисиите (YouTube превежда метаданните сървърно, като официалното приложение). Промените се прилагат напълно след рестартиране на приложението.";
+/* Rows */
+"settings.row.appLanguage" = "Език на приложението";
+"settings.row.contentLanguage" = "Език на съдържанието";
+"settings.row.region" = "Регион";
+/* Picker option following the device language/region */
+"settings.language.system" = "Системен";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Необходимо е рестартиране";
+"settings.language.restartMessage" = "Промените се прилагат напълно след рестартиране на приложението.";

@@ -12,6 +12,7 @@
 		<string>am</string>
 		<string>az</string>
 		<string>be</string>
+		<string>bg</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
