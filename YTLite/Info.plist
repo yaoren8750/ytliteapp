@@ -49,6 +49,7 @@
 		<string>ms</string>
 		<string>my</string>
 		<string>ne</string>
+		<string>nl</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
