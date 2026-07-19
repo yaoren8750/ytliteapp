@@ -57,6 +57,7 @@
 		<string>ro</string>
 		<string>si</string>
 		<string>sk</string>
+		<string>sl</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
