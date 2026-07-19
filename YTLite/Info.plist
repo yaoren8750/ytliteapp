@@ -25,6 +25,7 @@
 		<string>eu</string>
 		<string>fi</string>
 		<string>fr</string>
+		<string>ga</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>

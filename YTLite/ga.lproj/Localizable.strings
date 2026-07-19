@@ -1,0 +1,367 @@
+/*
+  YTLite — Irish (Gaeilge).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Socruithe seinnte";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Caighdeán";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Cosán fuaime";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Staitisticí do na nerds";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Fotheidíní";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "As";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (uathoibríoch)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Ag luchtú %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Ag réiteach sruth...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Theip ar an seinn.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Theip ar athrú caighdeáin.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Theip ar athrú cosáin fuaime.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Liostáil";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Liostáilte";
+/* Generic cancel action */
+"common.cancel" = "Cealaigh";
+/* Generic confirmation button */
+"common.ok" = "OK";
+/* Generic save action */
+"common.save" = "Sábháil";
+/* Generic done action */
+"common.done" = "Déanta";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Seinmliosta";
+/* Library tab title */
+"library.title" = "Leabharlann";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Ag ullmhú físe...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Ag athnuaileadh sruth...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Tuilleadh";
+/* Collapses the video description */
+"player.description.less" = "Níos lú";
+/* Action bar: share the video */
+"player.action.share" = "Roinn";
+/* Action bar: save to playlist */
+"player.action.save" = "Sábháil";
+/* Action bar: download */
+"player.action.download" = "Íoslódáil";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Tuairimí";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Tuairimí (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Ag luchtú tuairimí...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Níl tuairimí ar fáil";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Níl tuairimí ar fáil fós.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Luchtaigh tuairimí eile";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • Greamaithe";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ is fearr leat";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ freagraí";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Ar aghaidh";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Seinn anois";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Meascán";
+/* Header of the related-videos section */
+"player.related.title" = "Gaolmhar";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Earráid seinn: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Gnáth";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Léim thar %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Léim uathoibríoch";
+"sponsorblock.behavior.showButton" = "Taispeáin cnaipe";
+"sponsorblock.behavior.disabled" = "Díchumasaigh";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Ag úsáid SponsorBlock (sponsor.ajay.app) — tionscadal pobail oscailte.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Cainteanna earnsála";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Sponcóir";
+"sponsorblock.category.sponsor.description" = "Cur chun cinn íoctha, tagairtí íoctha agus fógraí díreacha. Ní le haghaidh cur chun cinn féin nó buíochas saor in aisce do chúise/suirbhéirí/láithreáin/táirgí.";
+"sponsorblock.category.selfpromo.name" = "Cur chun cinn saor in aisce/Féin";
+"sponsorblock.category.selfpromo.description" = "Cosúil le „sponcóir" ach le haghaidh cur chun cinn saor in aisce nó féin. Áirítear ranna faoi tháirgí, síntiúsanna nó eolas faoi chomhpháirtithe.";
+"sponsorblock.category.exclusive_access.name" = "Rochtain eisiach";
+"sponsorblock.category.exclusive_access.description" = "Le haghaidh lipéadú físeáin iomlán amháin. Úsáidtear nuair a thaispeánann físeán táirgí, seirbhís nó suíomh ar bhain siad rochtain saor in aisce nó fóirdheontaithe amach.";
+"sponsorblock.category.interaction.name" = "Meabhrúcháin idirghabhála (Liostáil)";
+"sponsorblock.category.interaction.description" = "Nuair a bhíonn meabhrúchán gearr faoi bhreithniú, liostáil nó leanúint i lár ábhair. Má tá sé fada nó faoi rud ar leith, ba cheart a bheith faoi chur chun cinn féin.";
+"sponsorblock.category.highlight.name" = "Páirt thábhachtach";
+"sponsorblock.category.highlight.description" = "An chuid den fhíseán a bhíonn ag lorg an chuid is mó daoine. Cosúil le tuairimí „Tosaíonn an físeán ag x".";
+"sponsorblock.category.intro.name" = "Idirbhreise/Beochan tosaigh";
+"sponsorblock.category.intro.description" = "Idirmhír gan ábhar fíor. Is féidir go mbeadh sos, fráma statach nó beochan atá ag athdhéanamh. Níor cheart é a úsáid le haghaidh trasnáití a bhfuil eolas iontu.";
+"sponsorblock.category.outro.name" = "Cártaí deiridh/Creidmheachtaí";
+"sponsorblock.category.outro.description" = "Creidmheachtaí nó nuair a thaispeántar cártaí deiridh YouTube. Ní le haghaidh conclúidí le heolas.";
+"sponsorblock.category.preview.name" = "Réamhamharc/Athbhreithniú";
+"sponsorblock.category.preview.description" = "Bailiúchán de chliplanna a thaispeánann cad atá ag teacht san fhíseán seo nó i bhfíseáin eile i sraith ina ndéantar gach eolas a athdhéanamh níos déanaí.";
+"sponsorblock.category.filler.name" = "Obanna/Greannmhaireacht";
+"sponsorblock.category.filler.description" = "Scéalta séantacha nó greannmhaireacht nach bhfuil gá leo chun tuiscint a fháil ar ábhar príomhúil an fhíseáin. Níor cheart go mbeadh ranna ann a sholáthraíann comhthéacs nó sonraí tuilleadh.";
+"sponsorblock.category.music_offtopic.name" = "Rannán neamhcheoil";
+"sponsorblock.category.music_offtopic.description" = "Le haghaidh físeáin cheoil amháin. An chuid neamhcheoil de físeán ceoil.";
+"sponsorblock.category.chapter.name" = "Caibidil";
+"sponsorblock.category.chapter.description" = "Ranna ainmnithe saincheaptha den fhíseán.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Socruithe";
+
+/* Section headers */
+"settings.section.theme" = "Téama";
+"settings.section.playback" = "Seinn";
+"settings.section.home" = "Baile";
+"settings.section.cache" = "Taisce";
+"settings.section.ryd" = "Filleadh YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Dífhabhtú";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Leanann an t-íomhá chóras go huathoibríoch.";
+"settings.footer.themeAutoHours" = "Athraíonn go dtéama dorcha go huathoibríoch idir na huaireanta thuas.";
+"settings.footer.playback" = "Zúmáil chun a líonadh scláthaíonn an físeán i lánscáileán gan barraí dubha. Scriosadh sa seinnteoir é a athraíonn de gach físeán.";
+"settings.footer.home" = "Conas a thaispeántar na seilfeanna moltaí: gríl neamhchéimnithe nó ráileanna cothrománacha i stíl teilifíse.";
+"settings.footer.ryd" = "Déantar líon na míbhá le Filleadh YouTube Dislike (returnyoutubedislike.com) — tionscadal pobail oscailte.";
+"settings.footer.debug" = "Cuir foinse seinnte ar shon. Úsáidtear Android VR de ghnáth le tarlú uathoibríoch. Cothaíonn an freastalaí réitigh an foinse Mobile Web + pot (minting pot agus réiteach n ar iOS 12–13).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Téama";
+"settings.theme.dark" = "Dorcha";
+"settings.theme.light" = "Solas";
+"settings.theme.auto" = "Uathoibríoch";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Téama dorcha ó";
+"settings.row.darkUntil" = "Téama dorcha go dtí";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Caighdeán réamhshocraithe";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Uathoibríoch";
+"settings.row.backgroundPlayback" = "Seinn sa chúlra";
+"settings.row.pip" = "Pictiúr-i-Pictiúr";
+"settings.row.hideStatusBar" = "Folaigh barra stádais i lánscáileán";
+"settings.row.zoomToFill" = "Zúmáil chun a líonadh i lánscáileán";
+"settings.row.showShorts" = "Taispeáin YouTube Shorts i Liostálacha";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Leagan baile";
+"settings.homeLayout.grid" = "Gríl ghlan";
+"settings.homeLayout.rails" = "Ráileanna seilfe";
+
+/* Cache rows */
+"settings.row.feedCache" = "Taisce an fheachtais";
+"settings.row.feedCacheDuration" = "Fad taisce an fheachtais";
+"settings.row.imageCache" = "Taisce na n-íomhánna";
+"settings.row.imageCacheDuration" = "Fad taisce na n-íomhánna";
+"settings.row.clearCache" = "Glan gach taisce";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Taisce glanta";
+"settings.cache.clearedMessage" = "Glanadh gach taisce.";
+
+/* Integration rows */
+"settings.row.ryd" = "Filleadh YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "Socruithe SponsorBlock";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Foinse seinnte";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Roinn log dífhabhtaithe";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL an fhearastail réitigh.";
+"settings.solver.reset" = "Athshocraigh go réamhshocrú";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (réamhshocrú)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Níl aon loganna ann";
+"settings.log.noneMessage" = "Níl aon loganna dífhabhtaithe ar fáil fós.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Próifíl";
+"profile.signOut" = "Sínigh amach";
+"profile.clearImageCache" = "Glan taisce na n-íomhánna";
+"profile.imageCacheCleared" = "Glanadh taisce na n-íomhánna.";
+
+/* ===== Search ===== */
+
+"search.title" = "Cuardaigh";
+/* Search bar placeholder */
+"search.placeholder" = "Cuardaigh YouTube";
+/* Header above the recent-search list */
+"search.recent" = "Cuardaigh le déanaí";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Scagairí";
+"search.filters.active" = "Scagairí •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Scagairí cuardaigh";
+"search.filters.reset" = "Athshocraigh scagairí";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Sórtáil: %1$@";
+"search.filters.date" = "Dáta: %1$@";
+"search.filters.type" = "Cineál: %1$@";
+"search.filters.duration" = "Fad: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Sórtáil de réir";
+"search.filters.dateTitle" = "Dáta uaslódála";
+"search.filters.typeTitle" = "Cineál";
+"search.filters.durationTitle" = "Fad";
+
+/* Filter option values */
+"search.sort.relevance" = "Ábharthacht";
+"search.sort.rating" = "Rátáil";
+"search.sort.uploadDate" = "Dáta uaslódála";
+"search.sort.viewCount" = "Líon na n-amharcanna";
+"search.date.any" = "Aon am";
+"search.date.lastHour" = "An uair dheireanach";
+"search.date.today" = "Inniu";
+"search.date.thisWeek" = "An tseachtain seo";
+"search.date.thisMonth" = "An mhí seo";
+"search.date.thisYear" = "An bhliain seo";
+"search.type.any" = "Aon chineál";
+"search.type.video" = "Físeán";
+"search.type.channel" = "Cainéal";
+"search.type.playlist" = "Seinmliosta";
+"search.duration.any" = "Aon fhad";
+"search.duration.short" = "Faoin 4 nóim";
+"search.duration.medium" = "4–20 nóim";
+"search.duration.long" = "Os cionn 20 nóim";
+
+/* ===== Home ===== */
+
+"home.title" = "Baile";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Uile";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Beo";
+"home.category.news" = "Nuacht";
+"home.category.gaming" = "Cluichí";
+"home.category.sports" = "Spórt";
+"home.category.learning" = "Oideachas";
+"home.category.fashion" = "Faisean";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Níorbh fhéidir an fotha a luchtú\nTarraing anuas le triail eile";
+/* Signed-out empty state */
+"home.signIn" = "Sínigh isteach chun do mholtaí a fheiceáil";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Físeáin";
+"channel.tab.live" = "Beo";
+"channel.tab.playlists" = "Seinmliostaí";
+/* About sheet */
+"channel.about.title" = "Faoi";
+"channel.about.close" = "Dún";
+"channel.about.subscribers" = "Liostálaithe";
+"channel.about.videos" = "Físeáin";
+"channel.about.description" = "Cur síos";
+"channel.about.contact" = "Teagmháil";
+
+/* ===== Library ===== */
+
+"library.history" = "Stair";
+"library.downloads" = "Íoslódálacha";
+"library.playlists" = "Seinmliostaí";
+"library.downloads.comingSoon" = "Ag teacht go luath";
+"library.history.signIn" = "Sínigh isteach chun do stair féachana a fheiceáil";
+"library.history.empty" = "Níor aimsíodh stair féachana";
+"library.history.loadFailed" = "Níorbh fhéidir an stair a luchtú";
+"library.playlists.signIn" = "Sínigh isteach chun do seinmliostaí a fheiceáil";
+"library.playlists.loadFailed" = "Níorbh fhéidir na seinmliostaí a luchtú";
+"library.playlist.empty" = "Níl aon fhíseáin sa seinmliosta seo";
+"library.playlist.loadFailed" = "Níorbh fhéidir an seinmliosta a luchtú";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Liostálacha";
+"subscriptions.all" = "Gach liostáil";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Uile";
+"subscriptions.signIn" = "Sínigh isteach chun do liostálacha a fheiceáil";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Cuntas";
+"account.signIn" = "Sínigh isteach";
+"account.signOut" = "Sínigh amach";
+"account.notSignedIn" = "Níl sínte isteach";
+
+/* Generic error alert title */
+"common.error" = "Earráid";
+/* Channel screen failed to load */
+"channel.unavailable" = "Cainéal gan fáil";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Teanga";
+"settings.footer.language" = "Athraíonn teanga na feidhmchlár an comhéadan. Athraíonn teanga an ábhair na teidill, cuardach agus fothaí (aistríonn YouTube comhthéacs freastalaithe, cosúil leis an bhfeidhmchlár oifigiúil). Cuirtear i bhfeidhm iad go hiomlán tar éis atosú feidhmchláir.";
+/* Rows */
+"settings.row.appLanguage" = "Teanga feidhmchláir";
+"settings.row.contentLanguage" = "Teanga ábhair";
+"settings.row.region" = "Ríochtain";
+/* Picker option following the device language/region */
+"settings.language.system" = "Córais";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Athsocriú ag teastáil";
+"settings.language.restartMessage" = "Cuirtear i bhfeidhm iad go hiomlán tar éis atosú feidhmchláir.";
