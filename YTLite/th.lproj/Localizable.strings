@@ -1,0 +1,367 @@
+/*
+  YTLite — Thai (ไทย).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "ตั้งค่าการเล่น";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "คุณภาพ";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "แทร็กเสียง";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "สถิติสำหรับนักพัฒนา";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "คำบรรยาย";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "ปิด";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (อัตโนมัติ)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "กำลังโหลด %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "กำลังโหลดสตรีม...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "เล่นไม่ได้";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "เปลี่ยนคุณภาพไม่สำเร็จ";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "เปลี่ยนแทร็กเสียงไม่สำเร็จ";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "สมัครรับ";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "สมัครรับแล้ว";
+/* Generic cancel action */
+"common.cancel" = "ยกเลิก";
+/* Generic confirmation button */
+"common.ok" = "ตกลง";
+/* Generic save action */
+"common.save" = "บันทึก";
+/* Generic done action */
+"common.done" = "เสร็จ";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "รายการเล่น";
+/* Library tab title */
+"library.title" = "คลัง";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "กำลังเตรียมวิดีโอ...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "กำลังรีเฟรชสตรีม...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "เพิ่มเติม";
+/* Collapses the video description */
+"player.description.less" = "น้อยลง";
+/* Action bar: share the video */
+"player.action.share" = "แชร์";
+/* Action bar: save to playlist */
+"player.action.save" = "บันทึก";
+/* Action bar: download */
+"player.action.download" = "ดาวน์โหลด";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "ความคิดเห็น";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "ความคิดเห็น (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "กำลังโหลดความคิดเห็น...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "ความคิดเห็นไม่พร้อมใช้งาน";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "ความคิดเห็นยังไม่พร้อมใช้งาน";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "โหลดความคิดเห็นเพิ่มเติม";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • ปักหมุด";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ ถูกใจ";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ คำตอบ";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "ถัดไป";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "เล่นเลย";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "มิกซ์";
+/* Header of the related-videos section */
+"player.related.title" = "ที่เกี่ยวข้อง";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "เกิดข้อผิดพลาดในการเล่น: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "ปกติ";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "ข้าม%1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "ข้ามอัตโนมัติ";
+"sponsorblock.behavior.showButton" = "แสดงปุ่ม";
+"sponsorblock.behavior.disabled" = "ปิด";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "ขับเคลื่อนโดย SponsorBlock (sponsor.ajay.app) — โครงการชุมชนเปิด";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "หมวดหมู่ช่วง";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "ผู้สนับสนุน";
+"sponsorblock.category.sponsor.description" = "การโฆษณาแบบเสียค่าใช้จ่าย การแนะนำแบบเสียค่าใช้จ่าย และโฆษณาโดยตรง ไม่รวมการโปรโมตตัวเองหรือการเชียร์ให้กับแบรนด์/ผู้สร้าง/เว็บไซต์/ผลิตภัณฑ์ที่ชอบโดยไม่เสียค่าใช้จ่าย";
+"sponsorblock.category.selfpromo.name" = "โปรโมตตนเอง/ไม่เสียค่าใช้จ่าย";
+"sponsorblock.category.selfpromo.description" = "คล้ายกับ \"ผู้สนับสนุน\" แต่เป็นการโปรโมตตนเองหรือไม่เสียค่าใช้จ่าย รวมถึงส่วนที่เกี่ยวกับสินค้า การบริจาค หรือข้อมูลเกี่ยวกับผู้ที่ร่วมงานด้วย";
+"sponsorblock.category.exclusive_access.name" = "สิทธิ์เข้าถึงพิเศษ";
+"sponsorblock.category.exclusive_access.description" = "ใช้สำหรับระบุวิดีโอทั้งเรื่อง ใช้เมื่อวิดีโอแสดงผลิตภัณฑ์ บริการ หรือสถานที่ที่ได้รับสิทธิ์เข้าถึงฟรีหรือลดราคา";
+"sponsorblock.category.interaction.name" = "การแจ้งเตือนการโต้ตอบ (สมัครรับ)";
+"sponsorblock.category.interaction.description" = "เมื่อมีการแจ้งเตือนสั้นๆ ให้กดถูกใจ สมัครรับ หรือติดตามในช่วงเนื้อหา หากยาวหรือเกี่ยวกับสิ่งใดสิ่งหนึ่งโดยเฉพาะ ควรจัดอยู่ในส่วนโปรโมตตนเอง";
+"sponsorblock.category.highlight.name" = "จุดเด่น";
+"sponsorblock.category.highlight.description" = "ส่วนของวิดีโอที่คนส่วนใหญ่ต้องการดู คล้ายกับความคิดเห็น \"วิดีโอเริ่มที่วินาที x\"";
+"sponsorblock.category.intro.name" = "ช่วงพัก/แอนิเมชันเปิด";
+"sponsorblock.category.intro.description" = "ช่วงที่ไม่มีเนื้อหาจริง อาจเป็นช่วงหยุด ภาพนิ่ง หรือแอนิเมชันซ้ำ ไม่ควรใช้สำหรับการเปลี่ยนฉากที่มีข้อมูล";
+"sponsorblock.category.outro.name" = "การ์ดท้าย/เครดิต";
+"sponsorblock.category.outro.description" = "เครดิตหรือช่วงที่ YouTube การ์ดท้ายปรากฏ ไม่รวมข้อสรุปที่มีข้อมูล";
+"sponsorblock.category.preview.name" = "ตัวอย่าง/ทบทวน";
+"sponsorblock.category.preview.description" = "คลิปที่รวมกันเพื่อแสดงสิ่งที่จะเกิดขึ้นในวิดีโอนี้หรือวิดีโออื่นในซีรีส์ที่ข้อมูลทั้งหมดจะถูกนำเสนอซ้ำในวิดีโอ";
+"sponsorblock.category.filler.name" = "เรื่องนอกเรื่อง/มุกตลก";
+"sponsorblock.category.filler.description" = "ฉากที่เข้าข้างหรือมุกตลกที่ไม่จำเป็นต้องเข้าใจเนื้อหาหลักของวิดีโอ ไม่ควรรวมช่วงที่ให้บริบทหรือรายละเอียดพื้นหลัง";
+"sponsorblock.category.music_offtopic.name" = "ส่วนที่ไม่ใช่เพลง";
+"sponsorblock.category.music_offtopic.description" = "ใช้สำหรับมิวสิกวิดีโอเท่านั้น ส่วนที่ไม่ใช่เพลงของมิวสิกวิดีโอ";
+"sponsorblock.category.chapter.name" = "บท";
+"sponsorblock.category.chapter.description" = "ส่วนที่ตั้งชื่อเองของวิดีโอ";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "ตั้งค่า";
+
+/* Section headers */
+"settings.section.theme" = "ธีม";
+"settings.section.playback" = "การเล่น";
+"settings.section.home" = "หน้าหลัก";
+"settings.section.cache" = "แคช";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "ดีบัก";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "ปรับตามรูปลักษณ์ของระบบโดยอัตโนมัติ";
+"settings.footer.themeAutoHours" = "สลับไปธีมมืดในช่วงเวลาข้างต้นโดยอัตโนมัติ";
+"settings.footer.playback" = "ซูมเต็มหน้าจอจะปรับขนาดวิดีโอในโหมดเต็มหน้าจอโดยอัตโนมัติเพื่อไม่ให้มีแถบสีดำ การบีบนิ้วในตัวเล่นจะแทนที่เป็นรายวิดีโอ";
+"settings.footer.home" = "วิธีแสดงชั้นวางคำแนะนำ: เป็นตารางต่อเนื่องหรือรางแนวนอนแบบทีวี";
+"settings.footer.ryd" = "จำนวนไม่ถูกใจขับเคลื่อนโดย Return YouTube Dislike (returnyoutubedislike.com) — โครงการชุมชนเปิด";
+"settings.footer.debug" = "บังคับใช้แหล่งเล่นเฉพาะ โดยปกติจะใช้ Android VR พร้อมการเปลี่ยนอัตโนมัติ เซิร์ฟเวอร์ solver ขับเคลื่อนแหล่ง Mobile Web + pot (การ mint pot และ n-solving บน iOS 12–13)";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "ธีม";
+"settings.theme.dark" = "มืด";
+"settings.theme.light" = "สว่าง";
+"settings.theme.auto" = "อัตโนมัติ";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "ธีมมืดตั้งแต่";
+"settings.row.darkUntil" = "ธีมมืดจนถึง";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "คุณภาพเริ่มต้น";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "อัตโนมัติ";
+"settings.row.backgroundPlayback" = "เล่นเบื้องหลัง";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "ซ่อนแถบสถานะในโหมดเต็มหน้าจอ";
+"settings.row.zoomToFill" = "ซูมเต็มหน้าจอในโหมดเต็มหน้าจอ";
+"settings.row.showShorts" = "แสดง YouTube Shorts ในรายการสมัครรับ";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "เลย์เอาต์หน้าหลัก";
+"settings.homeLayout.grid" = "ตารางเรียบง่าย";
+"settings.homeLayout.rails" = "รางชั้นวาง";
+
+/* Cache rows */
+"settings.row.feedCache" = "แคชฟีด";
+"settings.row.feedCacheDuration" = "ระยะเวลาแคชฟีด";
+"settings.row.imageCache" = "แคชรูปภาพ";
+"settings.row.imageCacheDuration" = "ระยะเวลาแคชรูปภาพ";
+"settings.row.clearCache" = "ล้างแคชทั้งหมด";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "ล้างแคชแล้ว";
+"settings.cache.clearedMessage" = "ล้างแคชทั้งหมดแล้ว";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "ตั้งค่า SponsorBlock";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "แหล่งเล่น";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "แชร์บันทึกดีบัก";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL ของเซิร์ฟเวอร์ solver";
+"settings.solver.reset" = "รีเซ็ตเป็นค่าเริ่มต้น";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (ค่าเริ่มต้น)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "ไม่มีบันทึก";
+"settings.log.noneMessage" = "ยังไม่มีบันทึกดีบัก";
+
+/* ===== Profile ===== */
+
+"profile.title" = "โปรไฟล์";
+"profile.signOut" = "ออกจากระบบ";
+"profile.clearImageCache" = "ล้างแคชรูปภาพ";
+"profile.imageCacheCleared" = "ล้างแคชรูปภาพแล้ว";
+
+/* ===== Search ===== */
+
+"search.title" = "ค้นหา";
+/* Search bar placeholder */
+"search.placeholder" = "ค้นหา YouTube";
+/* Header above the recent-search list */
+"search.recent" = "ค้นหาล่าสุด";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "ตัวกรอง";
+"search.filters.active" = "ตัวกรอง •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "ตัวกรองการค้นหา";
+"search.filters.reset" = "รีเซ็ตตัวกรอง";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "เรียงตาม: %1$@";
+"search.filters.date" = "วันที่: %1$@";
+"search.filters.type" = "ประเภท: %1$@";
+"search.filters.duration" = "ความยาว: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "เรียงตาม";
+"search.filters.dateTitle" = "วันที่อัปโหลด";
+"search.filters.typeTitle" = "ประเภท";
+"search.filters.durationTitle" = "ความยาว";
+
+/* Filter option values */
+"search.sort.relevance" = "ความเกี่ยวข้อง";
+"search.sort.rating" = "คะแนน";
+"search.sort.uploadDate" = "วันที่อัปโหลด";
+"search.sort.viewCount" = "จำนวน观看";
+"search.date.any" = "ทุกช่วงเวลา";
+"search.date.lastHour" = "ชั่วโมงที่แล้ว";
+"search.date.today" = "วันนี้";
+"search.date.thisWeek" = "สัปดาห์นี้";
+"search.date.thisMonth" = "เดือนนี้";
+"search.date.thisYear" = "ปีนี้";
+"search.type.any" = "ทุกประเภท";
+"search.type.video" = "วิดีโอ";
+"search.type.channel" = "ช่อง";
+"search.type.playlist" = "รายการเล่น";
+"search.duration.any" = "ทุกความยาว";
+"search.duration.short" = "ต่ำกว่า 4 นาที";
+"search.duration.medium" = "4–20 นาที";
+"search.duration.long" = "มากกว่า 20 นาที";
+
+/* ===== Home ===== */
+
+"home.title" = "หน้าหลัก";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "ทั้งหมด";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "ถ่ายทอดสด";
+"home.category.news" = "ข่าว";
+"home.category.gaming" = "เกม";
+"home.category.sports" = "กีฬา";
+"home.category.learning" = "การเรียนรู้";
+"home.category.fashion" = "แฟชัน";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "ไม่สามารถโหลดฟีดได้\nปัดลงเพื่อลองใหม่";
+/* Signed-out empty state */
+"home.signIn" = "เข้าสู่ระบบเพื่อดูคำแนะนำของคุณ";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "วิดีโอ";
+"channel.tab.live" = "ถ่ายทอดสด";
+"channel.tab.playlists" = "รายการเล่น";
+/* About sheet */
+"channel.about.title" = "เกี่ยวกับ";
+"channel.about.close" = "ปิด";
+"channel.about.subscribers" = "ผู้สมัครรับ";
+"channel.about.videos" = "วิดีโอ";
+"channel.about.description" = "คำอธิบาย";
+"channel.about.contact" = "ติดต่อ";
+
+/* ===== Library ===== */
+
+"library.history" = "ประวัติ";
+"library.downloads" = "การดาวน์โหลด";
+"library.playlists" = "รายการเล่น";
+"library.downloads.comingSoon" = "การดาวน์โหลดจะมาเร็วๆ นี้";
+"library.history.signIn" = "เข้าสู่ระบบเพื่อดูประวัติการรับชม";
+"library.history.empty" = "ไม่พบประวัติการรับชม";
+"library.history.loadFailed" = "ไม่สามารถโหลดประวัติได้";
+"library.playlists.signIn" = "เข้าสู่ระบบเพื่อดูรายการเล่นของคุณ";
+"library.playlists.loadFailed" = "ไม่สามารถโหลดรายการเล่นได้";
+"library.playlist.empty" = "ไม่มีวิดีโอในรายการเล่นนี้";
+"library.playlist.loadFailed" = "ไม่สามารถโหลดรายการเล่นได้";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "รายการสมัครรับ";
+"subscriptions.all" = "การสมัครรับทั้งหมด";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "ทั้งหมด";
+"subscriptions.signIn" = "เข้าสู่ระบบเพื่อดูการสมัครรับของคุณ";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "บัญชี";
+"account.signIn" = "เข้าสู่ระบบ";
+"account.signOut" = "ออกจากระบบ";
+"account.notSignedIn" = "ยังไม่ได้เข้าสู่ระบบ";
+
+/* Generic error alert title */
+"common.error" = "ข้อผิดพลาด";
+/* Channel screen failed to load */
+"channel.unavailable" = "ช่องไม่พร้อมใช้งาน";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "ภาษา";
+"settings.footer.language" = "การเปลี่ยนภาษาแอปจะเปลี่ยนอินเทอร์เฟซ ภาษาเนื้อหาจะเปลี่ยนชื่อ การค้นหา และฟีด (YouTube แปลข้อมูลเมตาฝั่งเซิร์ฟเวอร์ เหมือนแอปอย่างเป็นทางการ) การเปลี่ยนแปลงจะมีผลเต็มหลังจากรีสตาร์ทแอป";
+/* Rows */
+"settings.row.appLanguage" = "ภาษาแอป";
+"settings.row.contentLanguage" = "ภาษาเนื้อหา";
+"settings.row.region" = "ภูมิภาค";
+/* Picker option following the device language/region */
+"settings.language.system" = "ระบบ";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "ต้องรีสตาร์ท";
+"settings.language.restartMessage" = "การเปลี่ยนแปลงจะมีผลเต็มหลังจากรีสตาร์ทแอป";
