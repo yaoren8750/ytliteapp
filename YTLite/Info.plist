@@ -16,6 +16,7 @@
 		<string>bn</string>
 		<string>bs</string>
 		<string>ca</string>
+		<string>cs</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
