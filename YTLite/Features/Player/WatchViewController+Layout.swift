@@ -54,6 +54,12 @@ extension WatchViewController {
         nc.addObserver(self, selector: #selector(applyTheme), name: tn, object: nil)
         nc.addObserver(self, selector: #selector(appDidEnterBackground), name: bg, object: nil)
         nc.addObserver(self, selector: #selector(appWillEnterForeground), name: fg, object: nil)
+        nc.addObserver(
+            self,
+            selector: #selector(audioTracksDidChange(_:)),
+            name: .sourceAudioTracksDidChange,
+            object: nil
+        )
         // On iPhone the interface is portrait-locked; handle landscape fullscreen
         // by observing raw device orientation changes instead of relying on rotation.
         if UIDevice.current.userInterfaceIdiom != .pad {

@@ -48,14 +48,18 @@ extension MWebSource {
                 )
             }
         }
+        // A probe-picked track wins; otherwise the auto-dub preference gets
+        // to pick the starting track so the first build is already dubbed.
         let pendingId = pendingAudioTrackId
         pendingAudioTrackId = nil
-        let format = info.allDashAudioFormats.first {
-            $0.audioTrackId == pendingId
+        let startId = pendingId
+            ?? AutoDubPreference.autoDubTrack(in: tracks)?.id
+        let format = startId.flatMap { id in
+            info.allDashAudioFormats.first { $0.audioTrackId == id }
         } ?? info.dashAudioFormat
-        if let pendingId, format?.audioTrackId != pendingId {
+        if let startId, format?.audioTrackId != startId {
             AppLog.player(
-                "mwebSource: pending track \(pendingId) not in mweb formats"
+                "mwebSource: start track \(startId) not in mweb formats"
             )
         }
         let current = tracks.first { $0.id == format?.audioTrackId }

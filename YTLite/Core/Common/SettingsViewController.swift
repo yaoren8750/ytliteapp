@@ -8,6 +8,7 @@ final class SettingsViewController: UIViewController {
         case appLanguage, region
         case quality, backgroundPlayback, pipEnabled, hideStatusBar, showShorts
         case autoZoomToFill
+        case autoDubEnabled, autoDubLanguage, autoDubIgnoreAI
         case homeLayout
         case persistCache, feedCacheDays
         case imageCacheEnabled, imageCacheDays
@@ -47,6 +48,10 @@ final class SettingsViewController: UIViewController {
             cacheRows.append(.imageCacheDays)
         }
         cacheRows.append(.clearCache)
+        var autoDubRows: [Row] = [.autoDubEnabled]
+        if AutoDubPreference.isEnabled {
+            autoDubRows.append(contentsOf: [.autoDubLanguage, .autoDubIgnoreAI])
+        }
         var themeRows: [Row] = [.theme]
         if showsAutoHours {
             themeRows.append(contentsOf: [.autoDarkStart, .autoDarkEnd])
@@ -69,6 +74,11 @@ final class SettingsViewController: UIViewController {
                     .quality, .backgroundPlayback, .pipEnabled,
                     .hideStatusBar, .autoZoomToFill, .showShorts
                 ]
+            ),
+            Section(
+                header: "settings.section.autoDub".localized,
+                footer: "settings.footer.autoDub".localized,
+                rows: autoDubRows
             ),
             Section(
                 header: "settings.section.home".localized,
@@ -183,6 +193,14 @@ final class SettingsViewController: UIViewController {
     /// Full reload for extensions living in other files (tableView is
     /// private to this one).
     func reloadAllSettings() { tableView.reloadData() }
+
+    /// Row-based section reload — headers are localized display text, so
+    /// sections are found by their rows, never by title.
+    func reloadSection(containing row: Row) {
+        if let idx = sections.firstIndex(where: { $0.rows.contains(row) }) {
+            tableView.reloadSections(IndexSet(integer: idx), with: .automatic)
+        }
+    }
 }
 
 // MARK: - Data source / delegate
@@ -271,6 +289,12 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             }
         case .showShorts:
             return makeShowShortsCell()
+        case .autoDubEnabled:
+            return makeAutoDubToggleCell()
+        case .autoDubLanguage:
+            return makeAutoDubLanguageCell()
+        case .autoDubIgnoreAI:
+            return makeAutoDubIgnoreAICell()
         case .homeLayout:
             return makeDisclosureCell(
                 "settings.row.homeLayout".localized,
@@ -345,7 +369,8 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         let row = sections[indexPath.section].rows[indexPath.row]
         let handlers = [
             handleDebugSelection, handleThemeSelection,
-            handleLanguageSelection, handleGeneralSelection
+            handleLanguageSelection, handleAutoDubSelection,
+            handleGeneralSelection
         ]
         _ = handlers.first { $0(row) }
     }
@@ -398,7 +423,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 
-    private func makeToggleCell(
+    func makeToggleCell(
         _ title: String,
         isOn: Bool,
         onChange: @escaping (Bool) -> Void
@@ -457,12 +482,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     private func reloadSponsorBlockSection() {
-        // Row-based lookup — headers are localized display text.
-        if let idx = sections.firstIndex(
-            where: { $0.rows.contains(.sponsorBlockEnabled) }
-        ) {
-            tableView.reloadSections(IndexSet(integer: idx), with: .automatic)
-        }
+        reloadSection(containing: .sponsorBlockEnabled)
     }
     private func showSponsorBlockSettings() {
         let vc  = SponsorBlockSettingsViewController()

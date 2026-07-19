@@ -132,11 +132,16 @@ final class AutoVideoSource: VideoSource {
         }
         let source = fallback ?? makeFallback()
         fallback = source
-        source.probeAudioTracks(videoId: videoId) { tracks in
-            guard !tracks.isEmpty else {
+        source.probeAudioTracks(videoId: videoId) { [weak self] tracks in
+            guard let self, !tracks.isEmpty,
+                  cancellation?.isCancelled != true else {
                 return
             }
             AppLog.player("auto: probe found \(tracks.count) audio tracks")
+            // Completion arrives on main; lets the shell auto-pick a dub.
+            NotificationCenter.default.post(
+                name: .sourceAudioTracksDidChange, object: self
+            )
         }
     }
 

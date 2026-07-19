@@ -117,6 +117,7 @@
 
 "settings.section.theme" = "Тема";
 "settings.section.playback" = "Відтворення";
+"settings.section.autoDub" = "Дубляж";
 "settings.section.home" = "Головна";
 "settings.section.cache" = "Кеш";
 "settings.section.ryd" = "Return YouTube Dislike";
@@ -126,6 +127,7 @@
 "settings.footer.themeAutoSystem" = "«Авто» відповідає оформленню системи.";
 "settings.footer.themeAutoHours" = "«Авто» вмикає темну тему в години, вказані вище.";
 "settings.footer.playback" = "«Заповнення екрана» автоматично масштабує відео в повноекранному режимі, прибираючи чорні смуги. Жест щипка у плеєрі перевизначає це для конкретного відео.";
+"settings.footer.autoDub" = "Якщо мова оригіналу відео відрізняється від мови дубляжу, відповідна аудіодоріжка вмикається автоматично.";
 "settings.footer.home" = "Як показувати полиці рекомендацій: суцільна сітка або горизонтальні стрічки у стилі ТБ.";
 "settings.footer.ryd" = "Лічильники дизлайків працюють через Return YouTube Dislike (returnyoutubedislike.com) — відкритий проєкт спільноти.";
 "settings.footer.debug" = "Примусовий вибір джерела відтворення. Зазвичай використовується Android VR з автоматичним резервним джерелом. Solver server обслуговує джерело Mobile Web + pot (випуск pot і розв'язання n на iOS 12–13).";
@@ -144,6 +146,11 @@
 "settings.row.hideStatusBar" = "Приховувати рядок стану в повноекранному режимі";
 "settings.row.zoomToFill" = "Заповнювати екран у повноекранному режимі";
 "settings.row.showShorts" = "Показувати Shorts у підписках";
+
+/* Auto-dub rows: master toggle, dub-language picker, AI-dub exclusion */
+"settings.row.autoDub" = "Запускати відео в дубляжі";
+"settings.row.autoDubLanguage" = "Мова дубляжу";
+"settings.row.autoDubIgnoreAI" = "Ігнорувати ШІ-дубляж";
 
 "settings.row.homeLayout" = "Вигляд головної";
 "settings.homeLayout.grid" = "Проста сітка";

@@ -61,6 +61,13 @@ enum UserDefaultsKeys {
         static let autoZoomToFill = "player_autoZoomToFill"
     }
 
+    enum AutoDub {
+        static let enabled = "autoDub_enabled"
+        static let ignoreAIDubs = "autoDub_ignoreAIDubs"
+        /// Preferred dub language code; absent = follow the app language.
+        static let language = "autoDub_language"
+    }
+
     enum Innertube {
         static let visitorData = "innertube_visitorData"
         static let visitorDataDate = "innertube_visitorDataDate"
