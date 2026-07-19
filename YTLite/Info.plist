@@ -40,6 +40,7 @@
 		<string>ko</string>
 		<string>ky</string>
 		<string>lo</string>
+		<string>lt</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
