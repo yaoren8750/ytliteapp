@@ -54,6 +54,7 @@
 		<string>pa</string>
 		<string>pl</string>
 		<string>pt</string>
+		<string>ro</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>

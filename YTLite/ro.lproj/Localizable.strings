@@ -1,0 +1,367 @@
+/*
+  YTLite — Romanian (Română).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Setări de redare";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Calitate";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Pista audio";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Statistici pentru pasionați";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Subtitrări";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Oprit";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Se încarcă %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Se rezolvă fluxul...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Redarea a eșuat.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Schimbarea calității a eșuat.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Schimbarea pistei audio a eșuat.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Abonare";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Abonat";
+/* Generic cancel action */
+"common.cancel" = "Anulare";
+/* Generic confirmation button */
+"common.ok" = "OK";
+/* Generic save action */
+"common.save" = "Salvare";
+/* Generic done action */
+"common.done" = "Gata";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Listă de redare";
+/* Library tab title */
+"library.title" = "Bibliotecă";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Se pregătește videoclipul...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Se reîmprospătează fluxul...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Mai mult";
+/* Collapses the video description */
+"player.description.less" = "Mai puțin";
+/* Action bar: share the video */
+"player.action.share" = "Distribuire";
+/* Action bar: save to playlist */
+"player.action.save" = "Salvare";
+/* Action bar: download */
+"player.action.download" = "Descărcare";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Comentarii";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Comentarii (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Se încarcă comentariile...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Comentariile nu sunt disponibile";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Comentariile nu sunt încă disponibile.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Încarcă mai multe comentarii";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • Fixat";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ aprecieri";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ răspunsuri";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Următorul";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Redă acum";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Mix";
+/* Header of the related-videos section */
+"player.related.title" = "Similar";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Eroare de redare: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Normal";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Omite %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Omitere automată";
+"sponsorblock.behavior.showButton" = "Afișare buton";
+"sponsorblock.behavior.disabled" = "Dezactivare";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Cu sprijinul SponsorBlock (sponsor.ajay.app) — un proiect comunitar deschis.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Categorii de segmente";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Sponsor";
+"sponsorblock.category.sponsor.description" = "Promovare plătită, recomandări plătite și publicitate directă. Nu pentru autopromovare sau mențiuni gratuite pentru cauze/creatori/site-uri/produse preferate.";
+"sponsorblock.category.selfpromo.name" = "Promovare neplătită/De sine";
+"sponsorblock.category.selfpromo.description" = "Similar cu „sponsor”, dar pentru promovare neplătită sau de sine. Include secțiuni despre produse, donații sau informații despre colaborări.";
+"sponsorblock.category.exclusive_access.name" = "Acces exclusiv";
+"sponsorblock.category.exclusive_access.description" = "Doar pentru etichetarea întregilor videoclipuri. Folosit când un videoclip prezintă un produs, serviciu sau loc pentru care au primit acces gratuit sau subvenționat.";
+"sponsorblock.category.interaction.name" = "Memento de interacțiune (Abonare)";
+"sponsorblock.category.interaction.description" = "Când există un scurt memento de apreciere, abonare sau urmărire în mijlocul conținutului. Dacă este lung sau despre ceva specific, ar trebui să fie în secțiunea de autopromovare.";
+"sponsorblock.category.highlight.name" = "Parte importantă";
+"sponsorblock.category.highlight.description" = "Partea videoclipului pe care majoritatea o caută. Similar cu comentariile „Videoclipul începe la x”.";
+"sponsorblock.category.intro.name" = "Pauză/Animație introductivă";
+"sponsorblock.category.intro.description" = "Un interval fără conținut real. Poate fi o pauză, un cadru static sau o animație repetitivă. Nu trebuie folosit pentru tranziții care conțin informații.";
+"sponsorblock.category.outro.name" = "Carduri finale/Credite";
+"sponsorblock.category.outro.description" = "Creditele sau când apar cardurile finale YouTube. Nu pentru concluzii cu informații.";
+"sponsorblock.category.preview.name" = "Previzualizare/Rezumat";
+"sponsorblock.category.preview.description" = "Colecție de clipuri care arată ce urmează în acest videoclip sau alte videoclipuri dintr-o serie unde toate informațiile se repetă mai târziu.";
+"sponsorblock.category.filler.name" = "Digresii/F glume";
+"sponsorblock.category.filler.description" = "Scene colaterale sau glume care nu sunt necesare pentru a înțelege conținutul principal al videoclipului. Nu trebuie să includă segmente care oferă context sau detalii suplimentare.";
+"sponsorblock.category.music_offtopic.name" = "Secțiune non-muzicală";
+"sponsorblock.category.music_offtopic.description" = "Doar pentru videoclipuri muzicale. Partea non-muzicală a unui videoclip muzical.";
+"sponsorblock.category.chapter.name" = "Capitol";
+"sponsorblock.category.chapter.description" = "Secțiuni cu nume personalizate ale videoclipului.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Setări";
+
+/* Section headers */
+"settings.section.theme" = "Temă";
+"settings.section.playback" = "Redare";
+"settings.section.home" = "Acasă";
+"settings.section.cache" = "Cache";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Depanare";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Urmează automat aspectul sistemului.";
+"settings.footer.themeAutoHours" = "Comută automat la tema întunecată între orele de mai sus.";
+"settings.footer.playback" = "Umplere prin zoom scalează automat videoclipul în ecran complet, fără bare negre. Ciupirea în player o suprascrie pentru fiecare videoclip.";
+"settings.footer.home" = "Cum se afișează rafturile de recomandări: o grilă continuă sau rânduri orizontale stil TV.";
+"settings.footer.ryd" = "Numărul de displace-uri este susținut de Return YouTube Dislike (returnyoutubedislike.com) — un proiect comunitar deschis.";
+"settings.footer.debug" = "Forțează o sursă specifică de redare. În mod normal se folosește Android VR cu fallback automat. Serverul de soluționare alimentează sursa Mobile Web + pot (creare de pot și rezolvare n pe iOS 12–13).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Temă";
+"settings.theme.dark" = "Întunecată";
+"settings.theme.light" = "Luminată";
+"settings.theme.auto" = "Automată";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Temă întunecată de la";
+"settings.row.darkUntil" = "Temă întunecată până la";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Calitate implicită";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Automată";
+"settings.row.backgroundPlayback" = "Redare în fundal";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "Ascundere bară de stare în ecran complet";
+"settings.row.zoomToFill" = "Zoom pentru umplere în ecran complet";
+"settings.row.showShorts" = "Afișare YouTube Shorts în Abonamente";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Aspect acasă";
+"settings.homeLayout.grid" = "Grilă simplă";
+"settings.homeLayout.rails" = "Rafturi orizontale";
+
+/* Cache rows */
+"settings.row.feedCache" = "Cache flux";
+"settings.row.feedCacheDuration" = "Durată cache flux";
+"settings.row.imageCache" = "Cache imagini";
+"settings.row.imageCacheDuration" = "Durată cache imagini";
+"settings.row.clearCache" = "Golire tot cache-ul";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Cache golit";
+"settings.cache.clearedMessage" = "Tot cache-ul a fost golit.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "Setări SponsorBlock";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Sursă de redare";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Partajare jurnal de depanare";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL-ul serverului de soluționare.";
+"settings.solver.reset" = "Resetare la valoarea implicită";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (implicit)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Niciun jurnal";
+"settings.log.noneMessage" = "Nu există jurnale de depanare disponibile.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Profil";
+"profile.signOut" = "Deconectare";
+"profile.clearImageCache" = "Golire cache imagini";
+"profile.imageCacheCleared" = "Cache imagini golit.";
+
+/* ===== Search ===== */
+
+"search.title" = "Căutare";
+/* Search bar placeholder */
+"search.placeholder" = "Căutare YouTube";
+/* Header above the recent-search list */
+"search.recent" = "Căutări recente";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Filtre";
+"search.filters.active" = "Filtre •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Filtre de căutare";
+"search.filters.reset" = "Resetare filtre";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Sortare: %1$@";
+"search.filters.date" = "Dată: %1$@";
+"search.filters.type" = "Tip: %1$@";
+"search.filters.duration" = "Durată: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Sortare după";
+"search.filters.dateTitle" = "Data încărcării";
+"search.filters.typeTitle" = "Tip";
+"search.filters.durationTitle" = "Durată";
+
+/* Filter option values */
+"search.sort.relevance" = "Relevanță";
+"search.sort.rating" = "Evaluare";
+"search.sort.uploadDate" = "Data încărcării";
+"search.sort.viewCount" = "Număr de vizionări";
+"search.date.any" = "Oricând";
+"search.date.lastHour" = "Ultima oră";
+"search.date.today" = "Astăzi";
+"search.date.thisWeek" = "Săptămâna aceasta";
+"search.date.thisMonth" = "Luna aceasta";
+"search.date.thisYear" = "Anul acesta";
+"search.type.any" = "Orice tip";
+"search.type.video" = "Videoclip";
+"search.type.channel" = "Canal";
+"search.type.playlist" = "Listă de redare";
+"search.duration.any" = "Orice durată";
+"search.duration.short" = "Sub 4 min";
+"search.duration.medium" = "4–20 min";
+"search.duration.long" = "Peste 20 min";
+
+/* ===== Home ===== */
+
+"home.title" = "Acasă";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Toate";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Live";
+"home.category.news" = "Știri";
+"home.category.gaming" = "Jocuri";
+"home.category.sports" = "Sport";
+"home.category.learning" = "Educație";
+"home.category.fashion" = "Modă";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Nu s-a putut încărca fluxul\nTrageți în jos pentru a reîncerca";
+/* Signed-out empty state */
+"home.signIn" = "Conectați-vă pentru a vedea recomandările";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Videoclipuri";
+"channel.tab.live" = "Live";
+"channel.tab.playlists" = "Liste de redare";
+/* About sheet */
+"channel.about.title" = "Despre";
+"channel.about.close" = "Închidere";
+"channel.about.subscribers" = "Abonați";
+"channel.about.videos" = "Videoclipuri";
+"channel.about.description" = "Descriere";
+"channel.about.contact" = "Contact";
+
+/* ===== Library ===== */
+
+"library.history" = "Istoric";
+"library.downloads" = "Descărcări";
+"library.playlists" = "Liste de redare";
+"library.downloads.comingSoon" = "Descărcările vor fi disponibile în curând";
+"library.history.signIn" = "Conectați-vă pentru a vedea istoricul de vizionare";
+"library.history.empty" = "Nu a fost găsit istoric de vizionare";
+"library.history.loadFailed" = "Nu s-a putut încărca istoricul";
+"library.playlists.signIn" = "Conectați-vă pentru a vedea listele de redare";
+"library.playlists.loadFailed" = "Nu s-au putut încărca listele de redare";
+"library.playlist.empty" = "Niciun videoclip în această listă de redare";
+"library.playlist.loadFailed" = "Nu s-a putut încărca lista de redare";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Abonamente";
+"subscriptions.all" = "Toate abonamentele";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Toate";
+"subscriptions.signIn" = "Conectați-vă pentru a vedea abonamentele";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Cont";
+"account.signIn" = "Conectare";
+"account.signOut" = "Deconectare";
+"account.notSignedIn" = "Neconectat";
+
+/* Generic error alert title */
+"common.error" = "Eroare";
+/* Channel screen failed to load */
+"channel.unavailable" = "Canal indisponibil";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Limbă";
+"settings.footer.language" = "Limba aplicației modifică interfața. Limba conținutului modifică titlurile, căutările și fluxurile (YouTube traduce metadatele server-side, ca și aplicația oficială). Modificările se aplică complet după repornirea aplicației.";
+/* Rows */
+"settings.row.appLanguage" = "Limba aplicației";
+"settings.row.contentLanguage" = "Limba conținutului";
+"settings.row.region" = "Regiune";
+/* Picker option following the device language/region */
+"settings.language.system" = "Sistem";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Repornire necesară";
+"settings.language.restartMessage" = "Modificările se aplică complet după repornirea aplicației.";
