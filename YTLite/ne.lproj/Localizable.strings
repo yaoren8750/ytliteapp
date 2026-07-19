@@ -1,0 +1,367 @@
+/*
+  YTLite — Nepali (ne).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "प्लेब्याक सेटिङहरू";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "गुणस्तर";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "अडियो ट्र्याक / डब ट्र्याक";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Stats for nerds";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "सबटाइटल";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "बन्द";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "लोड हुँदैछ %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "स्ट्रिम समाधान गरिँदैछ...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "प्लेब्याक असफल भयो.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "गुणस्तर परिवर्तन असफल भयो.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "अडियो ट्र्याक परिवर्तन असफल भयो.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "सदस्यता लिनुहोस्";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "सदस्यता लिइयो";
+/* Generic cancel action */
+"common.cancel" = "रद्द गर्नुहोस्";
+/* Generic confirmation button */
+"common.ok" = "ठीक छ";
+/* Generic save action */
+"common.save" = "सुरक्षित गर्नुहोस्";
+/* Generic done action */
+"common.done" = "सम्पन्न";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "प्लेलिस्ट";
+/* Library tab title */
+"library.title" = "पुस्तकालय";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "भिडियो तयार गरिँदैछ...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "स्ट्रिम रिफ्रेस गरिँदैछ...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "थप";
+/* Collapses the video description */
+"player.description.less" = "कम";
+/* Action bar: share the video */
+"player.action.share" = "साझा गर्नुहोस्";
+/* Action bar: save to playlist */
+"player.action.save" = "सुरक्षित गर्नुहोस्";
+/* Action bar: download */
+"player.action.download" = "डाउनलोड गर्नुहोस्";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "प्रतिक्रियाहरू";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "प्रतिक्रियाहरू (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "प्रतिक्रियाहरू लोड हुँदैछ...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "प्रतिक्रियाहरू उपलब्ध छैन";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "प्रतिक्रियाहरू अझै उपलब्ध छैन.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "थप प्रतिक्रियाहरू लोड गर्नुहोस्";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • पिन गरिएको";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "मनपर्ने %1$@";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "जवाफहरू %1$@";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "अर्को";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "अहिले प्ले गर्नुहोस्";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "मिश्रण";
+/* Header of the related-videos section */
+"player.related.title" = "सम्बन्धित";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "प्लेब्याक त्रुटि: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "सामान्य";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "छोड्नुहोस् %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "स्वचालित छोड्ने";
+"sponsorblock.behavior.showButton" = "बटन देखाउनुहोस्";
+"sponsorblock.behavior.disabled" = "अक्षम गर्नुहोस्";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Powered by SponsorBlock (sponsor.ajay.app) — an open community project.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "खण्ड वर्गहरू";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "प्रायोजक";
+"sponsorblock.category.sponsor.description" = "भुक्तानी प्रवर्द्धन, भुक्तानी रेफरल र प्रत्यक्ष विज्ञापनहरू। स्व-प्रवर्द्धन वा निःशुल्क श्रेयका लागि होइन।";
+"sponsorblock.category.selfpromo.name" = "भुक्तानी नभएको / स्व-प्रवर्द्धन";
+"sponsorblock.category.selfpromo.description" = "\"प्रायोजक\" जस्तै तर भुक्तानी नभएको वा स्व-प्रवर्द्धन। वस्तुहरू, दान, वा सहकार्यको बारेमा जानकारी समावेश छ।";
+"sponsorblock.category.exclusive_access.name" = "विशेष पहुँच";
+"sponsorblock.category.exclusive_access.description" = "पूरै भिडियो लेबल गर्न मात्र। निःशुल्क वा सब्सिडी प्राप्त पहुँच भएका उत्पादन, सेवा वा स्थान प्रदर्शन गर्ने भिडियोहरूमा प्रयोग गरिन्छ।";
+"sponsorblock.category.interaction.name" = "अन्तरक्रिया स्मरण (सदस्यता लिनुहोस्)";
+"sponsorblock.category.interaction.description" = "सामग्री बीचमा लाइक, सदस्यता वा फलो गर्ने छोटो स्मरण हुँदा। लामो वा विशिष्ट कुराको बारेमा भएमा, यो स्व-प्रवर्द्धन अन्तर्गत हुनुपर्छ।";
+"sponsorblock.category.highlight.name" = "मुख्य भाग";
+"sponsorblock.category.highlight.description" = "धेरै मानिसहरू खोजिरहेको भिडियोको भाग। \"भिडियो x बाट सुरु हुन्छ\" प्रतिक्रियाहरू जस्तै।";
+"sponsorblock.category.intro.name" = "बिरामी / परिचय एनिमेसन";
+"sponsorblock.category.intro.description" = "वास्तविक सामग्री नभएको अन्तराल। विश्राम, स्थिर फ्रेम, वा दोहोरिने एनिमेसन हुन सक्छ। जानकारी समावेश भएका संक्रमणहरूका लागि यो प्रयोग गर्नु हुँदैन।";
+"sponsorblock.category.outro.name" = "अन्त्य कार्ड / श्रेय";
+"sponsorblock.category.outro.description" = "YouTube अन्त्य कार्ड देखिने वा श्रेयहरू। जानकारी भएका निष्कर्षहरूका लागि होइन।";
+"sponsorblock.category.preview.name" = "पूर्वावलोकन / सारांश";
+"sponsorblock.category.preview.description" = "यस भिडियो वा शृंखलाका अन्य भिडियोहरूमा के आउँछ भनेर देखाउने क्लिपहरूको संग्रह। सबै जानकारी पछि भिडियोमा दोहोरिन्छ।";
+"sponsorblock.category.filler.name" = "टाइमपास / ठट्टा";
+"sponsorblock.category.filler.description" = "भिडियोको मुख्य सामग्री बुझ्न अनिवार्य नभएका टाइमपास दृश्यहरू वा ठट्टाहरू। सन्दर्भ वा पृष्ठभूमि विवरण दिने खण्डहरू यसमा समावेश गर्नु हुँदैन।";
+"sponsorblock.category.music_offtopic.name" = "गीत विषयक नभएको खण्ड";
+"sponsorblock.category.music_offtopic.description" = "गीत भिडियोहरूमा मात्र। गीत भिडियोको गीत नभएको भाग।";
+"sponsorblock.category.chapter.name" = "अध्याय";
+"sponsorblock.category.chapter.description" = "भिडियोका अनुकूलित नाम भएका खण्डहरू।";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "सेटिङहरू";
+
+/* Section headers */
+"settings.section.theme" = "थिम";
+"settings.section.playback" = "प्लेब्याक";
+"settings.section.home" = "मुखपृष्ठ";
+"settings.section.cache" = "क्याश";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "डिबग";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "स्वचालित रूपमा प्रणालीको रूप पालना गर्छ।";
+"settings.footer.themeAutoHours" = "माथिका समयहरू बीचमा अँध्यारो थिममा स्वचालित रूपमा परिवर्तन हुन्छ।";
+"settings.footer.playback" = "फुलस्क्रिनमा Zoom to Fill ले स्वचालित रूपमा भिडियो स्केल गर्छ, त्यसैले कालो पट्टीहरू बाँकी हुँदैन। प्लेयरमा पिञ्चले प्रत्येक भिडियोमा यसलाई ओभरराइड गर्छ।";
+"settings.footer.home" = "सिफारिस शेल्फहरू कसरी देखाइन्छ: एक अखण्ड ग्रिड वा TV-शैलीका तिरछा रेलहरू।";
+"settings.footer.ryd" = "Dislike गणनाहरू Return YouTube Dislike (returnyoutubedislike.com) ले सञ्चालन गर्छ — एउटा खुला सामुदायिक परियोजना।";
+"settings.footer.debug" = "निश्चित प्लेब्याक स्रोत बाध्य गर्नुहोस्। सामान्यतया Android VR स्वचालित फलब्याकसहित प्रयोग गरिन्छ। समाधान सर्भरले Mobile Web + pot स्रोतलाई सञ्चालन गर्छ (pot minting, र iOS 12–13 मा n-solving)।";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "थिम";
+"settings.theme.dark" = "अँध्यारो";
+"settings.theme.light" = "उज्यालो";
+"settings.theme.auto" = "स्वचालित";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "अँध्यारो थिम सुरु";
+"settings.row.darkUntil" = "अँध्यारो थिम समाप्त";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "पूर्वनिर्धारित गुणस्तर";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Auto";
+"settings.row.backgroundPlayback" = "पृष्ठभूमि प्लेब्याक";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "फुलस्क्रिनमा स्थिति पट्टी लुकाउनुहोस्";
+"settings.row.zoomToFill" = "फुलस्क्रिनमा Zoom to Fill";
+"settings.row.showShorts" = "सदस्यतामा YouTube Shorts देखाउनुहोस्";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "मुखपृष्ठ लेआउट";
+"settings.homeLayout.grid" = "सादा ग्रिड";
+"settings.homeLayout.rails" = "शेल्फ रेलहरू";
+
+/* Cache rows */
+"settings.row.feedCache" = "फिड क्याश";
+"settings.row.feedCacheDuration" = "फिड क्याश अवधि";
+"settings.row.imageCache" = "चित्र क्याश";
+"settings.row.imageCacheDuration" = "चित्र क्याश अवधि";
+"settings.row.clearCache" = "सबै क्याश मेट्नुहोस्";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "क्याश मेटियो";
+"settings.cache.clearedMessage" = "सबै क्याश मेटिएको छ।";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock सेटिङहरू";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "प्लेब्याक स्रोत";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "डिबग लग साझा गर्नुहोस्";
+/* Solver-server URL alert */
+"settings.solver.message" = "समाधान सर्भरको URL।";
+"settings.solver.reset" = "पूर्वनिर्धारितमा रिसेट गर्नुहोस्";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (default)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "लगहरू छैनन्";
+"settings.log.noneMessage" = "अझै डिबग लगहरू उपलब्ध छैनन्।";
+
+/* ===== Profile ===== */
+
+"profile.title" = "प्रोफाइल";
+"profile.signOut" = "साइन आउट";
+"profile.clearImageCache" = "चित्र क्याश मेट्नुहोस्";
+"profile.imageCacheCleared" = "चित्र क्याश मेटिएको छ।";
+
+/* ===== Search ===== */
+
+"search.title" = "खोज्नुहोस्";
+/* Search bar placeholder */
+"search.placeholder" = "YouTube खोज्नुहोस्";
+/* Header above the recent-search list */
+"search.recent" = "हालका खोजहरू";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "फिल्टरहरू";
+"search.filters.active" = "फिल्टरहरू •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "खोज फिल्टरहरू";
+"search.filters.reset" = "फिल्टरहरू रिसेट गर्नुहोस्";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "क्रम: %1$@";
+"search.filters.date" = "मिति: %1$@";
+"search.filters.type" = "प्रकार: %1$@";
+"search.filters.duration" = "अवधि: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "क्रम गर्नुहोस्";
+"search.filters.dateTitle" = "अपलोड मिति";
+"search.filters.typeTitle" = "प्रकार";
+"search.filters.durationTitle" = "अवधि";
+
+/* Filter option values */
+"search.sort.relevance" = "प्रासंगिकता";
+"search.sort.rating" = "रेटिङ";
+"search.sort.uploadDate" = "अपलोड मिति";
+"search.sort.viewCount" = "हेराइ संख्या";
+"search.date.any" = "कुनै पनि समय";
+"search.date.lastHour" = "अघिल्लो घण्टा";
+"search.date.today" = "आज";
+"search.date.thisWeek" = "यो हप्ता";
+"search.date.thisMonth" = "यो महिना";
+"search.date.thisYear" = "यो वर्ष";
+"search.type.any" = "कुनै पनि प्रकार";
+"search.type.video" = "भिडियो";
+"search.type.channel" = "च्यानल";
+"search.type.playlist" = "प्लेलिस्ट";
+"search.duration.any" = "कुनै पनि अवधि";
+"search.duration.short" = "४ मिनेटभन्दा कम";
+"search.duration.medium" = "४–२० मिनेट";
+"search.duration.long" = "२० मिनेटभन्दा बढी";
+
+/* ===== Home ===== */
+
+"home.title" = "मुखपृष्ठ";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "सबै";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "प्रत्यक्ष";
+"home.category.news" = "समाचार";
+"home.category.gaming" = "गेमिङ";
+"home.category.sports" = "खेलकुद";
+"home.category.learning" = "शिक्षा";
+"home.category.fashion" = "फ्यासन";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "फिड लोड गर्न सकिएन\nपुनः प्रयास गर्न माथिल्लिरुँदै तान्नुहोस्";
+/* Signed-out empty state */
+"home.signIn" = "तपाईंका सिफारिसहरू हेर्न साइन इन गर्नुहोस्";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "भिडियोहरू";
+"channel.tab.live" = "प्रत्यक्ष";
+"channel.tab.playlists" = "प्लेलिस्टहरू";
+/* About sheet */
+"channel.about.title" = "बारेमा";
+"channel.about.close" = "बन्द गर्नुहोस्";
+"channel.about.subscribers" = "सदस्यहरू";
+"channel.about.videos" = "भिडियोहरू";
+"channel.about.description" = "विवरण";
+"channel.about.contact" = "सम्पर्क";
+
+/* ===== Library ===== */
+
+"library.history" = "इतिहास";
+"library.downloads" = "डाउनलोडहरू";
+"library.playlists" = "प्लेलिस्टहरू";
+"library.downloads.comingSoon" = "डाउनलोडहरू चाँडै आउँदैछ";
+"library.history.signIn" = "तपाईंको हेर्ने इतिहास हेर्न साइन इन गर्नुहोस्";
+"library.history.empty" = "हेर्ने इतिहास भेटिएन";
+"library.history.loadFailed" = "इतिहास लोड गर्न सकिएन";
+"library.playlists.signIn" = "तपाईंका प्लेलिस्टहरू हेर्न साइन इन गर्नुहोस्";
+"library.playlists.loadFailed" = "प्लेलिस्टहरू लोड गर्न सकिएन";
+"library.playlist.empty" = "यस प्लेलिस्टमा भिडियोहरू छैनन्";
+"library.playlist.loadFailed" = "प्लेलिस्ट लोड गर्न सकिएन";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "सदस्यताहरू";
+"subscriptions.all" = "सबै सदस्यताहरू";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "सबै";
+"subscriptions.signIn" = "तपाईंका सदस्यताहरू हेर्न साइन इन गर्नुहोस्";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "खाता";
+"account.signIn" = "साइन इन";
+"account.signOut" = "साइन आउट";
+"account.notSignedIn" = "साइन इन भएको छैन";
+
+/* Generic error alert title */
+"common.error" = "त्रुटि";
+/* Channel screen failed to load */
+"channel.unavailable" = "च्यानल उपलब्ध छैन";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "भाषा";
+"settings.footer.language" = "एप भाषाले इन्टरफेस परिवर्तन गर्छ। सामग्री भाषाले शीर्षक, खोज र फिडहरू परिवर्तन गर्छ (YouTube ले आधिकारिक एप जस्तै सर्भर-तर्फ मेटाडेटा अनुवाद गर्छ)। परिवर्तनहरू एप पुनः सुरु भएपछि पूर्ण रूपमा लागू हुन्छन्।";
+/* Rows */
+"settings.row.appLanguage" = "एप भाषा";
+"settings.row.contentLanguage" = "सामग्री भाषा";
+"settings.row.region" = "क्षेत्र";
+/* Picker option following the device language/region */
+"settings.language.system" = "प्रणाली";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "पुनः सुरु आवश्यक";
+"settings.language.restartMessage" = "एप पुनः सुरु गरेपछि परिवर्तनहरू पूर्ण रूपमा लागू हुन्छन्।";
