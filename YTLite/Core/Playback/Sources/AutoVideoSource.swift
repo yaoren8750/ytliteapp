@@ -38,11 +38,11 @@ final class AutoVideoSource: VideoSource {
         let tracks = active.availableAudioTracks
         return tracks.isEmpty ? (fallback?.availableAudioTracks ?? []) : tracks
     }
-    /// While the primary plays, the probed default track is the current one —
-    /// the primary always plays the original audio.
+    /// While the primary plays, the fallback's probe state answers — it
+    /// marks the ORIGINAL track current, which is what the primary
+    /// (android_vr) always plays.
     var currentAudioTrack: AudioTrack? {
-        active.currentAudioTrack
-            ?? fallback?.availableAudioTracks.first { $0.isDefault }
+        active.currentAudioTrack ?? fallback?.currentAudioTrack
     }
 
     init(primary: VideoSource, makeFallback: @escaping () -> VideoSource) {

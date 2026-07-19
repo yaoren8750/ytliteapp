@@ -1,0 +1,367 @@
+/*
+  YTLite — Bengali (bn).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "প্লেব্যাক সেটিংস";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "মান";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "অডিও ট্র্যাক";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Stats for nerds";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "সাবটাইটেল";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "বন্ধ";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "%1$@ লোড হচ্ছে...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "স্ট্রিম সমাধান হচ্ছে...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "প্লেব্যাক ব্যর্থ হয়েছে।";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "মান পরিবর্তন ব্যর্থ হয়েছে।";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "অডিও ট্র্যাক পরিবর্তন ব্যর্থ হয়েছে।";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "সাবস্ক্রাইব করুন";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "সাবস্ক্রাইব করা হয়েছে";
+/* Generic cancel action */
+"common.cancel" = "বাতিল করুন";
+/* Generic confirmation button */
+"common.ok" = "ঠিক আছে";
+/* Generic save action */
+"common.save" = "সংরক্ষণ করুন";
+/* Generic done action */
+"common.done" = "সম্পন্ন";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "প্লেলিস্ট";
+/* Library tab title */
+"library.title" = "লাইব্রেরি";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "ভিডিও প্রস্তুত হচ্ছে...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "স্ট্রিম রিফ্রেশ হচ্ছে...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "আরও দেখুন";
+/* Collapses the video description */
+"player.description.less" = "কম দেখুন";
+/* Action bar: share the video */
+"player.action.share" = "শেয়ার করুন";
+/* Action bar: save to playlist */
+"player.action.save" = "সংরক্ষণ করুন";
+/* Action bar: download */
+"player.action.download" = "ডাউনলোড";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "মন্তব্য";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "মন্তব্য (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "মন্তব্য লোড হচ্ছে...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "মন্তব্য উপলব্ধ নেই";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "মন্তব্য এখনও উপলব্ধ নেই।";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "আরও মন্তব্য লোড করুন";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • পিন করা হয়েছে";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ পছন্দ";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ উত্তর";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "পরবর্তী";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "এখনই চালান";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "মিক্স";
+/* Header of the related-videos section */
+"player.related.title" = "সম্পর্কিত";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "প্লেব্যাক ত্রুটি: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "সাধারণ";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "%1$@ স্কিপ করুন";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "স্বয়ংক্রিয় স্কিপ";
+"sponsorblock.behavior.showButton" = "বোতাম দেখান";
+"sponsorblock.behavior.disabled" = "অক্ষম";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "SponsorBlock (sponsor.ajay.app) দ্বারা পরিচালিত — একটি উন্মুক্ত সম্প্রদায় প্রকল্প।";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "সেগমেন্ট শ্রেণি";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Sponsor";
+"sponsorblock.category.sponsor.description" = "পেইড প্রচার, পেইড রেফারেল এবং সরাসরি বিজ্ঞাপন। স্ব-প্রচার বা তাদের পছন্দের কারণ/নির্মাতা/ওয়েবসাইট/পণ্যের জন্য বিনামূল্যে প্রচারের জন্য নয়।";
+"sponsorblock.category.selfpromo.name" = "অবৈতনিক/স্ব-প্রচার";
+"sponsorblock.category.selfpromo.description" = "\"Sponsor\" এর মতো, তবে অবৈতনিক বা স্ব-প্রচার ব্যতীত। এতে মার্চেন্ডাইজ, অনুদান বা তাদের সহযোগীদের সম্পর্কে তথ্য সম্বলিত বিভাগ অন্তর্ভুক্ত।";
+"sponsorblock.category.exclusive_access.name" = "Exclusive Access";
+"sponsorblock.category.exclusive_access.description" = "শুধুমাত্র সম্পূর্ণ ভিডিও লেবেল করার জন্য। যখন একটি ভিডিও এমন একটি পণ্য, পরিষেবা বা স্থান প্রদর্শন করে যার তারা বিনামূল্যে বা সাবসিডি প্রাপ্ত প্রবেশ পেয়েছে।";
+"sponsorblock.category.interaction.name" = "Interaction Reminder (Subscribe)";
+"sponsorblock.category.interaction.description" = "যখন বিষয়বস্তুর মাঝে লাইক, সাবস্ক্রাইব বা ফলো করার একটি সংক্ষিপ্ত রিমাইন্ডার থাকে। এটি লম্বা হলে বা নির্দিষ্ট কিছুর সম্পর্কে হলে, এটি স্ব-প্রচারের অধীনে হওয়া উচিত।";
+"sponsorblock.category.highlight.name" = "Highlight";
+"sponsorblock.category.highlight.description" = "ভিডিওর সেই অংশ যা বেশিরভাগ মানুষ খুঁজছে। \"ভিডিও x এ শুরু হয়\" মন্তব্যের মতো।";
+"sponsorblock.category.intro.name" = "Intermission/Intro Animation";
+"sponsorblock.category.intro.description" = "প্রকৃত বিষয়বস্তু ছাড়া একটি বিরতি। এটি একটি বিরতি, স্থির ফ্রেম বা পুনরাবৃত্ত অ্যানিমেশন হতে পারে। এটি তথ্য সমৃদ্ধ ট্রানজিশনের জন্য ব্যবহার করা উচিত নয়।";
+"sponsorblock.category.outro.name" = "Endcards/Credits";
+"sponsorblock.category.outro.description" = "ক্রেডিট বা যখন YouTube এন্ডকার্ড দেখা দেয়। তথ্য সমৃদ্ধ সারসংক্ষেপের জন্য নয়।";
+"sponsorblock.category.preview.name" = "Preview/Recap";
+"sponsorblock.category.preview.description" = "ক্লিপের সংগ্রহ যা দেখায় এই ভিডিও বা একটি সিরিজের অন্যান্য ভিডিওতে কী আসছে, যেখানে সমস্ত তথ্য পরে ভিডিওতে পুনরাবৃত্তি করা হয়।";
+"sponsorblock.category.filler.name" = "Tangents/Jokes";
+"sponsorblock.category.filler.description" = "অপ্রাসঙ্গিক দৃশ্য বা কৌতুক যা ভিডিওর মূল বিষয়বস্তু বোঝার জন্য প্রয়োজনীয় নয়। এতে প্রসঙ্গ বা পটভূমির বিবরণ প্রদানকারী অংশ অন্তর্ভুক্ত হওয়া উচিত নয়।";
+"sponsorblock.category.music_offtopic.name" = "Non-Music Section";
+"sponsorblock.category.music_offtopic.description" = "শুধুমাত্র সঙ্গীত ভিডিওর জন্য। সঙ্গীত ভিডিওর অ-সঙ্গীত অংশ।";
+"sponsorblock.category.chapter.name" = "Chapter";
+"sponsorblock.category.chapter.description" = "ভিডিওর কাস্টম নামকৃত বিভাগ।";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "সেটিংস";
+
+/* Section headers */
+"settings.section.theme" = "থিম";
+"settings.section.playback" = "প্লেব্যাক";
+"settings.section.home" = "হোম";
+"settings.section.cache" = "ক্যাশ";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "ডিবাগ";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "স্বয়ংক্রিয়ভাবে সিস্টেম উপস্থিতি অনুসরণ করে।";
+"settings.footer.themeAutoHours" = "উপরের সময়ের মধ্যে স্বয়ংক্রিয়ভাবে ডার্ক থিমে পরিবর্তন করে।";
+"settings.footer.playback" = "Zoom to Fill স্বয়ংক্রিয়ভাবে ফুলস্ক্রিনে ভিডিও স্কেল করে যাতে কোনো কাল৬ বার না থাকে। প্লেয়ারে পিঞ্চ করলে প্রতি ভিডিওতে এটি ওভাররাইড করা যায়।";
+"settings.footer.home" = "সুপারিশ শেল্ফ কীভাবে দেখানো হয়: একটি ধারাবাহিক গ্রিড বা টিভি-স্টাইল অনুপ্রস্থ রেল।";
+"settings.footer.ryd" = "ডিসলাইক গণনা Return YouTube Dislike (returnyoutubedislike.com) দ্বারা পরিচালিত — একটি উন্মুক্ত সম্প্রদায় প্রকল্প।";
+"settings.footer.debug" = "নির্দিষ্ট প্লেব্যাক উৎস বাধ্য করুন। সাধারণত Android VR স্বয়ংক্রিয় ফলব্যাক সহ ব্যবহৃত হয়। সলভার সার্ভার Mobile Web + pot উৎস পরিচালনা করে (pot minting, এবং iOS 12–13 এ n-solving)।";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "থিম";
+"settings.theme.dark" = "ডার্ক";
+"settings.theme.light" = "লাইট";
+"settings.theme.auto" = "অটো";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "ডার্ক থিম থেকে";
+"settings.row.darkUntil" = "ডার্ক থিম পর্যন্ত";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "ডিফল্ট মান";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "অটো";
+"settings.row.backgroundPlayback" = "ব্যাকগ্রাউন্ড প্লেব্যাক";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "ফুলস্ক্রিনে স্ট্যাটাস বার লুকান";
+"settings.row.zoomToFill" = "ফুলস্ক্রিনে Zoom to Fill";
+"settings.row.showShorts" = "সাবস্ক্রিপশনে YouTube Shorts দেখান";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "হোম লেআউট";
+"settings.homeLayout.grid" = "প্লেইন গ্রিড";
+"settings.homeLayout.rails" = "শেল্ফ রেল";
+
+/* Cache rows */
+"settings.row.feedCache" = "ফিড ক্যাশ";
+"settings.row.feedCacheDuration" = "ফিড ক্যাশ সময়কাল";
+"settings.row.imageCache" = "ছবি ক্যাশ";
+"settings.row.imageCacheDuration" = "ছবি ক্যাশ সময়কাল";
+"settings.row.clearCache" = "সমস্ত ক্যাশ মুছুন";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "ক্যাশ মুছে ফেলা হয়েছে";
+"settings.cache.clearedMessage" = "সমস্ত ক্যাশ মুছে ফেলা হয়েছে।";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock সেটিংস";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "প্লেব্যাক উৎস";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "ডিবাগ লগ শেয়ার করুন";
+/* Solver-server URL alert */
+"settings.solver.message" = "সলভার সার্ভারের URL।";
+"settings.solver.reset" = "ডিফল্টে রিসেট করুন";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (ডিফল্ট)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "কোনো লগ নেই";
+"settings.log.noneMessage" = "এখনো কোনো ডিবাগ লগ উপলব্ধ নেই।";
+
+/* ===== Profile ===== */
+
+"profile.title" = "প্রোফাইল";
+"profile.signOut" = "সাইন আউট করুন";
+"profile.clearImageCache" = "ছবি ক্যাশ মুছুন";
+"profile.imageCacheCleared" = "ছবি ক্যাশ মুছে ফেলা হয়েছে।";
+
+/* ===== Search ===== */
+
+"search.title" = "অনুসন্ধান";
+/* Search bar placeholder */
+"search.placeholder" = "YouTube অনুসন্ধান করুন";
+/* Header above the recent-search list */
+"search.recent" = "সাম্প্রতিক অনুসন্ধান";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "ফিল্টার";
+"search.filters.active" = "ফিল্টার •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "অনুসন্ধান ফিল্টার";
+"search.filters.reset" = "ফিল্টার রিসেট করুন";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "সাজান: %1$@";
+"search.filters.date" = "তারিখ: %1$@";
+"search.filters.type" = "ধরন: %1$@";
+"search.filters.duration" = "সময়কাল: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "এভাবে সাজান";
+"search.filters.dateTitle" = "আপলোড তারিখ";
+"search.filters.typeTitle" = "ধরন";
+"search.filters.durationTitle" = "সময়কাল";
+
+/* Filter option values */
+"search.sort.relevance" = "প্রাসঙ্গিকতা";
+"search.sort.rating" = "রেটিং";
+"search.sort.uploadDate" = "আপলোড তারিখ";
+"search.sort.viewCount" = "দর্শন সংখ্যা";
+"search.date.any" = "যেকোনো সময়";
+"search.date.lastHour" = "গত ঘণ্টা";
+"search.date.today" = "আজ";
+"search.date.thisWeek" = "এই সপ্তাহ";
+"search.date.thisMonth" = "এই মাস";
+"search.date.thisYear" = "এই বছর";
+"search.type.any" = "যেকোনো ধরন";
+"search.type.video" = "ভিডিও";
+"search.type.channel" = "চ্যানেল";
+"search.type.playlist" = "প্লেলিস্ট";
+"search.duration.any" = "যেকোনো সময়কাল";
+"search.duration.short" = "৪ মিনিটের কম";
+"search.duration.medium" = "৪–২০ মিনিট";
+"search.duration.long" = "২০ মিনিটের বেশি";
+
+/* ===== Home ===== */
+
+"home.title" = "হোম";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "সব";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "লাইভ";
+"home.category.news" = "সংবাদ";
+"home.category.gaming" = "গেমিং";
+"home.category.sports" = "খেলাধুলা";
+"home.category.learning" = "শিক্ষা";
+"home.category.fashion" = "ফ্যাশন";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "ফিড লোড করা যায়নি\nপুনরায় লোড করতে নিচে টানুন";
+/* Signed-out empty state */
+"home.signIn" = "আপনার সুপারিশ দেখতে সাইন ইন করুন";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "ভিডিও";
+"channel.tab.live" = "লাইভ";
+"channel.tab.playlists" = "প্লেলিস্ট";
+/* About sheet */
+"channel.about.title" = "সম্পর্কে";
+"channel.about.close" = "বন্ধ করুন";
+"channel.about.subscribers" = "সাবস্ক্রাইবার";
+"channel.about.videos" = "ভিডিও";
+"channel.about.description" = "বিবরণ";
+"channel.about.contact" = "যোগাযোগ";
+
+/* ===== Library ===== */
+
+"library.history" = "ইতিহাস";
+"library.downloads" = "ডাউনলোড";
+"library.playlists" = "প্লেলিস্ট";
+"library.downloads.comingSoon" = "ডাউনলোড শীঘ্রই আসছে";
+"library.history.signIn" = "আপনার দেখা ইতিহাস দেখতে সাইন ইন করুন";
+"library.history.empty" = "কোনো দেখা ইতিহাস পাওয়া যায়নি";
+"library.history.loadFailed" = "ইতিহাস লোড করা যায়নি";
+"library.playlists.signIn" = "আপনার প্লেলিস্ট দেখতে সাইন ইন করুন";
+"library.playlists.loadFailed" = "প্লেলিস্ট লোড করা যায়নি";
+"library.playlist.empty" = "এই প্লেলিস্টে কোনো ভিডিও নেই";
+"library.playlist.loadFailed" = "প্লেলিস্ট লোড করা যায়নি";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "সাবস্ক্রিপশন";
+"subscriptions.all" = "সমস্ত সাবস্ক্রিপশন";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "সব";
+"subscriptions.signIn" = "আপনার সাবস্ক্রিপশন দেখতে সাইন ইন করুন";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "অ্যাকাউন্ট";
+"account.signIn" = "সাইন ইন করুন";
+"account.signOut" = "সাইন আউট করুন";
+"account.notSignedIn" = "সাইন ইন করা হয়নি";
+
+/* Generic error alert title */
+"common.error" = "ত্রুটি";
+/* Channel screen failed to load */
+"channel.unavailable" = "চ্যানেল উপলব্ধ নেই";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "ভাষা";
+"settings.footer.language" = "অ্যাপ ভাষা ইন্টারফেস পরিবর্তন করে। বিষয়বস্তু ভাষা শিরোনাম, অনুসন্ধান এবং ফিড পরিবর্তন করে (YouTube অফিসিয়াল অ্যাপের মতো মেটাডেটা সার্ভার-সাইড অনুবাদ করে)। পরিবর্তন অ্যাপ পুনরায় চালু করার পরে সম্পূর্ণ প্রয়োগ হয়।";
+/* Rows */
+"settings.row.appLanguage" = "অ্যাপ ভাষা";
+"settings.row.contentLanguage" = "বিষয়বস্তু ভাষা";
+"settings.row.region" = "অঞ্চল";
+/* Picker option following the device language/region */
+"settings.language.system" = "সিস্টেম";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "পুনরায় চালু করা প্রয়োজন";
+"settings.language.restartMessage" = "পরিবর্তন অ্যাপ পুনরায় চালু করার পরে সম্পূর্ণ প্রয়োগ হয়।";

@@ -1,0 +1,367 @@
+/*
+  YTLite — Icelandic (is).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Afspilunarstillingar";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Gæði";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Hljóðbraut";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Tölfræði fyrir nörda";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Textun";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Slökkt";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (sjálfvirk)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Hleð %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Leysi streymi...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Afspilun mistókst.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Gæðaskipti mistókust.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Skipti um hljóðbraut mistókust.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Gerast áskrifandi";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Áskrifandi";
+/* Generic cancel action */
+"common.cancel" = "Hætta við";
+/* Generic confirmation button */
+"common.ok" = "Í lagi";
+/* Generic save action */
+"common.save" = "Vista";
+/* Generic done action */
+"common.done" = "Lokið";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Spilunarskil";
+/* Library tab title */
+"library.title" = "Safn";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Undirbý myndband...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Uppfæri streymi...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Meira";
+/* Collapses the video description */
+"player.description.less" = "Minna";
+/* Action bar: share the video */
+"player.action.share" = "Deila";
+/* Action bar: save to playlist */
+"player.action.save" = "Vista";
+/* Action bar: download */
+"player.action.download" = "Hala niður";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Athugasemdir";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Athugasemdir (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Hleð athugasemdir...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Athugasemdir eru ekki í boði";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Athugasemdir eru ekki í boði enn.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Hlaða fleiri athugasemdir";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ \u2022 Fest";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ líkar";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ svör";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Næst";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Spila núna";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Bland";
+/* Header of the related-videos section */
+"player.related.title" = "Skyld";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Afspilunvilla: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Venjulegt";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Sleppa %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Sjálfvirkur hoppi";
+"sponsorblock.behavior.showButton" = "Sýna hnapp";
+"sponsorblock.behavior.disabled" = "Óvirkt";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Rekið af SponsorBlock (sponsor.ajay.app) \u2014 opið samfélagsverkefni.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Hlutdeildarflokkar";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Styrktaraðili";
+"sponsorblock.category.sponsor.description" = "Greidd auglýsing, greiddar vísanir og beinar auglýsingar. Ekki fyrir sjálfauglýsingu eða ókeypis kynningar fyrir áhugamál/skapara/síður/vörur sem þeir líka.";
+"sponsorblock.category.selfpromo.name" = "Ógreidd/Sjálfauglýsing";
+"sponsorblock.category.selfpromo.description" = "Líkt og \"styrktaraðili\" nema ógreidd eða sjálfauglýsing. Innifelur kafla um vörur, framlög eða upplýsingar um samstarfsaðila.";
+"sponsorblock.category.exclusive_access.name" = "Einkarréttur";
+"sponsorblock.category.exclusive_access.description" = "Aðeins til að merkja heil myndbönd. Notað þegar myndband sýnir vöru, þjónustu eða stað sem þeir hafa fengið ókeypis eða styrktan aðgang að.";
+"sponsorblock.category.interaction.name" = "Samskiptayfirvarp (Gerast áskrifandi)";
+"sponsorblock.category.interaction.description" = "Þegar stutt áminning er um að líka, gerast áskrifandi eða fylgja í miðri efni. Ef það er langt eða um eitthvað sérstakt, ætti það að vera undir sjálfauglýsingu.";
+"sponsorblock.category.highlight.name" = "Aðalsenu";
+"sponsorblock.category.highlight.description" = "Sá hluti myndbandsins sem flestir leita að. Líkt og \"Myndband byrjar á x\" athugasemdir.";
+"sponsorblock.category.intro.name" = "Hlé/Inngangsbúningur";
+"sponsorblock.category.intro.description" = "Hlé án raunverulegs efnis. Getur verið þögn, fastur rammi eða endurteknir búningur. Ekki ætti að nota þetta fyrir yfurför sem innihalda upplýsingar.";
+"sponsorblock.category.outro.name" = "Lokaskjár/Textar";
+"sponsorblock.category.outro.description" = "Textar eða þegar YouTube lokaskjár birtist. Ekki fyrir niðurstöður með upplýsingum.";
+"sponsorblock.category.preview.name" = "Forsýn/Yfirlit";
+"sponsorblock.category.preview.description" = "Söfnun klippa sem sýna hvað er framundan í þessu myndbandi eða öðrum myndböndum í seríu þar sem allar upplýsingar endurtaka síðar í myndbandinu.";
+"sponsorblock.category.filler.name" = "Aukaatriði/Húmor";
+"sponsorblock.category.filler.description" = "Aukaatriða senur eða húmor sem ekki þarf til að skilja aðalefni myndbandsins. Þetta ætti ekki að innihalda kafla sem veita samhengi eða bakgrunnsupplýsingar.";
+"sponsorblock.category.music_offtopic.name" = "Hljóðsvæði utan tónlistar";
+"sponsorblock.category.music_offtopic.description" = "Aðeins fyrir tónlistarmyndbönd. Hljóðsvæði utan tónlistar í tónlistarmyndbandi.";
+"sponsorblock.category.chapter.name" = "Kafli";
+"sponsorblock.category.chapter.description" = "Sérsniðnir kaflar myndbandsins.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Stillingar";
+
+/* Section headers */
+"settings.section.theme" = "Þema";
+"settings.section.playback" = "Afspilun";
+"settings.section.home" = "Heim";
+"settings.section.cache" = "Skyndiminni";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Villuleit";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Fylgir sjálfkrafa kerfisútliti.";
+"settings.footer.themeAutoHours" = "Skiptir sjálfkrafa í dökkt þema milli ofangreindra klukkustunda.";
+"settings.footer.playback" = "Zoom til að fylla skalar myndbandið sjálfkrafa þannig engir svörtir birtur séu eftir. Þreifðu í spilaranum fellur það fyrir hvert myndband.";
+"settings.footer.home" = "Hvernig ráðgjafarhillir eru sýndar: samfellt net eða sjónvarpskenndar láréttar hillur.";
+"settings.footer.ryd" = "Fjöldi mislíkinga er rekinn af Return YouTube Dislike (returnyoutubedislike.com) \u2014 opið samfélagsverkefni.";
+"settings.footer.debug" = "Nauðung á tilteknum afspilunarheimildum. Venjulega er Android VR notað með sjálfvirkum sveiflum. Leysivarpurinn knýr Mobile Web + pot heimildina (pot myntun og n-leysni á iOS 12\u201313).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Þema";
+"settings.theme.dark" = "Dökkt";
+"settings.theme.light" = "Ljóst";
+"settings.theme.auto" = "Sjálfvirkt";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Dökkt þema frá";
+"settings.row.darkUntil" = "Dökkt þema til";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Sjálfgefin gæði";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Sjálfvirkt";
+"settings.row.backgroundPlayback" = "Bakgrunnsafspilun";
+"settings.row.pip" = "Mynd í mynd";
+"settings.row.hideStatusBar" = "Fela stöðustiku í fullskjá";
+"settings.row.zoomToFill" = "Zoom til að fylla í fullskjá";
+"settings.row.showShorts" = "Sýna YouTube Shorts í áskriftum";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Heimasíðuuppsetning";
+"settings.homeLayout.grid" = "Venjulegt net";
+"settings.homeLayout.rails" = "Hilluskynjar";
+
+/* Cache rows */
+"settings.row.feedCache" = "Fæðuskyniminni";
+"settings.row.feedCacheDuration" = "Tímalengd fæðuskyniminnis";
+"settings.row.imageCache" = "Myndaskyniminni";
+"settings.row.imageCacheDuration" = "Tímalengd myndaskyniminnis";
+"settings.row.clearCache" = "Hreinsa allt skyndiminni";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Skyndiminni hreinsað";
+"settings.cache.clearedMessage" = "Allt skyndiminni hefur verið hreinsað.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock stillingar";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Afspilunarheimild";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Deila villuleitarloga";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL leysisvarpsins.";
+"settings.solver.reset" = "Endurstilla í sjálfgefið";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (sjálfgefið)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Engir logar";
+"settings.log.noneMessage" = "Engir villuleitarlogar tiltækir enn.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Prófíll";
+"profile.signOut" = "Skrá út";
+"profile.clearImageCache" = "Hreinsa myndaskyniminni";
+"profile.imageCacheCleared" = "Myndaskyniminni hreinsað.";
+
+/* ===== Search ===== */
+
+"search.title" = "Leita";
+/* Search bar placeholder */
+"search.placeholder" = "Leita á YouTube";
+/* Header above the recent-search list */
+"search.recent" = "Seinustu leitir";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Síur";
+"search.filters.active" = "Síur \u2022";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Leitarsíur";
+"search.filters.reset" = "Endurstilla síur";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Raða: %1$@";
+"search.filters.date" = "Dagsetning: %1$@";
+"search.filters.type" = "Tegund: %1$@";
+"search.filters.duration" = "Lengd: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Raða eftir";
+"search.filters.dateTitle" = "Hleðsludagur";
+"search.filters.typeTitle" = "Tegund";
+"search.filters.durationTitle" = "Lengd";
+
+/* Filter option values */
+"search.sort.relevance" = "Viðeigandi";
+"search.sort.rating" = "Einkunn";
+"search.sort.uploadDate" = "Hleðsludagur";
+"search.sort.viewCount" = "Fjöldi áhorfa";
+"search.date.any" = "Hvenær sem er";
+"search.date.lastHour" = "Síðasti klukkutími";
+"search.date.today" = "Í dag";
+"search.date.thisWeek" = "Í þessari viku";
+"search.date.thisMonth" = "Í þessum mánuði";
+"search.date.thisYear" = "Í þessu ári";
+"search.type.any" = "Hvaða tegund sem er";
+"search.type.video" = "Myndband";
+"search.type.channel" = "Rás";
+"search.type.playlist" = "Spilunarskil";
+"search.duration.any" = "Hvaða lengd sem er";
+"search.duration.short" = "Undir 4 mín";
+"search.duration.medium" = "4\u201320 mín";
+"search.duration.long" = "Yfir 20 mín";
+
+/* ===== Home ===== */
+
+"home.title" = "Heim";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Öll";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Live";
+"home.category.news" = "Fréttir";
+"home.category.gaming" = "Leikir";
+"home.category.sports" = "Íþróttir";
+"home.category.learning" = "Nám";
+"home.category.fashion" = "Fatal";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Gat ekki hlaðið færðina\nDragðu niður til að reyna aftur";
+/* Signed-out empty state */
+"home.signIn" = "Skráðu þig inn til að sjá ráðleggingar þínar";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Myndbönd";
+"channel.tab.live" = "Live";
+"channel.tab.playlists" = "Spilunarskil";
+/* About sheet */
+"channel.about.title" = "Upplýsingar";
+"channel.about.close" = "Loka";
+"channel.about.subscribers" = "Áskrifendur";
+"channel.about.videos" = "Myndbönd";
+"channel.about.description" = "Lýsing";
+"channel.about.contact" = "Tengiliður";
+
+/* ===== Library ===== */
+
+"library.history" = "Saga";
+"library.downloads" = "Niðurhal";
+"library.playlists" = "Spilunarskil";
+"library.downloads.comingSoon" = "Niðurhal koma bráðlega";
+"library.history.signIn" = "Skráðu þig inn til að sjá áhorfssögu þína";
+"library.history.empty" = "Engin áhorfssaga fannst";
+"library.history.loadFailed" = "Gat ekki hlaðið sögu";
+"library.playlists.signIn" = "Skráðu þig inn til að sjá spilunarskilin þín";
+"library.playlists.loadFailed" = "Gat ekki hlaðið spilunarskilum";
+"library.playlist.empty" = "Engin myndbönd í þessu spilunarskili";
+"library.playlist.loadFailed" = "Gat ekki hlaðið spilunarskili";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Áskriftir";
+"subscriptions.all" = "Allar áskriftir";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Allar";
+"subscriptions.signIn" = "Skráðu þig inn til að sjá áskriftir þínar";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Reikningur";
+"account.signIn" = "Skrá inn";
+"account.signOut" = "Skrá út";
+"account.notSignedIn" = "Ekki skráður inn";
+
+/* Generic error alert title */
+"common.error" = "Villa";
+/* Channel screen failed to load */
+"channel.unavailable" = "Rás ekki tiltæk";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Tungumál";
+"settings.footer.language" = "Tungumál forritsins breytir viðmótinu. Tungumál efnis breytir titlum, leit og fæðum (YouTube þýðir lýsigögn á þjónustuhlið, eins og opinbera forritið). Breytingar koma að fullu eftir endurræsingu forritsins.";
+/* Rows */
+"settings.row.appLanguage" = "Tungumál forrits";
+"settings.row.contentLanguage" = "Tungumál efnis";
+"settings.row.region" = "Svæði";
+/* Picker option following the device language/region */
+"settings.language.system" = "Kerfistungumál";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Endurræsingu krafist";
+"settings.language.restartMessage" = "Breytingar koma að fullu eftir endurræsingu forritsins.";

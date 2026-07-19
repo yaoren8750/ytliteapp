@@ -28,11 +28,23 @@ struct VideoQuality: Equatable {
 
 /// A selectable audio track (dub), expressed source-agnostically.
 struct AudioTrack: Equatable {
-    /// YouTube's track id, e.g. "ru.3".
+    /// YouTube's track id, e.g. "ru.3". The suffix encodes the track type
+    /// (matches the `acont` value in the format's xtags): `.4` = original,
+    /// `.3` = human dub, `.10` = AI auto-dub. Verified 2026-07-18.
     let id: String
-    /// Localized display name, e.g. "Russian".
+    /// Localized display name, e.g. "Russian". Identical for human and AI
+    /// dubs — the id suffix is the only distinguishing signal.
     let displayName: String
+    /// YouTube's `audioIsDefault` — marks the track matching the REQUEST's
+    /// `hl`, not the upload language (a Russian video probed with `hl=en`
+    /// flags the English AI dub as default). Use [[isOriginal]] to find the
+    /// upload-language track.
     let isDefault: Bool
+
+    /// AI auto-dub (`acont=dubbed-auto`).
+    var isAutoDubbed: Bool { id.hasSuffix(".10") }
+    /// The upload-language track (`acont=original`).
+    var isOriginal: Bool { id.hasSuffix(".4") }
 }
 
 /// A ready-to-play result handed back to the player shell. The shell attaches

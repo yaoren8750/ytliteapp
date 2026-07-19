@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Doba trvania medzipamäti; používa sa ako „N deň/dni/dní/dňa" v bunkách a výberoch nastavení -->
+	<key>settings.daysCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@days@</string>
+		<key>days</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d deň</string>
+			<key>few</key>
+			<string>%d dni</string>
+			<key>many</key>
+			<string>%d dní</string>
+			<key>other</key>
+			<string>%d dňa</string>
+		</dict>
+	</dict>
+	<!-- Metadáta dlaždice playlistu; „N video/videá/videí/video" -->
+	<key>common.videosCount</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@videos@</string>
+		<key>videos</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d video</string>
+			<key>few</key>
+			<string>%d videá</string>
+			<key>many</key>
+			<string>%d videí</string>
+			<key>other</key>
+			<string>%d videa</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

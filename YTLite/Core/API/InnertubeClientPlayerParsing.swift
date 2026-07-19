@@ -110,10 +110,13 @@ private extension InnertubeClient {
         )
     }
 
-    /// Best audio/mp4 stream, preferring the default track. Auto-dubbed
-    /// videos ship several itag-140 variants whose bitrates differ by a few
-    /// bits — a plain max-bitrate pick lands on the dub; `audioIsDefault`
-    /// marks the original (matching what the website plays).
+    /// Best audio/mp4 stream, preferring the ORIGINAL track (id suffix
+    /// ".4" / `acont=original`). Dubbed videos ship several itag-140
+    /// variants whose bitrates differ by a few bits — a plain max-bitrate
+    /// pick lands on a dub. `audioIsDefault` is NOT the original: it marks
+    /// the track matching the request's `hl` (a Russian video fetched with
+    /// `hl=en` flags the English AI dub as default), so it's only the
+    /// fallback when no ".4" track exists.
     static func selectBestAudio(
         from adaptive: [[String: Any]]
     ) -> [String: Any]? {
@@ -122,14 +125,20 @@ private extension InnertubeClient {
                 && fmtMimeType($0)
                     .contains("audio/mp4")
         }
+        let originals = pool.filter {
+            (($0["audioTrack"] as? [String: Any])?["id"]
+                as? String)?.hasSuffix(".4") == true
+        }
         let defaults = pool.filter {
             ((($0["audioTrack"] as? [String: Any])?["audioIsDefault"])
                 as? Bool) == true
         }
-        return (defaults.isEmpty ? pool : defaults)
-            .max {
-                fmtBitrate($0) < fmtBitrate($1)
-            }
+        let preferred = originals.isEmpty
+            ? (defaults.isEmpty ? pool : defaults)
+            : originals
+        return preferred.max {
+            fmtBitrate($0) < fmtBitrate($1)
+        }
     }
 
     /// avc1 everywhere; av01 additionally on hardware-AV1 devices (the only
@@ -310,8 +319,8 @@ private extension InnertubeClient {
             return []
         }
         return bestPerTrack.values.sorted { lhs, rhs in
-            if lhs.audioIsDefault != rhs.audioIsDefault {
-                return lhs.audioIsDefault
+            if lhs.audioIsOriginal != rhs.audioIsOriginal {
+                return lhs.audioIsOriginal
             }
             return (lhs.audioTrackName ?? "")
                 < (rhs.audioTrackName ?? "")

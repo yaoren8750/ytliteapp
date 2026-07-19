@@ -1,0 +1,367 @@
+/*
+  YTLite — Vietnamese (Tiếng Việt).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Cài đặt phát lại";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Chất lượng";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Trek âm thanh";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Thống kê cho người dùng kỹ thuật";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Phụ đề";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Tắt";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (tự động)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Đang tải %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Đang giải quyết luồng...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Phát lại không thành công.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Chuyển chất lượng không thành công.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Chuyển track âm thanh không thành công.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Đăng ký";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Đã đăng ký";
+/* Generic cancel action */
+"common.cancel" = "Hủy";
+/* Generic confirmation button */
+"common.ok" = "OK";
+/* Generic save action */
+"common.save" = "Lưu";
+/* Generic done action */
+"common.done" = "Xong";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Danh sách phát";
+/* Library tab title */
+"library.title" = "Thư viện";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Đang chuẩn bị video...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Đang làm mới luồng...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Xem thêm";
+/* Collapses the video description */
+"player.description.less" = "Thu gọn";
+/* Action bar: share the video */
+"player.action.share" = "Chia sẻ";
+/* Action bar: save to playlist */
+"player.action.save" = "Lưu";
+/* Action bar: download */
+"player.action.download" = "Tải xuống";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Bình luận";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Bình luận (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Đang tải bình luận...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Bình luận không khả dụng";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Bình luận chưa khả dụng.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Tải thêm bình luận";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • Đã ghim";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ lượt thích";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ phản hồi";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Tiếp theo";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Phát ngay";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Mix";
+/* Header of the related-videos section */
+"player.related.title" = "Liên quan";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Lỗi phát lại: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Bình thường";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Bỏ qua %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Tự động bỏ qua";
+"sponsorblock.behavior.showButton" = "Hiển thị nút";
+"sponsorblock.behavior.disabled" = "Tắt";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Được cung cấp bởi SponsorBlock (sponsor.ajay.app) — dự án cộng đồng mã nguồn mở.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Danh mục phân đoạn";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Nhà tài trợ";
+"sponsorblock.category.sponsor.description" = "Quảng cáo trả phí, giới thiệu trả phí và quảng cáo trực tiếp. Không dành cho quảng cáo bản thân hoặc quảng cáo miễn phí cho các thương hiệu/người sáng tạo/trang web/sản phẩm họ yêu thích.";
+"sponsorblock.category.selfpromo.name" = "Quảng cáo không trả phí/Bản thân";
+"sponsorblock.category.selfpromo.description" = "Tương tự \"nhà tài trợ\" nhưng là quảng cáo không trả phí hoặc quảng cáo bản thân. Bao gồm các phần về hàng hóa, quyên góp hoặc thông tin về người họ hợp tác.";
+"sponsorblock.category.exclusive_access.name" = "Quyền truy cập độc quyền";
+"sponsorblock.category.exclusive_access.description" = "Chỉ để gắn nhãn toàn bộ video. Dùng khi video giới thiệu sản phẩm, dịch vụ hoặc địa điểm mà họ nhận được quyền truy cập miễn phí hoặc ưu đãi.";
+"sponsorblock.category.interaction.name" = "Nhắc nhở tương tác (Đăng ký)";
+"sponsorblock.category.interaction.description" = "Khi có lời nhắc ngắn về thích, đăng ký hoặc theo dõi giữa nội dung. Nếu dài hoặc về một chủ đề cụ thể, nên nằm trong phần quảng cáo bản thân.";
+"sponsorblock.category.highlight.name" = "Điểm nổi bật";
+"sponsorblock.category.highlight.description" = "Phần video mà hầu hết mọi người tìm kiếm. Tương tự bình luận \"Video bắt đầu tại giây x\".";
+"sponsorblock.category.intro.name" = "Nội dung chuyển tiếp/Intro";
+"sponsorblock.category.intro.description" = "Khoảng thời gian không có nội dung thực. Có thể là khoảng dừng, khung tĩnh hoặc animation lặp lại. Không nên dùng cho chuyển cảnh chứa thông tin.";
+"sponsorblock.category.outro.name" = "Endcards/Thông tin credits";
+"sponsorblock.category.outro.description" = "Credits hoặc khi YouTube endcards xuất hiện. Không dành cho kết luận có thông tin.";
+"sponsorblock.category.preview.name" = "Xem trước/Tổng hợp";
+"sponsorblock.category.preview.description" = "Tập hợp các đoạn clip cho thấy những gì sắp diễn ra trong video này hoặc các video khác trong một series nơi tất cả thông tin được lặp lại sau đó trong video.";
+"sponsorblock.category.filler.name" = "Chuyện ngoài lề/Miếng hài";
+"sponsorblock.category.filler.description" = "Các cảnh đi xa đề tài hoặc miếng hài không cần thiết để hiểu nội dung chính của video. Không nên bao gồm các phân đoạn cung cấp ngữ cảnh hoặc thông tin nền.";
+"sponsorblock.category.music_offtopic.name" = "Phần không phải nhạc";
+"sponsorblock.category.music_offtopic.description" = "Chỉ dành cho video nhạc. Phần không phải nhạc của một video nhạc.";
+"sponsorblock.category.chapter.name" = "Chương";
+"sponsorblock.category.chapter.description" = "Các phần được đặt tên tùy chỉnh của video.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Cài đặt";
+
+/* Section headers */
+"settings.section.theme" = "Giao diện";
+"settings.section.playback" = "Phát lại";
+"settings.section.home" = "Trang chủ";
+"settings.section.cache" = "Bộ nhớ đệm";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Gỡ lỗi";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Tự động theo giao diện hệ thống.";
+"settings.footer.themeAutoHours" = "Tự động chuyển sang giao diện tối trong khoảng thời gian trên.";
+"settings.footer.playback" = "Zoom để lấp đầy tự động scale video ở chế độ toàn màn hình để không còn thanh đen. Pinch trong trình phát sẽ ghi đè theo từng video.";
+"settings.footer.home" = "Cách hiển thị kệ đề xuất: một lưới liên tục hoặc các ray ngang kiểu TV.";
+"settings.footer.ryd" = "Số lượt không thích được cung cấp bởi Return YouTube Dislike (returnyoutubedislike.com) — dự án cộng đồng mã nguồn mở.";
+"settings.footer.debug" = "Bắt buộc sử dụng nguồn phát cụ thể. Thông thường Android VR được sử dụng với cơ chế chuyển đổi tự động. Server solver cung cấp nguồn Mobile Web + pot (tạo pot và n-solving trên iOS 12–13).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Giao diện";
+"settings.theme.dark" = "Tối";
+"settings.theme.light" = "Sáng";
+"settings.theme.auto" = "Tự động";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Giao diện tối từ";
+"settings.row.darkUntil" = "Giao diện tối đến";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Chất lượng mặc định";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Tự động";
+"settings.row.backgroundPlayback" = "Phát lại nền";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "Ẩn thanh trạng thái ở chế độ toàn màn hình";
+"settings.row.zoomToFill" = "Zoom để lấp đầy ở chế độ toàn màn hình";
+"settings.row.showShorts" = "Hiển thị YouTube Shorts trong Đăng ký";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Bố cục trang chủ";
+"settings.homeLayout.grid" = "Lưới đơn giản";
+"settings.homeLayout.rails" = "Ray kệ";
+
+/* Cache rows */
+"settings.row.feedCache" = "Bộ nhớ đệm Feed";
+"settings.row.feedCacheDuration" = "Thời lượng bộ nhớ đệm Feed";
+"settings.row.imageCache" = "Bộ nhớ đệm hình ảnh";
+"settings.row.imageCacheDuration" = "Thời lượng bộ nhớ đệm hình ảnh";
+"settings.row.clearCache" = "Xóa toàn bộ bộ nhớ đệm";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Đã xóa bộ nhớ đệm";
+"settings.cache.clearedMessage" = "Đã xóa toàn bộ bộ nhớ đệm.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "Cài đặt SponsorBlock";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Nguồn phát";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Chia sẻ nhật ký gỡ lỗi";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL của server solver.";
+"settings.solver.reset" = "Đặt lại mặc định";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (mặc định)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Không có nhật ký";
+"settings.log.noneMessage" = "Chưa có nhật ký gỡ lỗi.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Hồ sơ";
+"profile.signOut" = "Đăng xuất";
+"profile.clearImageCache" = "Xóa bộ nhớ đệm hình ảnh";
+"profile.imageCacheCleared" = "Đã xóa bộ nhớ đệm hình ảnh.";
+
+/* ===== Search ===== */
+
+"search.title" = "Tìm kiếm";
+/* Search bar placeholder */
+"search.placeholder" = "Tìm kiếm YouTube";
+/* Header above the recent-search list */
+"search.recent" = "Tìm kiếm gần đây";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Bộ lọc";
+"search.filters.active" = "Bộ lọc •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Bộ lọc tìm kiếm";
+"search.filters.reset" = "Đặt lại bộ lọc";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Sắp xếp: %1$@";
+"search.filters.date" = "Ngày: %1$@";
+"search.filters.type" = "Loại: %1$@";
+"search.filters.duration" = "Thời lượng: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Sắp xếp theo";
+"search.filters.dateTitle" = "Ngày tải lên";
+"search.filters.typeTitle" = "Loại";
+"search.filters.durationTitle" = "Thời lượng";
+
+/* Filter option values */
+"search.sort.relevance" = "Mức liên quan";
+"search.sort.rating" = "Đánh giá";
+"search.sort.uploadDate" = "Ngày tải lên";
+"search.sort.viewCount" = "Lượt xem";
+"search.date.any" = "Bất kỳ lúc nào";
+"search.date.lastHour" = "Giờ trước";
+"search.date.today" = "Hôm nay";
+"search.date.thisWeek" = "Tuần này";
+"search.date.thisMonth" = "Tháng này";
+"search.date.thisYear" = "Năm nay";
+"search.type.any" = "Bất kỳ loại nào";
+"search.type.video" = "Video";
+"search.type.channel" = "Kênh";
+"search.type.playlist" = "Danh sách phát";
+"search.duration.any" = "Bất kỳ thời lượng";
+"search.duration.short" = "Dưới 4 phút";
+"search.duration.medium" = "4–20 phút";
+"search.duration.long" = "Trên 20 phút";
+
+/* ===== Home ===== */
+
+"home.title" = "Trang chủ";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Tất cả";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Trực tiếp";
+"home.category.news" = "Tin tức";
+"home.category.gaming" = "Trò chơi";
+"home.category.sports" = "Thể thao";
+"home.category.learning" = "Học tập";
+"home.category.fashion" = "Thời trang";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Không thể tải feed\nKéo xuống để thử lại";
+/* Signed-out empty state */
+"home.signIn" = "Đăng nhập để xem đề xuất của bạn";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Video";
+"channel.tab.live" = "Trực tiếp";
+"channel.tab.playlists" = "Danh sách phát";
+/* About sheet */
+"channel.about.title" = "Giới thiệu";
+"channel.about.close" = "Đóng";
+"channel.about.subscribers" = "Người đăng ký";
+"channel.about.videos" = "Video";
+"channel.about.description" = "Mô tả";
+"channel.about.contact" = "Liên hệ";
+
+/* ===== Library ===== */
+
+"library.history" = "Lịch sử";
+"library.downloads" = "Tải xuống";
+"library.playlists" = "Danh sách phát";
+"library.downloads.comingSoon" = "Tải xuống sẽ có sớm";
+"library.history.signIn" = "Đăng nhập để xem lịch sử xem của bạn";
+"library.history.empty" = "Không tìm thấy lịch sử xem";
+"library.history.loadFailed" = "Không thể tải lịch sử";
+"library.playlists.signIn" = "Đăng nhập để xem danh sách phát của bạn";
+"library.playlists.loadFailed" = "Không thể tải danh sách phát";
+"library.playlist.empty" = "Không có video trong danh sách phát này";
+"library.playlist.loadFailed" = "Không thể tải danh sách phát";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Đăng ký";
+"subscriptions.all" = "Tất cả đăng ký";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Tất cả";
+"subscriptions.signIn" = "Đăng nhập để xem đăng ký của bạn";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Tài khoản";
+"account.signIn" = "Đăng nhập";
+"account.signOut" = "Đăng xuất";
+"account.notSignedIn" = "Chưa đăng nhập";
+
+/* Generic error alert title */
+"common.error" = "Lỗi";
+/* Channel screen failed to load */
+"channel.unavailable" = "Kênh không khả dụng";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Ngôn ngữ";
+"settings.footer.language" = "Ngôn ngữ ứng dụng thay đổi giao diện. Ngôn ngữ nội dung thay đổi tiêu đề, tìm kiếm và feed (YouTube dịch metadata ở phía server, giống ứng dụng chính thức). Thay đổi có hiệu lực đầy đủ sau khi khởi động lại ứng dụng.";
+/* Rows */
+"settings.row.appLanguage" = "Ngôn ngữ ứng dụng";
+"settings.row.contentLanguage" = "Ngôn ngữ nội dung";
+"settings.row.region" = "Vùng";
+/* Picker option following the device language/region */
+"settings.language.system" = "Hệ thống";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Cần khởi động lại";
+"settings.language.restartMessage" = "Thay đổi có hiệu lực đầy đủ sau khi khởi động lại ứng dụng.";

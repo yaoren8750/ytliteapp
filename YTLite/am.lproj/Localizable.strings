@@ -1,0 +1,279 @@
+/*
+  YTLite — Amharic (am).
+  Translated from English. Product names (YouTube, SponsorBlock, etc.)
+  are kept in English. Positional placeholders (%1$@, %1$d) are
+  preserved verbatim.
+*/
+
+/* ===== Player: settings menu ===== */
+
+"player.menu.settings" = "የመጫኛ ቅንብሮች";
+"player.menu.quality" = "ጥራት";
+"player.menu.audioTrack" = "የድምጽ ትራክ";
+"player.menu.stats" = "የስታቲስቲክ መረጃ";
+"player.menu.subtitles" = "ንዑስ ቃላት";
+
+/* ===== Player: pickers ===== */
+
+"player.subtitles.off" = "ዝግ";
+"player.subtitles.autoSuffix" = " (ራስ ተግባር)";
+"player.audioTrack.aiSuffix" = " (ሰው ሰራሽ ብልህ)";
+
+/* ===== Player: status / errors ===== */
+
+"player.status.loading" = "%1$@ በመጫን ላይ...";
+"player.status.resolving" = "ብፁህ በመፈረጃ ላይ...";
+"player.error.playback" = "መጫን አልተሳካም።";
+"player.error.qualitySwitch" = "ጥራት መቀየር አልተሳካም።";
+"player.error.audioTrackSwitch" = "የድምጽ ትራክ መቀየር አልተሳካም።";
+
+/* ===== Common ===== */
+
+"common.subscribe" = "ተመዝግብ";
+"common.subscribed" = "ተመዝግብቷል";
+"common.cancel" = "ሰርዝ";
+"common.ok" = "እሺ";
+"common.save" = "አስቀምጥ";
+"common.done" = "ተከናውኗል";
+"common.playlist" = "ዝርዝር";
+"library.title" = "ማከማቻ";
+
+/* ===== Player: status ===== */
+
+"player.status.preparing" = "ቪዲዮ በማዘጋጀት ላይ...";
+"player.status.refreshing" = "ብፁህ በማደስ ላይ...";
+
+/* ===== Player: watch page ===== */
+
+"player.description.more" = "ተጨማሪ";
+"player.description.less" = "ያስቀንጥ";
+"player.action.share" = "ያጋሩ";
+"player.action.save" = "አስቀምጥ";
+"player.action.download" = "አውርድ";
+
+/* ===== Player: comments ===== */
+
+"player.comments.title" = "አስተያየቶች";
+"player.comments.titleCount" = "አስተያየቶች (%1$d)";
+"player.comments.loading" = "አስተያየቶች በመጫን ላይ...";
+"player.comments.unavailable" = "አስተያየቶች አይገኙም";
+"player.comments.unavailableYet" = "አስተያየቶች እስካሁን አይገኙም።";
+"player.comments.loadMore" = "ተጨማሪ አስተያየቶች ጫን";
+"player.comments.pinned" = "%1$@ • ተቀጥሯል";
+"player.comments.likes" = "%1$@ ምቹ";
+"player.comments.replies" = "%1$@ መልስ";
+
+/* ===== Player: autoplay overlay ===== */
+
+"player.autoplay.upNext" = "ቀጥል";
+"player.autoplay.playNow" = "አሁን ጫን";
+
+/* ===== Player: related section ===== */
+
+"player.related.mix" = "ፍጻሜ";
+"player.related.title" = "ተዛማጅ";
+"player.error.withMessage" = "የተጫኑ ስህተት: %1$@";
+
+/* ===== Player: speed ===== */
+
+"player.speed.normal" = "መደበኛ";
+
+/* ===== SponsorBlock ===== */
+
+"sponsorblock.skip" = "ቀልቅ %1$@";
+"sponsorblock.behavior.autoSkip" = "በራስ ተቀልቅ";
+"sponsorblock.behavior.showButton" = "ቁልፍ ማሳያ";
+"sponsorblock.behavior.disabled" = "አቻ";
+"sponsorblock.attribution" = "በ SponsorBlock (sponsor.ajay.app) የሚሰራ — ክፍት ማህበራዊ ፕሮጀክት።";
+"sponsorblock.segmentCategories" = "የምርጽ ምድር̄ቶች";
+"sponsorblock.category.sponsor.name" = "ተጠቃሚ";
+"sponsorblock.category.sponsor.description" = "የተከፈለ ማስታወቂያ፣ የተከፈለ ማ ማስከበር እና ቀጥታ ማስታወቂያ። ለራስ ማስታወቂያ ወይም ለእርስዎ ምቹ ምክሮች/ተቀ生产总/ ዌብ ሳይቶች/ ምርቶች አይደለም።";
+"sponsorblock.category.selfpromo.name" = "ያልተከፈለ / ራስ ማስታወቂያ";
+"sponsorblock.category.selfpromo.description" = "\"ተጠቃሚ\" እንደ ያልተከፈለ ወይም ራስ ማስታወቂያ ብቻ። ይህ ምርቶች፣ ማ ማስከበር ወይም ከ ጋር የተቀ生产总 መረጃ ይጨምራል።";
+"sponsorblock.category.exclusive_access.name" = "ብቸኛ ማግኘት";
+"sponsorblock.category.exclusive_access.description" = "ሙሉ ቪዲዮዎችን ለመለየት ብቻ። ቪዲዮ ተጠቃሚ የሆነ ምርት፣ አገልግሎት ወይም ቦታ ሲያሳይ ይጠቀማል።";
+"sponsorblock.category.interaction.name" = "ተግባር ማስታወሻ (ተመዝግብ)";
+"sponsorblock.category.interaction.description" = "በይዘት መካከል ከፍተኛ ማስታወሻ ሲኖር። ከረጅም ወይም ስለ አንዳንድ ነገር ከሆነ፣ ራስ ማስታወቂያ ማ መካከል መሆን አለበት።";
+"sponsorblock.category.highlight.name" = "ጠቋሚ";
+"sponsorblock.category.highlight.description" = "ተጨማሪ ቪዲዮ የሚፈልጉት ክፍል። \"ቪዲዮ ከ x ይጀምራል\" አስተያየቶች እንደ ያህል።";
+"sponsorblock.category.intro.name" = "ማቋረጫ / ማቅደም እንቅስቃሴ";
+"sponsorblock.category.intro.description" = "ያልተከፈለ ይዘት የሌለው ጊዜ ክፍል። ማቋረጫ፣ ቀላል ቅርጽ ወይም የሚደግፈው እንቅስቃሴ ሊሆን ይችላል። መረጃ የሚወስድ ለውጦች አይ መጠቀም ዠንግበት።";
+"sponsorblock.category.outro.name" = "የመጨረሻ ካርዶች / አድናቆት";
+"sponsorblock.category.outro.description" = "አድናቆት ወይም YouTube የመጨረሻ ካርዶች ሲታዩ። ከመረጃ ጋር ማጠቃለያ አይደለም።";
+"sponsorblock.category.preview.name" = "ቅድመ ዕይታ / ማጠቃለያ";
+"sponsorblock.category.preview.description" = "ይዘት ማ ማጠቃለያ ቪዲዮ ውስጥ ምን እንደሚመጣ የሚያሳዩ ቅጽበቶች ስብስብ። ወይም ሌላ ቪዲዮ በሰquence ውስጥ መረጃው በኋላ ሲደገፍ።";
+"sponsorblock.category.filler.name" = "ተያይዞ መልኩ / ቀልድ";
+"sponsorblock.category.filler.description" = "ዋና ይዘት ለመረዳት ያልተፈለጉ ተያይዞ ቅጽበቶች ወይም ቀልዶች። ይህ የሚገልጽ ወይም የ昆仑 ያለው ቅጽበቶች አይጨምርም።";
+"sponsorblock.category.music_offtopic.name" = "የሙዚቃ ክፍል አይደለም";
+"sponsorblock.category.music_offtopic.description" = "ለሙዚቃ ቪዲዮዎች ብቻ። የሙዚቃ ቪዲዮ የማይደለም ክፍል።";
+"sponsorblock.category.chapter.name" = "ምእራፍ";
+"sponsorblock.category.chapter.description" = "ተፈጥሯዊ የተሰየሙ የቪዲዮ ክፍሎች።";
+
+/* ===== Settings ===== */
+
+"settings.title" = "ቅንብሮች";
+"settings.section.theme" = "ገጽታ";
+"settings.section.playback" = "መጫኛ";
+"settings.section.home" = "መነሻ";
+"settings.section.cache" = "ካሽ";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "ማስተካከያ";
+
+"settings.footer.themeAutoSystem" = "ራስ ተግባር የስርዓቱን ገጽታ ይከተላል።";
+"settings.footer.themeAutoHours" = "በላይ ያሉትን ሰዓታት መካከል ወደ ጥቁር ገጽታ ይቀይራል።";
+"settings.footer.playback" = "ለመሙላት ማሳደጊያ ቪዲዮውን በሙሉ ገጽ ላይ በራስ ተግባር ይመßn ም እና ጥቁር መስመሮች እንዳይቀሩ ያደርጋል። በተጫዋቹ ውስጥ በመጫን ይህን በእያንዳንዱ ቪዲዮ ይቀይራል።";
+"settings.footer.home" = "የምክር ለውጦች እንዴት እንደሚታዩ፡ አንድ ቀጥታ ዘርፍ ወይም ቴレビዥን ቅርጽ ላይ አግድም መስመሮች።";
+"settings.footer.ryd" = "የአልቀየር ቁጠர በReturn YouTube Dislike (returnyoutubedislike.com) የሚሰራ — ክፍት ማህበራዊ ፕሮጀክት።";
+"settings.footer.debug" = "ተወላጅ የመጫኛ ምንጭ አስገብት። በመደበኛነት Android VR ይጠቀማል ከራስ ተግባር ተ ማ ተመለሰ። የ ስልች ሰርቨር የ Mobile Web + ምንጭ ይሰጣል (pot minting, እና n-solving በ iOS 12–13)።";
+
+"settings.row.theme" = "ገጽታ";
+"settings.theme.dark" = "ጥቁር";
+"settings.theme.light" = "ቀላል";
+"settings.theme.auto" = "ራስ ተግባር";
+"settings.row.darkFrom" = "ጥቁር ገጽታ ከ";
+"settings.row.darkUntil" = "ጥቁር ገጽታ እስከ";
+
+"settings.row.defaultQuality" = "የነባር ጥራት";
+"settings.quality.auto" = "ራስ ተግባር";
+"settings.row.backgroundPlayback" = "የኋላ መጫኛ";
+"settings.row.pip" = "ምስል በምስል ውስጥ";
+"settings.row.hideStatusBar" = "በሙሉ ገጽ ላይ የሁኔታ መስመር ደብቅ";
+"settings.row.zoomToFill" = "ለመሙላት ማሳደጊያ በሙሉ ገጽ ላይ";
+"settings.row.showShorts" = "በማደን ነገሮች ውስጥ YouTube Shorts ማሳያ";
+
+"settings.row.homeLayout" = "የመነሻ አቀራረብ";
+"settings.homeLayout.grid" = "ቀላል ዘርፍ";
+"settings.homeLayout.rails" = "የምክር መስመሮች";
+
+"settings.row.feedCache" = "የፍና ካሽ";
+"settings.row.feedCacheDuration" = "የፍና ካሽ ጊዜ";
+"settings.row.imageCache" = "ምስል ካሽ";
+"settings.row.imageCacheDuration" = "ምስል ካሽ ጊዜ";
+"settings.row.clearCache" = "ሁሉንም ካሽ ዛፍ";
+"settings.cache.clearedTitle" = "ካሽ ተጽፏል";
+"settings.cache.clearedMessage" = "ሁሉም ካሽ ተጽፏል።";
+
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock ቅንብሮች";
+
+"settings.row.playbackSource" = "የመጫኛ ምንጭ";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "የማስተካከያ መዝገብ ያጋሩ";
+"settings.solver.message" = "የሰልች ሰርቨር ዩอารኤል።";
+"settings.solver.reset" = "ወደ ነባር ደግፍ";
+"settings.solver.defaultSuffix" = " (ነባር)";
+"settings.log.noneTitle" = "መዝገብ የለም";
+"settings.log.noneMessage" = "የማስተካከያ መዝገቦች እስካሁን አይገኙም።";
+
+/* ===== Profile ===== */
+
+"profile.title" = "መለያ";
+"profile.signOut" = "ያለፉ";
+"profile.clearImageCache" = "ምስል ካሽ ዛፍ";
+"profile.imageCacheCleared" = "ምስል ካሽ ተጽፏል።";
+
+/* ===== Search ===== */
+
+"search.title" = "ፈልግ";
+"search.placeholder" = "YouTube ፈልግ";
+"search.recent" = "የቅርብ ፍለሳዎች";
+"search.filters" = "ማጣሪያዎች";
+"search.filters.active" = "ማጣሪያዎች •";
+"search.filters.title" = "የፍለሳ ማጣሪያዎች";
+"search.filters.reset" = "ማጣሪያዎች ደግፍ";
+"search.filters.sort" = "ደርድር: %1$@";
+"search.filters.date" = "ቀን: %1$@";
+"search.filters.type" = "ዓይነት: %1$@";
+"search.filters.duration" = "ጊዜ: %1$@";
+"search.filters.sortTitle" = "በ ደርድር";
+"search.filters.dateTitle" = "የመስል ቀን";
+"search.filters.typeTitle" = "ዓይነት";
+"search.filters.durationTitle" = "ጊዜ";
+
+"search.sort.relevance" = "ተስማሚነት";
+"search.sort.rating" = "ደረጃ";
+"search.sort.uploadDate" = "የመስል ቀን";
+"search.sort.viewCount" = "የእይታ ቁጠር";
+"search.date.any" = "ማንኛውም ጊዜ";
+"search.date.lastHour" = "ለ ከፍተኛ ሰዓት";
+"search.date.today" = "ዛሬ";
+"search.date.thisWeek" = "በዚህ ሳምንት";
+"search.date.thisMonth" = "በዚህ ወር";
+"search.date.thisYear" = "በዚህ ዓመት";
+"search.type.any" = "ማንኛውም ዓይነት";
+"search.type.video" = "ቪዲዮ";
+"search.type.channel" = "ቻናል";
+"search.type.playlist" = "ዝርዝር";
+"search.duration.any" = "ማንኛውም ጊዜ";
+"search.duration.short" = "ከ4 ደቂቃ በታች";
+"search.duration.medium" = "4–20 ደቂቃ";
+"search.duration.long" = "ከ20 ደቂቃ በላይ";
+
+/* ===== Home ===== */
+
+"home.title" = "መነሻ";
+"home.category.all" = "ሁሉም";
+"home.category.live" = "ቀጥታ";
+"home.category.news" = "ዜና";
+"home.category.gaming" = "የጨዋታ";
+"home.category.sports" = "ስፖርት";
+"home.category.learning" = "ትምህርት";
+"home.category.fashion" = "ፋሽን";
+"home.error.loadFailed" = "ፍናውን መጫን አልተቻለም\nለመድበስ ከታች ይጎትቱ";
+"home.signIn" = "ለምክሮችዎን ለመመልከት ይግቡ";
+
+/* ===== Channel ===== */
+
+"channel.tab.videos" = "ቪዲዮዎች";
+"channel.tab.live" = "ቀጥታ";
+"channel.tab.playlists" = "ዝርዝሮች";
+"channel.about.title" = "ስለ";
+"channel.about.close" = "ዝጋ";
+"channel.about.subscribers" = "ተመዝጋቢዎች";
+"channel.about.videos" = "ቪዲዮዎች";
+"channel.about.description" = "መግለጫ";
+"channel.about.contact" = "ያገናኙን";
+
+/* ===== Library ===== */
+
+"library.history" = "ታሪክ";
+"library.downloads" = "ማውረዶች";
+"library.playlists" = "ዝርዝሮች";
+"library.downloads.comingSoon" = "ማውረዶች በቅርቡ ይመጣሉ";
+"library.history.signIn" = "ለታሪክዎን ለመመልከት ይግቡ";
+"library.history.empty" = "የታሪክ ታሪክ አልተገኘም";
+"library.history.loadFailed" = "ታሪክ መጫን አልተቻለም";
+"library.playlists.signIn" = "ለዝርዝሮችዎን ለመመልከት ይግቡ";
+"library.playlists.loadFailed" = "ዝርዝሮች መጫን አልተቻለም";
+"library.playlist.empty" = "በዚህ ዝርዝር ውስጥ ቪዲዮ የለም";
+"library.playlist.loadFailed" = "ዝርዝር መጫን አልተቻለም";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "ማደን ነገሮች";
+"subscriptions.all" = "ሁሉም ማደን ነገሮች";
+"subscriptions.allButton" = "ሁሉም";
+"subscriptions.signIn" = "ለማደን ነገሮችዎን ለመመልከት ይግቡ";
+
+/* ===== Account (toolbar sheet) ===== */
+
+"account.fallbackName" = "መለያ";
+"account.signIn" = "ይግቡ";
+"account.signOut" = "ያለፉ";
+"account.notSignedIn" = "አልገቡም";
+
+"common.error" = "ስህተት";
+"channel.unavailable" = "ቻናል አይገኘም";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "ቋንቋ";
+"settings.footer.language" = "የመተግበሪያ ቋንቋ ተግባሩን ይቀይራል። የይዘት ቋንቋ ሥም ርዕሶችን፣ ፍለሳ እና ፍናዎችን ይቀይራል (YouTube የመተግበሪያ ተጠቃሚ እንደ ሁሉ የይዘት ማ ማ መቀየር ይሠራል።) ለውጦች ከመተግበሪያ እንደገና ሲጀምሩ ሙሉ በሙሉ ይፈጸማሉ።";
+"settings.row.appLanguage" = "የመተግበሪያ ቋንቋ";
+"settings.row.contentLanguage" = "የይዘት ቋንቋ";
+"settings.row.region" = "ክልል";
+"settings.language.system" = "ስርዓት";
+"settings.language.restartTitle" = "ዳinnie እንደገና መጀመር ያስፈልጋል";
+"settings.language.restartMessage" = "ለውጦች ከመተግበሪያ እንደገና ሲጀምሩ ሙሉ በሙሉ ይፈጸማሉ።";

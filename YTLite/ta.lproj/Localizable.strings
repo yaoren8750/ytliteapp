@@ -1,0 +1,367 @@
+/*
+  YTLite — Tamil (ta).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Playback அமைப்புகள்";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "தரம்";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "ஆடியோ தடம்";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Stats for nerds";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "உப வரிகள்";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "அணை";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "ஏற்றுகிறது %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "ஸ்ட்ரீம் தீர்க்கிறது...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "பிளேபேக் தோல்வி.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "தர மாற்றம் தோல்வி.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "ஆடியோ தட மாற்றம் தோல்வி.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "சந்தா செலுத்து";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "சந்தா செலுத்தியது";
+/* Generic cancel action */
+"common.cancel" = "ரத்து";
+/* Generic confirmation button */
+"common.ok" = "சரி";
+/* Generic save action */
+"common.save" = "சேமி";
+/* Generic done action */
+"common.done" = "முடிந்தது";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "பிளேலிஸ்ட்";
+/* Library tab title */
+"library.title" = "நூலகம்";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "வீடியோ தயாராகிறது...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "ஸ்ட்ரீம் புதுப்பிக்கிறது...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "மேலும்";
+/* Collapses the video description */
+"player.description.less" = "குறைவு";
+/* Action bar: share the video */
+"player.action.share" = "பகிர்";
+/* Action bar: save to playlist */
+"player.action.save" = "சேமி";
+/* Action bar: download */
+"player.action.download" = "பதிவிறக்கு";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "கருத்துகள்";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "கருத்துகள் (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "கருத்துகள் ஏற்றுகிறது...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "கருத்துகள் கிடைக்கவில்லை";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "கருத்துகள் இன்னும் கிடைக்கவில்லை.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "மேலும் கருத்துகள் ஏற்று";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • பின் செய்யப்பட்டது";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ விரும்பிகள்";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ பதில்கள்";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "அடுத்து";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "இப்போது இயக்கு";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "மிக்ஸ்";
+/* Header of the related-videos section */
+"player.related.title" = "தொடர்புடையவை";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "பிளேபேக் பிழை: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "இயல்பு";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "தவிர் %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "தானாகத் தவிர்";
+"sponsorblock.behavior.showButton" = "பொத்தானைக் காண்பி";
+"sponsorblock.behavior.disabled" = "முடக்கு";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "SponsorBlock (sponsor.ajay.app) மூலம் இயங்குகிறது — ஒரு திறந்த சமூகத் திட்டம்.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "பிரிவு வகைகள்";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Sponsor";
+"sponsorblock.category.sponsor.description" = "கட்டண விளம்பரம், கட்டண பரிந்துரைகள் மற்றும் நேரடி விளம்பரங்கள். சுய விளம்பரம் அல்லது இலவச முறையில் காரணங்கள்/படைப்பாளர்கள்/இணையதளங்கள்/தயாரிப்புகளை ஆதரிப்பதற்காக அல்ல.";
+"sponsorblock.category.selfpromo.name" = "கட்டணமில்லா/சுய விளம்பரம்";
+"sponsorblock.category.selfpromo.description" = "\"sponsor\" போன்றது ஆனால் கட்டணமில்லா அல்லது சுய விளம்பரம். இதில் சரக்குகள், நன்கொடைகள், அல்லது யாருடன் கூட்டுச் சேர்ந்தார்கள் என்பது பற்றிய தகவல்கள் அடங்கும்.";
+"sponsorblock.category.exclusive_access.name" = "பிரத்தியேக அணுகல்";
+"sponsorblock.category.exclusive_access.description" = "முழு வீடியோக்களை மட்டுமை லேபிளிட பயன்படுகிறது. ஒரு வீடியோ ஒரு தயாரிப்பு, சேவை அல்லது இடத்தை இலவசமாக அல்லது மானிய விலையில் பெற்றதைக் காட்டும் போது பயன்படுத்தப்படுகிறது.";
+"sponsorblock.category.interaction.name" = "ஊடாட நினைவூட்டல் (சந்தா செலுத்து)";
+"sponsorblock.category.interaction.description" = "உள்ளடக்கத்தின் நடுவில் விரும்பு, சந்தா செலுத்து அல்லது பின்தொடர் என்ற குறுகிய நினைவூட்டல் இருக்கும் போது. அது நீளமாக இருந்தால் அல்லது ஏதாவது குறிப்பிட்ட விஷயத்தைப் பற்றியதாக இருந்தால், அது சுய விளம்பரத்தின் கீழ் இருக்க வேண்டும்.";
+"sponsorblock.category.highlight.name" = "சிறப்பம்சம்";
+"sponsorblock.category.highlight.description" = "பலர் தேடும் வீடியோவின் பகுதி. \"வீடியோ x இல் தொடங்குகிறது\" கருத்துகள் போன்றது.";
+"sponsorblock.category.intro.name" = "இடைவேளை/அறிமுக அனிமேஷன்";
+"sponsorblock.category.intro.description" = "உண்மையான உள்ளடக்கம் இல்லாத இடைவேளை. ஒரு நிறுத்தம், நிலையான சட்டம் அல்லது மீண்டும் மீண்டும் வரும் அனிமேஷனாக இருக்கலாம். தகவல் கொண்ட மாற்றங்களுக்கு இதைப் பயன்படுத்தக் கூடாது.";
+"sponsorblock.category.outro.name" = "எண்ட்கார்டுகள்/நன்றி பட்டியல்";
+"sponsorblock.category.outro.description" = "நன்றி பட்டியல் அல்லது YouTube எண்ட்கார்டுகள் தோன்றும் போது. தகவல் கொண்ட முடிவுகளுக்கு அல்ல.";
+"sponsorblock.category.preview.name" = "முன்னோட்டம்/சுருக்கம்";
+"sponsorblock.category.preview.description" = "இந்த வீடியோவில் அல்லது வரிசையில் உள்ள பிற வீடியோக்களில் என்ன வரப்போகிறது என்பதைக் காட்டும் கிளிப்களின் தொகுப்பு. அனைத்து தகவல்களும் பின்னர் வீடியோவில் மீண்டும் கூறப்படுகின்றன.";
+"sponsorblock.category.filler.name" = "சர்ச்சைகள்/நகைச்சுவை";
+"sponsorblock.category.filler.description" = "வீடியோவின் முக்கிய உள்ளடக்கத்தைப் புரிந்துகொள்ள தேவையில்லாத சர்ச்சைகள் அல்லது நகைச்சுவைகள். சூழல் அல்லது பின்னணி விவரங்களை வழங்கும் பிரிவுகள் இதில் இருக்கக் கூடாது.";
+"sponsorblock.category.music_offtopic.name" = "இசை அல்லாத பகுதி";
+"sponsorblock.category.music_offtopic.description" = "இசை வீடியோக்களுக்கு மட்டுமே. இசை வீடியோவின் இசை அல்லாத பகுதி.";
+"sponsorblock.category.chapter.name" = "அத்தியாயம்";
+"sponsorblock.category.chapter.description" = "வீடியோவின் தனிப்பயன் பெயரிடப்பட்ட பிரிவுகள்.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "அமைப்புகள்";
+
+/* Section headers */
+"settings.section.theme" = "தீம்";
+"settings.section.playback" = "பிளேபேக்";
+"settings.section.home" = "முகப்பு";
+"settings.section.cache" = "தற்காலிக சேமிப்பு";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "பிழை நீக்கம்";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "கருவியின் தோற்றத்தை தானாகப் பின்பற்றுகிறது.";
+"settings.footer.themeAutoHours" = "மேலே உள்ள நேரங்களுக்கு இடையில் இருண்ட தீமுக்கு தானாக மாறுகிறது.";
+"settings.footer.playback" = "முழுத்திரையில் வீடியோவை தானாக அளவிடுகிறது, கருப்பு பட்டிகள் இல்லாமல். பிளேயரில் பிஞ்ச் செய்வது வீடியோ வாரியாக மேலெழுதுகிறது.";
+"settings.footer.home" = "பரிந்துரை அலமாரிகள் எப்படி காட்டப்படுகின்றன: ஒரு தொடர்ச்சியான கிரிட் அல்லது டிவி-பாணி கிடைமட்ட ரெயில்கள்.";
+"settings.footer.ryd" = "விரும்பாத எண்ணிக்கைகள் Return YouTube Dislike (returnyoutubedislike.com) மூலம் இயங்குகின்றன — ஒரு திறந்த சமூகத் திட்டம்.";
+"settings.footer.debug" = "ஒரு குறிப்பிட்ட பிளேபேக் மூலத்தை கட்டாயப்படுத்துகிறது. வழக்கமாக Android VR தானியங்கு மாற்றத்துடன் பயன்படுத்தப்படுகிறது. சால்வர் சேவையகம் Mobile Web + pot மூலத்தை இயக்குகிறது (pot minting, மற்றும் iOS 12–13 இல் n-solving).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "தீம்";
+"settings.theme.dark" = "இருண்ட";
+"settings.theme.light" = "ஒளி";
+"settings.theme.auto" = "தானியங்கு";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "இருண்ட தீம் தொடக்கம்";
+"settings.row.darkUntil" = "இருண்ட தீம் முடிவு";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "இயல்புநிலை தரம்";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Auto";
+"settings.row.backgroundPlayback" = "பின்னணி பிளேபேக்";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "முழுத்திரையில் நிலைப்பட்டியை மறை";
+"settings.row.zoomToFill" = "முழுத்திரையில் நிரப்ப பெரிதாக்கு";
+"settings.row.showShorts" = "சந்தாக்களில் YouTube Shorts காண்பி";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "முகப்பு அமைப்பு";
+"settings.homeLayout.grid" = "சாதாரண கிரிட்";
+"settings.homeLayout.rails" = "அலமாரி ரெயில்கள்";
+
+/* Cache rows */
+"settings.row.feedCache" = "ஃபீட் தற்காலிக சேமிப்பு";
+"settings.row.feedCacheDuration" = "ஃபீட் தற்காலிக சேமிப்பு காலம்";
+"settings.row.imageCache" = "பட தற்காலிக சேமிப்பு";
+"settings.row.imageCacheDuration" = "பட தற்காலிக சேமிப்பு காலம்";
+"settings.row.clearCache" = "அனைத்து தற்காலிக சேமிப்பையும் அழி";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "தற்காலிக சேமிப்பு அழிக்கப்பட்டது";
+"settings.cache.clearedMessage" = "அனைத்து தற்காலிக சேமிப்பும் அழிக்கப்பட்டது.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock அமைப்புகள்";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "பிளேபேக் மூலம்";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "பிழை நீக்க பதிவைப் பகிர்";
+/* Solver-server URL alert */
+"settings.solver.message" = "சால்வர் சேவையகத்தின் URL.";
+"settings.solver.reset" = "இயல்புநிலைக்கு மீட்டமை";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (default)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "பதிவுகள் இல்லை";
+"settings.log.noneMessage" = "பிழை நீக்க பதிவுகள் இன்னும் கிடைக்கவில்லை.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "சுயவிவரம்";
+"profile.signOut" = "வெளியேறு";
+"profile.clearImageCache" = "பட தற்காலிக சேமிப்பை அழி";
+"profile.imageCacheCleared" = "பட தற்காலிக சேமிப்பு அழிக்கப்பட்டது.";
+
+/* ===== Search ===== */
+
+"search.title" = "தேடல்";
+/* Search bar placeholder */
+"search.placeholder" = "YouTube தேடு";
+/* Header above the recent-search list */
+"search.recent" = "சமீபத்திய தேடல்கள்";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "வடிகட்டிகள்";
+"search.filters.active" = "வடிகட்டிகள் •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "தேடல் வடிகட்டிகள்";
+"search.filters.reset" = "வடிகட்டிகளை மீட்டமை";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "வரிசைப்படுத்து: %1$@";
+"search.filters.date" = "தேதி: %1$@";
+"search.filters.type" = "வகை: %1$@";
+"search.filters.duration" = "காலம்: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "வரிசைப்படுத்துவது";
+"search.filters.dateTitle" = "பதிவேற்ற தேதி";
+"search.filters.typeTitle" = "வகை";
+"search.filters.durationTitle" = "காலம்";
+
+/* Filter option values */
+"search.sort.relevance" = "தொடர்புடைய";
+"search.sort.rating" = "மதிப்பீடு";
+"search.sort.uploadDate" = "பதிவேற்ற தேதி";
+"search.sort.viewCount" = "பார்வை எண்ணிக்கை";
+"search.date.any" = "நேரம் முழுவதும்";
+"search.date.lastHour" = "கடந்த மணி நேரம்";
+"search.date.today" = "இன்று";
+"search.date.thisWeek" = "இந்த வாரம்";
+"search.date.thisMonth" = "இந்த மாதம்";
+"search.date.thisYear" = "இந்த ஆண்டு";
+"search.type.any" = "ஏதேனும் வகை";
+"search.type.video" = "வீடியோ";
+"search.type.channel" = "சேனல்";
+"search.type.playlist" = "பிளேலிஸ்ட்";
+"search.duration.any" = "ஏதேனும் காலம்";
+"search.duration.short" = "4 நிமிடத்திற்கு குறைவு";
+"search.duration.medium" = "4–20 நிமிடம்";
+"search.duration.long" = "20 நிமிடத்திற்கு மேல்";
+
+/* ===== Home ===== */
+
+"home.title" = "முகப்பு";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "அனைத்தும்";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "நேரலை";
+"home.category.news" = "செய்திகள்";
+"home.category.gaming" = "கேமிங்";
+"home.category.sports" = "விளையாட்டு";
+"home.category.learning" = "கற்றல்";
+"home.category.fashion" = "பேஷன்";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "ஃபீட் ஏற்ற முடியவில்லை\nமீண்டும் முயற்சிக்க கீழே இழுக்கவும்";
+/* Signed-out empty state */
+"home.signIn" = "பரிந்துரைகளைக் காண உள்நுழையவும்";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "வீடியோக்கள்";
+"channel.tab.live" = "நேரலை";
+"channel.tab.playlists" = "பிளேலிஸ்ட்கள்";
+/* About sheet */
+"channel.about.title" = "பற்றி";
+"channel.about.close" = "மூடு";
+"channel.about.subscribers" = "சந்தாதாரர்கள்";
+"channel.about.videos" = "வீடியோக்கள்";
+"channel.about.description" = "விளக்கம்";
+"channel.about.contact" = "தொடர்பு";
+
+/* ===== Library ===== */
+
+"library.history" = "வரலாறு";
+"library.downloads" = "பதிவிறக்கங்கள்";
+"library.playlists" = "பிளேலிஸ்ட்கள்";
+"library.downloads.comingSoon" = "பதிவிறக்கங்கள் விரைவில் வருகின்றன";
+"library.history.signIn" = "பார்வை வரலாற்றைக் காண உள்நுழையவும்";
+"library.history.empty" = "பார்வை வரலாறு எதுவும் இல்லை";
+"library.history.loadFailed" = "வரலாற்றை ஏற்ற முடியவில்லை";
+"library.playlists.signIn" = "பிளேலிஸ்ட்களைக் காண உள்நுழையவும்";
+"library.playlists.loadFailed" = "பிளேலிஸ்ட்களை ஏற்ற முடியவில்லை";
+"library.playlist.empty" = "இந்த பிளேலிஸ்ட்டில் வீடியோக்கள் இல்லை";
+"library.playlist.loadFailed" = "பிளேலிஸ்ட்டை ஏற்ற முடியவில்லை";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "சந்தாக்கள்";
+"subscriptions.all" = "அனைத்து சந்தாக்கள்";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "அனைத்தும்";
+"subscriptions.signIn" = "சந்தாக்களைக் காண உள்நுழையவும்";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "கணக்கு";
+"account.signIn" = "உள்நுழை";
+"account.signOut" = "வெளியேறு";
+"account.notSignedIn" = "உள்நுழையவில்லை";
+
+/* Generic error alert title */
+"common.error" = "பிழை";
+/* Channel screen failed to load */
+"channel.unavailable" = "சேனல் கிடைக்கவில்லை";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "மொழி";
+"settings.footer.language" = "ஆப் மொழி இடைமுகத்தை மாற்றுகிறது. உள்ளடக்க மொழி தலைப்புகள், தேடல் மற்றும் ஃபீட்களை மாற்றுகிறது (YouTube அதிகாரப்பூர்வ ஆப் போல மெட்டாடேட்டாவை சேவையகப் புறமாக மொழிபெயர்க்கிறது). மாற்றங்கள் ஆப் மீண்டும் தொடங்கிய பின் முழுமையாக நடைமுறைப்படுத்தப்படும்.";
+/* Rows */
+"settings.row.appLanguage" = "ஆப் மொழி";
+"settings.row.contentLanguage" = "உள்ளடக்க மொழி";
+"settings.row.region" = "பிராந்தியம்";
+/* Picker option following the device language/region */
+"settings.language.system" = "கருவி";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "மீண்டும் தொடங்க வேண்டும்";
+"settings.language.restartMessage" = "மாற்றங்கள் ஆப்பை மீண்டும் தொடங்கிய பின் முழுமையாக நடைமுறைப்படுத்தப்படும்.";

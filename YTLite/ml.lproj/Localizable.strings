@@ -1,0 +1,367 @@
+/*
+  YTLite — Malayalam (ml).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "പ്ലേബാക്ക് ക്രമീകരണങ്ങൾ";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "ഗുണം";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "ഓഡിയോ ട്രാക്ക്";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "സ്റ്റാറ്റിസ്റ്റിക്സ് ഫോർ നെർഡ്സ്";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "സബ്‌ടൈറ്റിലുകൾ";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "ഓഫ്";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (ഓട്ടോ)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "%1$@ ലോഡ് ചെയ്യുന്നു...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "സ്ട്രീം റെസോൾവ് ചെയ്യുന്നു...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "പ്ലേബാക്ക് പരാജയപ്പെട്ടു.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "ഗുണ മാറ്റം പരാജയപ്പെട്ടു.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "ഓഡിയോ ട്രാക്ക് മാറ്റം പരാജയപ്പെട്ടു.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "സബ്സ്ക്രൈബ് ചെയ്യുക";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "സബ്സ്ക്രൈബ് ചെയ്തു";
+/* Generic cancel action */
+"common.cancel" = "റദ്ദാക്കുക";
+/* Generic confirmation button */
+"common.ok" = "ശരി";
+/* Generic save action */
+"common.save" = "സേവ് ചെയ്യുക";
+/* Generic done action */
+"common.done" = "ചെയ്തു";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "പ്ലേലിസ്റ്റ്";
+/* Library tab title */
+"library.title" = "ലൈബ്രറി";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "വീഡിയോ തയ്യാറാക്കുന്നു...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "സ്ട്രീം റീഫ്രഷ് ചെയ്യുന്നു...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "കൂടുതൽ";
+/* Collapses the video description */
+"player.description.less" = "കുറവ്";
+/* Action bar: share the video */
+"player.action.share" = "പങ്കിടുക";
+/* Action bar: save to playlist */
+"player.action.save" = "സേവ് ചെയ്യുക";
+/* Action bar: download */
+"player.action.download" = "ഡൗൺലോഡ്";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "അഭിപ്രായങ്ങൾ";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "അഭിപ്രായങ്ങൾ (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "അഭിപ്രായങ്ങൾ ലോഡ് ചെയ്യുന്നു...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "അഭിപ്രായങ്ങൾ ലഭ്യമല്ല";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "അഭിപ്രായങ്ങൾ ഇതുവരെ ലഭ്യമല്ല.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "കൂടുതൽ അഭിപ്രായങ്ങൾ ലോഡ് ചെയ്യുക";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • പിൻ ചെയ്തു";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ ഇഷ്ടങ്ങൾ";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ മറുപടികൾ";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "അടുത്തത്";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "ഇപ്പോൾ പ്ലേ ചെയ്യുക";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "മിക്സ്";
+/* Header of the related-videos section */
+"player.related.title" = "സംബന്ധമുള്ളത്";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "പ്ലേബാക്ക് പിശക്: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "സാധാരണ";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "സ്കിപ്പ് %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "സ്വയം സ്കിപ്പ് ചെയ്യുക";
+"sponsorblock.behavior.showButton" = "ബട്ടൺ കാണിക്കുക";
+"sponsorblock.behavior.disabled" = "പ്രവർത്തനരഹിതം";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Powered by SponsorBlock (sponsor.ajay.app) — an open community project.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "വിഭാഗങ്ങൾ";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "സ്പോൺസർ";
+"sponsorblock.category.sponsor.description" = "പെയ്ഡ് പ്രൊമോഷൻ, പെയ്ഡ് റെഫറലുകൾ, നേരിട്ടുള്ള പരസ്യങ്ങൾ. സ്വയം പ്രൊമോഷനോ സൗജന്യ ഷൗട്ടൗട്ടുകളോ അല്ല.";
+"sponsorblock.category.selfpromo.name" = "സൗജന്യ/സ്വയം പ്രൊമോഷൻ";
+"sponsorblock.category.selfpromo.description" = "\"സ്പോൺസർ\" പോലെയാണ്, പക്ഷേ സൗജന്യമോ സ്വയം പ്രൊമോഷനോ ആണ്.";
+"sponsorblock.category.exclusive_access.name" = "എക്സ്ക്ലൂസിവ് ആക്സസ്";
+"sponsorblock.category.exclusive_access.description" = "സമ്പൂർണ്ണ വീഡിയോകൾ ലേബൽ ചെയ്യാൻ മാത്രം. സൗജന്യമോ സബ്സിഡി നൽകിയ ആക്സസ് ലഭിച്ച ഉൽപ്പന്നം, സേവനം അല്ലെങ്കിൽ സ്ഥലം പ്രദർശിപ്പിക്കുമ്പോൾ ഉപയോഗിക്കുന്നു.";
+"sponsorblock.category.interaction.name" = "ഇന്ററാക്ഷൻ ഓർമ്മപ്പെടുത്തൽ (സബ്സ്ക്രൈബ്)";
+"sponsorblock.category.interaction.description" = "ഉള്ളടക്കത്തിനിടയിൽ ഇഷ്ടപ്പെടുക, സബ്സ്ക്രൈബ് ചെയ്യുക അല്ലെങ്കിൽ ഫോളോ ചെയ്യുക എന്നതിനുള്ള ചെറിയ ഓർമ്മപ്പെടുത്തൽ ഉള്ളപ്പോൾ.";
+"sponsorblock.category.highlight.name" = "ഹൈലൈറ്റ്";
+"sponsorblock.category.highlight.description" = "മിക്ക ആളുകളും അന്വേഷിക്കുന്ന വീഡിയോയുടെ ഭാഗം.";
+"sponsorblock.category.intro.name" = "ഇന്റർമിഷൻ/ഇന്ട്രോ ആനിമേഷൻ";
+"sponsorblock.category.intro.description" = "യഥാർത്ഥ ഉള്ളടക്കമില്ലാത്ത ഒരു ഇടവേള. ഒരു നിർത്തൽ, സ്ഥിര ഫ്രെയിം, അല്ലെങ്കിൽ ആവർത്തിക്കുന്ന ആനിമേഷൻ ആകാം.";
+"sponsorblock.category.outro.name" = "എൻഡ്‌കാർഡുകൾ/ക്രെഡിറ്റുകൾ";
+"sponsorblock.category.outro.description" = "YouTube എൻഡ്‌കാർഡുകൾ പ്രത്യക്ഷപ്പെടുമ്പോൾ അല്ലെങ്കിൽ ക്രെഡിറ്റുകൾ.";
+"sponsorblock.category.preview.name" = "പ്രീവ്യൂ/റീക്യാപ്പ്";
+"sponsorblock.category.preview.description" = "ഈ വീഡിയോയിലോ പരമ്പരയിലെ മറ്റ് വീഡിയോകളിലോ വരാനിരിക്കുന്നത് കാണിക്കുന്ന ക്ലിപ്പുകളുടെ ശേഖരം.";
+"sponsorblock.category.filler.name" = "ടാജന്റുകൾ/തമാശകൾ";
+"sponsorblock.category.filler.description" = "വീഡിയോയുടെ പ്രധാന ഉള്ളടക്കം മനസ്സിലാക്കാൻ ആവശ്യമില്ലാത്ത ടാജന്റൽ രംഗങ്ങൾ അല്ലെങ്കിൽ തമാശകൾ.";
+"sponsorblock.category.music_offtopic.name" = "സംഗീതേതര വിഭാഗം";
+"sponsorblock.category.music_offtopic.description" = "സംഗീത വീഡിയോകൾക്ക് മാത്രം. സംഗീത വീഡിയോയുടെ സംഗീതേതര ഭാഗം.";
+"sponsorblock.category.chapter.name" = "അധ്യായം";
+"sponsorblock.category.chapter.description" = "വീഡിയോയുടെ ഇഷ്ടാനുസൃത പേരിട്ട വിഭാഗങ്ങൾ.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "ക്രമീകരണങ്ങൾ";
+
+/* Section headers */
+"settings.section.theme" = "തീം";
+"settings.section.playback" = "പ്ലേബാക്ക്";
+"settings.section.home" = "ഹോം";
+"settings.section.cache" = "കാഷ്";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "ഡീബഗ്";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "സിസ്റ്റം രൂപത്തെ സ്വയം അനുസരിക്കുന്നു.";
+"settings.footer.themeAutoHours" = "മുകളിലുള്ള സമയങ്ങൾക്കിടയിൽ ഇരുണ്ട തീമിലേക്ക് സ്വയം മാറുന്നു.";
+"settings.footer.playback" = "ഫുൾസ്ക്രീനിൽ വീഡിയോ സ്വയം സ്കെയിൽ ചെയ്ത് കറുത്ത ബാറുകൾ ഇല്ലാതാക്കുന്നു. പ്ലേയറിൽ പിഞ്ച് ചെയ്ത് ഓരോ വീഡിയോയും ഓവർറൈഡ് ചെയ്യാം.";
+"settings.footer.home" = "ശുപാർശ ഷെൽഫുകൾ എങ്ങനെ കാണിക്കണം: ഒരു തുടർച്ചയായ ഗ്രിഡ് അല്ലെങ്കിൽ ടിവി-ശൈലി തിരശ്ചീന റെയിലുകൾ.";
+"settings.footer.ryd" = "ഡിസ്ലൈക്ക് എണ്ണം Return YouTube Dislike (returnyoutubedislike.com) വഴി നൽകുന്നു — ഒരു തുറന്ന കമ്മ്യൂണിറ്റി പ്രോജക്റ്റ്.";
+"settings.footer.debug" = "ഒരു പ്രത്യേക പ്ലേബാക്ക് സോർസ് നിർബന്ധിക്കുക. സാധാരണയായി Android VR സ്വയം ഫോൾബാക്കോടെ ഉപയോഗിക്കുന്നു. സോൾവർ സെർവർ Mobile Web + pot സോർസ് പ്രവർത്തിപ്പിക്കുന്നു.";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "തീം";
+"settings.theme.dark" = "ഇരുണ്ടത്";
+"settings.theme.light" = "വെളുത്തത്";
+"settings.theme.auto" = "സ്വയം";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "ഇരുണ്ട തീം മുതൽ";
+"settings.row.darkUntil" = "ഇരുണ്ട തീം വരെ";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "സ്ഥിര ഗുണം";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Auto";
+"settings.row.backgroundPlayback" = "പശ്ചാത്തല പ്ലേബാക്ക്";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "ഫുൾസ്ക്രീനിൽ സ്റ്റാറ്റസ് ബാർ മറയ്ക്കുക";
+"settings.row.zoomToFill" = "ഫുൾസ്ക്രീനിൽ സ്കെയിൽ ചെയ്യുക";
+"settings.row.showShorts" = "സബ്സ്ക്രിപ്ഷനുകളിൽ YouTube Shorts കാണിക്കുക";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "ഹോം ലേഔട്ട്";
+"settings.homeLayout.grid" = "സാധാരണ ഗ്രിഡ്";
+"settings.homeLayout.rails" = "ഷെൽഫ് റെയിലുകൾ";
+
+/* Cache rows */
+"settings.row.feedCache" = "ഫീഡ് കാഷ്";
+"settings.row.feedCacheDuration" = "ഫീഡ് കാഷ് കാലാവധി";
+"settings.row.imageCache" = "ചിത്ര കാഷ്";
+"settings.row.imageCacheDuration" = "ചിത്ര കാഷ് കാലാവധി";
+"settings.row.clearCache" = "എല്ലാ കാഷും മായ്ക്കുക";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "കാഷ് മായ്ച്ചു";
+"settings.cache.clearedMessage" = "എല്ലാ കാഷും മായ്ച്ചു.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock ക്രമീകരണങ്ങൾ";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "പ്ലേബാക്ക് സോർസ്";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "ഡീബഗ് ലോഗ് പങ്കിടുക";
+/* Solver-server URL alert */
+"settings.solver.message" = "സോൾവർ സെർവറിന്റെ URL.";
+"settings.solver.reset" = "സ്ഥിര മൂല്യത്തിലേക്ക് റീസെറ്റ് ചെയ്യുക";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (default)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "ലോഗുകൾ ഇല്ല";
+"settings.log.noneMessage" = "ഡീബഗ് ലോഗുകൾ ഇതുവരെ ലഭ്യമല്ല.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "പ്രൊഫൈൽ";
+"profile.signOut" = "സൈൻ ഔട്ട്";
+"profile.clearImageCache" = "ചിത്ര കാഷ് മായ്ക്കുക";
+"profile.imageCacheCleared" = "ചിത്ര കാഷ് മായ്ച്ചു.";
+
+/* ===== Search ===== */
+
+"search.title" = "തിരയുക";
+/* Search bar placeholder */
+"search.placeholder" = "YouTube തിരയുക";
+/* Header above the recent-search list */
+"search.recent" = "സമീപകാല തിരച്ചിലുകൾ";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "ഫിൽറ്ററുകൾ";
+"search.filters.active" = "ഫിൽറ്ററുകൾ •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "തിരച്ചിൽ ഫിൽറ്ററുകൾ";
+"search.filters.reset" = "ഫിൽറ്ററുകൾ റീസെറ്റ് ചെയ്യുക";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "ക്രമീകരണം: %1$@";
+"search.filters.date" = "തീയതി: %1$@";
+"search.filters.type" = "തരം: %1$@";
+"search.filters.duration" = "ദൈർഘ്യം: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "ക്രമീകരണം";
+"search.filters.dateTitle" = "അപ്ലോഡ് തീയതി";
+"search.filters.typeTitle" = "തരം";
+"search.filters.durationTitle" = "ദൈർഘ്യം";
+
+/* Filter option values */
+"search.sort.relevance" = "പ്രസക്തി";
+"search.sort.rating" = "റേറ്റിംഗ്";
+"search.sort.uploadDate" = "അപ്ലോഡ് തീയതി";
+"search.sort.viewCount" = "കാഴ്ചകളുടെ എണ്ണം";
+"search.date.any" = "ഏതു സമയവും";
+"search.date.lastHour" = "അവസാന മണിക്കൂർ";
+"search.date.today" = "ഇന്ന്";
+"search.date.thisWeek" = "ഈ ആഴ്ച";
+"search.date.thisMonth" = "ഈ മാസം";
+"search.date.thisYear" = "ഈ വർഷം";
+"search.type.any" = "ഏതു തരവും";
+"search.type.video" = "വീഡിയോ";
+"search.type.channel" = "ചാനൽ";
+"search.type.playlist" = "പ്ലേലിസ്റ്റ്";
+"search.duration.any" = "ഏതു ദൈർഘ്യവും";
+"search.duration.short" = "4 മിനിറ്റിൽ താഴെ";
+"search.duration.medium" = "4–20 മിനിറ്റ്";
+"search.duration.long" = "20 മിനിറ്റിൽ കൂടുതൽ";
+
+/* ===== Home ===== */
+
+"home.title" = "ഹോം";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "എല്ലാം";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "ലൈവ്";
+"home.category.news" = "വാർത്തകൾ";
+"home.category.gaming" = "ഗെയിമിംഗ്";
+"home.category.sports" = "കായികം";
+"home.category.learning" = "പഠനം";
+"home.category.fashion" = "ഫാഷൻ";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "ഫീഡ് ലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല\nവീണ്ടും ശ്രമിക്കാൻ താഴേക്ക് വലിക്കുക";
+/* Signed-out empty state */
+"home.signIn" = "ശുപാർശകൾ കാണാൻ സൈൻ ഇൻ ചെയ്യുക";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "വീഡിയോകൾ";
+"channel.tab.live" = "ലൈവ്";
+"channel.tab.playlists" = "പ്ലേലിസ്റ്റുകൾ";
+/* About sheet */
+"channel.about.title" = "വിവരം";
+"channel.about.close" = "അടയ്ക്കുക";
+"channel.about.subscribers" = "സബ്സ്ക്രൈബർമാർ";
+"channel.about.videos" = "വീഡിയോകൾ";
+"channel.about.description" = "വിവരണം";
+"channel.about.contact" = "ബന്ധപ്പെടുക";
+
+/* ===== Library ===== */
+
+"library.history" = "ചരിത്രം";
+"library.downloads" = "ഡൗൺലോഡുകൾ";
+"library.playlists" = "പ്ലേലിസ്റ്റുകൾ";
+"library.downloads.comingSoon" = "ഡൗൺലോഡുകൾ ഉടൻ വരുന്നു";
+"library.history.signIn" = "നിങ്ങളുടെ വാച്ച് ചരിത്രം കാണാൻ സൈൻ ഇൻ ചെയ്യുക";
+"library.history.empty" = "വാച്ച് ചരിത്രം കണ്ടെത്തിയില്ല";
+"library.history.loadFailed" = "ചരിത്രം ലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല";
+"library.playlists.signIn" = "നിങ്ങളുടെ പ്ലേലിസ്റ്റുകൾ കാണാൻ സൈൻ ഇൻ ചെയ്യുക";
+"library.playlists.loadFailed" = "പ്ലേലിസ്റ്റുകൾ ലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല";
+"library.playlist.empty" = "ഈ പ്ലേലിസ്റ്റിൽ വീഡിയോകൾ ഇല്ല";
+"library.playlist.loadFailed" = "പ്ലേലിസ്റ്റ് ലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "സബ്സ്ക്രിപ്ഷനുകൾ";
+"subscriptions.all" = "എല്ലാ സബ്സ്ക്രിപ്ഷനുകളും";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "എല്ലാം";
+"subscriptions.signIn" = "നിങ്ങളുടെ സബ്സ്ക്രിപ്ഷനുകൾ കാണാൻ സൈൻ ഇൻ ചെയ്യുക";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "അക്കൗണ്ട്";
+"account.signIn" = "സൈൻ ഇൻ";
+"account.signOut" = "സൈൻ ഔട്ട്";
+"account.notSignedIn" = "സൈൻ ഇൻ ചെയ്തിട്ടില്ല";
+
+/* Generic error alert title */
+"common.error" = "പിശക്";
+/* Channel screen failed to load */
+"channel.unavailable" = "ചാനൽ ലഭ്യമല്ല";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "ഭാഷ";
+"settings.footer.language" = "ആപ്പ് ഭാഷ ഇന്റർഫേസ് മാറ്റുന്നു. ഉള്ളടക്ക ഭാഷ തലക്കെട്ടുകൾ, തിരച്ചിൽ, ഫീഡുകൾ മാറ്റുന്നു (YouTube ഔദ്യോഗിക ആപ്പ് പോലെ മെറ്റാഡാറ്റ സെർവർ വശം വിവർത്തനം ചെയ്യുന്നു). മാറ്റങ്ങൾ ആപ്പ് വീണ്ടും ആരംഭിച്ചതിന് ശേഷം പൂർണ്ണമായി പ്രയോഗിക്കുന്നു.";
+/* Rows */
+"settings.row.appLanguage" = "ആപ്പ് ഭാഷ";
+"settings.row.contentLanguage" = "ഉള്ളടക്ക ഭാഷ";
+"settings.row.region" = "മേഖല";
+/* Picker option following the device language/region */
+"settings.language.system" = "സിസ്റ്റം";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "വീണ്ടും ആരംഭിക്കേണ്ടതുണ്ട്";
+"settings.language.restartMessage" = "ആപ്പ് വീണ്ടും ആരംഭിച്ചതിന് ശേഷം മാറ്റങ്ങൾ പൂർണ്ണമായി പ്രയോഗിക്കുന്നു.";

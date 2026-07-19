@@ -10,7 +10,7 @@ class SearchViewController: UIViewController {
     var results: [Video] = []
     var filters = SearchFilters()
     let filtersButton = UIBarButtonItem(
-        title: "Filters", style: .plain, target: nil, action: nil
+        title: "search.filters".localized, style: .plain, target: nil, action: nil
     )
     var lastQuery: String = ""
     var activeSearchQuery: String?
@@ -48,7 +48,7 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Search"
+        title = "search.title".localized
         setupFiltersButton()
         setupSearchBar()
         setupTableView()
@@ -63,7 +63,7 @@ class SearchViewController: UIViewController {
 
     private func setupSearchBar() {
         searchBar.delegate = self
-        searchBar.placeholder = "Search YouTube"
+        searchBar.placeholder = "search.placeholder".localized
         searchBar.text = lastQuery.isEmpty ? nil : lastQuery
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(searchBar)

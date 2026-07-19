@@ -273,7 +273,7 @@ extension WatchViewController {
         DispatchQueue.main.async { [weak self] in
             self?.playerSpinner.stopAnimating()
             self?.playerStatusLabel.text =
-                "Playback error: \(message)"
+                "player.error.withMessage".localized(with: message)
             self?.playerStatusLabel.textColor =
                 .systemRed
         }

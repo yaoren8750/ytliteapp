@@ -83,11 +83,14 @@ enum AppURLs {
                 URLQueryItem(name: "oe", value: "utf-8"),
                 URLQueryItem(name: "q", value: query)
             ]
-            if let language = Locale.current.languageCode {
-                items.append(
-                    URLQueryItem(name: "hl", value: language)
+            // Follows the content-language setting (not the device locale)
+            // so suggestions match what feeds/search return.
+            items.append(
+                URLQueryItem(
+                    name: "hl",
+                    value: InnertubeContexts.localePreferences.hl
                 )
-            }
+            )
             components?.queryItems = items
             return components?.url
         }

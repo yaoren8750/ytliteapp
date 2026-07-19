@@ -1,0 +1,367 @@
+/*
+  YTLite — Greek (Ελληνικά).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Ρυθμίσεις αναπαραγωγής";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Ποιότητα";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Ήχος";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Στατιστικά";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Υπότιτλοι";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Απενεργοποίηση";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Φόρτωση %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Επίλυση ροής...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Η αναπαραγωγή απέτυχε.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Η αλλαγή ποιότητας απέτυχε.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Η αλλαγή ήχου απέτυχε.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Εγγραφή";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Εγγεγραμένος";
+/* Generic cancel action */
+"common.cancel" = "Ακύρωση";
+/* Generic confirmation button */
+"common.ok" = "OK";
+/* Generic save action */
+"common.save" = "Αποθήκευση";
+/* Generic done action */
+"common.done" = "Τέλος";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Λίστα αναπαραγωγής";
+/* Library tab title */
+"library.title" = "Βιβλιοθήκη";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Προετοιμασία βίντεο...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Ανανέωση ροής...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Περισσότερα";
+/* Collapses the video description */
+"player.description.less" = "Λιγότερα";
+/* Action bar: share the video */
+"player.action.share" = "Κοινοποίηση";
+/* Action bar: save to playlist */
+"player.action.save" = "Αποθήκευση";
+/* Action bar: download */
+"player.action.download" = "Λήψη";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Σχόλια";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Σχόλια (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Φόρτωση σχολίων...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Τα σχόλια δεν είναι διαθέσιμα";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Τα σχόλια δεν είναι ακόμα διαθέσιμα.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Φόρτωση περισσότερων σχολίων";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • Καρφιτσωμένο";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ μου αρέσει";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ απαντήσεις";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Επόμενο";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Αναπαραγωγή τώρα";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Μείξη";
+/* Header of the related-videos section */
+"player.related.title" = "Σχετικά";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Σφάλμα αναπαραγωγής: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Κανονική";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Παράκαμψη %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Αυτόματη παράκαμψη";
+"sponsorblock.behavior.showButton" = "Εμφάνιση κουμπιού";
+"sponsorblock.behavior.disabled" = "Απενεργοποίηση";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Λειτουργεί με το SponsorBlock (sponsor.ajay.app) — ένα ανοιχτό κοινοτικό έργο.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Κατηγορίες τμημάτων";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Χορηγός";
+"sponsorblock.category.sponsor.description" = "Πληρωμένη προώθηση, πληρωμένες παραπομπές και άμεσες διαφημίσεις. Όχι για αυτοπροώθηση ή δωρεάν αναφορές σε αιτίες/δημιουργούς/ιστοσελίδες/προϊόντα που τους αρέσουν.";
+"sponsorblock.category.selfpromo.name" = "Μη πληρωμένη/Αυτοπροώθηση";
+"sponsorblock.category.selfpromo.description" = "Παρόμοιο με το \"χορηγός\" εκτός αν είναι μη πληρωμένο ή αυτοπροώθηση. Περιλαμβάνει ενότητες για εμπορεύματα, δωρεές ή πληροφορίες για συνεργασίες.";
+"sponsorblock.category.exclusive_access.name" = "Αποκλειστική Πρόσβαση";
+"sponsorblock.category.exclusive_access.description" = "Μόνο για ετικέτεση ολόκληρων βίντεο. Χρησιμοποιείται όταν ένα βίντεο παρουσιάζει ένα προϊόν, υπηρεσία ή τοποθεσία στην οποία έχουν λάβει δωρεάν ή επιδοτούμενη πρόσβαση.";
+"sponsorblock.category.interaction.name" = "Υπενθύμιση Αλληλεπίδρασης (Εγγραφή)";
+"sponsorblock.category.interaction.description" = "Όταν υπάρχει μια σύντομη υπενθύμιση για like, εγγραφή ή ακολούθηση στη μέσο του περιεχομένου. Αν είναι μακρύ ή σχετίζεται με κάτι συγκεκριμένο, θα πρέπει να είναι στην αυτοπροώθηση.";
+"sponsorblock.category.highlight.name" = "Σημαντικό";
+"sponsorblock.category.highlight.description" = "Το κομμάτι του βίντεο που ψάχνουν οι περισσότεροι. Παρόμοιο με τα σχόλια \"Το βίντεο ξεκινά στο x\".";
+"sponsorblock.category.intro.name" = "Ενδιάμεση/Εισαγωγική Εναρμόνιση";
+"sponsorblock.category.intro.description" = "Ένα διάστημα χωρίς πραγματικό περιεχόμενο. Μπορεί να είναι παύση, στατικό κάδρο ή επαναλαμβανόμενη εναρμόνιση. Δεν πρέπει να χρησιμοποιείται για μεταβάσεις με πληροφορίες.";
+"sponsorblock.category.outro.name" = "Τέλος/Επιγραφές";
+"sponsorblock.category.outro.description" = "Επιγραφές ή όταν εμφανίζονται οι κάρτες τέλους του YouTube. Όχι για συμπεράσματα με πληροφορίες.";
+"sponsorblock.category.preview.name" = "Προεπισκόπηση/Περίληψη";
+"sponsorblock.category.preview.description" = "Συλλογή κλιπ που δείχνουν τι έρχεται σε αυτό το βίντεο ή άλλα βίντεο σε μια σειρά όπου όλες οι πληροφορίες επαναλαμβάνονται αργότερα στο βίντεο.";
+"sponsorblock.category.filler.name" = "Παρεκτροπές/Αστεία";
+"sponsorblock.category.filler.description" = "Παρεκτρεπτικές σκηνές ή αστεία που δεν απαιτούνται για την κατανόηση του κύριου περιεχομένου του βίντεο. Δεν πρέπει να περιλαμβάνει τμήματα που παρέχουν πλαίσιο ή λεπτομέρειες ιστορικού.";
+"sponsorblock.category.music_offtopic.name" = "Μη Μουσικό Τμήμα";
+"sponsorblock.category.music_offtopic.description" = "Μόνο για μουσικά βίντεο. Μη μουσικό τμήμα ενός μουσικού βίντεο.";
+"sponsorblock.category.chapter.name" = "Κεφάλαιο";
+"sponsorblock.category.chapter.description" = "Προσαρμοσμένες ονομασμένες ενότητες του βίντεο.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Ρυθμίσεις";
+
+/* Section headers */
+"settings.section.theme" = "Θέμα";
+"settings.section.playback" = "Αναπαραγωγή";
+"settings.section.home" = "Αρχική";
+"settings.section.cache" = "Προσωρινή μνήμη";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Εντοπισμός σφαλμάτων";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Ακολουθεί αυτόματα την εμφάνιση του συστήματος.";
+"settings.footer.themeAutoHours" = "Εναλλαγή σε σκοτεινό θέμα αυτόματα μεταξύ των παραπάνω ωρών.";
+"settings.footer.playback" = "Η εστίαση σε πλήρη οθόνη κλιμακώνει αυτόματα το βίντεο ώστε να μην απομένουν μαύρες λωρίδες. Η πίεση στον αναπαραγωγέα το παρακάμπτει ανά βίντεο.";
+"settings.footer.home" = "Πώς εμφανίζονταν τα ράφια σύστασης: ένα συνεχές πλέγμα ή οριζόντιες ράγες σε στυλ τηλεόρασης.";
+"settings.footer.ryd" = "Οι μετρήσεις αρνήσεων υποστηρίζονται από το Return YouTube Dislike (returnyoutubedislike.com) — ένα ανοιχτό κοινοτικό έργο.";
+"settings.footer.debug" = "Εξαναγκασμός συγκεκριμένης πηγής αναπαραγωγής. Κανονικά χρησιμοποιείται Android VR με αυτόματη εναλλαγή. Ο διακομιστής επίλυσης τροφοδοτεί την πηγή Mobile Web + pot (παραγωγή pot, και επίλυση n στο iOS 12–13).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Θέμα";
+"settings.theme.dark" = "Σκοτεινό";
+"settings.theme.light" = "Φωτεινό";
+"settings.theme.auto" = "Αυτόματο";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Σκοτεινό θέμα από";
+"settings.row.darkUntil" = "Σκοτεινό θέμα έως";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Προεπιλεγμένη ποιότητα";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Αυτόματο";
+"settings.row.backgroundPlayback" = "Αναπαραγωγή στο παρασκήνιο";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "Απόκρυψη γραμμής κατάστασης σε πλήρη οθόνη";
+"settings.row.zoomToFill" = "Εστίαση σε πλήρη οθόνη";
+"settings.row.showShorts" = "Εμφάνιση YouTube Shorts στις Συνδρομές";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Διάταξη αρχικής";
+"settings.homeLayout.grid" = "Απλό πλέγμα";
+"settings.homeLayout.rails" = "Ράγες ραφιού";
+
+/* Cache rows */
+"settings.row.feedCache" = "Προσωρινή μνήμη ροής";
+"settings.row.feedCacheDuration" = "Διάρκεια προσωρινής μνήμης ροής";
+"settings.row.imageCache" = "Προσωρινή μνήμη εικόνων";
+"settings.row.imageCacheDuration" = "Διάρκεια προσωρινής μνήμης εικόνων";
+"settings.row.clearCache" = "Εκκαθάριση όλης της προσωρινής μνήμης";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Η προσωρινή μνήμη εκκαθαρίστηκε";
+"settings.cache.clearedMessage" = "Όλη η προσωρινή μνήμη εκκαθαρίστηκε.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "Ρυθμίσεις SponsorBlock";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Πηγή αναπαραγωγής";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Κοινοποίηση αρχείου καταγραφής εντοπισμού σφαλμάτων";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL του διακομιστή επίλυσης.";
+"settings.solver.reset" = "Επαναφορά στην προεπιλογή";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (προεπιλογή)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Δεν υπάρχουν καταγραφές";
+"settings.log.noneMessage" = "Δεν υπάρχουν ακόμα καταγραφές εντοπισμού σφαλμάτων.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Προφίλ";
+"profile.signOut" = "Αποσύνδεση";
+"profile.clearImageCache" = "Εκκαθάριση προσωρινής μνήμης εικόνων";
+"profile.imageCacheCleared" = "Η προσωρινή μνήμη εικόνων εκκαθαρίστηκε.";
+
+/* ===== Search ===== */
+
+"search.title" = "Αναζήτηση";
+/* Search bar placeholder */
+"search.placeholder" = "Αναζήτηση στο YouTube";
+/* Header above the recent-search list */
+"search.recent" = "Πρόσφατες αναζητήσεις";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Φίλτρα";
+"search.filters.active" = "Φίλτρα •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Φίλτρα αναζήτησης";
+"search.filters.reset" = "Επαναφορά φίλτρων";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Ταξινόμηση: %1$@";
+"search.filters.date" = "Ημερομηνία: %1$@";
+"search.filters.type" = "Τύπος: %1$@";
+"search.filters.duration" = "Διάρκεια: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Ταξινόμηση κατά";
+"search.filters.dateTitle" = "Ημερομηνία μεταφόρτωσης";
+"search.filters.typeTitle" = "Τύπος";
+"search.filters.durationTitle" = "Διάρκεια";
+
+/* Filter option values */
+"search.sort.relevance" = "Συσχέτιση";
+"search.sort.rating" = "Αξιολόγηση";
+"search.sort.uploadDate" = "Ημερομηνία μεταφόρτωσης";
+"search.sort.viewCount" = "Αριθμός προβολών";
+"search.date.any" = "Οποιαδήποτε στιγμή";
+"search.date.lastHour" = "Τελευταία ώρα";
+"search.date.today" = "Σήμερα";
+"search.date.thisWeek" = "Αυτή την εβδομάδα";
+"search.date.thisMonth" = "Αυτόν τον μήνα";
+"search.date.thisYear" = "Αυτόν τον χρόνο";
+"search.type.any" = "Οποιοσδήποτε τύπος";
+"search.type.video" = "Βίντεο";
+"search.type.channel" = "Κανάλι";
+"search.type.playlist" = "Λίστα αναπαραγωγής";
+"search.duration.any" = "Οποιαδήποτε διάρκεια";
+"search.duration.short" = "Κάτω από 4 λεπτά";
+"search.duration.medium" = "4–20 λεπτά";
+"search.duration.long" = "Πάνω από 20 λεπτά";
+
+/* ===== Home ===== */
+
+"home.title" = "Αρχική";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Όλα";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Live";
+"home.category.news" = "Ειδήσεις";
+"home.category.gaming" = "Παιχνίδια";
+"home.category.sports" = "Αθλητικά";
+"home.category.learning" = "Μάθηση";
+"home.category.fashion" = "Μόδα";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Αδυναμία φόρτωσης ροής\nΤραβήξτε για να δοκιμάσετε ξανά";
+/* Signed-out empty state */
+"home.signIn" = "Συνδεθείτε για να δείτε τις συστάσεις σας";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Βίντεο";
+"channel.tab.live" = "Live";
+"channel.tab.playlists" = "Λίστες αναπαραγωγής";
+/* About sheet */
+"channel.about.title" = "Σχετικά";
+"channel.about.close" = "Κλείσιμο";
+"channel.about.subscribers" = "Συνδρομητές";
+"channel.about.videos" = "Βίντεο";
+"channel.about.description" = "Περιγραφή";
+"channel.about.contact" = "Επικοινωνία";
+
+/* ===== Library ===== */
+
+"library.history" = "Ιστορικό";
+"library.downloads" = "Λήψεις";
+"library.playlists" = "Λίστες αναπαραγωγής";
+"library.downloads.comingSoon" = "Οι λήψεις θα είναι σύντομα διαθέσιμες";
+"library.history.signIn" = "Συνδεθείτε για να δείτε το ιστορικό προβολών σας";
+"library.history.empty" = "Δεν βρέθηκε ιστορικό προβολών";
+"library.history.loadFailed" = "Αδυναμία φόρτωσης ιστορικού";
+"library.playlists.signIn" = "Συνδεθείτε για να δείτε τις λίστες αναπαραγωγής σας";
+"library.playlists.loadFailed" = "Αδυναμία φόρτωσης λιστών αναπαραγωγής";
+"library.playlist.empty" = "Δεν υπάρχουν βίντεο σε αυτή τη λίστα αναπαραγωγής";
+"library.playlist.loadFailed" = "Αδυναμία φόρτωσης λίστας αναπαραγωγής";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Συνδρομές";
+"subscriptions.all" = "Όλες οι συνδρομές";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Όλα";
+"subscriptions.signIn" = "Συνδεθείτε για να δείτε τις συνδρομές σας";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Λογαριασμός";
+"account.signIn" = "Σύνδεση";
+"account.signOut" = "Αποσύνδεση";
+"account.notSignedIn" = "Δεν έχετε συνδεθεί";
+
+/* Generic error alert title */
+"common.error" = "Σφάλμα";
+/* Channel screen failed to load */
+"channel.unavailable" = "Το κανάλι δεν είναι διαθέσιμο";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Γλώσσα";
+"settings.footer.language" = "Η γλώσσα εφαρμογής αλλάζει τη διεπαφή. Η γλώσσα περιεχομένου αλλάζει τίτλους, αναζήτηση και ροές (το YouTube μεταφράζει τα μεταδεδομένα στην πλευρά του διακομιστή, όπως η επίσημη εφαρμογή). Οι αλλαγές εφαρμόζονται πλήρως μετά από επανεκκίνηση της εφαρμογής.";
+/* Rows */
+"settings.row.appLanguage" = "Γλώσσα εφαρμογής";
+"settings.row.contentLanguage" = "Γλώσσα περιεχομένου";
+"settings.row.region" = "Περιοχή";
+/* Picker option following the device language/region */
+"settings.language.system" = "Σύστημα";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Απαιτείται επανεκκίνηση";
+"settings.language.restartMessage" = "Οι αλλαγές εφαρμόζονται πλήρως μετά την επανεκκίνηση της εφαρμογής.";

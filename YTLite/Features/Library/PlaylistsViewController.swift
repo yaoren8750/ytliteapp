@@ -33,7 +33,7 @@ final class PlaylistsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Playlists"
+        title = "library.playlists".localized
         setupTableView()
         setupSpinner()
         setupEmpty()
@@ -118,7 +118,7 @@ final class PlaylistsViewController: UIViewController {
 
     private func showSignInRequired() {
         tableView.isHidden = true
-        emptyLabel.text = "Sign in to view your playlists"
+        emptyLabel.text = "library.playlists.signIn".localized
         emptyLabel.isHidden = false
     }
 
@@ -144,7 +144,8 @@ final class PlaylistsViewController: UIViewController {
                         self?.emptyLabel.isHidden = true
                     }
                 case .failure:
-                    self?.emptyLabel.text = "Could not load playlists"
+                    self?.emptyLabel.text =
+                        "library.playlists.loadFailed".localized
                     self?.emptyLabel.isHidden = false
                 }
             }

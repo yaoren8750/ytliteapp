@@ -1,0 +1,367 @@
+/*
+  YTLite — Burmese (မြန်မာ).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "ဖွင့်ချက်အပြင်အဆင်";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "အရည်အသွေး";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "အသံလမ်းကြောင်း";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "ဖွံ့ဖြိုးတိုးတက်သူများအတွက် စာရင်းအင်းများ";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "စာတန်းထိုးချက်များ";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "ပိတ်";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (အလိုအလျောက်)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "%1$@ ကို ဖွင့်နေသည်...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "ဖြန်ကြေးကို ဖြေရှင်းနေသည်...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "ဖွင့်ချက်မအောင်မြင်ပါ။";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "အရည်အသွေးပြောင်းလဲခြင်းမအောင်မြင်ပါ။";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "အသံလမ်းကြောင်းပြောင်းလဲခြင်းမအောင်မြင်ပါ။";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "စာရင်းသွင်းရန်";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "စာရင်းသွင်းပြီးပါပြီ";
+/* Generic cancel action */
+"common.cancel" = "ပယ်ဖျက်ရန်";
+/* Generic confirmation button */
+"common.ok" = "အိုကေ";
+/* Generic save action */
+"common.save" = "သိမ်းဆည်းရန်";
+/* Generic done action */
+"common.done" = "ပြီးပါပြီ";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "ဖွင့်ချက်စာရင်း";
+/* Library tab title */
+"library.title" = "စာကြည့်တိုက်";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "ဗီဒီယိုကို ပြင်ဆင်နေသည်...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "ဖြန်ကြေးကို ပြန်လည်ရှင်းနေသည်...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "ထပ်မံကြည့်ရန်";
+/* Collapses the video description */
+"player.description.less" = "လျှော့ချရန်";
+/* Action bar: share the video */
+"player.action.share" = "မျှဝေရန်";
+/* Action bar: save to playlist */
+"player.action.save" = "သိမ်းဆည်းရန်";
+/* Action bar: download */
+"player.action.download" = "ဒေါင်းလုဒ်လုပ်ရန်";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "မှတ်ချက်များ";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "မှတ်ချက်များ (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "မှတ်ချက်များ ဖွင့်နေသည်...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "မှတ်ချက်များ မရနိုင်ပါ";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "မှတ်ချက်များ မရနိုင်သေးပါ။";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "ထပ်မံဖွင့်ရန်";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • ညှပ်ထားသည်";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ ကြိုက်နှစ်သက်မှု";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ ဖြေကြားချက်";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "နောက်တစ်ခု";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "ယခုဖွင့်ရန်";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Mix";
+/* Header of the related-videos section */
+"player.related.title" = "ဆက်စပ်နေသည်";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "ဖွင့်ချက်အမှား: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "ပုံမှန်";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "%1$@ ကို ဖြတ်ရန်";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "အလိုအလျောက် ဖြတ်ရန်";
+"sponsorblock.behavior.showButton" = "ခလုတ်ပြရန်";
+"sponsorblock.behavior.disabled" = "ပိတ်ရန်";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "SponsorBlock (sponsor.ajay.app) ဖြင့် ထောက်ပံ့သည် — လူမှုအသိုင်းအဝိုင်း ပွင့်လင်းစီမံကိန်း။";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "အပိုင်းအမျိုးအစားများ";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "အားပေးသူ";
+"sponsorblock.category.sponsor.description" = "ပေးချေထားသော ကြော်ငြာ၊ ပေးချေထားသော ညွှန်းဆိုမှုများနှင့် တိုက်ရိုက်ကြော်ငြာများ။ ကိုယ်တိုင်ကြော်ငြာခြင်း သို့မဟုတ် သူတို့ကြိုက်နှစ်သက်သော brand/creator/website/product များအတွက် အခမဲ့ အားပေးခြင်း မပါဝင်ပါ။";
+"sponsorblock.category.selfpromo.name" = "အခမဲ့/ကိုယ်တိုင်ကြော်ငြာ";
+"sponsorblock.category.selfpromo.description" = "\"အားပေးသူ\" နှင့် ဆင်တူသော်လည်း အခမဲ့ သို့မဟုတ် ကိုယ်တိုင်ကြော်ငြာခြင်းအတွက်။ merchandise၊ လှူဒါန်းမှုများ သို့မဟုတ် ၎င်းတို့ပူးပေါင်းဆောင်ရွက်သူများအကြောင်း အချက်အလက်များ ပါဝင်သည်။";
+"sponsorblock.category.exclusive_access.name" = "သီးသန့်အသုံးပြုခွင့်";
+"sponsorblock.category.exclusive_access.description" = "ဗီဒီယိုတစ်ခုလုံးအတွက် အမှတ်အသားပေးရန်သာ။ ဗီဒီယိုသည် အခမဲ့ သို့မဟုတ် အကျပ်အတည်းဖြင့် ရရှိထားသော ထုတ်ကုန်၊ ဝန်ဆောင်မှု သို့မဟုတ် နေရာကို ပြသသည့်အခါ အသုံးပြုသည်။";
+"sponsorblock.category.interaction.name" = "အပြန်အလှန်သတိပေးချက် (စာရင်းသွင်းရန်)";
+"sponsorblock.category.interaction.description" = "အကြောင်းအရာအလယ်တွင် ကြိုက်နှစ်သက်ခြင်း၊ စာရင်းသွင်းခြင်း သို့မဟုတ် လိုက်နာခြင်းအတွက် တိတ်ဆိတ်သည့် သတိပေးချက် ရှိသည့်အခါ။ ရှည်လျားပြီး အထူးတစ်ခုခုအကြောင်းဖြစ်ပါက ကိုယ်တိုင်ကြော်ငြာခြင်းအောက်တွင် ရှိသင့်ပါသည်။";
+"sponsorblock.category.highlight.name" = "အထူးခြားအပိုင်း";
+"sponsorblock.category.highlight.description" = "လူအများစု ရှာဖွေနေသည့် ဗီဒီယိုအပိုင်း။ \"ဗီဒီယိုသည် x စက္ကန့်တွင် စတင်သည်\" မှတ်ချက်များနှင့် ဆင်တူသည်။";
+"sponsorblock.category.intro.name" = "အနားပေးချက်/အစပိုင်း animation";
+"sponsorblock.category.intro.description" = "အမှန်တကယ်ပါဝင်မှုမရှိသည့် အချိန်ကာလ။ ရပ်နားခြင်း၊ ရပ်ထားသည့်ဘောင် သို့မဟုတ် ထပ်ခါတလဲလဲ animation ဖြစ်နိုင်သည်။ အချက်အလက်ပါဝင်သည့် ပြောင်းလဲခြင်းများအတွက် မသုံးသင့်ပါ။";
+"sponsorblock.category.outro.name" = "အဆုံးကတ်များ/အသိအမှတ်ပြုချက်များ";
+"sponsorblock.category.outro.description" = "YouTube အဆုံးကတ်များ ပေါ်လာသည့်အခါ အသိအမှတ်ပြုချက်များ။ အချက်အလက်ပါဝင်သည့် အနှစ်ချုပ်များအတွက် မဟုတ်ပါ။";
+"sponsorblock.category.preview.name" = "ကြိုကြည့်/အနှစ်ချုပ်";
+"sponsorblock.category.preview.description" = "ဗီဒီယိုတစ်ခုလုံးတွင် နောက်ပိုင်းတွင် အချက်အလက်အားလုံးကို ထပ်မံဖော်ပြမည့် ဗီဒီယို သို့မဟုတ် ဇာတ်လမ်းတွဲရှိ ဗီဒီယိုများတွင် ဘာလာမည်ကို ပြသည့် clip များ စုစည်းမှု။";
+"sponsorblock.category.filler.name" = "ဘေးဖြတ်ချက်/ရယ်စရာ";
+"sponsorblock.category.filler.description" = "ဗီဒီယို၏ အဓိပ္ပာယ်ကို နားလည်ရန် မလိုအပ်သည့် ဘေးဖြတ်ချက်များ သို့မဟုတ် ရယ်စရာများ။ အဓိပ္ပာယ်ဖွင့်ဆိုချက် သို့မဟုတ် နောက်ခံအသေးစိတ်များ ပေးသည့် အပိုင်းများ မပါဝင်သင့်ပါ။";
+"sponsorblock.category.music_offtopic.name" = "သီချင်းမဟုတ်သည့်အပိုင်း";
+"sponsorblock.category.music_offtopic.description" = "သီချင်းဗီဒီယိုများအတွက်သာ။ သီချင်းဗီဒီယို၏ သီချင်းမဟုတ်သည့်အပိုင်း။";
+"sponsorblock.category.chapter.name" = "အပိုင်း";
+"sponsorblock.category.chapter.description" = "ဗီဒီယို၏ စိတ်ကြိုက်အမည်တပ်ထားသည့် အပိုင်းများ။";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "အပြင်အဆင်များ";
+
+/* Section headers */
+"settings.section.theme" = "အပြင်အဆင်";
+"settings.section.playback" = "ဖွင့်ချက်";
+"settings.section.home" = "ပင်မ";
+"settings.section.cache" = "Cache";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Debug";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "စနစ်ပုံစံကို အလိုအလျောက် လိုက်နာသည်။";
+"settings.footer.themeAutoHours" = "အထက်ပါအချိန်များအကြားတွင် မှောင်သည့်အပြင်အဆင်သို့ အလိုအလျောက် ပြောင်းလဲသည်။";
+"settings.footer.playback" = "Zoom to Fill သည် ဖန်သားပြင်အပြည့်တွင် ဗီဒီယိုကို အမည်းဘားများ မကျန်အောင် အလိုအလျောက် scale လုပ်သည်။ Player တွင် pinch ခြင်းသည် ဗီဒီယိုတစ်ခုချင်းစီအတွက် override လုပ်သည်။";
+"settings.footer.home" = "အကြံပြုထားသည့် ကုတင်များကို မည်ကဲ့သို့ ပြသသည် — ဆက်တိုက် grid တစ်ခု သို့မဟုတ် TV-style အလျားလိုက် rail များ။";
+"settings.footer.ryd" = "မကြိုက်မှု ရေတွက်ချက်မှုကို Return YouTube Dislike (returnyoutubedislike.com) ဖြင့် ထောက်ပံ့သည် — လူမှုအသိုင်းအဝိုင်း ပွင့်လင်းစီမံကိန်း။";
+"settings.footer.debug" = "အထူးဖွင့်ချက်အရင်းအမြစ်ကို မတည်ရှိစေရန်။ ပုံမှန်အားဖြင့် Android VR ကို အလိုအလျောက် fallback ဖြင့် အသုံးပြုသည်။ Solver server သည် Mobile Web + pot source (pot minting နှင့် iOS 12–13 တွင် n-solving) ကို ထောက်ပံ့သည်။";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "အပြင်အဆင်";
+"settings.theme.dark" = "မှောင်";
+"settings.theme.light" = "လင်း";
+"settings.theme.auto" = "အလိုအလျောက်";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "မှောင်သည့်အပြင်အဆင် စတင်ချိန်";
+"settings.row.darkUntil" = "မှောင်သည့်အပြင်အဆင် ပြီးဆုံးချိန်";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "ပုံသေအရည်အသွေး";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "အလိုအလျောက်";
+"settings.row.backgroundPlayback" = "နောက်ခံဖွင့်ချက်";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "ဖန်သားပြင်အပြည့်တွင် အခြေအနေဘားကို ဖျောက်ရန်";
+"settings.row.zoomToFill" = "ဖန်သားပြင်အပြည့်တွင် Zoom to Fill";
+"settings.row.showShorts" = "စာရင်းသွင်းမှုများတွင် YouTube Shorts ကို ပြရန်";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "ပင်မအပြင်အဆင်";
+"settings.homeLayout.grid" = "ရိုးရှင်းသည့် Grid";
+"settings.homeLayout.rails" = "ကုတင် Rail များ";
+
+/* Cache rows */
+"settings.row.feedCache" = "Feed Cache";
+"settings.row.feedCacheDuration" = "Feed Cache ကြာချိန်";
+"settings.row.imageCache" = "Image Cache";
+"settings.row.imageCacheDuration" = "Image Cache ကြာချိန်";
+"settings.row.clearCache" = "Cache အားလုံးကို ရှင်းလင်းရန်";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Cache ရှင်းလင်းပြီးပါပြီ";
+"settings.cache.clearedMessage" = "Cache အားလုံးကို ရှင်းလင်းပြီးပါပြီ။";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock အပြင်အဆင်များ";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "ဖွင့်ချက်အရင်းအမြစ်";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Debug Log မျှဝေရန်";
+/* Solver-server URL alert */
+"settings.solver.message" = "Solver server ၏ URL။";
+"settings.solver.reset" = "ပုံသေသို့ ပြန်ဖွင့်ရန်";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (ပုံသေ)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Log မရှိပါ";
+"settings.log.noneMessage" = "Debug log များ မရှိသေးပါ။";
+
+/* ===== Profile ===== */
+
+"profile.title" = "ပရိုဖိုင်";
+"profile.signOut" = "ထွက်ရန်";
+"profile.clearImageCache" = "Image Cache ရှင်းလင်းရန်";
+"profile.imageCacheCleared" = "Image cache ရှင်းလင်းပြီးပါပြီ။";
+
+/* ===== Search ===== */
+
+"search.title" = "ရှာဖွေရန်";
+/* Search bar placeholder */
+"search.placeholder" = "YouTube တွင် ရှာဖွေရန်";
+/* Header above the recent-search list */
+"search.recent" = "နောက်ဆုံးရှာဖွေမှုများ";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "စစ်ထုတ်ချက်များ";
+"search.filters.active" = "စစ်ထုတ်ချက်များ •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "ရှာဖွေမှုစစ်ထုတ်ချက်များ";
+"search.filters.reset" = "စစ်ထုတ်ချက်များ ပြန်ဖွင့်ရန်";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "စီရန်: %1$@";
+"search.filters.date" = "ရက်စွဲ: %1$@";
+"search.filters.type" = "အမျိုးအစား: %1$@";
+"search.filters.duration" = "ကြာချိန်: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "စီရန်";
+"search.filters.dateTitle" = "တင်သည့်ရက်စွဲ";
+"search.filters.typeTitle" = "အမျိုးအစား";
+"search.filters.durationTitle" = "ကြာချိန်";
+
+/* Filter option values */
+"search.sort.relevance" = "သက်ဆိုင်မှု";
+"search.sort.rating" = "အဆင့်သတ်မှတ်ချက်";
+"search.sort.uploadDate" = "တင်သည့်ရက်စွဲ";
+"search.sort.viewCount" = "ကြည့်ရှုမှု ရေတွက်ချက်";
+"search.date.any" = "အချိန်မရွေး";
+"search.date.lastHour" = "ယခုနာရီ";
+"search.date.today" = "ယနေ့";
+"search.date.thisWeek" = "ယခုအပတ်";
+"search.date.thisMonth" = "ယခုလ";
+"search.date.thisYear" = "ယခုနှစ်";
+"search.type.any" = "အမျိုးအစားမရွေး";
+"search.type.video" = "ဗီဒီယို";
+"search.type.channel" = "Channel";
+"search.type.playlist" = "ဖွင့်ချက်စာရင်း";
+"search.duration.any" = "ကြာချိန်မရွေး";
+"search.duration.short" = "မိနစ် ၄ အောက်";
+"search.duration.medium" = "မိနစ် ၄–၂၀";
+"search.duration.long" = "မိနစ် ၂၀ အထက်";
+
+/* ===== Home ===== */
+
+"home.title" = "ပင်မ";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "အားလုံး";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "တိုက်ရိုက်";
+"home.category.news" = "သတင်း";
+"home.category.gaming" = "ဂိမ်း";
+"home.category.sports" = "အားကစား";
+"home.category.learning" = "သင်ယူခြင်း";
+"home.category.fashion" = "ဖက်ရှင်";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Feed ကို ဖွင့်မတက်ပါ\nပြန်ကြိုးစားရန် အောက်သိုဆွဲပါ";
+/* Signed-out empty state */
+"home.signIn" = "သင့်အကြံပြုချက်များကို ကြည့်ရန် ဝင်ရောက်ပါ";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "ဗီဒီယိုများ";
+"channel.tab.live" = "တိုက်ရိုက်";
+"channel.tab.playlists" = "ဖွင့်ချက်စာရင်းများ";
+/* About sheet */
+"channel.about.title" = "အကြောင်းအရာ";
+"channel.about.close" = "ပိတ်ရန်";
+"channel.about.subscribers" = "စာရင်းသွင်းသူများ";
+"channel.about.videos" = "ဗီဒီယိုများ";
+"channel.about.description" = "ဖော်ပြချက်";
+"channel.about.contact" = "ဆက်သွယ်ရန်";
+
+/* ===== Library ===== */
+
+"library.history" = "မှတ်တမ်း";
+"library.downloads" = "ဒေါင်းလုဒ်များ";
+"library.playlists" = "ဖွင့်ချက်စာရင်းများ";
+"library.downloads.comingSoon" = "ဒေါင်းလုဒ်များ မကြာမီ လာပါမည်";
+"library.history.signIn" = "သင့်ကြည့်ရှုမှုမှတ်တမ်းကို ကြည့်ရန် ဝင်ရောက်ပါ";
+"library.history.empty" = "ကြည့်ရှုမှုမှတ်တမ်း မတွေ့ပါ";
+"library.history.loadFailed" = "မှတ်တမ်းကို ဖွင့်မတက်ပါ";
+"library.playlists.signIn" = "သင့်ဖွင့်ချက်စာရင်းများကို ကြည့်ရန် ဝင်ရောက်ပါ";
+"library.playlists.loadFailed" = "ဖွင့်ချက်စာရင်းများကို ဖွင့်မတက်ပါ";
+"library.playlist.empty" = "ဖွင့်ချက်စာရင်းတွင် ဗီဒီယို မရှိပါ";
+"library.playlist.loadFailed" = "ဖွင့်ချက်စာရင်းကို ဖွင့်မတက်ပါ";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "စာရင်းသွင်းမှုများ";
+"subscriptions.all" = "စာရင်းသွင်းမှု အားလုံး";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "အားလုံး";
+"subscriptions.signIn" = "သင့်စာရင်းသွင်းမှုများကို ကြည့်ရန် ဝင်ရောက်ပါ";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "အကောင့်";
+"account.signIn" = "ဝင်ရောက်ရန်";
+"account.signOut" = "ထွက်ရန်";
+"account.notSignedIn" = "ဝင်ရောက်မထားပါ";
+
+/* Generic error alert title */
+"common.error" = "အမှား";
+/* Channel screen failed to load */
+"channel.unavailable" = "Channel မရနိုင်ပါ";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "ဘာသာစကား";
+"settings.footer.language" = "App ဘာသာစကားသည် interface ကို ပြောင်းလဲသည်။ ပါဝင်မှုဘာသာစကားသည် ခေါင်းစဉ်များ၊ ရှာဖွေမှုနှင့် feed များကို ပြောင်းလဲသည် (YouTube သည် server side တွင် metadata ကို ဘာသာပြန်သည်၊ တရားဝင် app ကဲ့သို့ပင်)။ ပြောင်းလဲမှုများသည် app ကို ပြန်ဖွင့်ပြီးနောက် အပြည့်အဝ အကျိုးသက်ရောက်သည်။";
+/* Rows */
+"settings.row.appLanguage" = "App ဘာသာစကား";
+"settings.row.contentLanguage" = "ပါဝင်မှုဘာသာစကား";
+"settings.row.region" = "ဒေသ";
+/* Picker option following the device language/region */
+"settings.language.system" = "စနစ်";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "ပြန်ဖွင့်ရန် လိုအပ်သည်";
+"settings.language.restartMessage" = "ပြောင်းလဲမှုများသည် app ကို ပြန်ဖွင့်ပြီးနောက် အပြည့်အဝ အကျိုးသက်ရောက်သည်။";

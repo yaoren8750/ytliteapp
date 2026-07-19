@@ -1,0 +1,367 @@
+/*
+  YTLite — Albanian (Shqip).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Cilësimet e luajtjes";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Cilësia";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Pista audio";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Statistikat";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Titrat";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Jo aktiv";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Po ngarkohet %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Po zgjidhet transmetimi...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Luajtja dështoi.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Ndryshimi i cilësisë dështoi.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Ndryshimi i pistës audio dështoi.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Abonohu";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "I abonuar";
+/* Generic cancel action */
+"common.cancel" = "Anulo";
+/* Generic confirmation button */
+"common.ok" = "OK";
+/* Generic save action */
+"common.save" = "Ruaj";
+/* Generic done action */
+"common.done" = "Mbyll";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Listë luajtëse";
+/* Library tab title */
+"library.title" = "Biblioteka";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Po përgatitet videoja...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Po përditësohet transmetimi...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Më shumë";
+/* Collapses the video description */
+"player.description.less" = "Më pak";
+/* Action bar: share the video */
+"player.action.share" = "Ndaj";
+/* Action bar: save to playlist */
+"player.action.save" = "Ruaj";
+/* Action bar: download */
+"player.action.download" = "Shkarko";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Komente";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Komente (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Po ngarkohen komentet...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Komente e padisponueshme";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Komente ende e padisponueshme.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Ngarko më shumë komente";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • E fiksuar";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ pëlqime";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ përgjigje";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Tjetër";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Luaj tani";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Përzierje";
+/* Header of the related-videos section */
+"player.related.title" = "Të ngjashme";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Gabim luajtjeje: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Normale";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Kalo %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Kalo automatikisht";
+"sponsorblock.behavior.showButton" = "Shfaq butonin";
+"sponsorblock.behavior.disabled" = "Çaktivizo";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Mundësuar nga SponsorBlock (sponsor.ajay.app) — një projekt i hapur komuniteti.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Kategoritë e segmenteve";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Sponsor";
+"sponsorblock.category.sponsor.description" = "Promovim i paguar, referime të paguara dhe reklama të drejtpërdrejta. Jo për vetë-promovim ose falenderime falas për shkaqe/ krijues/faqe produkte që u pëlqejnë.";
+"sponsorblock.category.selfpromo.name" = "Jo e paguar/Vetë-promovim";
+"sponsorblock.category.selfpromo.description" = "E ngjashme me \"sponsor\" përveç se e papaguar ose vetë-promovim. Përfshin seksione rreth mallrave, donacioneve ose informacionit me këtë kanë bashkëpunuar.";
+"sponsorblock.category.exclusive_access.name" = "Qasje Ekskluzive";
+"sponsorblock.category.exclusive_access.description" = "Vetëm për etiketimin e videove të plota. Përdoret kur një video shfaq një produkt, shërbim ose vendndodhje për të cilën kanë marrë qasje të falur ose të subvencionuar.";
+"sponsorblock.category.interaction.name" = "Kujtues për ndërveprimin (Abonohu)";
+"sponsorblock.category.interaction.description" = "Kur ka një kujtesë të shkurtër për të pëlqyer, u ndoqa ose u abonuar në mes të përmbajtjes. Nëse është i gjatë ose për diçka specifike, duhet të jetë në vetë-promovim.";
+"sponsorblock.category.highlight.name" = "Në thelb";
+"sponsorblock.category.highlight.description" = "Pjesa e videos që shumica e njerëzve po kërkojnë. E ngjashme me komentet \"Videoja fillon në x\".";
+"sponsorblock.category.intro.name" = "Ndërprerje/Animacion hyrës";
+"sponsorblock.category.intro.description" = "Një interval pa përmbajtje reale. Mund të jetë një pushim, kornizë statike ose animacion që përsëritet. Nuk duhet përdorur për tranzicione që përmbajnë informacion.";
+"sponsorblock.category.outro.name" = "Fund kartat/merita";
+"sponsorblock.category.outro.description" = "Merita ose kur shfaqen kartat e fundit të YouTube. Jo për përfundime me informacion.";
+"sponsorblock.category.preview.name" = "Parapamje/Përmbledhje";
+"sponsorblock.category.preview.description" = "Koleksion klipesh që tregojnë se çfarë vjen në këtë video ose në video të tjera në një seri ku informacioni përsëritet më vonë në video.";
+"sponsorblock.category.filler.name" = "Deviacione/Batuta";
+"sponsorblock.category.filler.description" = "Scena deviante ose batuta që nuk kërkohen për të kuptuar përmbajtjen kryesore të videos. Nuk duhet të përfshijë segments që ofrojnë kontekst ose detaje sfondi.";
+"sponsorblock.category.music_offtopic.name" = "Seksion jo-muzikor";
+"sponsorblock.category.music_offtopic.description" = "Vetëm për video muzikore. Pjesa jo-muzikore e një videoje muzikore.";
+"sponsorblock.category.chapter.name" = "Kapitull";
+"sponsorblock.category.chapter.description" = "Seksione me emër të personalizuar të videos.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Cilësimet";
+
+/* Section headers */
+"settings.section.theme" = "Tema";
+"settings.section.playback" = "Luajtja";
+"settings.section.home" = "Ballina";
+"settings.section.cache" = "Kujtesa";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Diagnostikimi";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Ndiq automatikisht paraqitjen e sistemit.";
+"settings.footer.themeAutoHours" = "Kalo automatikisht në temën e errët midis orëve të mësipërme.";
+"settings.footer.playback" = "Zmadhimi për plotësimin e shkallëzon automatikisht videon në ekran të plotë kështu që nuk mbeten barra të zeza. Shtypja në lojtës e anashkalon atë për video.";
+"settings.footer.home" = "Si shfaqen raftet e rekomandimeve: një rrjetë e vazhdueshme oshqe horizontale në stil televizori.";
+"settings.footer.ryd" = "Numrat e antipëlqimeve fuqizohen nga Return YouTube Dislike (returnyoutubedislike.com) — një projekt i hapur komuniteti.";
+"settings.footer.debug" = "Detyro një burim të veçantë luajtjeje. Normalisht përdoret Android VR me rikthim automatik. Serveri i zgjidhjes furnizon burimin Mobile Web + pot (minim pot, dhe zgjidhje n në iOS 12–13).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Tema";
+"settings.theme.dark" = "E errët";
+"settings.theme.light" = "E ndritur";
+"settings.theme.auto" = "Automatike";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Tema e errët nga";
+"settings.row.darkUntil" = "Tema e errët deri";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Cilësia e paracaktuar";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Automatike";
+"settings.row.backgroundPlayback" = "Luajtja në sfond";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "Fshih shiritin e gjendjes në ekran të plotë";
+"settings.row.zoomToFill" = "Zmadho për plotësim në ekran të plotë";
+"settings.row.showShorts" = "Shfaq YouTube Shorts në Abonime";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Skema e ballinës";
+"settings.homeLayout.grid" = "Rrjetë e thjeshtë";
+"settings.homeLayout.rails" = "Shina raftesh";
+
+/* Cache rows */
+"settings.row.feedCache" = "Kujtesa e ushqimit";
+"settings.row.feedCacheDuration" = "Kohëzgjatja e kujtesës së ushqimit";
+"settings.row.imageCache" = "Kujtesa e imazheve";
+"settings.row.imageCacheDuration" = "Kohëzgjatja e kujtesës së imazheve";
+"settings.row.clearCache" = "Pastro të gjithë kujtesën";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Kujtesa u pastrua";
+"settings.cache.clearedMessage" = "E gjithë kujtesa u pastrua.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "Cilësimet e SponsorBlock";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Burimi i luajtjes";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Ndaj regjistrimin diagnostik";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL e serverit të zgjidhjes.";
+"settings.solver.reset" = "Rikthe te e paracaktuara";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (e paracaktuar)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Nuk ka regjistrime";
+"settings.log.noneMessage" = "Nuk ka ende regjistrime diagnostikimi.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Profili";
+"profile.signOut" = "Dil";
+"profile.clearImageCache" = "Pastro kujtesën e imazheve";
+"profile.imageCacheCleared" = "Kujtesa e imazheve u pastrua.";
+
+/* ===== Search ===== */
+
+"search.title" = "Kërko";
+/* Search bar placeholder */
+"search.placeholder" = "Kërko në YouTube";
+/* Header above the recent-search list */
+"search.recent" = "Kërkimet e fundit";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Filtra";
+"search.filters.active" = "Filtra •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Filtra kërkimi";
+"search.filters.reset" = "Rikthe filtrat";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Renditja: %1$@";
+"search.filters.date" = "Data: %1$@";
+"search.filters.type" = "Tipi: %1$@";
+"search.filters.duration" = "Kohëzgjatja: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Rendit sipas";
+"search.filters.dateTitle" = "Data e ngarkimit";
+"search.filters.typeTitle" = "Tipi";
+"search.filters.durationTitle" = "Kohëzgjatja";
+
+/* Filter option values */
+"search.sort.relevance" = "Relevanca";
+"search.sort.rating" = "Vlerësimi";
+"search.sort.uploadDate" = "Data e ngarkimit";
+"search.sort.viewCount" = "Numri i shikimeve";
+"search.date.any" = "Çdo kohë";
+"search.date.lastHour" = "Ora e fundit";
+"search.date.today" = "Sot";
+"search.date.thisWeek" = "Këtë javë";
+"search.date.thisMonth" = "Këtë muaj";
+"search.date.thisYear" = "Këtë vit";
+"search.type.any" = "Çdo tip";
+"search.type.video" = "Video";
+"search.type.channel" = "Kanal";
+"search.type.playlist" = "Listë luajtëse";
+"search.duration.any" = "Çdo kohëzgjatje";
+"search.duration.short" = "Nën 4 min";
+"search.duration.medium" = "4–20 min";
+"search.duration.long" = "Mbi 20 min";
+
+/* ===== Home ===== */
+
+"home.title" = "Ballina";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Të gjitha";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Transmetim live";
+"home.category.news" = "Lajme";
+"home.category.gaming" = "Lojëra";
+"home.category.sports" = "Sport";
+"home.category.learning" = "Mësim";
+"home.category.fashion" = "Modë";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Nuk mundi të ngarkohej ushqimi\nTërhiqni poshtë për të provuar përsëri";
+/* Signed-out empty state */
+"home.signIn" = "Hyni për të parë rekomandimet tuaja";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Video";
+"channel.tab.live" = "Transmetim live";
+"channel.tab.playlists" = "Lista luajtëse";
+/* About sheet */
+"channel.about.title" = "Rreth";
+"channel.about.close" = "Mbyll";
+"channel.about.subscribers" = "Abonentë";
+"channel.about.videos" = "Video";
+"channel.about.description" = "Përshkrim";
+"channel.about.contact" = "Kontakt";
+
+/* ===== Library ===== */
+
+"library.history" = "Historia";
+"library.downloads" = "Shkarkime";
+"library.playlists" = "Lista luajtëse";
+"library.downloads.comingSoon" = "Shkarkimet së shpejti";
+"library.history.signIn" = "Hyni për të parë historinë e shikimeve";
+"library.history.empty" = "Nuk u gjet histori shikimi";
+"library.history.loadFailed" = "Nuk mundi të ngarkohej historia";
+"library.playlists.signIn" = "Hyni për të parë listat tuaja luajtëse";
+"library.playlists.loadFailed" = "Nuk mundi të ngarkoheshin listat luajtëse";
+"library.playlist.empty" = "Nuk ka video në këtë listë luajtëse";
+"library.playlist.loadFailed" = "Nuk mundi të ngarkohej lista luajtëse";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Abonime";
+"subscriptions.all" = "Të gjitha abonimet";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Të gjitha";
+"subscriptions.signIn" = "Hyni për të parë abonimet tuaja";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Llogaria";
+"account.signIn" = "Hyrje";
+"account.signOut" = "Dilje";
+"account.notSignedIn" = "Nuk jeni i regjistruar";
+
+/* Generic error alert title */
+"common.error" = "Gabim";
+/* Channel screen failed to load */
+"channel.unavailable" = "Kanali i padisponueshëm";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Gjuha";
+"settings.footer.language" = "Gjuha e aplikacionit ndryshon ndërfaqen. Gjuha e përmbajtjes ndryshon titujt, kërkimin dhe ushqimet (YouTube përkthen metadatat në anën e serverit, si aplikacioni zyrtar). Ndryshimet aplikohen plotësisht pas ri fillimit të aplikacionit.";
+/* Rows */
+"settings.row.appLanguage" = "Gjuha e aplikacionit";
+"settings.row.contentLanguage" = "Gjuha e përmbajtjes";
+"settings.row.region" = "Rajoni";
+/* Picker option following the device language/region */
+"settings.language.system" = "Sistemi";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Kërkohet ri fillimi";
+"settings.language.restartMessage" = "Ndryshimet aplikohen plotësisht pas ri fillimit të aplikacionit.";

@@ -47,6 +47,15 @@ enum UserDefaultsKeys {
         static let history = "search_history"
     }
 
+    enum Localization {
+        /// In-app UI language override; absent = follow the system.
+        static let appLanguage = "localization_appLanguage"
+        /// Innertube `hl`; absent = same as the app language.
+        static let contentLanguage = "localization_contentLanguage"
+        /// Innertube `gl`; absent = device region.
+        static let region = "localization_region"
+    }
+
     enum Player {
         static let backgroundPlayback = "player_backgroundPlayback"
         static let pipEnabled = "player_pipEnabled"

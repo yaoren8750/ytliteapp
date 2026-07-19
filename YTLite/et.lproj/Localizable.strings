@@ -1,0 +1,367 @@
+/*
+  YTLite — Estonian translation.
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Taasesitusseaded";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Kvaliteet";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Heliriba";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Statistika nõudele";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Subtiitrid";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Väljas";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (automaatne)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Laadimine %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Voo lahendamine...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Taasesitus nurjus.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Kvaliteedi vahetus nurjus.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Heliriba vahetus nurjus.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Telli";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Tellitud";
+/* Generic cancel action */
+"common.cancel" = "Tühista";
+/* Generic confirmation button */
+"common.ok" = "OK";
+/* Generic save action */
+"common.save" = "Salvesta";
+/* Generic done action */
+"common.done" = "Valmis";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Esitusloend";
+/* Library tab title */
+"library.title" = "Teek";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Video ettevalmistamine...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Voo värskendamine...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Rohkem";
+/* Collapses the video description */
+"player.description.less" = "Vähem";
+/* Action bar: share the video */
+"player.action.share" = "Jaga";
+/* Action bar: save to playlist */
+"player.action.save" = "Salvesta";
+/* Action bar: download */
+"player.action.download" = "Laadi alla";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Kommentaarid";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Kommentaarid (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Kommentaaride laadimine...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Kommentaarid pole saadaval";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Kommentaarid pole veel saadaval.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Laadi rohkem kommentaare";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ \u2022 Kinnitatud";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ meeldimist";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ vastust";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Järgmine";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Esita kohe";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Miks";
+/* Header of the related-videos section */
+"player.related.title" = "Seotud";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Taasesituse viga: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Tavaline";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Jäta %1$@ vahele";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Automaatselt vahele";
+"sponsorblock.behavior.showButton" = "Näita nuppu";
+"sponsorblock.behavior.disabled" = "Keela";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Pakub SponsorBlock (sponsor.ajay.app) \u2014 avatud kogukonnaprojekt.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Segmendi kategooriad";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Sponsor";
+"sponsorblock.category.sponsor.description" = "Tasuline reklaam, tasulised viited ja otsesed reklaamid. Ei ole mõeldud enesereklaamile või tasuta väljatõmgetele põhjustele/loomijatele/veebisaitidele/toodetele, mida nad toetavad.";
+"sponsorblock.category.selfpromo.name" = "Mittetasuline/Enesereklaam";
+"sponsorblock.category.selfpromo.description" = "Sarnane \"sponsorile\", välja arvatud mittetasuline või enesereklaam. See hõlmab osi kaupadest, annetustest või teavet, kellega nad koostööd tegid.";
+"sponsorblock.category.exclusive_access.name" = "Eksklusiivne juurdepääs";
+"sponsorblock.category.exclusive_access.description" = "Ainult terve video märgistamiseks. Kasutatakse, kui video näitab toodet, teenust või kohta, millele on nad saanud tasuta või toetusega juurdepääsu.";
+"sponsorblock.category.interaction.name" = "Interaktsiooni meeldetuletus (Tellu)";
+"sponsorblock.category.interaction.description" = "Kui sisu keskel on lühike meeldetuletus meeldida, tellida või jälgida. Kui see on pikk või konkreetse asja kohta, peaks see olema pigem enesereklaami alla.";
+"sponsorblock.category.highlight.name" = "Esiletõst";
+"sponsorblock.category.highlight.description" = "Video osa, mida enamik inimesi otsib. Sarnane \"Video algab x\" kommentaaridega.";
+"sponsorblock.category.intro.name" = "Vaheaeg/Sissejuhatav animatsioon";
+"sponsorblock.category.intro.description" = "Intervall ilma tegeliku sisuta. Võib olla paus, staatiline kaader või korduv animatsioon. Seda ei tohiks kasutada üleminekute puhul, mis sisaldavad teavet.";
+"sponsorblock.category.outro.name" = "Lõpukaardid/Tänud";
+"sponsorblock.category.outro.description" = "Tänud või YouTube'i lõpukaartide ilmumine. Ei ole mõeldud järeldustele, mis sisaldavad teavet.";
+"sponsorblock.category.preview.name" = "Eelvaade/Kokkuvõte";
+"sponsorblock.category.preview.description" = "Lõikude kogu, mis näitab, mis selles videos või muudes sarja videotes tuleb, kus kogu teave kordub hiljem videos.";
+"sponsorblock.category.filler.name" = "Kõrvalekalded/Naljad";
+"sponsorblock.category.filler.description" = "Kõrvalekalduvad stseenid või naljad, mida ei nõuta video põhisisu mõistmiseks. See ei tohiks sisaldada segmente, mis pakuvad konteksti või taustateavet.";
+"sponsorblock.category.music_offtopic.name" = "Mitu-osamitu osa";
+"sponsorblock.category.music_offtopic.description" = "Ainult muusikavideote jaoks. Muusikavideo mitta-muusika osa.";
+"sponsorblock.category.chapter.name" = "Peatükk";
+"sponsorblock.category.chapter.description" = "Videokohandatud nimedega osad.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Sätted";
+
+/* Section headers */
+"settings.section.theme" = "Teema";
+"settings.section.playback" = "Taasesitus";
+"settings.section.home" = "Kodu";
+"settings.section.cache" = "Vahemälu";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Silumine";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Järgib automaatselt süsteemi väljanägemist.";
+"settings.footer.themeAutoHours" = "Lülitub automaatselt tumedale teemale ülalnimetatud tundidel.";
+"settings.footer.playback" = "Täisekraanil suurendamine skaleerib video automaatselt, et musti servi ei jääks. Mängija sõrmedega suurendamine tühistab seda video kohta.";
+"settings.footer.home" = "Kuidas soovitusriiuleid näidatakse: ühtlane ruudustik või televiisori-stiilised horisontaalsed reastused.";
+"settings.footer.ryd" = "Meeldimiste arvud pärinevad Return YouTube Dislike (returnyoutubedislike.com) \u2014 avatud kogukonnaprojekt.";
+"settings.footer.debug" = "Sunni konkreetset taasesitusallikat. Tavaliselt kasutatakse Android VR-i automaatse taganemisega. Lahendusserver töötab Mobile Web + pot allikaga (pot tootmine ja n-lahendamine iOS 12\u201313 puhul).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Teema";
+"settings.theme.dark" = "Tume";
+"settings.theme.light" = "Hele";
+"settings.theme.auto" = "Automaatne";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Tume teema alates";
+"settings.row.darkUntil" = "Tume teema kuni";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Vaikimisi kvaliteet";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Automaatne";
+"settings.row.backgroundPlayback" = "Taustataasesitus";
+"settings.row.pip" = "Pilt pildis";
+"settings.row.hideStatusBar" = "Peida olekuriba täisekraanil";
+"settings.row.zoomToFill" = "Suurenda täitmiseks täisekraanil";
+"settings.row.showShorts" = "Näita YouTube Shorts Tellimustes";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Kodu paigutus";
+"settings.homeLayout.grid" = "Tavaline ruudustik";
+"settings.homeLayout.rails" = "Riiuli reastused";
+
+/* Cache rows */
+"settings.row.feedCache" = "Voog vahemälu";
+"settings.row.feedCacheDuration" = "Voo vahemälu kestus";
+"settings.row.imageCache" = "Pildi vahemälu";
+"settings.row.imageCacheDuration" = "Pildi vahemälu kestus";
+"settings.row.clearCache" = "Tühjenda kogu vahemälu";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Vahemälu tühjendatud";
+"settings.cache.clearedMessage" = "Kogu vahemälu on tühjendatud.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock seaded";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Taasesitusallikas";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Jaga silumislogi";
+/* Solver-server URL alert */
+"settings.solver.message" = "Lahendusserveri URL.";
+"settings.solver.reset" = "Lähtesta vaikeväärtusele";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (vaikimisi)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Logisid pole";
+"settings.log.noneMessage" = "Silumislogisid pole veel saadaval.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Profiil";
+"profile.signOut" = "Logi välja";
+"profile.clearImageCache" = "Tühjenda pildi vahemälu";
+"profile.imageCacheCleared" = "Pildi vahemälu tühjendatud.";
+
+/* ===== Search ===== */
+
+"search.title" = "Otsing";
+/* Search bar placeholder */
+"search.placeholder" = "Otsi YouTube'ist";
+/* Header above the recent-search list */
+"search.recent" = "Hiljutised otsingud";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Filtrid";
+"search.filters.active" = "Filtrid \u2022";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Otsingufiltrid";
+"search.filters.reset" = "Lähtesta filtrid";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Järjesta: %1$@";
+"search.filters.date" = "Kuupäev: %1$@";
+"search.filters.type" = "Tüüp: %1$@";
+"search.filters.duration" = "Kestus: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Järjestus";
+"search.filters.dateTitle" = "Üleslaadimise kuupäev";
+"search.filters.typeTitle" = "Tüüp";
+"search.filters.durationTitle" = "Kestus";
+
+/* Filter option values */
+"search.sort.relevance" = "Asjakohasus";
+"search.sort.rating" = "Hinnang";
+"search.sort.uploadDate" = "Üleslaadimise kuupäev";
+"search.sort.viewCount" = "Vaatamiste arv";
+"search.date.any" = "Igal ajal";
+"search.date.lastHour" = "Viimane tund";
+"search.date.today" = "Täna";
+"search.date.thisWeek" = "See nädal";
+"search.date.thisMonth" = "See kuu";
+"search.date.thisYear" = "See aasta";
+"search.type.any" = "Iga tüüp";
+"search.type.video" = "Video";
+"search.type.channel" = "Kanal";
+"search.type.playlist" = "Esitusloend";
+"search.duration.any" = "Iga kestus";
+"search.duration.short" = "Alla 4 min";
+"search.duration.medium" = "4\u201320 min";
+"search.duration.long" = "Üle 20 min";
+
+/* ===== Home ===== */
+
+"home.title" = "Kodu";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Kõik";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Live";
+"home.category.news" = "Uudised";
+"home.category.gaming" = "Mängud";
+"home.category.sports" = "Sport";
+"home.category.learning" = "Õppimine";
+"home.category.fashion" = "Moond";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Voogu ei saa laadida\nTõmba allapoole uuesti proovimiseks";
+/* Signed-out empty state */
+"home.signIn" = "Logi sisse, et näha oma soovitusi";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Videod";
+"channel.tab.live" = "Live";
+"channel.tab.playlists" = "Esitusloendid";
+/* About sheet */
+"channel.about.title" = "Teave";
+"channel.about.close" = "Sulge";
+"channel.about.subscribers" = "Tellijad";
+"channel.about.videos" = "Videod";
+"channel.about.description" = "Kirjeldus";
+"channel.about.contact" = "Kontakt";
+
+/* ===== Library ===== */
+
+"library.history" = "Ajalugu";
+"library.downloads" = "Allalaadimised";
+"library.playlists" = "Esitusloendid";
+"library.downloads.comingSoon" = "Allalaadimised tulevad peagi";
+"library.history.signIn" = "Logi sisse, et näha oma vaatamise ajalugu";
+"library.history.empty" = "Vaatamise ajalugu ei leitud";
+"library.history.loadFailed" = "Ajalugu ei saa laadida";
+"library.playlists.signIn" = "Logi sisse, et näha oma esitusloendeid";
+"library.playlists.loadFailed" = "Esitusloendeid ei saa laadida";
+"library.playlist.empty" = "Selles esitusloendus pole videoid";
+"library.playlist.loadFailed" = "Esitusloendit ei saa laadida";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Tellimused";
+"subscriptions.all" = "Kõik tellimused";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Kõik";
+"subscriptions.signIn" = "Logi sisse, et näha oma tellimusi";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Konto";
+"account.signIn" = "Logi sisse";
+"account.signOut" = "Logi välja";
+"account.notSignedIn" = "Pole sisse logitud";
+
+/* Generic error alert title */
+"common.error" = "Viga";
+/* Channel screen failed to load */
+"channel.unavailable" = "Kanal pole saadaval";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Keel";
+"settings.footer.language" = "Rakenduse keel muudab liidese. Sisu keel muudab pealkirju, otsinguid ja vooge (YouTube tõlgib metateadusi serveripoolset, nagu ametlik rakendus). Muudatused rakenduvad täielikult pärast rakenduse taaskäivitamist.";
+/* Rows */
+"settings.row.appLanguage" = "Rakenduse keel";
+"settings.row.contentLanguage" = "Sisu keel";
+"settings.row.region" = "Piirkond";
+/* Picker option following the device language/region */
+"settings.language.system" = "Süsteemi";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Taaskäivitamine vajalik";
+"settings.language.restartMessage" = "Muudatused rakenduvad täielikult pärast rakenduse taaskäivitamist.";

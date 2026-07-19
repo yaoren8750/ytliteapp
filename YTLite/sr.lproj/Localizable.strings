@@ -1,0 +1,369 @@
+/*
+  YTLite — Srpski (ћирилица).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Подешавања репродукције";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Квалитет";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Аудио записи";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Статистика за радознале";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Титлови";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Искључено";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (аутоматски)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Учитавање %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Решавање струјања...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Репродукција није успела.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Промена квалитета није успела.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Промена аудио записа није успела.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Претплати се";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Претплаћен";
+/* Generic cancel action */
+"common.cancel" = "Откажи";
+/* Generic confirmation button */
+"common.ok" = "У реду";
+/* Generic save action */
+"common.save" = "Сачувај";
+/* Generic done action */
+"common.done" = "Готово";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Листа за репродукцију";
+/* Library tab title */
+"library.title" = "Библиотека";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Припрема видеа...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Освежавање струјања...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Више";
+/* Collapses the video description */
+"player.description.less" = "Мање";
+/* Action bar: share the video */
+"player.action.share" = "Дели";
+/* Action bar: save to playlist */
+"player.action.save" = "Сачувај";
+/* Action bar: download */
+"player.action.download" = "Преузми";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Коментари";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Коментари (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Учитавање коментара...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Коментари нису доступни";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Коментари још нису доступни.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Учитај још коментара";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • Закачено";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ свиђања";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ одговора";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Следеће";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Репродуцирај одмах";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Микс";
+/* Header of the related-videos section */
+"player.related.title" = "Повезано";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Грешка репродукције: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Нормално";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Прескочи %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Аутоматско прескакање";
+"sponsorblock.behavior.showButton" = "Прикажи дугме";
+"sponsorblock.behavior.disabled" = "Онемогући";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Омогућено помоћу SponsorBlock (sponsor.ajay.app) — отворени заједнички пројекат.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Категорије сегмената";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Спонзор";
+"sponsorblock.category.sponsor.description" = "Плаћена промоција, плаћене препоруке и директни огласи. Не укључује самопромоцију или бесплатне препоруке узрока/аутора/веб-страница/производа које воле.";
+"sponsorblock.category.selfpromo.name" = "Неплаћена/Самопромоција";
+"sponsorblock.category.exclusive_access.name" = "Ексклузивни приступ";
+"sponsorblock.category.exclusive_access.description" = "Само за означавање целих видеа. Користи се када видео приказује производ, услугу или локацију за коју су добили бесплатни или субвенционисани приступ.";
+"sponsorblock.category.interaction.name" = "Подсетник на интеракцију (Претплати се)";
+"sponsorblock.category.interaction.description" = "Кратак подсетник за лајковање, претплату или праћење усред садржаја. Ако је дуг или о нечем специфичном, треба бити под самопромоциjom.";
+"sponsorblock.category.highlight.name" = "Истицано";
+"sponsorblock.category.intro.name" = "Пауза/Уводна анимација";
+"sponsorblock.category.intro.description" = "Интервал без стварног садржаја. Може бити пауза, статични кадар или понављајућа анимација. Не треба се користити за прелазе који садрже информације.";
+"sponsorblock.category.outro.name" = "Завршне картице/Заслуге";
+"sponsorblock.category.outro.description" = "Заслуге или када се појаве YouTube завршне картице. Не за закључке са информацијама.";
+"sponsorblock.category.preview.name" = "Преглед/Сажетак";
+"sponsorblock.category.preview.description" = "Збирка исечака који показују што следи у овом видеу или другим видеима у серију где се све информације понављају касније у видеу.";
+"sponsorblock.category.filler.name" = "Дигресије/Шале";
+"sponsorblock.category.filler.description" = "Сцене или шале које нису потребне за разумевање главног садржаја видеа. Не би требало укључивати сегменте који пружају контекст или позадинске детаље.";
+"sponsorblock.category.music_offtopic.name" = "Музички део";
+"sponsorblock.category.music_offtopic.description" = "Само за музичке видее. Не-музички део музичког видеа.";
+"sponsorblock.category.chapter.name" = "Поглавље";
+"sponsorblock.category.chapter.description" = "Прилагођено названи делови videa.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Подешавања";
+
+/* Section headers */
+"settings.section.theme" = "Тема";
+"settings.section.playback" = "Репродукција";
+"settings.section.home" = "Насловна";
+"settings.section.cache" = "Кеш";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Отклањање грешака";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Аутоматски прати изглед система.";
+"settings.footer.themeAutoHours" = "Аутоматски прелази на тамну тему између наведених сати.";
+"settings.footer.playback" = "Увећај за испуњавање аутоматски скалира видео у целом екрану тако да нема црних трака. Стицање у репродукцеру надглађује то за сваки видео.";
+"settings.footer.home" = "Како се препоруке приказују: један континуирани мрежни приказ или водоравне полице у стилу ТВ-а.";
+"settings.footer.ryd" = "Бројачи несвиђања омогућени су путем Return YouTube Dislike (returnyoutubedislike.com) — отворени заједнички пројекат.";
+"settings.footer.debug" = "Наметни одређени извор репродукције. Нормално се користи Android VR са аутоматским падом на ниже. Сервер решавача покреће извор Mobile Web + pot (mintanje pot-а и n-решавање на iOS 12–13).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Тема";
+"settings.theme.dark" = "Тамна";
+"settings.theme.light" = "Светла";
+"settings.theme.auto" = "Аутоматски";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Тамна тема од";
+"settings.row.darkUntil" = "Тамна тема до";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Подразумевани квалитет";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Аутоматски";
+"settings.row.backgroundPlayback" = "Репродукција у позадини";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "Сакриј траку стања у целом екрану";
+"settings.row.zoomToFill" = "Увећај за испуњавање у целом екрану";
+"settings.row.showShorts" = "Прикажи YouTube Shorts у претплатама";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Распоред насловне";
+"settings.homeLayout.grid" = "Једноставна мрежа";
+"settings.homeLayout.rails" = "Полице";
+
+/* Cache rows */
+"settings.row.feedCache" = "Кеш фида";
+"settings.row.feedCacheDuration" = "Трајање кеша фида";
+"settings.row.imageCache" = "Кеш слика";
+"settings.row.imageCacheDuration" = "Трајање кеша слика";
+"settings.row.clearCache" = "Обриши цео кеш";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Кеш обрисан";
+"settings.cache.clearedMessage" = "Сав кеш је обрисан.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "Подешавања SponsorBlock-а";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Извор репродукције";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Дели дневник отклањања грешака";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL сервера решавача.";
+"settings.solver.reset" = "Врати на подразумевано";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (подразумевано)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Нема дневника";
+"settings.log.noneMessage" = "Још нема доступних дневника отклањања грешака.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Профил";
+"profile.signOut" = "Одјави се";
+"profile.clearImageCache" = "Обриши кеш слика";
+"profile.imageCacheCleared" = "Кеш слика обрисан.";
+
+/* ===== Search ===== */
+
+"search.title" = "Претрага";
+/* Search bar placeholder */
+"search.placeholder" = "Претражи YouTube";
+/* Header above the recent-search list */
+"search.recent" = "Недавне претраге";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Филтри";
+"search.filters.active" = "Филтри •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Филтри претраге";
+"search.filters.reset" = "Поништи филтере";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Редослед: %1$@";
+"search.filters.date" = "Датум: %1$@";
+"search.filters.type" = "Врста: %1$@";
+"search.filters.duration" = "Трајање: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Редослед";
+"search.filters.dateTitle" = "Датум отпремања";
+"search.filters.typeTitle" = "Врста";
+"search.filters.durationTitle" = "Трајање";
+
+/* Filter option values */
+"search.sort.relevance" = "Релевантност";
+"search.sort.rating" = "Оцена";
+"search.sort.uploadDate" = "Датум отпремања";
+"search.sort.viewCount" = "Број прегледа";
+"search.date.any" = "Било када";
+"search.date.lastHour" = "Последњи сат";
+"search.date.today" = "Данас";
+"search.date.thisWeek" = "Овај недељу";
+"search.date.thisMonth" = "Овај месец";
+"search.date.thisYear" = "Ова година";
+"search.type.any" = "Све врсте";
+"search.type.video" = "Видео";
+"search.type.channel" = "Канал";
+"search.type.playlist" = "Листа за репродукцију";
+"search.duration.any" = "Свако трајање";
+"search.duration.short" = "Мање од 4 мин";
+"search.duration.medium" = "4–20 мин";
+"search.duration.long" = "Више од 20 мин";
+
+/* ===== Home ===== */
+
+"home.title" = "Насловна";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Све";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Уживо";
+"home.category.news" = "Вести";
+"home.category.gaming" = "Игре";
+"home.category.sports" = "Спорт";
+"home.category.learning" = "Образовање";
+"home.category.fashion" = "Мода";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Није могуће учитати фид\nПовуците доле за покушај";
+/* Signed-out empty state */
+"home.signIn" = "Пријавите се за препоруке";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Видео снимци";
+"channel.tab.live" = "Уживо";
+"channel.tab.playlists" = "Листе за репродукцију";
+/* About sheet */
+"channel.about.title" = "О каналу";
+"channel.about.close" = "Затвори";
+"channel.about.subscribers" = "Претплатници";
+"channel.about.videos" = "Видео снимци";
+"channel.about.description" = "Опис";
+"channel.about.contact" = "Контакт";
+
+/* ===== Library ===== */
+
+"library.history" = "Историја";
+"library.downloads" = "Преузимања";
+"library.playlists" = "Листе за репродукцију";
+"library.downloads.comingSoon" = "Преузимања ускоро";
+"library.history.signIn" = "Пријавите се за преглед историје гледања";
+"library.history.empty" = "Нема историје гледања";
+"library.history.loadFailed" = "Није могуће учитати историју";
+"library.playlists.signIn" = "Пријавите се за преглед листи за репродукцију";
+"library.playlists.loadFailed" = "Није могуће учитати листе за репродукцију";
+"library.playlist.empty" = "Нема видеа у овој листи за репродукцију";
+"library.playlist.loadFailed" = "Није могуће учитати листу за репродукцију";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Претплате";
+"subscriptions.all" = "Све претплате";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Све";
+"subscriptions.signIn" = "Пријавите се за преглед претплата";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Налог";
+"account.signIn" = "Пријави се";
+"account.signOut" = "Одјави се";
+"account.notSignedIn" = "Нисте пријављени";
+
+/* Generic error alert title */
+"common.error" = "Грешка";
+/* Channel screen failed to load */
+"channel.unavailable" = "Канал није доступан";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Језик";
+"settings.footer.language" = "Језик апликације мења интерфејс. Језик садржаја мења наслове, претраге и фидове (YouTube преводи метаподатке серверски, попут званичне апликације). Промене се у потпуности примењују након поновног покретања апликације.";
+/* Rows */
+"settings.row.appLanguage" = "Језик апликације";
+"settings.row.contentLanguage" = "Језик садржаја";
+"settings.row.region" = "Регија";
+/* Picker option following the device language/region */
+"settings.language.system" = "Системски";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Потребно поновно покретање";
+"settings.language.restartMessage" = "Промене се у потпуности примењују након поновног покретања апликације.";
+
+/* Added during review merge */
+"sponsorblock.category.selfpromo.description" = "Слично „спонзору“, али за неплаћену промоцију или самопромоцију: мерч, донације или информације о сарадњама.";
+"sponsorblock.category.highlight.description" = "Део видеа који већина људи тражи. Слично коментарима „видео почиње од x“.";

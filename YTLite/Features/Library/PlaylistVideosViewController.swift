@@ -125,6 +125,25 @@ final class PlaylistVideosViewController: UIViewController {
 
     // MARK: - Data
 
+    private func applyLoadResult(
+        _ result: Result<FeedPage, Error>
+    ) {
+        switch result {
+        case .success(let page):
+            videos = page.videos
+            continuationToken = page.continuation
+            emptyLabel.isHidden = !page.videos.isEmpty
+            if page.videos.isEmpty {
+                emptyLabel.text = "library.playlist.empty".localized
+            }
+        case .failure(let error):
+            AppLog.log("Playlist", "load error: \(error)")
+            emptyLabel.text = "library.playlist.loadFailed".localized
+            emptyLabel.isHidden = false
+        }
+        tableView.reloadData()
+    }
+
     private func loadVideos() {
         isLoading = true
         continuationToken = nil
@@ -139,21 +158,7 @@ final class PlaylistVideosViewController: UIViewController {
                 self.isLoading = false
                 self.spinner.stopAnimating()
                 self.tableView.refreshControl?.endRefreshing()
-                switch result {
-                case .success(let page):
-                    self.videos = page.videos
-                    self.continuationToken = page.continuation
-                    self.emptyLabel.isHidden = !page.videos.isEmpty
-                    if page.videos.isEmpty {
-                        self.emptyLabel.text = "No videos in this playlist"
-                    }
-                    self.tableView.reloadData()
-                case .failure(let error):
-                    AppLog.log("Playlist", "load error: \(error)")
-                    self.emptyLabel.text = "Could not load playlist"
-                    self.emptyLabel.isHidden = false
-                    self.tableView.reloadData()
-                }
+                self.applyLoadResult(result)
             }
         }
     }

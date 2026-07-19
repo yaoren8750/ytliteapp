@@ -1,0 +1,369 @@
+/*
+  YTLite — Slovenčina.
+
+  Kľúče sú stabilné API: nikdy ich nepremenovávajte – kľúč by sa stratil vo
+  všetkých prekladoch. Komentáre poskytujú kontext prekladateľa. Pozicionálne
+  zástupné symboly (%1$@) musia byť v prekladoch zachované doslovne.
+*/
+
+/* ===== Player: ponuka nastavení ===== */
+
+/* Názov ponuky ozubeného kola v prehrávači */
+"player.menu.settings" = "Nastavenie prehrávania";
+/* Položka ponuky + názov výberu: kvalita videa */
+"player.menu.quality" = "Kvalita";
+/* Položka ponuky + názov výberu: zvuková stopa (dabing) */
+"player.menu.audioTrack" = "Zvuková stopa";
+/* Položka ponuky: prepne prekrytie štatistík prehrávania */
+"player.menu.stats" = "Štatistiky pre fajnšmekrov";
+/* Názov výberu: titulky */
+"player.menu.subtitles" = "Titulky";
+
+/* ===== Player: výbery ===== */
+
+/* Výber titulkov: vypne titulky */
+"player.subtitles.off" = "Vypnuté";
+/* Prípona u automaticky generovaných stôp titulkov, napr. „English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Prípona u AI automaticky dabovaných zvukových stôp, napr. „Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: stav / chyby ===== */
+
+/* Stavový štítok pri prepínaní; %1$@ = popis kvality alebo názov stopy */
+"player.status.loading" = "Načítanie %1$@…";
+/* Stavový štítok pri rozpoznávaní adresy streamu */
+"player.status.resolving" = "Rozpoznávanie streamu…";
+/* Zobrazí sa, keď sa video nedá prehrať */
+"player.error.playback" = "Prehrávanie zlyhalo.";
+/* Zobrazí sa pri zlyhaní prepnutia kvality (prehrávanie pokračuje) */
+"player.error.qualitySwitch" = "Prepnutie kvality zlyhalo.";
+/* Zobrazí sa pri zlyhaní prepnutia zvukovej stopy (prehrávanie pokračuje) */
+"player.error.audioTrackSwitch" = "Prepnutie zvukovej stopy zlyhalo.";
+
+/* ===== Spoločné ===== */
+
+/* Tlačidlo odoberať, stav neodoberáno */
+"common.subscribe" = "Odoberať";
+/* Tlačidlo odoberať, stav odoberáno */
+"common.subscribed" = "Odoberané";
+/* Všeobecná akcia zrušiť */
+"common.cancel" = "Zrušiť";
+/* Všeobecné potvrdzovacie tlačidlo */
+"common.ok" = "OK";
+/* Všeobecná akcia uložiť */
+"common.save" = "Uložiť";
+/* Všeobecná akcia hotovo */
+"common.done" = "Hotovo";
+/* Predvolený názov/štítok dlaždice playlistu */
+"common.playlist" = "Playlist";
+/* Záložka Knižnica */
+"library.title" = "Knižnica";
+
+/* ===== Player: stav ===== */
+
+/* Stavový štítok, kým prehrávač pripravuje prvé video */
+"player.status.preparing" = "Príprava videa…";
+/* Stavový štítok pri opätovnom rozpoznávaní vypršanej adresy streamu */
+"player.status.refreshing" = "Obnovenie streamu…";
+
+/* ===== Player: stránka prehrávania ===== */
+
+/* Rozbalí popis videa */
+"player.description.more" = "Viac";
+/* Zbalí popis videa */
+"player.description.less" = "Menej";
+/* Panel akcí: zdieľať video */
+"player.action.share" = "Zdieľať";
+/* Panel akcí: uložiť do playlistu */
+"player.action.save" = "Uložiť";
+/* Panel akcí: prevziať */
+"player.action.download" = "Prevziať";
+
+/* ===== Player: komentáre ===== */
+
+/* Záhlavie sekcie komentárov */
+"player.comments.title" = "Komentáre";
+/* Záhlavie komentárov s počtom; %1$d = počet komentárov */
+"player.comments.titleCount" = "Komentáre (%1$d)";
+/* Zobrazí sa pri načítavaní komentárov */
+"player.comments.loading" = "Načítanie komentárov…";
+/* Zobrazí sa, keď požiadavka na komentáre zlyhala */
+"player.comments.unavailable" = "Komentáre nie sú dostupné";
+/* Zobrazí sa, kým stránka prehrávania nenačítala dostatok údajov na načítanie komentárov */
+"player.comments.unavailableYet" = "Komentáre zatiaľ nie sú dostupné.";
+/* Tlačidlo načítať ďalšie komentáre */
+"player.comments.loadMore" = "Načítať ďalšie komentáre";
+/* Riadok autora pripnutého komentára; %1$@ = meno autora */
+"player.comments.pinned" = "%1$@ • Pripnuté";
+/* Počet lajkov komentára; %1$@ = formátované číslo */
+"player.comments.likes" = "%1$@ páči sa";
+/* Počet odpovedí na komentár; %1$@ = formátované číslo */
+"player.comments.replies" = "%1$@ odpovedí";
+
+/* ===== Player: prekrytie automatického prehrávania ===== */
+
+/* Záhlavie nad návrhom ďalšieho videa */
+"player.autoplay.upNext" = "Ďalšie";
+/* Spustí navrhnuté video okamžite, preskočí odpočítavanie */
+"player.autoplay.playNow" = "Prehrať teraz";
+
+/* ===== Player: súvisiaca sekcia ===== */
+
+/* Záhlavie nepomenovanej rady/playlistu automatického prehrávania */
+"player.related.mix" = "Mix";
+/* Záhlavie sekcie súvisiacich videí */
+"player.related.title" = "Súvisiace";
+/* Stavový štítok pri fatálnej chybe prehrávania; %1$@ = popis chyby */
+"player.error.withMessage" = "Chyba prehrávania: %1$@";
+
+/* ===== Player: rýchlosť ===== */
+
+/* Rýchlosť prehrávania 1x */
+"player.speed.normal" = "Normálna";
+
+/* ===== SponsorBlock ===== */
+
+/* Tlačidlo preskočiť; %1$@ = lokalizovaný názov kategórie, napr. „Skip Sponsor" */
+"sponsorblock.skip" = "Preskočiť %1$@";
+
+/* Možnosti správania preskočenia (nastavenie pre každú kategóriu) */
+"sponsorblock.behavior.autoSkip" = "Automaticky preskočiť";
+"sponsorblock.behavior.showButton" = "Zobraziť tlačidlo";
+"sponsorblock.behavior.disabled" = "Zakázať";
+
+/* Pätička pod sekciou SponsorBlock (atribúcia projektu) */
+"sponsorblock.attribution" = "Využíva SponsorBlock (sponsor.ajay.app) — otvorený komunitný projekt.";
+/* Záhlavie nad nastavením preskočenia pre jednotlivé kategórie */
+"sponsorblock.segmentCategories" = "Kategórie segmentov";
+
+/* Názvy kategórie (termíny projektu SponsorBlock) a ich popisy */
+"sponsorblock.category.sponsor.name" = "Sponsor";
+"sponsorblock.category.sponsor.description" = "Platená propagácia, platené odporúčania a priame reklamy. Nie pre vlastnú propagáciu alebo bezplatné zmienky o obľúbených príčinách/tvorcoch/webových stránkach/produktoch.";
+"sponsorblock.category.selfpromo.name" = "Neplatená/vlastná propagácia";
+"sponsorblock.category.exclusive_access.name" = "Exkluzívny prístup";
+"sponsorblock.category.exclusive_access.description" = "Len na označenie celých videí. Používa sa, keď video predvádza produkt, službu alebo miesto, ku ktorému získali bezplatný alebo dotovaný prístup.";
+"sponsorblock.category.interaction.name" = "Pripomienka interakcie (Odoberať)";
+"sponsorblock.category.interaction.description" = "Keď je uprostred obsahu krátka pripomienka na like, odoberanie alebo sledovanie. Ak je dlhá alebo o niečom konkrétnom, mala by byť v sekcii vlastnej propagácie.";
+"sponsorblock.category.highlight.name" = "Dôležitý okamih";
+"sponsorblock.category.intro.name" = "Prestávka/Úvodná animácia";
+"sponsorblock.category.intro.description" = "Interval bez skutočného obsahu. Môže to byť pauza, statický snímok alebo opakujúca sa animácia. Nemalo by sa to používať na prechody obsahujúce informácie.";
+"sponsorblock.category.outro.name" = "Záverečné karty/Zásluhy";
+"sponsorblock.category.outro.description" = "Zásluhy alebo keď sa objavia záverečné karty YouTube. Nie pre závery s informáciami.";
+"sponsorblock.category.preview.name" = "Ukážka/Sumár";
+"sponsorblock.category.preview.description" = "Zbierka klipov, ktoré ukazujú, čo príde v tomto videu alebo iných videách v sérii, kde sú všetky informácie neskôr vo videu zopakované.";
+"sponsorblock.category.filler.name" = "Odbočky/Vtipy";
+"sponsorblock.category.filler.description" = "Odbočné scény alebo vtipy, ktoré nie sú potrebné na pochopenie hlavného obsahu videa. Toto by nemalo zahŕňať segmenty poskytujúce kontext alebo podrobnosti.";
+"sponsorblock.category.music_offtopic.name" = "Hudobná sekcia";
+"sponsorblock.category.music_offtopic.description" = "Len pre hudobné videá. Nehudobná časť hudobného videa.";
+"sponsorblock.category.chapter.name" = "Kapitola";
+"sponsorblock.category.chapter.description" = "Vlastné pomenované sekcie videa.";
+
+/* ===== Nastavenia ===== */
+
+/* Názov listu nastavení */
+"settings.title" = "Nastavenia";
+
+/* Záhlavia sekcií */
+"settings.section.theme" = "Motív";
+"settings.section.playback" = "Prehrávanie";
+"settings.section.home" = "Domov";
+"settings.section.cache" = "Medzipamäť";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Ladenie";
+
+/* Pätičky sekcií */
+"settings.footer.themeAutoSystem" = "Automaticky sleduje vzhľad systému.";
+"settings.footer.themeAutoHours" = "Automaticky prepne na tmavý motív medzi uvedenými hodinami.";
+"settings.footer.playback" = "Zoom to Fill automaticky škáluje video v celoobrazovkovom režime, aby nezostali čierne pruhy. Štipnutie v prehrávači ho prepíše pre jednotlivé video.";
+"settings.footer.home" = "Ako sú zobrazené poličky odporúčaní: jeden súvislý mriežkový alebo TV-styl vodorovné lišty.";
+"settings.footer.ryd" = "Počty nesúhlasov poskytuje Return YouTube Dislike (returnyoutubedislike.com) — otvorený komunitný projekt.";
+"settings.footer.debug" = "Vynúti konkrétny zdroj prehrávania. Normálne sa používa Android VR s automatickým zálohovaním. Server riešičov napája zdroj Mobile Web + pot (raženie pot a n-solving na iOS 12–13).";
+
+/* Riadky motívu; popisky segmentov pre režimy tmavý/svetlý/automatický */
+"settings.row.theme" = "Motív";
+"settings.theme.dark" = "Tmavý";
+"settings.theme.light" = "Svetlý";
+"settings.theme.auto" = "Automatický";
+/* Voliče hodín obmedzujúcich plánovaný tmavý režim iOS 12 */
+"settings.row.darkFrom" = "Tmavý motív od";
+"settings.row.darkUntil" = "Tmavý motív do";
+
+/* Riadky prehrávania */
+"settings.row.defaultQuality" = "Predvolená kvalita";
+/* Položka „Auto" vo výberu predvolenej kvality (uložená hodnota zostáva anglicky) */
+"settings.quality.auto" = "Auto";
+"settings.row.backgroundPlayback" = "Prehrávanie na pozadí";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "Skryť stavový riadok v celoobrazovkovom režime";
+"settings.row.zoomToFill" = "Zoom to Fill v celoobrazovkovom režime";
+"settings.row.showShorts" = "Zobraziť YouTube Shorts v odberoch";
+
+/* Riadky rozloženia domov + názvy možností */
+"settings.row.homeLayout" = "Rozloženie domov";
+"settings.homeLayout.grid" = "Jednoduchá mriežka";
+"settings.homeLayout.rails" = "Poličky";
+
+/* Riadky medzipamäte */
+"settings.row.feedCache" = "Medzipamäť feedu";
+"settings.row.feedCacheDuration" = "Doba trvania medzipamäti feedu";
+"settings.row.imageCache" = "Medzipamäť obrázkov";
+"settings.row.imageCacheDuration" = "Doba trvania medzipamäti obrázkov";
+"settings.row.clearCache" = "Vymazať celú medzipamäť";
+/* Výstraha po vymazaní všetkých medzipamätí */
+"settings.cache.clearedTitle" = "Medzipamäť vymazaná";
+"settings.cache.clearedMessage" = "Celá medzipamäť bola vymazaná.";
+
+/* Riadky integrácií */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "Nastavenia SponsorBlock";
+
+/* Riadky ladenia (hodnoty zostávajú technické/anglické) */
+"settings.row.playbackSource" = "Zdroj prehrávania";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Zdieľať protokol ladenia";
+/* Výstraha URL servera riešičov */
+"settings.solver.message" = "URL servera riešičov.";
+"settings.solver.reset" = "Obnoviť predvolené";
+/* Prípona zobrazená za URL riešičov, keď je predvolená vstavaná */
+"settings.solver.defaultSuffix" = " (predvolené)";
+/* Výstraha, keď zatiaľ neexistujú žiadne protokoly ladenia */
+"settings.log.noneTitle" = "Žiadne protokoly";
+"settings.log.noneMessage" = "Zatiaľ nie sú k dispozícii žiadne protokoly ladenia.";
+
+/* ===== Profil ===== */
+
+"profile.title" = "Profil";
+"profile.signOut" = "Odhlásiť sa";
+"profile.clearImageCache" = "Vymazať medzipamäť obrázkov";
+"profile.imageCacheCleared" = "Medzipamäť obrázkov vymazaná.";
+
+/* ===== Vyhľadávanie ===== */
+
+"search.title" = "Vyhľadávanie";
+/* Zástupný text vyhľadávacieho poľa */
+"search.placeholder" = "Vyhľadávať na YouTube";
+/* Záhlavie nad zoznamom nedávnych vyhľadávaní */
+"search.recent" = "Nedávne vyhľadávania";
+/* Tlačidlo panelu filtrov; bodkovaná varianta označuje aktívne filtre */
+"search.filters" = "Filtre";
+"search.filters.active" = "Filtre •";
+/* Názov listu filtrov + akcia obnovenia */
+"search.filters.title" = "Vyhľadávacie filtre";
+"search.filters.reset" = "Obnoviť filtre";
+/* Riadky filtrov; %1$@ = aktuálna hodnota */
+"search.filters.sort" = "Zoradenie: %1$@";
+"search.filters.date" = "Dátum: %1$@";
+"search.filters.type" = "Typ: %1$@";
+"search.filters.duration" = "Trvanie: %1$@";
+/* Názvy podlistov */
+"search.filters.sortTitle" = "Zoradiť podľa";
+"search.filters.dateTitle" = "Dátum nahrania";
+"search.filters.typeTitle" = "Typ";
+"search.filters.durationTitle" = "Trvanie";
+
+/* Hodnoty možností filtrov */
+"search.sort.relevance" = "Relevancia";
+"search.sort.rating" = "Hodnotenie";
+"search.sort.uploadDate" = "Dátum nahrania";
+"search.sort.viewCount" = "Počet zhliadnutí";
+"search.date.any" = "Kedykoľvek";
+"search.date.lastHour" = "Posledná hodina";
+"search.date.today" = "Dnes";
+"search.date.thisWeek" = "Tento týždeň";
+"search.date.thisMonth" = "Tento mesiac";
+"search.date.thisYear" = "Tento rok";
+"search.type.any" = "Akýkoľvek typ";
+"search.type.video" = "Video";
+"search.type.channel" = "Kanál";
+"search.type.playlist" = "Playlist";
+"search.duration.any" = "Akékoľvek trvanie";
+"search.duration.short" = "Pod 4 min";
+"search.duration.medium" = "4–20 min";
+"search.duration.long" = "Nad 20 min";
+
+/* ===== Domov ===== */
+
+"home.title" = "Domov";
+/* Chip obnovujúci nefiltrovaný feed */
+"home.category.all" = "Všetko";
+/* Statické chipy kategórií (názvy poličiek zo servera prichádzajú už lokalizované) */
+"home.category.live" = "Naživo";
+"home.category.news" = "Správy";
+"home.category.gaming" = "Hry";
+"home.category.sports" = "Šport";
+"home.category.learning" = "Vzdelávanie";
+"home.category.fashion" = "Móda";
+/* Prázdny stav chyby (dva riadky) */
+"home.error.loadFailed" = "Nepodarilo sa načítať feed\nPotiahnite dole pre opakovanie";
+/* Prázdny stav neprihláseného používateľa */
+"home.signIn" = "Prihláste sa a zobrazte odporúčania";
+
+/* ===== Kanál ===== */
+
+/* Panel kariet kanála */
+"channel.tab.videos" = "Videá";
+"channel.tab.live" = "Naživo";
+"channel.tab.playlists" = "Playlisty";
+/* List O kanáli */
+"channel.about.title" = "O kanáli";
+"channel.about.close" = "Zatvoriť";
+"channel.about.subscribers" = "Odberatelia";
+"channel.about.videos" = "Videá";
+"channel.about.description" = "Popis";
+"channel.about.contact" = "Kontakt";
+
+/* ===== Knižnica ===== */
+
+"library.history" = "História";
+"library.downloads" = "Prevzaté";
+"library.playlists" = "Playlisty";
+"library.downloads.comingSoon" = "Prevzatie čoskoro k dispozícii";
+"library.history.signIn" = "Prihláste sa a zobrazte históriu sledovania";
+"library.history.empty" = "Nebola nájdená žiadna história sledovania";
+"library.history.loadFailed" = "Nepodarilo sa načítať históriu";
+"library.playlists.signIn" = "Prihláste sa a zobrazte svoje playlisty";
+"library.playlists.loadFailed" = "Nepodarilo sa načítať playlisty";
+"library.playlist.empty" = "V tomto playliste nie sú žiadne videá";
+"library.playlist.loadFailed" = "Nepodarilo sa načítať playlist";
+
+/* ===== Odbery ===== */
+
+"subscriptions.title" = "Odbery";
+"subscriptions.all" = "Všetky odbery";
+/* Tlačidlo „Všetko" v lište avatarov kanálov */
+"subscriptions.allButton" = "Všetko";
+"subscriptions.signIn" = "Prihláste sa a zobrazte svoje odbery";
+
+/* ===== Účet (list panelu nástrojov) ===== */
+
+/* Predvolený názov účtu, keď profil žiadny nemá */
+"account.fallbackName" = "Účet";
+"account.signIn" = "Prihlásiť sa";
+"account.signOut" = "Odhlásiť sa";
+"account.notSignedIn" = "Neprihlásený";
+
+/* Všeobecný názov výstrahy chyby */
+"common.error" = "Chyba";
+/* Obrazovka kanála sa nepodarilo načítať */
+"channel.unavailable" = "Kanál nedostupný";
+
+/* ===== Nastavenia: sekcia jazyka ===== */
+
+"settings.section.language" = "Jazyk";
+"settings.footer.language" = "Jazyk aplikácie mení rozhranie. Jazyk obsahu mení názvy, vyhľadávania a feedy (YouTube prekladá metadata na strane serveru, ako oficiálna aplikácia). Zmeny sa plne prejavia po reštarte aplikácie.";
+/* Riadky */
+"settings.row.appLanguage" = "Jazyk aplikácie";
+"settings.row.contentLanguage" = "Jazyk obsahu";
+"settings.row.region" = "Oblasť";
+/* Voľba výberu nasledujúca jazyk/oblasť zariadenia */
+"settings.language.system" = "Systémový";
+/* Výstraha po zmene nastavenia jazyka */
+"settings.language.restartTitle" = "Vyžadovaný reštart";
+"settings.language.restartMessage" = "Zmeny sa plne prejavia po reštarte aplikácie.";
+
+/* Added during review merge */
+"sponsorblock.category.selfpromo.description" = "Podobné ako „sponzor“, ale pre neplatenú propagáciu alebo vlastnú propagáciu: merch, dary alebo informácie o spolupráci.";
+"sponsorblock.category.highlight.description" = "Časť videa, ktorú väčšina ľudí hľadá. Podobné komentárom „video začína v x“.";

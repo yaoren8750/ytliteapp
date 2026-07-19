@@ -48,7 +48,7 @@ class SubscriptionsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Subscriptions"
+        title = "subscriptions.title".localized
         AppLog.subs("viewDidLoad")
         setupTableView()
         setupSpinner()

@@ -10,8 +10,9 @@ import Foundation
 // only feeds the picker.
 
 extension InnertubeClient {
-    /// One entry per distinct `audioTrack.id`, default first. Fewer than two
-    /// tracks collapses to `[]` — nothing to switch between.
+    /// One entry per distinct `audioTrack.id`, original (id suffix ".4")
+    /// first — `audioIsDefault` follows the request `hl`, not the upload
+    /// language. Fewer than two tracks collapses to `[]`.
     static func extractAudioTrackList(
         _ json: [String: Any]
     ) -> [AudioTrackInfo] {
@@ -35,8 +36,9 @@ extension InnertubeClient {
             return []
         }
         return tracks.sorted { lhs, rhs in
-            if lhs.isDefault != rhs.isDefault {
-                return lhs.isDefault
+            let lo = lhs.id.hasSuffix(".4")
+            if lo != rhs.id.hasSuffix(".4") {
+                return lo
             }
             return lhs.displayName < rhs.displayName
         }

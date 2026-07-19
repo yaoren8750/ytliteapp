@@ -1,0 +1,367 @@
+/*
+  YTLite — Sinhala (si).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "ප්‍රතිදර්ශන සැකසුම්";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "ගුණාත්මකභාවය";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "ශ්‍රව්‍ය පාර / නළකරණ පාර";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Stats for nerds";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "උප පෙළ";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "විකල්ප";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "පූරණය වෙමින් %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "ප්‍රවාහය විසඳෙමින්...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "ප්‍රතිදර්ශනය අසාර්ථක විය.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "ගුණාත්මකභාව මාරුව අසාර්ථක විය.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "ශ්‍රව්‍ය පාර මාරුව අසාර්ථක විය.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "දායක වන්න";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "දායක විය";
+/* Generic cancel action */
+"common.cancel" = "අවලංගු කරන්න";
+/* Generic confirmation button */
+"common.ok" = "හරි";
+/* Generic save action */
+"common.save" = "සුරකින්න";
+/* Generic done action */
+"common.done" = "සම්පූර්ණයි";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "ප්ලේලිස්ටය";
+/* Library tab title */
+"library.title" = "පුස්තකාලය";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "වීඩියෝව සූදානම් කරමින්...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "ප්‍රවාහය යාවත්කාලීන කරමින්...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "තවත්";
+/* Collapses the video description */
+"player.description.less" = "අඩු";
+/* Action bar: share the video */
+"player.action.share" = "බෙදාහරින්න";
+/* Action bar: save to playlist */
+"player.action.save" = "සුරකින්න";
+/* Action bar: download */
+"player.action.download" = "බාගන්න";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "අදහස්";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "අදහස් (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "අදහස් පූරණය වෙමින්...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "අදහස් නොපවතී";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "අදහස් තවම නොපවතී.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "තවත් අදහස් පූරණය කරන්න";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • ඇමරණය කළ";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "කැමති %1$@";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "පිළිතුරු %1$@";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "ඊළඟට";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "දැන් ප්‍රතිදර්ශනය කරන්න";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "මිශ්‍රය";
+/* Header of the related-videos section */
+"player.related.title" = "අදාළ";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "ප්‍රතිදර්ශන දෝෂය: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "සාමාන්‍ය";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "මඟ හරින්න %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "ස්වයංක්‍රීය මඟ හැරීම";
+"sponsorblock.behavior.showButton" = "බොත්තම පෙන්වන්න";
+"sponsorblock.behavior.disabled" = "අක්‍රීය කරන්න";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Powered by SponsorBlock (sponsor.ajay.app) — an open community project.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "කොටස් වර්ග";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "අනුග්‍රහකයා";
+"sponsorblock.category.sponsor.description" = "ගෙවන ලද ප්‍රවර්ධන, ගෙවන ලද යොමු සහ සෘජු දැන්වීම්. ස්වයං-ප්‍රවර්ධන හෝ නිදහස් හඳුනාගැනීම් සඳහා නොවේ.";
+"sponsorblock.category.selfpromo.name" = "ගෙවන නොලැබූ / ස්වයං ප්‍රවර්ධනය";
+"sponsorblock.category.selfpromo.description" = "\"අනුග්‍රහකයා\" වැනිම නමුත් ගෙවන නොලැබූ හෝ ස්වයං ප්‍රවර්ධනය. භාණ්ඩ, පරිත්‍යාග, හෝ සහයෝගිතා පිළිබඳ තොරතුරු ඇතුළත් වේ.";
+"sponsorblock.category.exclusive_access.name" = "විශේෂ ප්‍රවේශය";
+"sponsorblock.category.exclusive_access.description" = "සම්පූර්ණ වීඩියෝ ලේබල් කිරීම සඳහා පමණි. නොමිලේ හෝ සහන මිලට ලැබුණු නිෂ්පාදන, සේවා හෝ ස්ථාන ප්‍රදර්ශනය කරන වීඩියෝ සඳහා භාවිතා කෙරේ.";
+"sponsorblock.category.interaction.name" = "අන්තර්ක්‍රියා මතක් කිරීම (දායක වන්න)";
+"sponsorblock.category.interaction.description" = "අන්තර්ගතය මැද කැමති වන්න, දායක වන්න හෝ අනුගමනය කරන්න යන කෙටි මතක් කිරීමක් ඇති විට. එය දිගු හෝ යම් විශේෂිත දෙයක් ගැන නම්, ස්වයං-ප්‍රවර්ධනය යටතේ තිබිය යුතුය.";
+"sponsorblock.category.highlight.name" = "ප්‍රධාන කොටස";
+"sponsorblock.category.highlight.description" = "බොහෝ දෙනා සොයන වීඩියෝවේ කොටස. \"වීඩියෝව x දී ආරම්භ වේ\" යන අදහස් වැනිම.";
+"sponsorblock.category.intro.name" = "අතරමැදි / ආරම්භක සජීවනය";
+"sponsorblock.category.intro.description" = "සැබෑ අන්තර්ගතයක් නැති අවකාශයක්. නැවතීමක්, ස්ථිර රාමුවක්, හෝ නැවත නැවත සිදුවන සජීවනයක් විය හැක. තොරතුරු අඩංගු මාරුවන් සඳහා මෙය භාවිතා නොකළ යුතුය.";
+"sponsorblock.category.outro.name" = "අවසන් කාඩ් / පිළිගැනීම්";
+"sponsorblock.category.outro.description" = "YouTube අවසන් කාඩ් පෙනෙන විට හෝ පිළිගැනීම්. තොරතුරු සහිත නිගමන සඳහා නොවේ.";
+"sponsorblock.category.preview.name" = "පෙරදසුන / සාරාංශය";
+"sponsorblock.category.preview.description" = "මෙම වීඩියෝවේ හෝ ශ්‍රේණියේ අනෙකුත් වීඩියෝ වල එන දේ පෙන්වන ක්ලිප් එකතුව. සියලු තොරතුරු පසුව නැවත නැවත නැවත වීඩියෝවේ දක්වා ඇත.";
+"sponsorblock.category.filler.name" = "වික්තර / විහිළු";
+"sponsorblock.category.filler.description" = "වීඩියෝවේ ප්‍රධාන අන්තර්ගතය තේරුම් ගැනීමට අවශ්‍ය නැති අතරමැදි දර්ශන හෝ විහිළු. සන්දර්භය හෝ පසුබිම් විස්තර සපයන කොටස් මෙයට ඇතුළත් නොවේ.";
+"sponsorblock.category.music_offtopic.name" = "සංගීත නොවන කොටස";
+"sponsorblock.category.music_offtopic.description" = "සංගීත වීඩියෝ සඳහා පමණි. සංගීත වීඩියෝවක සංගීත නොවන කොටස.";
+"sponsorblock.category.chapter.name" = "පරිච්ඡේදය";
+"sponsorblock.category.chapter.description" = "වීඩියෝවේ අභිරුචි නාම ලත් කොටස්.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "සැකසුම්";
+
+/* Section headers */
+"settings.section.theme" = "තේමාව";
+"settings.section.playback" = "ප්‍රතිදර්ශනය";
+"settings.section.home" = "මුල් පිටුව";
+"settings.section.cache" = "කැෂේ";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "දෝෂ නිරාකරණය";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "ස්වයංක්‍රීයව පද්ධති පෙනුම අනුගමනය කරයි.";
+"settings.footer.themeAutoHours" = "ඉහත පැය අතර අඳුරු තේමාවට ස්වයංක්‍රීයව මාරු වේ.";
+"settings.footer.playback" = "සම්පූර්ණ තිරයේ Zoom to Fill ස්වයංක්‍රීයව වීඩියෝව ප්‍රමාණනය කරයි, එවිට අඳුරු තීරු ඉතිරි නොවේ. වාදකයා තුළ අභිසාරීත කිරීම වීඩියෝවකට එය ආවරණය කරයි.";
+"settings.footer.home" = "නිර්දේශිත කැබලි කෙසේ පෙන්වා ඇත: අඛණ්ඩ ජාලයක් හෝ රූපවාහිනී-විලාසිත තිරස් මාර්ග.";
+"settings.footer.ryd" = "Dislike ගණන් ලබා දෙන්නේ Return YouTube Dislike (returnyoutubedislike.com) මගිනි — විවෘත ප්‍රජා ව්‍යාපෘතියකි.";
+"settings.footer.debug" = "නිශ්චිත ප්‍රතිදර්ශන මූලාශ්‍රයක් බල කරන්න. සාමාන්‍යයෙන් Android VR ස්වයංක්‍රීය ආපසු යාමකින් යුතුව භාවිතා කෙරේ. විසඳුම් සේවාදායකය Mobile Web + pot මූලාශ්‍රය බලගන්වයි (pot minting, සහ iOS 12–13 හි n-solving).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "තේමාව";
+"settings.theme.dark" = "අඳුරු";
+"settings.theme.light" = "ආලෝකමත්";
+"settings.theme.auto" = "ස්වයංක්‍රීය";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "අඳුරු තේමාව ආරම්භය";
+"settings.row.darkUntil" = "අඳුරු තේමාව අවසානය";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "පෙරනිමි ගුණාත්මකභාවය";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Auto";
+"settings.row.backgroundPlayback" = "පසුබිම ප්‍රතිදර්ශනය";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "සම්පූර්ණ තිරයේ තත්ත්ව තීරුව සඟවන්න";
+"settings.row.zoomToFill" = "සම්පූර්ණ තිරයේ Zoom to Fill";
+"settings.row.showShorts" = "දායකත්වයන්හි YouTube Shorts පෙන්වන්න";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "මුල් පිටු සැලැස්ම";
+"settings.homeLayout.grid" = "සාමාන්‍ය ජාලය";
+"settings.homeLayout.rails" = "කැබලි මාර්ග";
+
+/* Cache rows */
+"settings.row.feedCache" = "පෝෂණ කැෂේ";
+"settings.row.feedCacheDuration" = "පෝෂණ කැෂේ කාලය";
+"settings.row.imageCache" = "රූප කැෂේ";
+"settings.row.imageCacheDuration" = "රූප කැෂේ කාලය";
+"settings.row.clearCache" = "සියලු කැෂේ මකන්න";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "කැෂේ මකා ඇත";
+"settings.cache.clearedMessage" = "සියලු කැෂේ මකා ඇත.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock සැකසුම්";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "ප්‍රතිදර්ශන මූලාශ්‍රය";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "දෝෂ ලොගය බෙදාහරින්න";
+/* Solver-server URL alert */
+"settings.solver.message" = "විසඳුම් සේවාදායකයේ URL.";
+"settings.solver.reset" = "පෙරනිමි වෙත යළි සකසන්න";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (default)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "ලොග නැත";
+"settings.log.noneMessage" = "දෝෂ ලොග තවම නොපවතී.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "පැතිකඩ";
+"profile.signOut" = "පිටවන්න";
+"profile.clearImageCache" = "රූප කැෂේ මකන්න";
+"profile.imageCacheCleared" = "රූප කැෂේ මකා ඇත.";
+
+/* ===== Search ===== */
+
+"search.title" = "සොයන්න";
+/* Search bar placeholder */
+"search.placeholder" = "YouTube සොයන්න";
+/* Header above the recent-search list */
+"search.recent" = "මෑත සෙවුම්";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "පෙරහන්";
+"search.filters.active" = "පෙරහන් •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "සෙවුම් පෙරහන්";
+"search.filters.reset" = "පෙරහන් යළි සකසන්න";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "වර්ගීකරණය: %1$@";
+"search.filters.date" = "දිනය: %1$@";
+"search.filters.type" = "වර්ගය: %1$@";
+"search.filters.duration" = "කාලය: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "වර්ගීකරණය";
+"search.filters.dateTitle" = "උඩගුණ කළ දිනය";
+"search.filters.typeTitle" = "වර්ගය";
+"search.filters.durationTitle" = "කාලය";
+
+/* Filter option values */
+"search.sort.relevance" = "අදාළත්වය";
+"search.sort.rating" = "අගයුම";
+"search.sort.uploadDate" = "උඩගුණ කළ දිනය";
+"search.sort.viewCount" = "දසුන් ගණන";
+"search.date.any" = "ඕනෑම කාලයක";
+"search.date.lastHour" = "පසුගිය පැය";
+"search.date.today" = "අද";
+"search.date.thisWeek" = "මෙම සතිය";
+"search.date.thisMonth" = "මෙම මාසය";
+"search.date.thisYear" = "මෙම වසර";
+"search.type.any" = "ඕනෑම වර්ගයක්";
+"search.type.video" = "වීඩියෝව";
+"search.type.channel" = "නාලිකාව";
+"search.type.playlist" = "ප්ලේලිස්ටය";
+"search.duration.any" = "ඕනෑම කාලයක්";
+"search.duration.short" = "නිමි. 4 මිනි.";
+"search.duration.medium" = "4–20 මිනි.";
+"search.duration.long" = "වැඩිම 20 මිනි.";
+
+/* ===== Home ===== */
+
+"home.title" = "මුල් පිටුව";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "සියල්ල";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "සජීවී";
+"home.category.news" = "පුවත්";
+"home.category.gaming" = "ක්‍රීඩා";
+"home.category.sports" = "ක්‍රීඩා තරඟ";
+"home.category.learning" = "අධ්‍යාපනය";
+"home.category.fashion" = "ෆෑෂන්";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "පෝෂණය පූරණය කළ නොහැක\nඋත්සාහ කිරීමට පහළට ඇදන්න";
+/* Signed-out empty state */
+"home.signIn" = "ඔබගේ නිර්දේශ බැලීමට පිවිසෙන්න";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "වීඩියෝ";
+"channel.tab.live" = "සජීවී";
+"channel.tab.playlists" = "ප්ලේලිස්ට";
+/* About sheet */
+"channel.about.title" = "පිළිබඳව";
+"channel.about.close" = "වසන්න";
+"channel.about.subscribers" = "දායකයන්";
+"channel.about.videos" = "වීඩියෝ";
+"channel.about.description" = "විස්තරය";
+"channel.about.contact" = "සම්බන්ධ වන්න";
+
+/* ===== Library ===== */
+
+"library.history" = "ඉතිහාසය";
+"library.downloads" = "බාගැනීම්";
+"library.playlists" = "ප්ලේලිස්ට";
+"library.downloads.comingSoon" = "බාගැනීම් ඉක්මනින්";
+"library.history.signIn" = "ඔබගේ නැරඹුම් ඉතිහාසය බැලීමට පිවිසෙන්න";
+"library.history.empty" = "නැරඹුම් ඉතිහාසයක් හමු නොවීය";
+"library.history.loadFailed" = "ඉතිහාසය පූරණය කළ නොහැක";
+"library.playlists.signIn" = "ඔබගේ ප්ලේලිස්ට බැලීමට පිවිසෙන්න";
+"library.playlists.loadFailed" = "ප්ලේලිස්ට පූරණය කළ නොහැක";
+"library.playlist.empty" = "මෙම ප්ලේලිස්ටයේ වීඩියෝ නැත";
+"library.playlist.loadFailed" = "ප්ලේලිස්ට පූරණය කළ නොහැක";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "දායකත්වයන්";
+"subscriptions.all" = "සියලු දායකත්වයන්";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "සියල්ල";
+"subscriptions.signIn" = "ඔබගේ දායකත්වයන් බැලීමට පිවිසෙන්න";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "ගිණුම";
+"account.signIn" = "පිවිසෙන්න";
+"account.signOut" = "පිටවන්න";
+"account.notSignedIn" = "පිවිස නැත";
+
+/* Generic error alert title */
+"common.error" = "දෝෂය";
+/* Channel screen failed to load */
+"channel.unavailable" = "නාලිකාව නොපවතී";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "භාෂාව";
+"settings.footer.language" = "යෙදුම් භාෂාව හැඩැස්ම වෙනස් කරයි. අන්තර්ගත භාෂාව මාතෘකා, සෙවුම් සහ පෝෂණ වෙනස් කරයි (YouTube නිල යෙදුම මෙන් මෙටාඩේටා සේවාදායක පැත්තේ පරිවර්තනය කරයි). වෙනස්කම් යෙදුම නැවත ආරම්භ කළ පසු සම්පූර්ණයෙන් බලාත්මක වේ.";
+/* Rows */
+"settings.row.appLanguage" = "යෙදුම් භාෂාව";
+"settings.row.contentLanguage" = "අන්තර්ගත භාෂාව";
+"settings.row.region" = "ප්‍රදේශය";
+/* Picker option following the device language/region */
+"settings.language.system" = "පද්ධතිය";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "නැවත ආරම්භය අවශ්‍යයි";
+"settings.language.restartMessage" = "යෙදුම නැවත ආරම්භ කළ පසු වෙනස්කම් සම්පූර්ණයෙන් බලාත්මක වේ.";

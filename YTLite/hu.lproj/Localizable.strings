@@ -1,0 +1,367 @@
+/*
+  YTLite — Hungarian translation.
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Lejátszási beállítások";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Minőség";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Hangsáv";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Statisztika nerdoknak";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Feliratok";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Ki";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (automatikus)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (MI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Betöltés: %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Adatfolyam megoldása...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Lejátszás sikertelen.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Minőség váltása sikertelen.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Hangsáv váltása sikertelen.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Feliratkozás";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Feliratkozva";
+/* Generic cancel action */
+"common.cancel" = "Mégse";
+/* Generic confirmation button */
+"common.ok" = "OK";
+/* Generic save action */
+"common.save" = "Mentés";
+/* Generic done action */
+"common.done" = "Kész";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Lejátszási lista";
+/* Library tab title */
+"library.title" = "Könyvtár";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Videó előkészítése...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Adatfolyam frissítése...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Továbbiak";
+/* Collapses the video description */
+"player.description.less" = "Kevesebb";
+/* Action bar: share the video */
+"player.action.share" = "Megosztás";
+/* Action bar: save to playlist */
+"player.action.save" = "Mentés";
+/* Action bar: download */
+"player.action.download" = "Letöltés";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Hozzászólások";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Hozzászólások (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Hozzászólások betöltése...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Hozzászólások nem érhetők el";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "A hozzászólások még nem érhetők el.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "További hozzászólások betöltése";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ \u2022 Rögzítve";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ kedvelés";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ válasz";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Következik";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Lejátszás most";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Mix";
+/* Header of the related-videos section */
+"player.related.title" = "Kapcsolódó";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Lejátszási hiba: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Normál";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "%1$@ kihagyása";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Automatikus kihagyás";
+"sponsorblock.behavior.showButton" = "Gomb megjelenítése";
+"sponsorblock.behavior.disabled" = "Letiltás";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "A SponsorBlock működteti (sponsor.ajay.app) \u2014 egy nyílt közösségi projekt.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Szegmens kategóriák";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Szponzor";
+"sponsorblock.category.sponsor.description" = "Fizetett reklám, fizetett ajánlások és közvetlen hirdetések. Nem önmaguk népszerűsítésére vagy ingyenes említésekre okok/készítők/weboldalak/termékek tekintetében, amelyeket támogatnak.";
+"sponsorblock.category.selfpromo.name" = "Nem fizetett/Önnépszerűsítés";
+"sponsorblock.category.selfpromo.description" = "Hasonló a \"szponzorhoz\", kivéve a nem fizetett vagy önnépszerűsítést. Ide tartoznak a termékekkel, adományokkal vagy együttműködéseikkel kapcsolatos szakaszok.";
+"sponsorblock.category.exclusive_access.name" = "Exkluzív hozzáférés";
+"sponsorblock.category.exclusive_access.description" = "Csak egész videók címkézésére. Akkor használatos, amikor a videó egy olyan terméket, szolgáltatást vagy helyszínt mutat be, amelyhez ingyenes vagy támogatott hozzáférést kaptak.";
+"sponsorblock.category.interaction.name" = "Interakció emlékeztető (Feliratkozás)";
+"sponsorblock.category.interaction.description" = "Amikor a tartalom közepén rövid emlékeztető van a kedvelésre, feliratkozásra vagy követésre. Ha hosszú vagy valami konkrétról szól, inkább az önnépszerűsítés alá kellene kerülnie.";
+"sponsorblock.category.highlight.name" = "Kiemelés";
+"sponsorblock.category.highlight.description" = "A videónak az a része, amit a legtöbben keresnek. Hasonló a \"Videó x-nél kezdődik\" kommentekhez.";
+"sponsorblock.category.intro.name" = "Szünet/Nyitó animáció";
+"sponsorblock.category.intro.description" = "Valódi tartalom nélküli szünet. Lehet szünet, statikus képkocka vagy ismétlődő animáció. Nem használható információt tartalmazó átmenetekhez.";
+"sponsorblock.category.outro.name" = "Záróképek/Köszönetnyilvánítás";
+"sponsorblock.category.outro.description" = "Köszönetnyilvánítás vagy amikor a YouTube záróképei megjelennek. Nem információt tartalmazó összefoglalókhoz.";
+"sponsorblock.category.preview.name" = "Előnézet/Összefoglaló";
+"sponsorblock.category.preview.description" = "Klippek gyűjteménye, amely bemutatja, mi következik ebben a videóban vagy más videókban egy sorozatban, ahol az összes információ később megismétlődik a videóban.";
+"sponsorblock.category.filler.name" = "Kitérők/Vicc";
+"sponsorblock.category.filler.description" = "Kitérő jelenetek vagy viccek, amelyek nem szükségesek a videó fő tartalmának megértéséhez. Nem tartalmazhat olyan szegmenseket, amelyek kontextust vagy háttérinformációt nyújtanak.";
+"sponsorblock.category.music_offtopic.name" = "Nem zenei szakasz";
+"sponsorblock.category.music_offtopic.description" = "Csak zenés videókhoz. Zenés videó nem zenei része.";
+"sponsorblock.category.chapter.name" = "Fejezet";
+"sponsorblock.category.chapter.description" = "A videó egyéni nevű szakaszai.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Beállítások";
+
+/* Section headers */
+"settings.section.theme" = "Téma";
+"settings.section.playback" = "Lejátszás";
+"settings.section.home" = "Kezdőlap";
+"settings.section.cache" = "Gyorsítótár";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Hibakeresés";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Automatikusan követi a rendszer megjelenését.";
+"settings.footer.themeAutoHours" = "Automatikusan vált sötét téma között a fenti órákban.";
+"settings.footer.playback" = "Teljes képernyős nagyítás automatikusan méretezi a videót, hogy ne maradjanak fekete sávok. A lejátszóban végzett csipetnyomás felülbírja videónként.";
+"settings.footer.home" = "Hogyan jelennek meg az ajánló polcok: folyamatos rács vagy tévé-stílusú vízszintes sávok.";
+"settings.footer.ryd" = "Nemtetszés számokat a Return YouTube Dislike (returnyoutubedislike.com) \u2014 egy nyílt közösségi projekt biztosítja.";
+"settings.footer.debug" = "Egy adott lejátszási forrás kényszerítése. Normálisan az Android VR-t használja automatikus visszaeséssel. A megoldó szerver a Mobile Web + pot forrást működteti (pot előállítás és n-megoldás iOS 12\u201313-on).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Téma";
+"settings.theme.dark" = "Sötét";
+"settings.theme.light" = "Világos";
+"settings.theme.auto" = "Automatikus";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Sötét téma ettől";
+"settings.row.darkUntil" = "Sötét téma eddig";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Alapértelmezett minőség";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Automatikus";
+"settings.row.backgroundPlayback" = "Háttérlejátszás";
+"settings.row.pip" = "Kép a képben";
+"settings.row.hideStatusBar" = "Állapotsor elrejtése teljes képernyőn";
+"settings.row.zoomToFill" = "Nagyítás kitöltéshez teljes képernyőn";
+"settings.row.showShorts" = "YouTube Shorts megjelenítése a Feliratkozásokban";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Kezdőlap elrendezés";
+"settings.homeLayout.grid" = "Egyszerű rács";
+"settings.homeLayout.rails" = "Polc sávok";
+
+/* Cache rows */
+"settings.row.feedCache" = "Hírfolyam gyorsítótár";
+"settings.row.feedCacheDuration" = "Hírfolyam gyorsítótár időtartam";
+"settings.row.imageCache" = "Kép gyorsítótár";
+"settings.row.imageCacheDuration" = "Kép gyorsítótár időtartam";
+"settings.row.clearCache" = "Összes gyorsítótár törlése";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Gyorsítótár törölve";
+"settings.cache.clearedMessage" = "Az összes gyorsítótár törlődött.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock beállítások";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Lejátszási forrás";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Hibakeresési napló megosztása";
+/* Solver-server URL alert */
+"settings.solver.message" = "A megoldó szerver URL-je.";
+"settings.solver.reset" = "Visszaállítás alapértelmezettre";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (alapértelmezett)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Nincsenek naplók";
+"settings.log.noneMessage" = "Még nincsenek elérhető hibakeresési naplók.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Profil";
+"profile.signOut" = "Kijelentkezés";
+"profile.clearImageCache" = "Kép gyorsítótár törlése";
+"profile.imageCacheCleared" = "Kép gyorsítótár törölve.";
+
+/* ===== Search ===== */
+
+"search.title" = "Keresés";
+/* Search bar placeholder */
+"search.placeholder" = "Keresés a YouTube-on";
+/* Header above the recent-search list */
+"search.recent" = "Legutóbbi keresések";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Szűrők";
+"search.filters.active" = "Szűrők \u2022";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Keresési szűrők";
+"search.filters.reset" = "Szűrők visszaállítása";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Rendezés: %1$@";
+"search.filters.date" = "Dátum: %1$@";
+"search.filters.type" = "Típus: %1$@";
+"search.filters.duration" = "Időtartam: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Rendezés";
+"search.filters.dateTitle" = "Feltöltés dátuma";
+"search.filters.typeTitle" = "Típus";
+"search.filters.durationTitle" = "Időtartam";
+
+/* Filter option values */
+"search.sort.relevance" = "Relevancia";
+"search.sort.rating" = "Értékelés";
+"search.sort.uploadDate" = "Feltöltés dátuma";
+"search.sort.viewCount" = "Megtekintések száma";
+"search.date.any" = "Bármikor";
+"search.date.lastHour" = "Utolsó óra";
+"search.date.today" = "Ma";
+"search.date.thisWeek" = "Ez a hét";
+"search.date.thisMonth" = "Ez a hónap";
+"search.date.thisYear" = "Ez az év";
+"search.type.any" = "Bármilyen típus";
+"search.type.video" = "Videó";
+"search.type.channel" = "Csatorna";
+"search.type.playlist" = "Lejátszási lista";
+"search.duration.any" = "Bármilyen időtartam";
+"search.duration.short" = "4 perc alatt";
+"search.duration.medium" = "4\u201320 perc";
+"search.duration.long" = "Több mint 20 perc";
+
+/* ===== Home ===== */
+
+"home.title" = "Kezdőlap";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Összes";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Live";
+"home.category.news" = "Hírek";
+"home.category.gaming" = "Játékok";
+"home.category.sports" = "Sport";
+"home.category.learning" = "Tanulás";
+"home.category.fashion" = "Divat";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "A hírfolyam nem tölthető be\nHúzd le az újbóli próbálkozáshoz";
+/* Signed-out empty state */
+"home.signIn" = "Jelentkezz be az ajánlások megtekintéséhez";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Videók";
+"channel.tab.live" = "Live";
+"channel.tab.playlists" = "Lejátszási listák";
+/* About sheet */
+"channel.about.title" = "Névjegy";
+"channel.about.close" = "Bezárás";
+"channel.about.subscribers" = "Feliratkozók";
+"channel.about.videos" = "Videók";
+"channel.about.description" = "Leírás";
+"channel.about.contact" = "Kapcsolat";
+
+/* ===== Library ===== */
+
+"library.history" = "Előzmények";
+"library.downloads" = "Letöltések";
+"library.playlists" = "Lejátszási listák";
+"library.downloads.comingSoon" = "Letöltések hamarosan érkeznek";
+"library.history.signIn" = "Jelentkezz be a megtekintési előzmények megtekintéséhez";
+"library.history.empty" = "Nem található megtekintési előzmény";
+"library.history.loadFailed" = "Az előzmények nem tölthetők be";
+"library.playlists.signIn" = "Jelentkezz be a lejátszási listáid megtekintéséhez";
+"library.playlists.loadFailed" = "A lejátszási listák nem tölthetők be";
+"library.playlist.empty" = "Nincsenek videók ebben a lejátszási listában";
+"library.playlist.loadFailed" = "A lejátszási lista nem tölthető be";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Feliratkozások";
+"subscriptions.all" = "Összes feliratkozás";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Összes";
+"subscriptions.signIn" = "Jelentkezz be a feliratkozásaid megtekintéséhez";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Fiók";
+"account.signIn" = "Bejelentkezés";
+"account.signOut" = "Kijelentkezés";
+"account.notSignedIn" = "Nincs bejelentkezve";
+
+/* Generic error alert title */
+"common.error" = "Hiba";
+/* Channel screen failed to load */
+"channel.unavailable" = "Csatorna nem érhető el";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Nyelv";
+"settings.footer.language" = "Az alkalmazás nyelve megváltoztatja a felületet. A tartalom nyelve megváltoztatja a címeket, a keresést és a hírfolyamokat (a YouTube szerveroldalon fordítja le a metaadatokat, mint a hivatalos alkalmazás). A változások az alkalmazás újraindítása után lépnek teljesen életbe.";
+/* Rows */
+"settings.row.appLanguage" = "Alkalmazás nyelve";
+"settings.row.contentLanguage" = "Tartalom nyelve";
+"settings.row.region" = "Régió";
+/* Picker option following the device language/region */
+"settings.language.system" = "Rendszer";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Újraindítás szükséges";
+"settings.language.restartMessage" = "A változások az alkalmazás újraindítása után lépnek teljesen életbe.";

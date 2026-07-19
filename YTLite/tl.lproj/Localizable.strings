@@ -1,0 +1,367 @@
+/*
+  YTLite — Filipino (Tagalog).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Mga setting ng playback";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Kalidad";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Audio track";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Stats para sa mga nerds";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Mga subtitle";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Naka-off";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Naglo-load ng %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Iniresolba ang stream...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Nabigo ang playback.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Nabigo ang paglipat ng kalidad.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Nabigo ang paglipat ng audio track.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Mag-subscribe";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Naka-subscribe";
+/* Generic cancel action */
+"common.cancel" = "Kanselahin";
+/* Generic confirmation button */
+"common.ok" = "OK";
+/* Generic save action */
+"common.save" = "I-save";
+/* Generic done action */
+"common.done" = "Tapos na";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Playlist";
+/* Library tab title */
+"library.title" = "Library";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Inihahanda ang video...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Sinasariwa ang stream...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Higit pa";
+/* Collapses the video description */
+"player.description.less" = "Bawasan";
+/* Action bar: share the video */
+"player.action.share" = "I-share";
+/* Action bar: save to playlist */
+"player.action.save" = "I-save";
+/* Action bar: download */
+"player.action.download" = "I-download";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Mga komento";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Mga komento (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Naglo-load ng mga komento...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Hindi available ang mga komento";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Hindi pa available ang mga komento.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Mag-load ng higit pang komento";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • Naka-pin";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ na like";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ na tugon";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Susunod";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "I-play na";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Mix";
+/* Header of the related-videos section */
+"player.related.title" = "Kaugnay";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Playback error: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Normal";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Laktawan ang %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Auto skip";
+"sponsorblock.behavior.showButton" = "Ipakita ang button";
+"sponsorblock.behavior.disabled" = "I-disable";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Pinapagana ng SponsorBlock (sponsor.ajay.app) — isang bukas na proyekto ng komunidad.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Mga Kategorya ng Segment";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Sponsor";
+"sponsorblock.category.sponsor.description" = "Bayad na promosyon, bayad na referral at direktang advertising. Hindi para sa self-promotion o libreng pagsuporta sa mga brand/creator/website/produce na gusto nila.";
+"sponsorblock.category.selfpromo.name" = "Hindi Bayad/Self Promotion";
+"sponsorblock.category.selfpromo.description" = "Katulad ng \"sponsor\" maliban sa hindi bayad o self-promotion. Kabilang ang mga bahagi tungkol sa merchandise, donasyon, o impormasyon tungkol sa kanilang mga kasosyo.";
+"sponsorblock.category.exclusive_access.name" = "Eksklusibong Access";
+"sponsorblock.category.exclusive_access.description" = "Para lamang sa pag-label ng buong video. Ginagamit kapag ang video ay nagpapakita ng produkto, serbisyo o lokasyon na nakakuha sila ng libre o subsidized na access.";
+"sponsorblock.category.interaction.name" = "Paalala ng Interaksyon (Mag-subscribe)";
+"sponsorblock.category.interaction.description" = "Kapag may maikling paalala na mag-like, mag-subscribe o mag-follow sa gitna ng content. Kung mahaba o tungkol sa isang partikular na bagay, dapat nasa ilalim ng self-promotion.";
+"sponsorblock.category.highlight.name" = "Highlight";
+"sponsorblock.category.highlight.description" = "Ang bahagi ng video na hinahanap ng karamihan. Katulad ng mga komentong \"Nagsisimula ang video sa segundo x\".";
+"sponsorblock.category.intro.name" = "Intermission/Intro Animation";
+"sponsorblock.category.intro.description" = "Isang agwat na walang aktwal na nilalaman. Maaaring pause, static frame, o paulit-ulit na animasyon. Hindi dapat gamitin para sa mga transition na naglalaman ng impormasyon.";
+"sponsorblock.category.outro.name" = "Endcards/Credits";
+"sponsorblock.category.outro.description" = "Credits o kapag lumitaw ang YouTube endcards. Hindi para sa mga konklusyon na may impormasyon.";
+"sponsorblock.category.preview.name" = "Preview/Recap";
+"sponsorblock.category.preview.description" = "Koleksyon ng mga clip na nagpapakita kung ano ang susunod sa video na ito o iba pang video sa isang serye kung saan ang lahat ng impormasyon ay inuulat mamaya sa video.";
+"sponsorblock.category.filler.name" = "Tangents/Jokes";
+"sponsorblock.category.filler.description" = "Mga tanag na eksena o biro na hindi kinakailangan para maunawaan ang pangunahing nilalaman ng video. Hindi dapat isama ang mga segment na nagbibigay ng konteksto o background details.";
+"sponsorblock.category.music_offtopic.name" = "Non-Music Section";
+"sponsorblock.category.music_offtopic.description" = "Para lamang sa mga music video. Ang bahaging hindi musika ng isang music video.";
+"sponsorblock.category.chapter.name" = "Chapter";
+"sponsorblock.category.chapter.description" = "Mga pasadyang binigyang-pangalan na bahagi ng video.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Mga Setting";
+
+/* Section headers */
+"settings.section.theme" = "Tema";
+"settings.section.playback" = "Playback";
+"settings.section.home" = "Home";
+"settings.section.cache" = "Cache";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Debug";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Awtomatikong sinusunod ang hitsura ng sistema.";
+"settings.footer.themeAutoHours" = "Awtomatikong lumilipat sa dark theme sa pagitan ng mga oras sa itaas.";
+"settings.footer.playback" = "Ang Zoom to Fill ay awtomatikong nag-i-scale ng video sa fullscreen upang walang itim na bar. Ang pinch sa player ay ini-override ito bawat video.";
+"settings.footer.home" = "Paano ipinapakita ang mga recommendation shelf: isang tuloy-tuloy na grid o mga TV-style na horizontal rail.";
+"settings.footer.ryd" = "Ang bilang ng dislike ay pinapagana ng Return YouTube Dislike (returnyoutubedislike.com) — isang bukas na proyekto ng komunidad.";
+"settings.footer.debug" = "Pilitin ang isang partikular na playback source. Karaniwang ginagamit ang Android VR na may awtomatikong fallback. Ang solver server ang nagpapagana sa Mobile Web + pot source (pot minting, at n-solving sa iOS 12–13).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Tema";
+"settings.theme.dark" = "Madilim";
+"settings.theme.light" = "Maliwanag";
+"settings.theme.auto" = "Auto";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Dark Theme Mula";
+"settings.row.darkUntil" = "Dark Theme Hanggang";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Default na Kalidad";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Auto";
+"settings.row.backgroundPlayback" = "Background Playback";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "Itago ang Status Bar sa Fullscreen";
+"settings.row.zoomToFill" = "Zoom to Fill sa Fullscreen";
+"settings.row.showShorts" = "Ipakita ang YouTube Shorts sa Mga Subscription";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Home Layout";
+"settings.homeLayout.grid" = "Plain Grid";
+"settings.homeLayout.rails" = "Shelf Rails";
+
+/* Cache rows */
+"settings.row.feedCache" = "Feed Cache";
+"settings.row.feedCacheDuration" = "Tagal ng Feed Cache";
+"settings.row.imageCache" = "Image Cache";
+"settings.row.imageCacheDuration" = "Tagal ng Image Cache";
+"settings.row.clearCache" = "I-clear ang Lahat ng Cache";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Na-clear ang Cache";
+"settings.cache.clearedMessage" = "Na-clear na ang lahat ng cache.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "Mga Setting ng SponsorBlock";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Playback Source";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "I-share ang Debug Log";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL ng solver server.";
+"settings.solver.reset" = "I-reset sa default";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (default)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Walang Log";
+"settings.log.noneMessage" = "Wala pang available na debug log.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Profile";
+"profile.signOut" = "Mag-sign Out";
+"profile.clearImageCache" = "I-clear ang Image Cache";
+"profile.imageCacheCleared" = "Na-clear na ang image cache.";
+
+/* ===== Search ===== */
+
+"search.title" = "Search";
+/* Search bar placeholder */
+"search.placeholder" = "Maghanap sa YouTube";
+/* Header above the recent-search list */
+"search.recent" = "Mga nakaraang search";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Mga Filter";
+"search.filters.active" = "Mga Filter •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Mga Filter sa Search";
+"search.filters.reset" = "I-reset ang mga filter";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Ayusin: %1$@";
+"search.filters.date" = "Petsa: %1$@";
+"search.filters.type" = "Uri: %1$@";
+"search.filters.duration" = "Tagal: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Ayusin ayon sa";
+"search.filters.dateTitle" = "Petsa ng upload";
+"search.filters.typeTitle" = "Uri";
+"search.filters.durationTitle" = "Tagal";
+
+/* Filter option values */
+"search.sort.relevance" = "Relevansya";
+"search.sort.rating" = "Rating";
+"search.sort.uploadDate" = "Petsa ng upload";
+"search.sort.viewCount" = "Bilang ng views";
+"search.date.any" = "Anumang oras";
+"search.date.lastHour" = "Nakaraang oras";
+"search.date.today" = "Ngayon";
+"search.date.thisWeek" = "Linggong ito";
+"search.date.thisMonth" = "Buwang ito";
+"search.date.thisYear" = "Taong ito";
+"search.type.any" = "Anumang uri";
+"search.type.video" = "Video";
+"search.type.channel" = "Channel";
+"search.type.playlist" = "Playlist";
+"search.duration.any" = "Anumang tagal";
+"search.duration.short" = "Baba 4 min";
+"search.duration.medium" = "4–20 min";
+"search.duration.long" = "Higit 20 min";
+
+/* ===== Home ===== */
+
+"home.title" = "Home";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Lahat";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Live";
+"home.category.news" = "Balita";
+"home.category.gaming" = "Gaming";
+"home.category.sports" = "Sports";
+"home.category.learning" = "Pag-aaral";
+"home.category.fashion" = "Fashion";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Hindi ma-load ang feed\nHilahin pababa para subukan muli";
+/* Signed-out empty state */
+"home.signIn" = "Mag-sign in para makita ang iyong mga rekomendasyon";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Mga Video";
+"channel.tab.live" = "Live";
+"channel.tab.playlists" = "Mga Playlist";
+/* About sheet */
+"channel.about.title" = "Tungkol sa";
+"channel.about.close" = "Isara";
+"channel.about.subscribers" = "Mga Subscriber";
+"channel.about.videos" = "Mga Video";
+"channel.about.description" = "Paglalarawan";
+"channel.about.contact" = "Makipag-ugnayan";
+
+/* ===== Library ===== */
+
+"library.history" = "Kasaysayan";
+"library.downloads" = "Mga Download";
+"library.playlists" = "Mga Playlist";
+"library.downloads.comingSoon" = "Malapit na ang mga download";
+"library.history.signIn" = "Mag-sign in para makita ang iyong watch history";
+"library.history.empty" = "Walang nahanap na watch history";
+"library.history.loadFailed" = "Hindi ma-load ang kasaysayan";
+"library.playlists.signIn" = "Mag-sign in para makita ang iyong mga playlist";
+"library.playlists.loadFailed" = "Hindi ma-load ang mga playlist";
+"library.playlist.empty" = "Walang video sa playlist na ito";
+"library.playlist.loadFailed" = "Hindi ma-load ang playlist";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Mga Subscription";
+"subscriptions.all" = "Lahat ng subscription";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Lahat";
+"subscriptions.signIn" = "Mag-sign in para makita ang iyong mga subscription";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Account";
+"account.signIn" = "Mag-sign In";
+"account.signOut" = "Mag-sign Out";
+"account.notSignedIn" = "Hindi naka-sign in";
+
+/* Generic error alert title */
+"common.error" = "Error";
+/* Channel screen failed to load */
+"channel.unavailable" = "Hindi available ang channel";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Wika";
+"settings.footer.language" = "Ang pagbabago ng wikang app ay nagbabago sa interface. Ang wikang content ay nagbabago sa mga pamagat, paghahanap at feed (isinasalin ng YouTube ang metadata sa server side, tulad ng opisyal na app). Epektibo ang mga pagbabago pagkatapos i-restart ang app.";
+/* Rows */
+"settings.row.appLanguage" = "Wika ng App";
+"settings.row.contentLanguage" = "Wika ng Content";
+"settings.row.region" = "Rehiyon";
+/* Picker option following the device language/region */
+"settings.language.system" = "Sistema";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Kailangan ang Restart";
+"settings.language.restartMessage" = "Epektibo ang mga pagbabago pagkatapos i-restart ang app.";

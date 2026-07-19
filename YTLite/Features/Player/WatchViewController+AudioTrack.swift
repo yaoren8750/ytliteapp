@@ -13,13 +13,17 @@ extension WatchViewController {
         }
         let items = source.availableAudioTracks.map { track -> PlayerMenuItem in
             let isCurrent = track == source.currentAudioTrack
-            let title = isCurrent
-                ? "✓ \(track.displayName)" : track.displayName
+            let name = track.isAutoDubbed
+                ? track.displayName + "player.audioTrack.aiSuffix".localized
+                : track.displayName
+            let title = isCurrent ? "✓ \(name)" : name
             return PlayerMenuItem(title: title) { [weak self] in
                 self?.selectAudioTrack(track, source: source)
             }
         }
-        presentPlayerMenu(title: "Audio track", items: items)
+        presentPlayerMenu(
+            title: "player.menu.audioTrack".localized, items: items
+        )
     }
 
     private func selectAudioTrack(
@@ -30,7 +34,8 @@ extension WatchViewController {
             return
         }
         let resumeTime = videoPlayerView?.player?.currentTime()
-        playerStatusLabel.text = "Loading \(track.displayName)..."
+        playerStatusLabel.text = "player.status.loading"
+            .localized(with: track.displayName)
         playerStatusLabel.isHidden = false
         source.selectAudioTrack(track) { [weak self] result in
             DispatchQueue.main.async {
@@ -38,7 +43,9 @@ extension WatchViewController {
                 case .success(let prepared):
                     self?.attachPrepared(prepared, resumeAt: resumeTime)
                 case .failure:
-                    self?.showPlaybackError("Audio track switch failed.")
+                    self?.showPlaybackError(
+                        "player.error.audioTrackSwitch".localized
+                    )
                 }
             }
         }

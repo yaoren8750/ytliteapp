@@ -232,25 +232,17 @@ private extension InnertubeClient {
         }
     }
 
+    // Keyword tables live in ContentKeywords (Core/Localization) —
+    // adding a content language means adding its table there.
     static func isViewCountText(
         _ text: String
     ) -> Bool {
-        let keys = [
-            "view", "просмотр",
-            "watching", "смотр"
-        ]
-        return keys.contains { text.contains($0) }
+        ContentKeywords.isViewCount(text)
     }
 
     static func isPublishedText(
         _ text: String
     ) -> Bool {
-        let keys = [
-            "ago", "назад", "hour", "day",
-            "week", "month", "year", "час",
-            "нед", "мес", "лет", "дн",
-            "мин", "сек"
-        ]
-        return keys.contains { text.contains($0) }
+        ContentKeywords.isPublished(text)
     }
 }

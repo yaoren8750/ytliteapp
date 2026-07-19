@@ -1,0 +1,367 @@
+/*
+  YTLite — Indonesian (Bahasa Indonesia).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Pengaturan pemutaran";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Kualitas";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Trekan audio";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Statistik untuk pengembang";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Subtitle";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Mati";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (otomatis)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Memuat %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Menyelesaikan stream...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Pemutaran gagal.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Gagal mengganti kualitas.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Gagal mengganti trek audio.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Berlangganan";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Berlangganan";
+/* Generic cancel action */
+"common.cancel" = "Batal";
+/* Generic confirmation button */
+"common.ok" = "OK";
+/* Generic save action */
+"common.save" = "Simpan";
+/* Generic done action */
+"common.done" = "Selesai";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Playlist";
+/* Library tab title */
+"library.title" = "Pustaka";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Menyiapkan video...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Menyegarkan stream...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Selengkapnya";
+/* Collapses the video description */
+"player.description.less" = "Lebih sedikit";
+/* Action bar: share the video */
+"player.action.share" = "Bagikan";
+/* Action bar: save to playlist */
+"player.action.save" = "Simpan";
+/* Action bar: download */
+"player.action.download" = "Unduh";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Komentar";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Komentar (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Memuat komentar...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Komentar tidak tersedia";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Komentar belum tersedia.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Muat lebih banyak komentar";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • Disematkan";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ suka";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ balasan";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Berikutnya";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Putar sekarang";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Mix";
+/* Header of the related-videos section */
+"player.related.title" = "Terkait";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Kesalahan pemutaran: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Normal";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Lewati %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Lewati otomatis";
+"sponsorblock.behavior.showButton" = "Tampilkan tombol";
+"sponsorblock.behavior.disabled" = "Nonaktifkan";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Didukung oleh SponsorBlock (sponsor.ajay.app) — proyek komunitas sumber terbuka.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Kategori Segmen";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Sponsor";
+"sponsorblock.category.sponsor.description" = "Promosi berbayar, referensi berbayar, dan iklan langsung. Bukan untuk promosi diri atau dukungan gratis untuk merek/ pembuat konten/website/produk yang mereka sukai.";
+"sponsorblock.category.selfpromo.name" = "Promosi Tidak Berbayar/Diri";
+"sponsorblock.category.selfpromo.description" = "Mirip dengan \"sponsor\" kecuali untuk promosi tidak berbayar atau diri. Termasuk bagian tentang merchandise, donasi, atau informasi tentang siapa yang mereka ajak bekerja sama.";
+"sponsorblock.category.exclusive_access.name" = "Akses Eksklusif";
+"sponsorblock.category.exclusive_access.description" = "Hanya untuk melabeli seluruh video. Digunakan saat video memperlihatkan produk, layanan, atau lokasi yang mereka dapatkan akses gratis atau bersubsidi.";
+"sponsorblock.category.interaction.name" = "Pengingat Interaksi (Berlangganan)";
+"sponsorblock.category.interaction.description" = "Ketika ada pengingat singkat untuk menyukai, berlangganan, atau mengikuti di tengah konten. Jika panjang atau tentang sesuatu yang spesifik, seharusnya berada di bawah promosi diri.";
+"sponsorblock.category.highlight.name" = "Sorotan";
+"sponsorblock.category.highlight.description" = "Bagian video yang paling dicari orang. Mirip dengan komentar \"Video dimulai pada detik x\".";
+"sponsorblock.category.intro.name" = "Jeda/Animasi Intro";
+"sponsorblock.category.intro.description" = "Interval tanpa konten nyata. Bisa berupa jeda, frame statis, atau animasi berulang. Tidak boleh digunakan untuk transisi yang berisi informasi.";
+"sponsorblock.category.outro.name" = "Kartu Akhir/Kredit";
+"sponsorblock.category.outro.description" = "Kredit atau saat kartu akhir YouTube muncul. Bukan untuk kesimpulan yang berisi informasi.";
+"sponsorblock.category.preview.name" = "Pratinjau/Ringkasan";
+"sponsorblock.category.preview.description" = "Kumpulan klip yang menunjukkan apa yang akan datang dalam video ini atau video lain dalam seri di mana semua informasi diulang nanti dalam video.";
+"sponsorblock.category.filler.name" = "Celotehan/Lelucon";
+"sponsorblock.category.filler.description" = "Adegan menyimpang atau lelucon yang tidak diperlukan untuk memahami konten utama video. Tidak boleh mencakup segmen yang memberikan konteks atau detail latar belakang.";
+"sponsorblock.category.music_offtopic.name" = "Bagian Non-Musik";
+"sponsorblock.category.music_offtopic.description" = "Hanya untuk video musik. Bagian non-musik dari video musik.";
+"sponsorblock.category.chapter.name" = "Bab";
+"sponsorblock.category.chapter.description" = "Bagian bernama kustom dari video.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Pengaturan";
+
+/* Section headers */
+"settings.section.theme" = "Tema";
+"settings.section.playback" = "Pemutaran";
+"settings.section.home" = "Beranda";
+"settings.section.cache" = "Cache";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Debug";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Otomatis mengikuti tampilan sistem.";
+"settings.footer.themeAutoHours" = "Otomatis beralih ke tema gelap di antara jam di atas.";
+"settings.footer.playback" = "Zoom to Fill secara otomatis mengubah ukuran video di layar penuh sehingga tidak ada bar hitam. Cubit di pemutar menggantikannya per video.";
+"settings.footer.home" = "Cara rak rekomendasi ditampilkan: satu kisi berlanjut atau rel horizontal bergaya TV.";
+"settings.footer.ryd" = "Jumlah tidak disukai didukung oleh Return YouTube Dislike (returnyoutubedislike.com) — proyek komunitas sumber terbuka.";
+"settings.footer.debug" = "Paksa sumber pemutaran tertentu. Biasanya Android VR digunakan dengan fallback otomatis. Server solver mendukung sumber Mobile Web + pot (pembuatan pot dan n-solving di iOS 12–13).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Tema";
+"settings.theme.dark" = "Gelap";
+"settings.theme.light" = "Terang";
+"settings.theme.auto" = "Otomatis";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Tema Gelap Dari";
+"settings.row.darkUntil" = "Tema Gelap Sampai";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Kualitas Default";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Otomatis";
+"settings.row.backgroundPlayback" = "Pemutaran Latar Belakang";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "Sembunyikan Bilah Status di Layar Penuh";
+"settings.row.zoomToFill" = "Zoom to Fill di Layar Penuh";
+"settings.row.showShorts" = "Tampilkan YouTube Shorts di Langganan";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Tata Letak Beranda";
+"settings.homeLayout.grid" = "Kisi Sederhana";
+"settings.homeLayout.rails" = "Rel Rak";
+
+/* Cache rows */
+"settings.row.feedCache" = "Cache Feed";
+"settings.row.feedCacheDuration" = "Durasi Cache Feed";
+"settings.row.imageCache" = "Cache Gambar";
+"settings.row.imageCacheDuration" = "Durasi Cache Gambar";
+"settings.row.clearCache" = "Hapus Semua Cache";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Cache Dihapus";
+"settings.cache.clearedMessage" = "Semua cache telah dihapus.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "Pengaturan SponsorBlock";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Sumber Pemutaran";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Bagikan Log Debug";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL server solver.";
+"settings.solver.reset" = "Atur ulang ke default";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (default)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Tidak Ada Log";
+"settings.log.noneMessage" = "Belum ada log debug.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Profil";
+"profile.signOut" = "Keluar";
+"profile.clearImageCache" = "Hapus Cache Gambar";
+"profile.imageCacheCleared" = "Cache gambar dihapus.";
+
+/* ===== Search ===== */
+
+"search.title" = "Telusuri";
+/* Search bar placeholder */
+"search.placeholder" = "Telusuri YouTube";
+/* Header above the recent-search list */
+"search.recent" = "Pencarian terbaru";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Filter";
+"search.filters.active" = "Filter •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Filter Pencarian";
+"search.filters.reset" = "Atur ulang filter";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Urutkan: %1$@";
+"search.filters.date" = "Tanggal: %1$@";
+"search.filters.type" = "Jenis: %1$@";
+"search.filters.duration" = "Durasi: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Urutkan menurut";
+"search.filters.dateTitle" = "Tanggal unggah";
+"search.filters.typeTitle" = "Jenis";
+"search.filters.durationTitle" = "Durasi";
+
+/* Filter option values */
+"search.sort.relevance" = "Relevansi";
+"search.sort.rating" = "Penilaian";
+"search.sort.uploadDate" = "Tanggal unggah";
+"search.sort.viewCount" = "Jumlah tayangan";
+"search.date.any" = "Kapan saja";
+"search.date.lastHour" = "Jam terakhir";
+"search.date.today" = "Hari ini";
+"search.date.thisWeek" = "Minggu ini";
+"search.date.thisMonth" = "Bulan ini";
+"search.date.thisYear" = "Tahun ini";
+"search.type.any" = "Semua jenis";
+"search.type.video" = "Video";
+"search.type.channel" = "Channel";
+"search.type.playlist" = "Playlist";
+"search.duration.any" = "Semua durasi";
+"search.duration.short" = "Di bawah 4 menit";
+"search.duration.medium" = "4–20 menit";
+"search.duration.long" = "Lebih dari 20 menit";
+
+/* ===== Home ===== */
+
+"home.title" = "Beranda";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Semua";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Langsung";
+"home.category.news" = "Berita";
+"home.category.gaming" = "Game";
+"home.category.sports" = "Olahraga";
+"home.category.learning" = "Pembelajaran";
+"home.category.fashion" = "Fashion";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Tidak dapat memuat feed\nTarik ke bawah untuk mencoba lagi";
+/* Signed-out empty state */
+"home.signIn" = "Masuk untuk melihat rekomendasi Anda";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Video";
+"channel.tab.live" = "Langsung";
+"channel.tab.playlists" = "Playlist";
+/* About sheet */
+"channel.about.title" = "Tentang";
+"channel.about.close" = "Tutup";
+"channel.about.subscribers" = "Subscriber";
+"channel.about.videos" = "Video";
+"channel.about.description" = "Deskripsi";
+"channel.about.contact" = "Kontak";
+
+/* ===== Library ===== */
+
+"library.history" = "Riwayat";
+"library.downloads" = "Unduhan";
+"library.playlists" = "Playlist";
+"library.downloads.comingSoon" = "Unduhan segera hadir";
+"library.history.signIn" = "Masuk untuk melihat riwayat tontonan Anda";
+"library.history.empty" = "Tidak ada riwayat tontonan";
+"library.history.loadFailed" = "Tidak dapat memuat riwayat";
+"library.playlists.signIn" = "Masuk untuk melihat playlist Anda";
+"library.playlists.loadFailed" = "Tidak dapat memuat playlist";
+"library.playlist.empty" = "Tidak ada video di playlist ini";
+"library.playlist.loadFailed" = "Tidak dapat memuat playlist";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Langganan";
+"subscriptions.all" = "Semua langganan";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Semua";
+"subscriptions.signIn" = "Masuk untuk melihat langganan Anda";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Akun";
+"account.signIn" = "Masuk";
+"account.signOut" = "Keluar";
+"account.notSignedIn" = "Belum masuk";
+
+/* Generic error alert title */
+"common.error" = "Kesalahan";
+/* Channel screen failed to load */
+"channel.unavailable" = "Channel tidak tersedia";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Bahasa";
+"settings.footer.language" = "Bahasa aplikasi mengubah antarmuka. Bahasa konten mengubah judul, pencarian, dan feed (YouTube menerjemahkan metadata di sisi server, seperti aplikasi resmi). Perubahan berlaku penuh setelah aplikasi di-restart.";
+/* Rows */
+"settings.row.appLanguage" = "Bahasa Aplikasi";
+"settings.row.contentLanguage" = "Bahasa Konten";
+"settings.row.region" = "Wilayah";
+/* Picker option following the device language/region */
+"settings.language.system" = "Sistem";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Restart Diperlukan";
+"settings.language.restartMessage" = "Perubahan berlaku penuh setelah aplikasi di-restart.";

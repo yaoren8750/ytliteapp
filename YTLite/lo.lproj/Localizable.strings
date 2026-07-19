@@ -1,0 +1,367 @@
+/*
+  YTLite — Lao (ລາວ).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "ການຕັ້ງຄ່າການຫຼິ້ນ";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "ຄຸນນະພາບ";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "ລໍາເພັງ";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "ສະຖິຕິສຳລັບນັກພັດທະນາ";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "ຂໍ້ຄວາມບັນຍາຍ";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "ປິດ";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (ອັດຕະໂນມັດ)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "ກຳລັງໂຫຼດ %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "ກຳລັງແກ້ໄຂສະຕຣີມ...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "ການຫຼິ້ນລົ້ມເຫຼວ.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "ການປ່ຽນຄຸນນະພາບລົ້ມເຫຼວ.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "ການປ່ຽນລໍາເພັງລົ້ມເຫຼວ.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "ສະໝັກ";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "ສະໝັກແລ້ວ";
+/* Generic cancel action */
+"common.cancel" = "ຍົກເລີກ";
+/* Generic confirmation button */
+"common.ok" = "ຕົກລົງ";
+/* Generic save action */
+"common.save" = "ບັນທຶກ";
+/* Generic done action */
+"common.done" = "ສຳເລັດແລ້ວ";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "ລາຍການຫຼິ້ນ";
+/* Library tab title */
+"library.title" = "ຫໍສະຫມຸດ";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "ກຳລັງກະກຽມວິດີໂອ...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "ກຳລັງສົດງວດສະຕຣີມ...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "ເພີ່ມເຕີມ";
+/* Collapses the video description */
+"player.description.less" = "ຫຼຸດລົງ";
+/* Action bar: share the video */
+"player.action.share" = "ແບ່ງປັນ";
+/* Action bar: save to playlist */
+"player.action.save" = "ບັນທຶກ";
+/* Action bar: download */
+"player.action.download" = "ດາວໂຫຼດ";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "ຄໍາເຫັນ";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "ຄໍາເຫັນ (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "ກຳລັງໂຫຼດຄໍາເຫັນ...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "ຄໍາເຫັນບໍ່ສາມາດໃຊ້ໄດ້";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "ຄໍາເຫັນຍັງບໍ່ທັນສາມາດໃຊ້ໄດ້.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "ໂຫຼດຄໍາເຫັນເພີ່ມເຕີມ";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • ແຈ້ງໄວ້";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ ມັກ";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ ຕອບ";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "ຕໍ່ໄປ";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "ຫຼິ້ນຕອນນີ້";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Mix";
+/* Header of the related-videos section */
+"player.related.title" = "ກ່ຽວຂ້ອງ";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "ຂໍ້ຜິດພາດການຫຼິ້ນ: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "ປົກກະຕິ";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "ຂ້າມ %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "ຂ້າມອັດຕະໂນມັດ";
+"sponsorblock.behavior.showButton" = "ສະແດງປຸ່ມ";
+"sponsorblock.behavior.disabled" = "ປິດໃຊ້ງານ";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "ຂັບເຄື່ອນໂດຍ SponsorBlock (sponsor.ajay.app) — ໂຄງການຊຸມຊົນເປີດ.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "ໝວດໝູ່ສ່ວນ";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "ຜູ້ສະໜັບສະໜູນ";
+"sponsorblock.category.sponsor.description" = "ການໂຄສະນາທີ່ຈ່າຍເງິນ, ການແນະນຳທີ່ຈ່າຍເງິນ ແລະ ການໂຄສະນາໂດຍກົງ. ບໍ່ແມ່ນສຳລັບການໂຄສະນາຕົນເອງ ຫຼື ການສະໜັບສະໜູນຟຣີໃຫ້ແກ່ຍີ່ຫໍ້/ຜູ້ສ້າງ/ເວັບໄຊ/ຜະລິດຕະພັນທີ່ພວກເຂົາມັກ.";
+"sponsorblock.category.selfpromo.name" = "ການໂຄສະນາຟຣີ/ຕົນເອງ";
+"sponsorblock.category.selfpromo.description" = "ຄ້າຍຄືກັບ \"ຜູ້ສະໜັບສະໜູນ\" ນອກເໜືອຈາກການໂຄສະນາຟຣີ ຫຼື ຕົນເອງ. ລວມມີສ່ວນກ່ຽວກັບສິນຄ້າ, ການບໍລິຈາກ, ຫຼື ຂໍ້ມູນກ່ຽວກັບຜູ້ທີ່ພວກເຂົາຮ່ວມມື.";
+"sponsorblock.category.exclusive_access.name" = "ການເຂົ້າເຖິງພິເສດ";
+"sponsorblock.category.exclusive_access.description" = "ສຳລັບການຕິກ້ອງວິດີໂອທັງໝົດເທົ່ານັ້ນ. ໃຊ້ເມື່ອວິດີໂອສະແດງຜະລິດຕະພັນ, ບໍລິການ ຫຼື ສະຖານທີ່ທີ່ພວກເຂົາໄດ້ຮັບການເຂົ້າເຖິງຟຣີ ຫຼື ຊ່ວຍເຫຼືອ.";
+"sponsorblock.category.interaction.name" = "ການແຈ້ງເຕືອນການໂຕ້ຕິບ (ສະໝັກ)";
+"sponsorblock.category.interaction.description" = "ເມື່ອມີການແຈ້ງເຕືອນສັ້ນເພື່ອມັກ, ສະໝັກ ຫຼື ຕິດຕາມຢູ່ກາງເນື້ອໃນ. ຖ້າຍາວ ຫຼື ກ່ຽວກັບບາງສິ່ງບາງຢ່າງໂດຍສະເພາະ, ມັນຄວນຢູ່ພາຍໃຕ້ການໂຄສະນາຕົນເອງ.";
+"sponsorblock.category.highlight.name" = "ຈຸດເດັ່ນ";
+"sponsorblock.category.highlight.description" = "ສ່ວນຂອງວິດີໂອທີ່ຄົນສ່ວນໃຫຍ່ກຳລັງຊອກຫາ. ຄ້າຍຄືກັບຄຳເຫັນ \"ວິດີໂອເລີ່ມຕົ້ນທີ່ວິນາທີ x\".";
+"sponsorblock.category.intro.name" = "ການຢຸດຊົວ/Animation ແນະນຳ";
+"sponsorblock.category.intro.description" = "ຊ່ວງເວລາທີ່ບໍ່ມີເນື້ອໃນຈິງ. ອາດເປັນການຢຸດ, ເຟຣມສະຖິນ ຫຼື animation ຊ້ຳ. ບໍ່ຄວນໃຊ້ສຳລັບການປ່ຽນຜ່ານທີ່ມີຂໍ້ມູນ.";
+"sponsorblock.category.outro.name" = "ກາງຈົບ/Credit";
+"sponsorblock.category.outro.description" = "Credit ຫຼື ເມື່ອກາງຈົບ YouTube ປາກົດ. ບໍ່ແມ່ນສຳລັບສະຫຼຸບທີ່ມີຂໍ້ມູນ.";
+"sponsorblock.category.preview.name" = "ເບິ່ງກ່ອນ/ສະຫຼຸບ";
+"sponsorblock.category.preview.description" = "ການລວບລວມຂອງຕົວຢ່າງທີ່ສະແດງສິ່ງທີ່ຈະມາເຖິງໃນວິດີໂອນີ້ ຫຼື ວິດີໂອອື່ນໃນລາຍການທີ່ຂໍ້ມູນທັງໝົດຖືກສະຫຼຸບໃນພາຍຫຼັງໃນວິດີໂອ.";
+"sponsorblock.category.filler.name" = "ເລື່ອງນອກເລື່ອງ/ມຸມຕະຫຼົກ";
+"sponsorblock.category.filler.description" = "ພາກສ່ວນທີ່ອອກນອກຫົວຂໍ້ ຫຼື ມຸມຕະຫຼົກທີ່ບໍ່ຈຳເປັນຕ້ອງເຂົ້າໃຈເນື້ອໃນຫຼັກຂອງວິດີໂອ. ບໍ່ຄວນລວມພາກສ່ວນທີ່ໃຫ້ບັນການ ຫຼື ລາຍລະອຽດພື້ນຫຼັງ.";
+"sponsorblock.category.music_offtopic.name" = "ພາກສ່ວນທີ່ບໍ່ແມ່ນເພັງ";
+"sponsorblock.category.music_offtopic.description" = "ສຳລັບວິດີໂອເພັງເທົ່ານັ້ນ. ພາກສ່ວນທີ່ບໍ່ແມ່ນເພັງຂອງວິດີໂອເພັງ.";
+"sponsorblock.category.chapter.name" = "ບົດ";
+"sponsorblock.category.chapter.description" = "ພາກສ່ວນທີ່ຕັ້ງຊື່ແບບກຳນົດເອງຂອງວິດີໂອ.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "ການຕັ້ງຄ່າ";
+
+/* Section headers */
+"settings.section.theme" = "ຮູບແບບ";
+"settings.section.playback" = "ການຫຼິ້ນ";
+"settings.section.home" = "ໜ້າຫຼັກ";
+"settings.section.cache" = "Cache";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Debug";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "ອັດຕະໂນມັດຕາມຮູບແບບລະບົບ.";
+"settings.footer.themeAutoHours" = "ອັດຕະໂນມັດປ່ຽນໄປຮູບແບບມືດໃນລະຫວ່າງເວລາຂ້າງເທິງ.";
+"settings.footer.playback" = "Zoom to Fill ອັດຕະໂນມັດປັບຂະໜາດວິດີໂອໃນໜ້າຈໍເຕັມເພື່ອບໍ່ໃຫ້ມີແຖບດຳ. Pinch ໃນ player ທົດແທນມັນຕາມວິດີໂອ.";
+"settings.footer.home" = "ວິທີການສະແດງຊັ້ນແນະນຳ: grid ຕໍ່ເນື່ອງດຽວ ຫຼື rail ນອນແບບ TV.";
+"settings.footer.ryd" = "ຈຳນວນບໍ່ມັກຂັບເຄື່ອນໂດຍ Return YouTube Dislike (returnyutubedislike.com) — ໂຄງການຊຸມຊົນເປີດ.";
+"settings.footer.debug" = "ບັງຄັບໃຊ້ແຫຼ່ງການຫຼິ້ນສະເພາະ. ທົ່ວໄປ Android VR ຖືກໃຊ້ພ້ອມ fallback ອັດຕະໂນມັດ. Server solver ຂັບເຄື່ອນແຫຼ່ງ Mobile Web + pot (ການເຮັດ pot ແລະ n-solving ໃນ iOS 12–13).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "ຮູບແບບ";
+"settings.theme.dark" = "ມືດ";
+"settings.theme.light" = "ສະຫວ່າງ";
+"settings.theme.auto" = "ອັດຕະໂນມັດ";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "ຮູບແບບມືດແຕ່";
+"settings.row.darkUntil" = "ຮູບແບບມືດຈົນຮອດ";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "ຄຸນນະພາບເລີ່ມຕົ້ນ";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "ອັດຕະໂນມັດ";
+"settings.row.backgroundPlayback" = "ການຫຼິ້ນພື້ນຫຼັງ";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "ເຊື່ອງແຖບສະຖານະພາບໃນໜ້າຈໍເຕັມ";
+"settings.row.zoomToFill" = "Zoom to Fill ໃນໜ້າຈໍເຕັມ";
+"settings.row.showShorts" = "ສະແດງ YouTube Shorts ໃນການສະໝັກ";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "ຮູບແບບໜ້າຫຼັກ";
+"settings.homeLayout.grid" = "Grid ງ່າຍໆ";
+"settings.homeLayout.rails" = "Shelf Rails";
+
+/* Cache rows */
+"settings.row.feedCache" = "Feed Cache";
+"settings.row.feedCacheDuration" = "ໄລຍະເວລາ Feed Cache";
+"settings.row.imageCache" = "Image Cache";
+"settings.row.imageCacheDuration" = "ໄລຍະເວລາ Image Cache";
+"settings.row.clearCache" = "ລ້າງ Cache ທັງໝົດ";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Cache ລ້າງແລ້ວ";
+"settings.cache.clearedMessage" = "Cache ທັງໝົດໄດ້ລ້າງແລ້ວ.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "ການຕັ້ງຄ່າ SponsorBlock";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "ແຫຼ່ງການຫຼິ້ນ";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "ແບ່ງປັນ Log Debug";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL ຂອງ server solver.";
+"settings.solver.reset" = "ຕັ້ງຄ່າໃໝ່ເປັນເລີ່ມຕົ້ນ";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (ເລີ່ມຕົ້ນ)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "ບໍ່ມີ Log";
+"settings.log.noneMessage" = "ຍັງບໍ່ມີ log debug.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "ໂປຣໄຟລ໌";
+"profile.signOut" = "ອອກ";
+"profile.clearImageCache" = "ລ້າງ Image Cache";
+"profile.imageCacheCleared" = "Image cache ລ້າງແລ້ວ.";
+
+/* ===== Search ===== */
+
+"search.title" = "ຄົ້ນຫາ";
+/* Search bar placeholder */
+"search.placeholder" = "ຄົ້ນຫາ YouTube";
+/* Header above the recent-search list */
+"search.recent" = "ການຄົ້ນຫາຫຼ້າສຸດ";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "ຕົວກອງ";
+"search.filters.active" = "ຕົວກອງ •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "ຕົວກອງການຄົ້ນຫາ";
+"search.filters.reset" = "ຕັ້ງຄ່າໃໝ່ຕົວກອງ";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "ຈັດລຽນ: %1$@";
+"search.filters.date" = "ວັນທີ: %1$@";
+"search.filters.type" = "ປະເພດ: %1$@";
+"search.filters.duration" = "ໄລຍະເວລາ: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "ຈັດລຽນຕາມ";
+"search.filters.dateTitle" = "ວັນທີອັບໂຫຼດ";
+"search.filters.typeTitle" = "ປະເພດ";
+"search.filters.durationTitle" = "ໄລຍະເວລາ";
+
+/* Filter option values */
+"search.sort.relevance" = "ກ່ຽວຂ້ອງ";
+"search.sort.rating" = "ການໃຫ້ຄະແນນ";
+"search.sort.uploadDate" = "ວັນທີອັບໂຫຼດ";
+"search.sort.viewCount" = "ຈຳນວນການເບິ່ງ";
+"search.date.any" = "ເວລາໃດກໍໄດ້";
+"search.date.lastHour" = "ຊົ່ວໂມງກ່ອນ";
+"search.date.today" = "ມື້ນີ້";
+"search.date.thisWeek" = "ອາທິດນີ້";
+"search.date.thisMonth" = "ເດືອນນີ້";
+"search.date.thisYear" = "ປີນີ້";
+"search.type.any" = "ປະເພດໃດກໍໄດ້";
+"search.type.video" = "ວິດີໂອ";
+"search.type.channel" = "Channel";
+"search.type.playlist" = "ລາຍການຫຼິ້ນ";
+"search.duration.any" = "ໄລຍະເວລາໃດກໍໄດ້";
+"search.duration.short" = "ຕ່ຳກວ່າ 4 ນາທີ";
+"search.duration.medium" = "4–20 ນາທີ";
+"search.duration.long" = "ຫຼາຍກວ່າ 20 ນາທີ";
+
+/* ===== Home ===== */
+
+"home.title" = "ໜ້າຫຼັກ";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "ທັງໝົດ";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "ສົດ";
+"home.category.news" = "ຂ່າວ";
+"home.category.gaming" = "ເກມ";
+"home.category.sports" = "ກິລາ";
+"home.category.learning" = "ການຮຽນ";
+"home.category.fashion" = "ຟ່ຊັນ";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "ບໍ່ສາມາດໂຫຼດ feed ໄດ້\nລາກລົງເພື່ອລອງໃໝ່";
+/* Signed-out empty state */
+"home.signIn" = "ເຂົ້າເພື່ອເບິ່ງແນະນຳຂອງທ່ານ";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "ວິດີໂອ";
+"channel.tab.live" = "ສົດ";
+"channel.tab.playlists" = "ລາຍການຫຼິ້ນ";
+/* About sheet */
+"channel.about.title" = "ກ່ຽວກັບ";
+"channel.about.close" = "ປິດ";
+"channel.about.subscribers" = "ຜູ້ສະໝັກ";
+"channel.about.videos" = "ວິດີໂອ";
+"channel.about.description" = "ຄຳອະທິບາຍ";
+"channel.about.contact" = "ຕິດຕໍ່";
+
+/* ===== Library ===== */
+
+"library.history" = "ປະຫວັດ";
+"library.downloads" = "ການດາວໂຫຼດ";
+"library.playlists" = "ລາຍການຫຼິ້ນ";
+"library.downloads.comingSoon" = "ການດາວໂຫຼດຈະມາໃນໄວໆນີ້";
+"library.history.signIn" = "ເຂົ້າເພື່ອເບິ່ງປະຫວັດການເບິ່ງຂອງທ່ານ";
+"library.history.empty" = "ບໍ່ພົບປະຫວັດການເບິ່ງ";
+"library.history.loadFailed" = "ບໍ່ສາມາດໂຫຼດປະຫວັດໄດ້";
+"library.playlists.signIn" = "ເຂົ້າເພື່ອເບິ່ງລາຍການຫຼິ້ນຂອງທ່ານ";
+"library.playlists.loadFailed" = "ບໍ່ສາມາດໂຫຼດລາຍການຫຼິ້ນໄດ້";
+"library.playlist.empty" = "ບໍ່ມີວິດີໂອໃນລາຍການຫຼິ້ນນີ້";
+"library.playlist.loadFailed" = "ບໍ່ສາມາດໂຫຼດລາຍການຫຼິ້ນໄດ້";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "ການສະໝັກ";
+"subscriptions.all" = "ການສະໝັກທັງໝົດ";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "ທັງໝົດ";
+"subscriptions.signIn" = "ເຂົ້າເພື່ອເບິ່ງການສະໝັກຂອງທ່ານ";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "ບັນຊາ";
+"account.signIn" = "ເຂົ້າ";
+"account.signOut" = "ອອກ";
+"account.notSignedIn" = "ຍັງບໍ່ເຂົ້າ";
+
+/* Generic error alert title */
+"common.error" = "ຂໍ້ຜິດພາດ";
+/* Channel screen failed to load */
+"channel.unavailable" = "Channel ບໍ່ສາມາດໃຊ້ໄດ້";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "ພາສາ";
+"settings.footer.language" = "ພາສາແອັບປ່ຽນອິນເຕີເຟດ. ພາສາເນື້ອໃນປ່ຽນຫົວຂໍ້, ການຄົ້ນຫາ ແລະ feed (YouTube ປະຊາທິປະໄຕ metadata ຢູ່ຝ່າຍ server, ແບບດັ້ງເດີມແອັບ). ການປ່ຽນແປງມີຜົນບັງຄັບບັນຊາເຕັມໝົດຫຼັງຈາກຮີບເລີ່ມແອັບໃໝ່.";
+/* Rows */
+"settings.row.appLanguage" = "ພາສາແອັບ";
+"settings.row.contentLanguage" = "ພາສາເນື້ອໃນ";
+"settings.row.region" = "ພູມິພາກ";
+/* Picker option following the device language/region */
+"settings.language.system" = "ລະບົບ";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "ຕ້ອງການຮີບໃໝ່";
+"settings.language.restartMessage" = "ການປ່ຽນແປງມີຜົນບັງຄັບບັນຊາເຕັມໝົດຫຼັງຈາກຮີບເລີ່ມແອັບໃໝ່.";

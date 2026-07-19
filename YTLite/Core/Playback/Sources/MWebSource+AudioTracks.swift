@@ -59,7 +59,7 @@ extension MWebSource {
             )
         }
         let current = tracks.first { $0.id == format?.audioTrackId }
-            ?? tracks.first { $0.isDefault }
+            ?? tracks.first { $0.isOriginal }
         setAudioTrackState(available: tracks, current: current, format: format)
         if !tracks.isEmpty {
             let ids = tracks.map(\.id).joined(separator: ",")
@@ -67,8 +67,10 @@ extension MWebSource {
         }
     }
 
-    /// IOS-probe results: menu metadata only, no playable formats yet — the
-    /// default track shows as current since that's what any source plays.
+    /// IOS-probe results: menu metadata only, no playable formats yet. The
+    /// ORIGINAL track shows as current — that's what the playing source
+    /// (android_vr) always serves; `isDefault` follows the probe's `hl` and
+    /// would tick the AI dub on any video uploaded in another language.
     func applyProbedTracks(_ infos: [AudioTrackInfo]) {
         let tracks = infos.map {
             AudioTrack(
@@ -77,7 +79,8 @@ extension MWebSource {
         }
         setAudioTrackState(
             available: tracks,
-            current: tracks.first { $0.isDefault },
+            current: tracks.first { $0.isOriginal }
+                ?? tracks.first { $0.isDefault },
             format: nil
         )
     }

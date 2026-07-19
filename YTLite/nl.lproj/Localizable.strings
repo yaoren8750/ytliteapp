@@ -1,0 +1,363 @@
+/*
+  YTLite — Dutch (Nederlands).
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Afspeelinstellingen";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Kwaliteit";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Audiospoor";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Statistieken";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Ondertitels";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Uit";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "%1$@ laden…";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Stream oplossen…";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Afspelen mislukt.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Kwaliteitswisseling mislukt.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Audiospoorwisseling mislukt.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Abonneren";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Geabonneerd";
+/* Generic cancel action */
+"common.cancel" = "Annuleren";
+/* Generic confirmation button */
+"common.ok" = "OK";
+/* Generic save action */
+"common.save" = "Opslaan";
+/* Generic done action */
+"common.done" = "Gereed";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Afspeellijst";
+/* Library tab title */
+"library.title" = "Bibliotheek";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Video voorbereiden…";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Stream verversen…";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Meer";
+/* Collapses the video description */
+"player.description.less" = "Minder";
+/* Action bar: share the video */
+"player.action.share" = "Delen";
+/* Action bar: save to playlist */
+"player.action.save" = "Opslaan";
+/* Action bar: download */
+"player.action.download" = "Downloaden";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Reacties";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Reacties (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Reacties laden…";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Reacties niet beschikbaar";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Reacties zijn nog niet beschikbaar.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Meer reacties laden";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • Vastgezet";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ likes";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ reacties";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Volgende";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Nu afspelen";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Mix";
+/* Header of the related-videos section */
+"player.related.title" = "Gerelateerd";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Afspeelfout: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Normaal";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "%1$@ overslaan";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Automatisch overslaan";
+"sponsorblock.behavior.showButton" = "Knop weergeven";
+"sponsorblock.behavior.disabled" = "Uitschakelen";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Mogelijk gemaakt door SponsorBlock (sponsor.ajay.app) — een open gemeenschapsproject.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Segmentcategorieën";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Sponsor";
+"sponsorblock.category.sponsor.description" = "Betaalde promotie, betaalde verwijzingen en directe advertenties. Niet voor zelfpromotie of gratis vermeldingen van zaken/creërende/websites/producten die ze leuk vinden.";
+"sponsorblock.category.selfpromo.name" = "Onbetaald/Zelfpromotie";
+"sponsorblock.category.selfpromo.description" = "Vergelijkbaar met «sponsor» maar dan onbetaald of zelfpromotie. Bevat secties over merchandise, donaties of informatie over samenwerkingen.";
+"sponsorblock.category.exclusive_access.name" = "Exclusieve toegang";
+"sponsorblock.category.exclusive_access.description" = "Alleen om volledige video's te labelen. Wordt gebruikt wanneer een video een product, dienst of locatie toont waartoe ze gratis of gesubsidieerde toegang hebben gekregen.";
+"sponsorblock.category.interaction.name" = "Interactieherinnering (Abonneren)";
+"sponsorblock.category.interaction.description" = "Wanneer er een korte herinnering is om te liken, abonneren of volgen midden in de content. Als het lang is of over iets specifieks gaat, zou het onder zelfpromotie moeten staan.";
+"sponsorblock.category.highlight.name" = "Hoogtepunt";
+"sponsorblock.category.highlight.description" = "Het deel van de video waar de meeste mensen naar zoeken. Vergelijkbaar met «Video begint bij x»-reacties.";
+"sponsorblock.category.intro.name" = "Onderbreking/Intro-animatie";
+"sponsorblock.category.intro.description" = "Een interval zonder werkelijke inhoud. Kan een pauze, statisch frame of herhalende animatie zijn. Mag niet worden gebruikt voor overgangen met informatie.";
+"sponsorblock.category.outro.name" = "Eindkaarten/Verantwoording";
+"sponsorblock.category.outro.description" = "Verantwoording of wanneer de YouTube-eindkaarten verschijnen. Niet voor conclusies met informatie.";
+"sponsorblock.category.preview.name" = "Vooruitblik/Samenvatting";
+"sponsorblock.category.preview.description" = "Verzameling van clips die laten zien wat er komt in deze video of andere video's in een reeks waarbij alle informatie later in de video wordt herhaald.";
+"sponsorblock.category.filler.name" = "Afwijkingen/Grapjes";
+"sponsorblock.category.filler.description" = "Afwijkende scènes of grapjes die niet nodig zijn om de hoofdinhoud van de video te begrijpen. Mag geen segmenten bevatten die context of achtergrondinformatie bieden.";
+"sponsorblock.category.music_offtopic.name" = "Niet-muzikaal gedeelte";
+"sponsorblock.category.music_offtopic.description" = "Alleen voor muziekvideo's. Niet-muzikaal deel van een muziekvideo.";
+"sponsorblock.category.chapter.name" = "Hoofdstuk";
+"sponsorblock.category.chapter.description" = "Genoemde secties van de video.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Instellingen";
+
+/* Section headers */
+"settings.section.theme" = "Thema";
+"settings.section.playback" = "Afspelen";
+"settings.section.home" = "Start";
+"settings.section.cache" = "Cache";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Debug";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Volgt automatisch het systeemuititerlijk.";
+"settings.footer.themeAutoHours" = "Schakelt automatisch over naar het donkere thema tussen de bovenstaande uren.";
+"settings.footer.playback" = "Zoom om te vullen schaalt de video automatisch in volledig scherm zodat er geen zwarte balken overblijven. Knijpen in de speler overschrijft dit per video.";
+"settings.footer.home" = "Hoe aanbevelingsshelves worden weergegeven: een doorlopend raster of TV-stijl horizontale rails.";
+"settings.footer.ryd" = "Dislike-aantallen worden mogelijk gemaakt door Return YouTube Dislike (returnyoutubedislike.com) — een open gemeenschapsproject.";
+"settings.footer.debug" = "Forceer een specifieke afspeelbron. Normaal wordt Android VR gebruikt met automatische terugval. De solver-server levert de Mobile Web + pot bron (pot-muntvervaardiging en n-solving op iOS 12–13).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Thema";
+"settings.theme.dark" = "Donker";
+"settings.theme.light" = "Licht";
+"settings.theme.auto" = "Auto";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Donker thema vanaf";
+"settings.row.darkUntil" = "Donker thema tot";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Standaard kwaliteit";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Auto";
+"settings.row.backgroundPlayback" = "Achtergrond afspelen";
+"settings.row.pip" = "Beeld-in-beeld";
+"settings.row.hideStatusBar" = "Statusbalk verbergen in volledig scherm";
+"settings.row.zoomToFill" = "Zoom om te vullen in volledig scherm";
+"settings.row.showShorts" = "YouTube Shorts weergeven in Abonnementen";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Startindeling";
+"settings.homeLayout.grid" = "Eenvoudig raster";
+"settings.homeLayout.rails" = "Shelfrails";
+
+/* Cache rows */
+"settings.row.feedCache" = "Feed-cache";
+"settings.row.feedCacheDuration" = "Feed-cache-duur";
+"settings.row.imageCache" = "Afbeeldingscache";
+"settings.row.imageCacheDuration" = "Afbeeldingscache-duur";
+"settings.row.clearCache" = "Alle cache wissen";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Cache gewist";
+"settings.cache.clearedMessage" = "Alle cache is gewist.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock-instellingen";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Afspeelbron";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Debuglog delen";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL van de solver-server.";
+"settings.solver.reset" = "Terug naar standaard";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (standaard)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Geen logs";
+"settings.log.noneMessage" = "Nog geen debuglogs beschikbaar.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Profiel";
+"profile.signOut" = "Afmelden";
+"profile.clearImageCache" = "Afbeeldingscache wissen";
+"profile.imageCacheCleared" = "Afbeeldingscache gewist.";
+
+/* ===== Search ===== */
+
+"search.title" = "Zoeken";
+/* Search bar placeholder */
+"search.placeholder" = "YouTube doorzoeken";
+/* Header above the recent-search list */
+"search.recent" = "Recente zoekopdrachten";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Filters";
+"search.filters.active" = "Filters •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Zoekfilters";
+"search.filters.reset" = "Filters resetten";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Sorteren: %1$@";
+"search.filters.date" = "Datum: %1$@";
+"search.filters.type" = "Type: %1$@";
+"search.filters.duration" = "Duur: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Sorteren op";
+"search.filters.dateTitle" = "Upload datum";
+"search.filters.typeTitle" = "Type";
+"search.filters.durationTitle" = "Duur";
+
+/* Filter option values */
+"search.sort.relevance" = "Relevantie";
+"search.sort.rating" = "Beoordeling";
+"search.sort.uploadDate" = "Upload datum";
+"search.sort.viewCount" = "Aantal views";
+"search.date.any" = "Alle tijden";
+"search.date.lastHour" = "Afgelopen uur";
+"search.date.today" = "Vandaag";
+"search.date.thisWeek" = "Deze week";
+"search.date.thisMonth" = "Deze maand";
+"search.date.thisYear" = "Dit jaar";
+"search.type.any" = "Alle typen";
+"search.type.video" = "Video";
+"search.type.channel" = "Kanaal";
+"search.type.playlist" = "Afspeellijst";
+"search.duration.any" = "Alle duur";
+"search.duration.short" = "Minder dan 4 min";
+"search.duration.medium" = "4–20 min";
+"search.duration.long" = "Langer dan 20 min";
+
+/* ===== Home ===== */
+
+"home.title" = "Start";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Alles";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Live";
+"home.category.news" = "Nieuws";
+"home.category.gaming" = "Games";
+"home.category.sports" = "Sport";
+"home.category.learning" = "Onderwijs";
+"home.category.fashion" = "Mode";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Kan feed niet laden\nOmlaag vegen om opnieuw te proberen";
+/* Signed-out empty state */
+"home.signIn" = "Meld je aan om je aanbevelingen te zien";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Video's";
+"channel.tab.live" = "Live";
+"channel.tab.playlists" = "Afspeellijsten";
+/* About sheet */
+"channel.about.title" = "Over";
+"channel.about.close" = "Sluiten";
+"channel.about.subscribers" = "Abonnees";
+"channel.about.videos" = "Video's";
+"channel.about.description" = "Beschrijving";
+"channel.about.contact" = "Contact";
+
+/* ===== Library ===== */
+
+"library.history" = "Geschiedenis";
+"library.downloads" = "Downloads";
+"library.playlists" = "Afspeellijsten";
+"library.downloads.comingSoon" = "Downloads komen binnenkort";
+"library.history.signIn" = "Meld je aan om je kijkgeschiedenis te zien";
+"library.history.empty" = "Geen kijkgeschiedenis gevonden";
+"library.history.loadFailed" = "Kan geschiedenis niet laden";
+"library.playlists.signIn" = "Meld je aan om je afspeellijsten te zien";
+"library.playlists.loadFailed" = "Kan afspeellijsten niet laden";
+"library.playlist.empty" = "Geen video's in deze afspeellijst";
+"library.playlist.loadFailed" = "Kan afspeellijst niet laden";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Abonnementen";
+"subscriptions.all" = "Alle abonnementen";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Alles";
+"subscriptions.signIn" = "Meld je aan om je abonnementen te zien";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Account";
+"account.signIn" = "Aanmelden";
+"account.signOut" = "Afmelden";
+"account.notSignedIn" = "Niet aangemeld";
+
+/* Generic error alert title */
+"common.error" = "Fout";
+/* Channel screen failed to load */
+"channel.unavailable" = "Kanaal niet beschikbaar";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Taal";
+"settings.footer.language" = "De app-taal wijzigt de interface. De inhoudstaal wijzigt titels, zoeken en feeds (YouTube vertaalt metadata server-side, zoals de officiële app). Wijzigingen worden volledig toegepast na het herstarten van de app.";
+/* Rows */
+"settings.row.appLanguage" = "App-taal";
+"settings.row.contentLanguage" = "Inhoudstaal";
+"settings.row.region" = "Regio";
+/* Picker option following the device language/region */
+"settings.language.system" = "Systeem";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Herstart vereist";
+"settings.language.restartMessage" = "Wijzigingen worden volledig toegepast na het herstarten van de app.";

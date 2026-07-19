@@ -1,0 +1,367 @@
+/*
+  YTLite — Mongolian (Монгол).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Тогтох тохиргоо";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Чанар";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Аудио зам";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Статистик шүншигчдэд";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Хүрэн бичиг";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Унтрах";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (авто)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Ача дурын %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Урсгал шийдэгдэж байна...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Тогтох амжилтгүй боллоо.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Чанар солих амжилтгүй.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Аудио зам солих амжилтгүй.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Бүртгүү";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Бүртгүүлсэн";
+/* Generic cancel action */
+"common.cancel" = "Цуцлах";
+/* Generic confirmation button */
+"common.ok" = "ОК";
+/* Generic save action */
+"common.save" = "Хадглах";
+/* Generic done action */
+"common.done" = "Дуусгах";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Тогтох жагсаалт";
+/* Library tab title */
+"library.title" = "Номын сан";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Видео бэлдэж байна...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Урсгал шинэчилж байна...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Дэлгэрүүлэх";
+/* Collapses the video description */
+"player.description.less" = "Хураах";
+/* Action bar: share the video */
+"player.action.share" = "Хуваалцах";
+/* Action bar: save to playlist */
+"player.action.save" = "Хадглах";
+/* Action bar: download" */
+"player.action.download" = "Татаж авах";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Сэтгэгдэл";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Сэтгэгдэл (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Сэтгэгдэл ача дурын...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Сэтгэгдэл боломжгүй";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Сэтгэгдэл одоо боломжгүй байна.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Дахиад сэтгэгдэл ача";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • Бэхэлсэн";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ таалал";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ хариулт";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Дараагийн";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Одоо тогтох";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Холимог";
+/* Header of the related-videos section */
+"player.related.title" = "Холбоотой";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Тогтох алдаа: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Энгийн";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Орхи %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Автомат орхи";
+"sponsorblock.behavior.showButton" = "Товчлуур харуулах";
+"sponsorblock.behavior.disabled" = "Унтрах";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "SponsorBlock (sponsor.ajay.app) дээр суурилсан — нээлттэй нийгэмлэгийн төсөл.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Сегментийн ангилалууд";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Ивээн тэтгэгч";
+"sponsorblock.category.sponsor.description" = "Төлбөртэй сурталчилгаа, төлбөртэй хүмүүсийн холбоо шууд сурталчилгаа. Өөрийгөө сурталчлах эсвэл үнэгүй сурталчилгаа биш.";
+"sponsorblock.category.selfpromo.name" = "Үнэгүй/Өөрийн сурталчилгаа";
+"sponsorblock.category.selfpromo.description" = "\"Ивээн тэтгэгч\"-тэй адилхан, гэхдээ үнэгүй эсвэл өөрийн сурталчилгаа. Үүнд барааны сурталчилгаа, хандив, эсвэл хамтран ажиллагчдын мэдээлэл хамаарна.";
+"sponsorblock.category.exclusive_access.name" = "Эрхийн нэвтрэх";
+"sponsorblock.category.exclusive_access.description" = "Зөвхөн бүх видеог шошголоход. Бүтээгдэхүүн, үйлчилгээ эсвэл газрыг үнэгүй эсвэл хөнгөлөлттэйгээр авсан видеог харуулахад хэрэглэнэ.";
+"sponsorblock.category.interaction.name" = "Оролцоо сануулга (Бүртгүүлэх)";
+"sponsorblock.category.interaction.description" = "Агуулгын дундуур лайк, бүртгүүлэх эсвэл дагах талаарх богино сануулга байгаа үед. Урт эсвэл тодорхой нэг зүйлийн талаар бол өөрийн сурталчилгааны хэсэгт хамаарна.";
+"sponsorblock.category.highlight.name" = "Гол хэсэг";
+"sponsorblock.category.highlight.description" = "Хүмүүс хайж байгаа видеоны хэсэг. \"Видео x-ээс эхэлдэг\" сэтгэгдэлүүдтэй адилхан.";
+"sponsorblock.category.intro.name" = "Завсарлага/Нээлтийн хөдөлгөөн";
+"sponsorblock.category.intro.description" = "Бодит агуулгагүй завсарлага. Түр зогсоол, статик кадр эсвэл давтагдах хөдөлгөөн байж болно. Мэдээлэл агуулсан шилжүүлэгт хэрэглэж болохгүй.";
+"sponsorblock.category.outro.name" = "Эцсийн кадр/Титр";
+"sponsorblock.category.outro.description" = "Титр эсвэл YouTube эцсийн кадр гарах үе. Мэдээлэл агуулсан дүгнэлтэд хэрэглэж болохгүй.";
+"sponsorblock.category.preview.name" = "Урьдчилан харах/Дахин харах";
+"sponsorblock.category.preview.description" = "Энэ видео эсвэл цувралын бусад видеод юу болохыг харуулсан клипүүдийн цуглуулга.";
+"sponsorblock.category.filler.name" = "Нэмэлт үг/Инээдэм";
+"sponsorblock.category.filler.description" = "Видеоны үндсэн агуулгыг ойлгоход шаардлагагүй нэмэлт үзэгдэл эсвэл инээдэм. Эхний мэдээлэл өгдөг хэсгүүдийг оруулна.";
+"sponsorblock.category.music_offtopic.name" = "Хөгжмийн бус хэсэг";
+"sponsorblock.category.music_offtopic.description" = "Зөвхөн хөгжмийн видеод. Хөгжмийн видеогийн хөгжмийн бус хэсэг.";
+"sponsorblock.category.chapter.name" = "Бүлэг";
+"sponsorblock.category.chapter.description" = "Видеогийн өөрийн нэртэй хэсгүүд.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Тохиргоо";
+
+/* Section headers */
+"settings.section.theme" = "Загвар";
+"settings.section.playback" = "Тогтох";
+"settings.section.home" = "Нүүр хуудас";
+"settings.section.cache" = "Кэш";
+"settings.section.ryd" = "YouTube таалалгүйг буцаах";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Алдаа олж засварлах";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Системийн харагдацыг автомат дагана.";
+"settings.footer.themeAutoHours" = "Дээрх цагийн хооронд хар загвар руу автомат шилжинэ.";
+"settings.footer.playback" = "Бүтэн дэлгэц дээр видеог автомат масштаблаж, хар туухай үлдэхгүй. Тогтоогч дээрх хуруугаар нээх нь бүх видеог өөрчилдөг.";
+"settings.footer.home" = "Зөвлөмжийн тавиур хэрхэн харуулагддаг: нэг тасралтгүй тор эсвэл ТВ хэлбэртэй хэвтэй туухайнууд.";
+"settings.footer.ryd" = "Таалалгүй тоо Return YouTube Dislike (returnyoutubedislike.com) дээр суурилж ажилладаг — нээлттэй нийгэмлэгийн төсөл.";
+"settings.footer.debug" = "Тодорхой тогтох эхийг албадна. Ихэвчлэн Android VR автоматаар ашиглагдана. Шийдвэрлэгч сервер Mobile Web + эхийг хангана (pot үүсгэх ба iOS 12–13 дээр n-шийдвэрлэлт).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Загвар";
+"settings.theme.dark" = "Хар";
+"settings.theme.light" = "Гэрэлтэй";
+"settings.theme.auto" = "Автомат";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Хар загвар эхлэх цаг";
+"settings.row.darkUntil" = "Хар загвар дуусах цаг";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Үндсэн чанар";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Автомат";
+"settings.row.backgroundPlayback" = "Арын тогтох";
+"settings.row.pip" = "Зураг дээрх зураг";
+"settings.row.hideStatusBar" = "Бүтэн дэлгэц дээр төлөвийн туухай нуух";
+"settings.row.zoomToFill" = "Бүтэн дэлгэц дээр масштаблах";
+"settings.row.showShorts" = "Бүртгүүлэл дээр YouTube Shorts харуулах";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Нүүр хуудасны зохион байгуулалт";
+"settings.homeLayout.grid" = "Энгийн тор";
+"settings.homeLayout.rails" = "Тавиурын туухайнууд";
+
+/* Cache rows */
+"settings.row.feedCache" = "Нийлүүлэгийн кэш";
+"settings.row.feedCacheDuration" = "Нийлүүлэгийн кэшийн хугацаа";
+"settings.row.imageCache" = "Зургийн кэш";
+"settings.row.imageCacheDuration" = "Зургийн кэшийн хугацаа";
+"settings.row.clearCache" = "Бүх кэшийг арилгах";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Кэш арилгагдсан";
+"settings.cache.clearedMessage" = "Бүх кэш арилгагдсан.";
+
+/* Integration rows */
+"settings.row.ryd" = "YouTube таалалгүйг буцаах";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock тохиргоо";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Тогтох эх";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Алдаа олж засварлах лог хуваалцах";
+/* Solver-server URL alert */
+"settings.solver.message" = "Шийдвэрлэгч серверийн URL хаяг.";
+"settings.solver.reset" = "Үндсэн утга руу буцаах";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (үндсэн)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Лог байхгүй";
+"settings.log.noneMessage" = "Одоогоор алдаа олж засварлах лог байхгүй байна.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Профиль";
+"profile.signOut" = "Гарах";
+"profile.clearImageCache" = "Зургийн кэш арилгах";
+"profile.imageCacheCleared" = "Зургийн кэш арилгагдсан.";
+
+/* ===== Search ===== */
+
+"search.title" = "Хайх";
+/* Search bar placeholder */
+"search.placeholder" = "YouTube-ээр хайх";
+/* Header above the recent-search list */
+"search.recent" = "Сүүлийн хайлтууд";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Шүүлтүүр";
+"search.filters.active" = "Шүүлтүүр •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Хайлтын шүүлтүүр";
+"search.filters.reset" = "Шүүлтүүрийг буцаах";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Эрэмбэлэх: %1$@";
+"search.filters.date" = "Огноо: %1$@";
+"search.filters.type" = "Төрөл: %1$@";
+"search.filters.duration" = "Урт: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Эрэмбэлэх арга";
+"search.filters.dateTitle" = "Байршуулсан огноо";
+"search.filters.typeTitle" = "Төрөл";
+"search.filters.durationTitle" = "Урт";
+
+/* Filter option values */
+"search.sort.relevance" = "Тохиролт";
+"search.sort.rating" = "Үнэлгээ";
+"search.sort.uploadDate" = "Байршуулсан огноо";
+"search.sort.viewCount" = "Үзэлтийн тоо";
+"search.date.any" = "Ямар ч цагт";
+"search.date.lastHour" = "Сүүлийн цаг";
+"search.date.today" = "Өнөөдөр";
+"search.date.thisWeek" = "Энэ долоо хоног";
+"search.date.thisMonth" = "Энэ сар";
+"search.date.thisYear" = "Энэ жил";
+"search.type.any" = "Ямар ч төрөл";
+"search.type.video" = "Видео";
+"search.type.channel" = "Суваг";
+"search.type.playlist" = "Тогтох жагсаалт";
+"search.duration.any" = "Ямар ч урт";
+"search.duration.short" = "4 мин бага";
+"search.duration.medium" = "4–20 мин";
+"search.duration.long" = "20 мин дээш";
+
+/* ===== Home ===== */
+
+"home.title" = "Нүүр хуудас";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Бүгд";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Шууд дамжуулалт";
+"home.category.news" = "Мэдээ";
+"home.category.gaming" = "Тоглоом";
+"home.category.sports" = "Спорт";
+"home.category.learning" = "Боловсрол";
+"home.category.fashion" = "Загвар";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Нийлүүлгийг ачаагүй\nДоош татаж дахин оролдоно уу";
+/* Signed-out empty state */
+"home.signIn" = "Зөвлөмжүүдийг харахын тулд нэвтэрнэ үү";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Видеонууд";
+"channel.tab.live" = "Шууд дамжуулалт";
+"channel.tab.playlists" = "Тогтох жагсаалтууд";
+/* About sheet */
+"channel.about.title" = "Тухай";
+"channel.about.close" = "Хаах";
+"channel.about.subscribers" = "Бүртгүүлэгчид";
+"channel.about.videos" = "Видеонууд";
+"channel.about.description" = "Тодорхойлолт";
+"channel.about.contact" = "Холбоо барих";
+
+/* ===== Library ===== */
+
+"library.history" = "Түүх";
+"library.downloads" = "Татаж авалтууд";
+"library.playlists" = "Тогтох жагсаалтууд";
+"library.downloads.comingSoon" = "Татаж авалтууд удахгүй";
+"library.history.signIn" = "Үзэх түүхээ харахын тулд нэвтэрнэ үү";
+"library.history.empty" = "Үзэх түүх олдсонгүй";
+"library.history.loadFailed" = "Түүхийг ачаагүй";
+"library.playlists.signIn" = "Тогтох жагсаалтуудаа харахын тулд нэвтэрнэ үү";
+"library.playlists.loadFailed" = "Тогтох жагсаалтуудыг ачаагүй";
+"library.playlist.empty" = "Энэ тогтох жагсаалтад видео байхгүй";
+"library.playlist.loadFailed" = "Тогтох жагсаалтыг ачаагүй";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Бүртгүүлэлүүд";
+"subscriptions.all" = "Бүх бүртгүүлэлүүд";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Бүгд";
+"subscriptions.signIn" = "Бүртгүүлэлүүдээ харахын тулд нэвтэрнэ үү";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Бүртгэл";
+"account.signIn" = "Нэвтрэх";
+"account.signOut" = "Гарах";
+"account.notSignedIn" = "Нэвтрээгүй";
+
+/* Generic error alert title */
+"common.error" = "Алдаа";
+/* Channel screen failed to load */
+"channel.unavailable" = "Суваг боломжгүй";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Хэл";
+"settings.footer.language" = "Аппликейшнийн хэл интерфейсийг өөрчилдөг. Агуулгын хэл нэршлийг, хайлтыг, нийлүүлгийг өөрчилдөг (YouTube метадатыг сервер талаас орчуулдаг, албан ёсны аппликейшн шиг). Өөрчлөлтүүдийг аппликейшнийг дахин эхлүүлсний дараа бүрэн хэрэгжүүлнэ.";
+/* Rows */
+"settings.row.appLanguage" = "Аппликейшнийн хэл";
+"settings.row.contentLanguage" = "Агуулгын хэл";
+"settings.row.region" = "Бүс нутаг";
+/* Picker option following the device language/region */
+"settings.language.system" = "Системийн";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Дахин эхлүүлэх шаардлагатай";
+"settings.language.restartMessage" = "Өөрчлөлтүүдийг аппликейшнийг дахин эхлүүлсний дараа бүрэн хэрэгжүүлнэ.";

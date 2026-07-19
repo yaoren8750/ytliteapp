@@ -1,0 +1,367 @@
+/*
+  YTLite — Malay (Bahasa Melayu).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Tetapan main balik";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Kualiti";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Trek audio";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Statistik untuk pembangun";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Sari kata";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Mati";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Memuatkan %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Menyelesaikan strim...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Main balik gagal.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Penukaran kualiti gagal.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Penukaran trek audio gagal.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Langgan";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Dilanggan";
+/* Generic cancel action */
+"common.cancel" = "Batal";
+/* Generic confirmation button */
+"common.ok" = "OK";
+/* Generic save action */
+"common.save" = "Simpan";
+/* Generic done action */
+"common.done" = "Selesai";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Senarai main";
+/* Library tab title */
+"library.title" = "Pustaka";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Menyediakan video...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Menyegarkan strim...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Lagi";
+/* Collapses the video description */
+"player.description.less" = "Kurang";
+/* Action bar: share the video */
+"player.action.share" = "Kongsi";
+/* Action bar: save to playlist */
+"player.action.save" = "Simpan";
+/* Action bar: download */
+"player.action.download" = "Muat turun";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Ulasan";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Ulasan (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Memuatkan ulasan...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Ulasan tidak tersedia";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Ulasan belum tersedia.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Muatkan lebih banyak ulasan";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • Disematkan";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ suka";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ balasan";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Seterusnya";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Main sekarang";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Mix";
+/* Header of the related-videos section */
+"player.related.title" = "Berkaitan";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Ralat main balik: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Biasa";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Langkau %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Langkau auto";
+"sponsorblock.behavior.showButton" = "Tunjukkan butang";
+"sponsorblock.behavior.disabled" = "Nyahaktifkan";
+
+/* Footer under the sponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Dikuasakan oleh SponsorBlock (sponsor.ajay.app) — projek komuniti sumber terbuka.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Kategori Segmen";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Penaja";
+"sponsorblock.category.sponsor.description" = "Promosi berbayar, rujukan berbayar dan pengiklanan langsung. Bukan untuk promosi diri atau sokongan percuma untuk jenama/pencipta/laman web/produk yang mereka gemari.";
+"sponsorblock.category.selfpromo.name" = "Promosi Tidak Berbayar/Diri";
+"sponsorblock.category.selfpromo.description" = "Seperti \"penaja\" kecuali untuk promosi tidak berbayar atau diri. Ini termasuk bahagian tentang merchandise, derma atau maklumat tentang siapa yang mereka bekerjasama.";
+"sponsorblock.category.exclusive_access.name" = "Akses Eksklusif";
+"sponsorblock.category.exclusive_access.description" = "Hanya untuk melabeli keseluruhan video. Digunakan apabila video memaparkan produk, perkhidmatan atau lokasi yang mereka terima akses percuma atau bersubsidi.";
+"sponsorblock.category.interaction.name" = "Peringatan Interaksi (Langgan)";
+"sponsorblock.category.interaction.description" = "Apabila terdapat peringatan ringkas untuk menyukai, langgan atau ikuti di tengah-tengah kandungan. Jika panjang atau tentang sesuatu yang khusus, ia harus berada di bawah promosi diri.";
+"sponsorblock.category.highlight.name" = "Sorotan";
+"sponsorblock.category.highlight.description" = "Bahagian video yang paling dicari orang. Seperti ulasan \"Video bermula pada saat x\".";
+"sponsorblock.category.intro.name" = "Rehat/Animasi Intro";
+"sponsorblock.category.intro.description" = "Selang tanpa kandungan sebenar. Boleh jadi jeda, bingkai statik atau animasi berulang. Tidak boleh digunakan untuk peralihan yang mengandungi maklumat.";
+"sponsorblock.category.outro.name" = "Kad Akhir/Kredit";
+"sponsorblock.category.outro.description" = "Kredit atau apabila kad akhir YouTube muncul. Bukan untuk kesimpulan yang mengandungi maklumat.";
+"sponsorblock.category.preview.name" = "Pratonton/Ringkasan";
+"sponsorblock.category.preview.description" = "Kumpulan klip yang menunjukkan apa yang akan datang dalam video ini atau video lain dalam siri di mana semua maklumat diulang kemudian dalam video.";
+"sponsorblock.category.filler.name" = "Tembelang/Gurauan";
+"sponsorblock.category.filler.description" = "Adegan tembelang atau gurauan yang tidak diperlukan untuk memahami kandungan utama video. Tidak boleh merangkumi segmen yang memberikan konteks atau butiran latar belakang.";
+"sponsorblock.category.music_offtopic.name" = "Bahagian Bukan Muzik";
+"sponsorblock.category.music_offtopic.description" = "Hanya untuk video muzik. Bahagian bukan muzik daripada video muzik.";
+"sponsorblock.category.chapter.name" = "Bab";
+"sponsorblock.category.chapter.description" = "Bahagian bernama tersuai video.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Tetapan";
+
+/* Section headers */
+"settings.section.theme" = "Tema";
+"settings.section.playback" = "Main balik";
+"settings.section.home" = "Laman utama";
+"settings.section.cache" = "Cache";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Nyahpijat";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Secara automatik mengikuti rupa bentuk sistem.";
+"settings.footer.themeAutoHours" = "Secara automatik beralih ke tema gelap antara jam di atas.";
+"settings.footer.playback" = "Zoom to Fill secara automatik menyeret video dalam skrin penuh supaya tiada bar hitam. Cengkam dalam pemain mengatasinya bagi setiap video.";
+"settings.footer.home" = "Cara rak syor ditunjukkan: satu grid berterusan atau rel mengufuk bergaya TV.";
+"settings.footer.ryd" = "Bilangan tidak suka ditaja oleh Return YouTube Dislike (returnyoutubedislike.com) — projek komuniti sumber terbuka.";
+"settings.footer.debug" = "Paksa sumber main balik tertentu. Biasanya Android VR digunakan dengan fallback automatik. Pelayan solver menawarkan sumber Mobile Web + pot (pencetakan pot dan n-solving pada iOS 12–13).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Tema";
+"settings.theme.dark" = "Gelap";
+"settings.theme.light" = "Cerah";
+"settings.theme.auto" = "Auto";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Tema Gelap Dari";
+"settings.row.darkUntil" = "Tema Gelap Sehingga";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Kualiti Lalai";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Auto";
+"settings.row.backgroundPlayback" = "Main Balik Latar Belakang";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "Sembunyikan Bar Status dalam Skrin Penuh";
+"settings.row.zoomToFill" = "Zoom to Fill dalam Skrin Penuh";
+"settings.row.showShorts" = "Tunjukkan YouTube Shorts dalam Langganan";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Tata Letak Laman Utama";
+"settings.homeLayout.grid" = "Grid Ringkas";
+"settings.homeLayout.rails" = "Rel Rak";
+
+/* Cache rows */
+"settings.row.feedCache" = "Cache Feed";
+"settings.row.feedCacheDuration" = "Tempoh Cache Feed";
+"settings.row.imageCache" = "Cache Imej";
+"settings.row.imageCacheDuration" = "Tempoh Cache Imej";
+"settings.row.clearCache" = "Padam Semua Cache";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Cache Dipadam";
+"settings.cache.clearedMessage" = "Semua cache telah dipadam.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "Tetapan SponsorBlock";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Sumber Main Balik";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Kongsi Log Nyahpijat";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL pelayan solver.";
+"settings.solver.reset" = "Tetapkan semula kepada lalai";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (lalai)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Tiada Log";
+"settings.log.noneMessage" = "Tiada log nyahpijat tersedia.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Profil";
+"profile.signOut" = "Log keluar";
+"profile.clearImageCache" = "Padam Cache Imej";
+"profile.imageCacheCleared" = "Cache imej dipadam.";
+
+/* ===== Search ===== */
+
+"search.title" = "Carian";
+/* Search bar placeholder */
+"search.placeholder" = "Cari YouTube";
+/* Header above the recent-search list */
+"search.recent" = "Carian terkini";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Penapis";
+"search.filters.active" = "Penapis •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Penapis Carian";
+"search.filters.reset" = "Tetapkan semula penapis";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Susun: %1$@";
+"search.filters.date" = "Tarikh: %1$@";
+"search.filters.type" = "Jenis: %1$@";
+"search.filters.duration" = "Tempoh: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Susun mengikut";
+"search.filters.dateTitle" = "Tarikh muat naik";
+"search.filters.typeTitle" = "Jenis";
+"search.filters.durationTitle" = "Tempoh";
+
+/* Filter option values */
+"search.sort.relevance" = "Kepertinentan";
+"search.sort.rating" = "Penarafan";
+"search.sort.uploadDate" = "Tarikh muat naik";
+"search.sort.viewCount" = "Jumlah tayangan";
+"search.date.any" = "Bila-bila masa";
+"search.date.lastHour" = "Jam lepas";
+"search.date.today" = "Hari ini";
+"search.date.thisWeek" = "Minggu ini";
+"search.date.thisMonth" = "Bulan ini";
+"search.date.thisYear" = "Tahun ini";
+"search.type.any" = "Sebarang jenis";
+"search.type.video" = "Video";
+"search.type.channel" = "Saluran";
+"search.type.playlist" = "Senarai main";
+"search.duration.any" = "Sebarang tempoh";
+"search.duration.short" = "Bawah 4 minit";
+"search.duration.medium" = "4–20 minit";
+"search.duration.long" = "Lebih 20 minit";
+
+/* ===== Home ===== */
+
+"home.title" = "Laman utama";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Semua";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Langsung";
+"home.category.news" = "Berita";
+"home.category.gaming" = "Permainan";
+"home.category.sports" = "Sukan";
+"home.category.learning" = "Pembelajaran";
+"home.category.fashion" = "Fesyen";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Tidak dapat memuatkan feed\nTarik ke bawah untuk cuba lagi";
+/* Signed-out empty state */
+"home.signIn" = "Log masuk untuk melihat syor anda";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Video";
+"channel.tab.live" = "Langsung";
+"channel.tab.playlists" = "Senarai main";
+/* About sheet */
+"channel.about.title" = "Tentang";
+"channel.about.close" = "Tutup";
+"channel.about.subscribers" = "Pelanggan";
+"channel.about.videos" = "Video";
+"channel.about.description" = "Penerangan";
+"channel.about.contact" = "Hubungi";
+
+/* ===== Library ===== */
+
+"library.history" = "Sejarah";
+"library.downloads" = "Muat turun";
+"library.playlists" = "Senarai main";
+"library.downloads.comingSoon" = "Muat turun akan datang tidak lama lagi";
+"library.history.signIn" = "Log masuk untuk melihat sejarah tontonan anda";
+"library.history.empty" = "Tiada sejarah tontonan";
+"library.history.loadFailed" = "Tidak dapat memuatkan sejarah";
+"library.playlists.signIn" = "Log masuk untuk melihat senarai main anda";
+"library.playlists.loadFailed" = "Tidak dapat memuatkan senarai main";
+"library.playlist.empty" = "Tiada video dalam senarai main ini";
+"library.playlist.loadFailed" = "Tidak dapat memuatkan senarai main";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Langganan";
+"subscriptions.all" = "Semua langganan";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Semua";
+"subscriptions.signIn" = "Log masuk untuk melihat langganan anda";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Akaun";
+"account.signIn" = "Log masuk";
+"account.signOut" = "Log keluar";
+"account.notSignedIn" = "Belum log masuk";
+
+/* Generic error alert title */
+"common.error" = "Ralat";
+/* Channel screen failed to load */
+"channel.unavailable" = "Saluran tidak tersedia";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Bahasa";
+"settings.footer.language" = "Bahasa aplikasi menukar antara muka. Bahasa kandungan menukar tajuk, carian dan feed (YouTube menterjemahkan metadata di pihak pelayan, seperti aplikasi rasmi). Perubahan dikuatkuasakan sepenuhnya selepas permulaan semula aplikasi.";
+/* Rows */
+"settings.row.appLanguage" = "Bahasa Aplikasi";
+"settings.row.contentLanguage" = "Bahasa Kandungan";
+"settings.row.region" = "Kawasan";
+/* Picker option following the device language/region */
+"settings.language.system" = "Sistem";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Mulakan Semula Diperlukan";
+"settings.language.restartMessage" = "Perubahan dikuatkuasakan sepenuhnya selepas permulaan semula aplikasi.";

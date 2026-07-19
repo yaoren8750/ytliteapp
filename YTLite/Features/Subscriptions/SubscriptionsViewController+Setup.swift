@@ -18,7 +18,7 @@ extension SubscriptionsViewController {
 
     func setupSignInPrompt() {
         let prompt = SignInEmptyStateView(
-            message: "Sign in to see your subscriptions"
+            message: "subscriptions.signIn".localized
         )
         prompt.isHidden = true
         prompt.onSignIn = { [weak self] in

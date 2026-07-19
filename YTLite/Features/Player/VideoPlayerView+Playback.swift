@@ -51,7 +51,7 @@ extension VideoPlayerView {
 
     func showSkipButton(categoryName: String) {
         skipButton.setTitle(
-            "Skip \(categoryName)",
+            "sponsorblock.skip".localized(with: categoryName),
             for: .normal
         )
         skipButton.isHidden = false

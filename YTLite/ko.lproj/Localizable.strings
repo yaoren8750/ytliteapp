@@ -1,0 +1,367 @@
+/*
+  YTLite — 한국어
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "재생 설정";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "화질";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "오디오 트랙";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "상세 통계";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "자막";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "끔";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (자동)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (AI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "%1$@ 로드 중...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "스트림 해석 중...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "재생에 실패했습니다.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "화질 전환에 실패했습니다.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "오디오 트랙 전환에 실패했습니다.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "구독";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "구독됨";
+/* Generic cancel action */
+"common.cancel" = "취소";
+/* Generic confirmation button */
+"common.ok" = "확인";
+/* Generic save action */
+"common.save" = "저장";
+/* Generic done action */
+"common.done" = "완료";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "재생 목록";
+/* Library tab title */
+"library.title" = "보관함";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "동영상 준비 중...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "스트림 새로고침 중...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "더보기";
+/* Collapses the video description */
+"player.description.less" = "간략히";
+/* Action bar: share the video */
+"player.action.share" = "공유";
+/* Action bar: save to playlist */
+"player.action.save" = "저장";
+/* Action bar: download */
+"player.action.download" = "다운로드";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "댓글";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "댓글 (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "댓글 로드 중...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "댓글을 사용할 수 없음";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "댓글을 아직 사용할 수 없습니다.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "댓글 더 보기";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ • 고정됨";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "좋아요 %1$@개";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "답글 %1$@개";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "다음";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "지금 재생";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "믹스";
+/* Header of the related-videos section */
+"player.related.title" = "관련";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "재생 오류: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "보통";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "%1$@ 건너뛰기";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "자동 건너뛰기";
+"sponsorblock.behavior.showButton" = "버튼 표시";
+"sponsorblock.behavior.disabled" = "비활성화";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Powered by SponsorBlock (sponsor.ajay.app) — an open community project.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "세그먼트 카테고리";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "스폰서";
+"sponsorblock.category.sponsor.description" = "유료 프로모션, 유료 추천 및 직접 광고. 셀프 프로모션이나 좋아하는 크리에이터/웹사이트/제품에 대한 무료 홍보가 아닙니다.";
+"sponsorblock.category.selfpromo.name" = "무료/셀프 프로모션";
+"sponsorblock.category.selfpromo.description" = "\"스폰서\"와 유사하지만 무료 또는 셀프 프로모션입니다. 상품, 기부금 또는 협력한 사람에 대한 정보가 포함됩니다.";
+"sponsorblock.category.exclusive_access.name" = "독점 접근";
+"sponsorblock.category.exclusive_access.description" = "동영상 전체에만 적용됩니다. 무료 또는 보조를 받은 제품, 서비스 또는 장소를 소개하는 동영상에 사용됩니다.";
+"sponsorblock.category.interaction.name" = "인터랙션 리마인더 (구독)";
+"sponsorblock.category.interaction.description" = "콘텐츠 중간에 좋아요, 구독 또는 팔로우를 짧게 안내하는 경우. 길거나 특정 내용인 경우 셀프 프로모션으로 분류해야 합니다.";
+"sponsorblock.category.highlight.name" = "하이라이트";
+"sponsorblock.category.highlight.description" = "대부분의 사람이 찾는 동영상 부분. \"x부터 동영상 시작\" 댓글과 유사합니다.";
+"sponsorblock.category.intro.name" = "간주/인트로 애니메이션";
+"sponsorblock.category.intro.description" = "실제 콘텐츠가 없는 구간. 일시 정지, 정지 화면 또는 반복 애니메이션일 수 있습니다. 정보를 포함하는 전환에는 사용하지 마세요.";
+"sponsorblock.category.outro.name" = "엔드카드/크레딧";
+"sponsorblock.category.outro.description" = "크레딧 또는 YouTube 엔드카드가 나타나는 부분. 정보를 포함하는 결론이 아닙니다.";
+"sponsorblock.category.preview.name" = "미리보기/요약";
+"sponsorblock.category.preview.description" = "이 동영상이나 시리즈의 다른 동영상에서 앞으로 나올 내용을 보여주는 클립 모음. 모든 정보는 나중에 동영상에서 반복됩니다.";
+"sponsorblock.category.filler.name" = "오프토픽/유머";
+"sponsorblock.category.filler.description" = "동영상의 주요 콘텐츠를 이해하는 데 필요한 것이 아닌 오프토픽 장면이나 유머. 맥락이나 배경 세부 정보를 제공하는 세그먼트는 포함하지 마세요.";
+"sponsorblock.category.music_offtopic.name" = "비뮤직 섹션";
+"sponsorblock.category.music_offtopic.description" = "뮤직 비디오에만 적용됩니다. 뮤직 비디오의 비뮤직 부분.";
+"sponsorblock.category.chapter.name" = "챕터";
+"sponsorblock.category.chapter.description" = "동영상의 사용자 정의 명명된 섹션.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "설정";
+
+/* Section headers */
+"settings.section.theme" = "테마";
+"settings.section.playback" = "재생";
+"settings.section.home" = "홈";
+"settings.section.cache" = "캐시";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "디버그";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "시스템 외관을 자동으로 따릅니다.";
+"settings.footer.themeAutoHours" = "위 시간대에 어두운 테마로 자동 전환됩니다.";
+"settings.footer.playback" = "줌 투 필은 전체 화면에서 동영상을 자동으로 확대하여 검은 여백을 제거합니다. 플레이어에서 핀치하면 동영상별로 덮어씁니다.";
+"settings.footer.home" = "추천 선반 표시 방식: 연속 격자 또는 TV 스타일 가로 레일.";
+"settings.footer.ryd" = "싫어요 수는 Return YouTube Dislike (returnyoutubedislike.com)에서 제공합니다 — 오픈 커뮤니티 프로젝트.";
+"settings.footer.debug" = "특정 재생 소스를 강제합니다. 일반적으로 Android VR이 자동 대체로 사용됩니다. 솔버 서버는 Mobile Web + pot 소스(pot 민팅 및 iOS 12–13에서의 n-solving)를 제공합니다.";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "테마";
+"settings.theme.dark" = "어두운";
+"settings.theme.light" = "밝은";
+"settings.theme.auto" = "자동";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "어두운 테마 시작";
+"settings.row.darkUntil" = "어두운 테마 종료";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "기본 화질";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "자동";
+"settings.row.backgroundPlayback" = "백그라운드 재생";
+"settings.row.pip" = "Picture-in-Picture";
+"settings.row.hideStatusBar" = "전체 화면에서 상태 표시줄 숨기기";
+"settings.row.zoomToFill" = "전체 화면에서 확대하여 채우기";
+"settings.row.showShorts" = "구독에서 YouTube Shorts 표시";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "홈 레이아웃";
+"settings.homeLayout.grid" = "그리드";
+"settings.homeLayout.rails" = "선반 레일";
+
+/* Cache rows */
+"settings.row.feedCache" = "피드 캐시";
+"settings.row.feedCacheDuration" = "피드 캐시 기간";
+"settings.row.imageCache" = "이미지 캐시";
+"settings.row.imageCacheDuration" = "이미지 캐시 기간";
+"settings.row.clearCache" = "모든 캐시 지우기";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "캐시 지워짐";
+"settings.cache.clearedMessage" = "모든 캐시가 지워졌습니다.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock 설정";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "재생 소스";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "디버그 로그 공유";
+/* Solver-server URL alert */
+"settings.solver.message" = "솔버 서버 URL.";
+"settings.solver.reset" = "기본값으로 재설정";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (기본값)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "로그 없음";
+"settings.log.noneMessage" = "디버그 로그가 아직 없습니다.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "프로필";
+"profile.signOut" = "로그아웃";
+"profile.clearImageCache" = "이미지 캐시 지우기";
+"profile.imageCacheCleared" = "이미지 캐시가 지워졌습니다.";
+
+/* ===== Search ===== */
+
+"search.title" = "검색";
+/* Search bar placeholder */
+"search.placeholder" = "YouTube 검색";
+/* Header above the recent-search list */
+"search.recent" = "최근 검색";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "필터";
+"search.filters.active" = "필터 •";
+/* Filters sheet title + reset action */
+"search.filters.title" = "검색 필터";
+"search.filters.reset" = "필터 초기화";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "정렬: %1$@";
+"search.filters.date" = "날짜: %1$@";
+"search.filters.type" = "유형: %1$@";
+"search.filters.duration" = "기간: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "정렬 기준";
+"search.filters.dateTitle" = "업로드 날짜";
+"search.filters.typeTitle" = "유형";
+"search.filters.durationTitle" = "기간";
+
+/* Filter option values */
+"search.sort.relevance" = "관련성";
+"search.sort.rating" = "평가";
+"search.sort.uploadDate" = "업로드 날짜";
+"search.sort.viewCount" = "조회수";
+"search.date.any" = "전체";
+"search.date.lastHour" = "1시간 이내";
+"search.date.today" = "오늘";
+"search.date.thisWeek" = "이번 주";
+"search.date.thisMonth" = "이번 달";
+"search.date.thisYear" = "올해";
+"search.type.any" = "전체 유형";
+"search.type.video" = "동영상";
+"search.type.channel" = "채널";
+"search.type.playlist" = "재생 목록";
+"search.duration.any" = "전체 기간";
+"search.duration.short" = "4분 미만";
+"search.duration.medium" = "4–20분";
+"search.duration.long" = "20분 이상";
+
+/* ===== Home ===== */
+
+"home.title" = "홈";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "전체";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "실시간";
+"home.category.news" = "뉴스";
+"home.category.gaming" = "게임";
+"home.category.sports" = "스포츠";
+"home.category.learning" = "학습";
+"home.category.fashion" = "패션";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "피드를 불러올 수 없습니다\n아래로 당겨 다시 시도";
+/* Signed-out empty state */
+"home.signIn" = "로그인하여 추천 콘텐츠 보기";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "동영상";
+"channel.tab.live" = "실시간";
+"channel.tab.playlists" = "재생 목록";
+/* About sheet */
+"channel.about.title" = "정보";
+"channel.about.close" = "닫기";
+"channel.about.subscribers" = "구독자";
+"channel.about.videos" = "동영상";
+"channel.about.description" = "설명";
+"channel.about.contact" = "문의";
+
+/* ===== Library ===== */
+
+"library.history" = "시청 기록";
+"library.downloads" = "다운로드";
+"library.playlists" = "재생 목록";
+"library.downloads.comingSoon" = "다운로드는 곧 제공됩니다";
+"library.history.signIn" = "로그인하여 시청 기록 보기";
+"library.history.empty" = "시청 기록이 없습니다";
+"library.history.loadFailed" = "기록을 불러올 수 없습니다";
+"library.playlists.signIn" = "로그인하여 재생 목록 보기";
+"library.playlists.loadFailed" = "재생 목록을 불러올 수 없습니다";
+"library.playlist.empty" = "이 재생 목록에 동영상이 없습니다";
+"library.playlist.loadFailed" = "재생 목록을 불러올 수 없습니다";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "구독";
+"subscriptions.all" = "전체 구독";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "전체";
+"subscriptions.signIn" = "로그인하여 구독 채널 보기";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "계정";
+"account.signIn" = "로그인";
+"account.signOut" = "로그아웃";
+"account.notSignedIn" = "로그인되지 않음";
+
+/* Generic error alert title */
+"common.error" = "오류";
+/* Channel screen failed to load */
+"channel.unavailable" = "채널을 사용할 수 없음";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "언어";
+"settings.footer.language" = "앱 언어는 인터페이스를 변경합니다. 콘텐츠 언어는 제목, 검색 및 피드를 변경합니다(YouTube는 공식 앱과 마찬가지로 서버 측에서 메타데이터를 번역합니다). 변경 사항은 앱을 재시작한 후 완전히 적용됩니다.";
+/* Rows */
+"settings.row.appLanguage" = "앱 언어";
+"settings.row.contentLanguage" = "콘텐츠 언어";
+"settings.row.region" = "지역";
+/* Picker option following the device language/region */
+"settings.language.system" = "시스템";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "재시작 필요";
+"settings.language.restartMessage" = "변경 사항은 앱을 재시작한 후 완전히 적용됩니다.";

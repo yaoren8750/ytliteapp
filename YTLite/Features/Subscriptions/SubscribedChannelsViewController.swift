@@ -29,7 +29,7 @@ final class SubscribedChannelsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "All subscriptions"
+        title = "subscriptions.all".localized
         setupTableView()
         applyTheme()
         NotificationCenter.default.addObserver(

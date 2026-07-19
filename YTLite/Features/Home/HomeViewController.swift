@@ -62,7 +62,7 @@ class HomeViewController: VideosViewController {
 
     lazy var errorLabel: UILabel = {
         let label = UILabel()
-        label.text = "Couldn't load feed\nPull down to retry"
+        label.text = "home.error.loadFailed".localized
         label.textColor = .lightGray
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -73,7 +73,7 @@ class HomeViewController: VideosViewController {
     }()
 
     lazy var signInEmptyView: SignInEmptyStateView = {
-        let emptyView = SignInEmptyStateView(message: "Sign in to see your recommendations")
+        let emptyView = SignInEmptyStateView(message: "home.signIn".localized)
         emptyView.isHidden = true
         emptyView.onSignIn = { [weak self] in self?.toolbarOpenProfile() }
         return emptyView
@@ -98,7 +98,7 @@ class HomeViewController: VideosViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Home"
+        title = "home.title".localized
         AppLog.home("viewDidLoad")
         setupEmptyViews()
         setupChipBar()
