@@ -50,6 +50,7 @@
 		<string>my</string>
 		<string>ne</string>
 		<string>nl</string>
+		<string>no</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>

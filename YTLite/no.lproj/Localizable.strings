@@ -1,0 +1,367 @@
+/*
+  YTLite — Norwegian Bokmål (no).
+
+  Keys are stable API: never rename one casually — it orphans the key in
+  every translation. Comments give translator context. Positional
+  placeholders (%1$@) must be preserved verbatim in translations.
+*/
+
+/* ===== Player: settings menu ===== */
+
+/* Title of the gear menu in the player */
+"player.menu.settings" = "Avspillingsinnstillinger";
+/* Menu item + picker title: video quality */
+"player.menu.quality" = "Kvalitet";
+/* Menu item + picker title: audio track (dub) selection */
+"player.menu.audioTrack" = "Lydspor";
+/* Menu item: toggles the playback statistics overlay */
+"player.menu.stats" = "Statistikk for nerder";
+/* Picker title: subtitles */
+"player.menu.subtitles" = "Undertekster";
+
+/* ===== Player: pickers ===== */
+
+/* Subtitle picker: disables subtitles */
+"player.subtitles.off" = "Av";
+/* Suffix on auto-generated subtitle tracks, e.g. "English (auto)" */
+"player.subtitles.autoSuffix" = " (auto)";
+/* Suffix on AI auto-dubbed audio tracks, e.g. "Russian (AI)" */
+"player.audioTrack.aiSuffix" = " (KI)";
+
+/* ===== Player: status / errors ===== */
+
+/* Status label while switching; %1$@ = quality label or track name */
+"player.status.loading" = "Laster %1$@...";
+/* Status label while the stream URL is being resolved */
+"player.status.resolving" = "Løser strøm...";
+/* Shown when a video cannot be played at all */
+"player.error.playback" = "Avspilling mislyktes.";
+/* Shown when switching video quality failed (playback continues) */
+"player.error.qualitySwitch" = "Kvalitetsbytte mislyktes.";
+/* Shown when switching the audio track failed (playback continues) */
+"player.error.audioTrackSwitch" = "Lydsporbytte mislyktes.";
+
+/* ===== Common ===== */
+
+/* Subscribe button, not-subscribed state */
+"common.subscribe" = "Abonner";
+/* Subscribe button, subscribed state */
+"common.subscribed" = "Abonnert";
+/* Generic cancel action */
+"common.cancel" = "Avbryt";
+/* Generic confirmation button */
+"common.ok" = "OK";
+/* Generic save action */
+"common.save" = "Lagre";
+/* Generic done action */
+"common.done" = "Ferdig";
+/* Fallback title/label of a playlist tile */
+"common.playlist" = "Spilleliste";
+/* Library tab title */
+"library.title" = "Bibliotek";
+
+/* ===== Player: status ===== */
+
+/* Status label while the player prepares the first video */
+"player.status.preparing" = "Forbereder video...";
+/* Status label while an expired stream URL is re-resolved */
+"player.status.refreshing" = "Oppdaterer strøm...";
+
+/* ===== Player: watch page ===== */
+
+/* Expands the video description */
+"player.description.more" = "Mer";
+/* Collapses the video description */
+"player.description.less" = "Mindre";
+/* Action bar: share the video */
+"player.action.share" = "Del";
+/* Action bar: save to playlist */
+"player.action.save" = "Lagre";
+/* Action bar: download */
+"player.action.download" = "Last ned";
+
+/* ===== Player: comments ===== */
+
+/* Comments section header */
+"player.comments.title" = "Kommentarer";
+/* Comments header with count; %1$d = number of comments */
+"player.comments.titleCount" = "Kommentarer (%1$d)";
+/* Shown while comments load */
+"player.comments.loading" = "Laster kommentarer...";
+/* Shown when the comments request failed */
+"player.comments.unavailable" = "Kommentarer utilgjengelig";
+/* Shown before the watch page has loaded enough to fetch comments */
+"player.comments.unavailableYet" = "Kommentarer er ikke tilgjengelig ennå.";
+/* Button loading the next page of comments */
+"player.comments.loadMore" = "Last flere kommentarer";
+/* Author line of a pinned comment; %1$@ = author name */
+"player.comments.pinned" = "%1$@ \u2022 Festet";
+/* Comment like count; %1$@ = formatted number */
+"player.comments.likes" = "%1$@ likerklikk";
+/* Comment reply count; %1$@ = formatted number */
+"player.comments.replies" = "%1$@ svar";
+
+/* ===== Player: autoplay overlay ===== */
+
+/* Header above the next video suggestion */
+"player.autoplay.upNext" = "Neste";
+/* Starts the suggested video immediately, skipping the countdown */
+"player.autoplay.playNow" = "Spill nå";
+
+/* ===== Player: related section ===== */
+
+/* Header of an unnamed autoplay queue/playlist */
+"player.related.mix" = "Mix";
+/* Header of the related-videos section */
+"player.related.title" = "Relaterte";
+/* Status label on fatal playback failure; %1$@ = error description */
+"player.error.withMessage" = "Avspillingsfeil: %1$@";
+
+/* ===== Player: speed ===== */
+
+/* The 1x playback speed */
+"player.speed.normal" = "Normal";
+
+/* ===== SponsorBlock ===== */
+
+/* Skip button; %1$@ = localized category name, e.g. "Skip Sponsor" */
+"sponsorblock.skip" = "Hopp over %1$@";
+
+/* Skip-behavior options (per-category setting) */
+"sponsorblock.behavior.autoSkip" = "Hopp over automatisk";
+"sponsorblock.behavior.showButton" = "Vis knapp";
+"sponsorblock.behavior.disabled" = "Deaktiver";
+
+/* Footer under the SponsorBlock section (project attribution) */
+"sponsorblock.attribution" = "Drevet av SponsorBlock (sponsor.ajay.app) \u2014 et åpent fellesskapsprosjekt.";
+/* Header above the per-category skip settings */
+"sponsorblock.segmentCategories" = "Segmentkategorier";
+
+/* Category names (SponsorBlock project terms) and their descriptions */
+"sponsorblock.category.sponsor.name" = "Sponset";
+"sponsorblock.category.sponsor.description" = "Betalt promotering, betalt viderehenvisning og direkte annonsering. Ikke for selvpromotering eller gratis omtale av årsaker/skapere/nettsteder/produkter de liker.";
+"sponsorblock.category.selfpromo.name" = "Ubetalt/Selvpromotering";
+"sponsorblock.category.selfpromo.description" = "Lignende «sponset» bortsett fra ubetalt eller selvpromotering. Dette inkluderer deler om merchandise, donasjoner, eller informasjon om hvem de samarbeidet med.";
+"sponsorblock.category.exclusive_access.name" = "Eksklusiv tilgang";
+"sponsorblock.category.exclusive_access.description" = "Kun for å merke hele videoer. Brukes når en video viser et produkt, en tjeneste eller et sted de har fått gratis eller subsidiert tilgang til.";
+"sponsorblock.category.interaction.name" = "Interaksjonspåminnelse (Abonner)";
+"sponsorblock.category.interaction.description" = "Når det er en kort påminnelse om å like, abonnere eller følge midt i innholdet. Hvis det er langt eller om noe spesifikt, bør det heller være under selvpromotering.";
+"sponsorblock.category.highlight.name" = "Høydepunkt";
+"sponsorblock.category.highlight.description" = "Den delen av videoen de fleste ser etter. Lignende kommentarer som «Videoen starter på x».";
+"sponsorblock.category.intro.name" = "Pause/Introanimasjon";
+"sponsorblock.category.intro.description" = "Et intervall uten egentlig innhold. Kan være en pause, statisk bilde, eller gjentatt animasjon. Dette bør ikke brukes for overganger som inneholder informasjon.";
+"sponsorblock.category.outro.name" = "Sluttkort/Rulletekst";
+"sponsorblock.category.outro.description" = "Rulletekst eller når YouTube-sluttkortene vises. Ikke for konklusjoner med informasjon.";
+"sponsorblock.category.preview.name" = "Forhåndsvisning/Sammendrag";
+"sponsorblock.category.preview.description" = "Samling av klipp som viser hva som kommer i denne videoen eller andre videoer i en serie der all informasjon gjentas senere i videoen.";
+"sponsorblock.category.filler.name" = "Digresjoner/Vitser";
+"sponsorblock.category.filler.description" = "Bisider eller vitser som ikke er nødvendige for å forstå hovedinnholdet i videoen. Dette bør ikke inkludere segmenter som gir kontekst eller bakgrunnsdetaljer.";
+"sponsorblock.category.music_offtopic.name" = "Ikke-musikk-seksjon";
+"sponsorblock.category.music_offtopic.description" = "Kun for musikkvideoer. Ikke-musikk-del av en musikkvideo.";
+"sponsorblock.category.chapter.name" = "Kapittel";
+"sponsorblock.category.chapter.description" = "Egendefinerte navngitte seksjoner av videoen.";
+
+/* ===== Settings ===== */
+
+/* Settings sheet title */
+"settings.title" = "Innstillinger";
+
+/* Section headers */
+"settings.section.theme" = "Tema";
+"settings.section.playback" = "Avspilling";
+"settings.section.home" = "Hjem";
+"settings.section.cache" = "Buffer";
+"settings.section.ryd" = "Return YouTube Dislike";
+"settings.section.sponsorblock" = "SponsorBlock";
+"settings.section.debug" = "Feilsøking";
+
+/* Section footers */
+"settings.footer.themeAutoSystem" = "Følger automatisk systemutseendet.";
+"settings.footer.themeAutoHours" = "Bytter automatisk til mørkt tema mellom de angitte tidspunktene.";
+"settings.footer.playback" = "Zoom for å fylle skalerer automatisk videoen i fullskjerm slik at ingen svarte striper gjenstår. Klyp i spilleren overstyrer dette per video.";
+"settings.footer.home" = " hvordan anbefalingshyllene vises: ett sammenhengende rutenett eller TV-stil horisontale skinner.";
+"settings.footer.ryd" = "Antall mislikinger drives av Return YouTube Dislike (returnyoutubedislike.com) \u2014 et åpent fellesskapsprosjekt.";
+"settings.footer.debug" = "Tving en bestemt avspillingskilde. Normalt brukes Android VR med automatisk tilbakefall. Løsertjeneren driver Mobile Web + pot-kilden (pot-minting og n-løsning på iOS 12\u201313).";
+
+/* Theme rows; segment labels for dark/light/auto modes */
+"settings.row.theme" = "Tema";
+"settings.theme.dark" = "Mørk";
+"settings.theme.light" = "Lys";
+"settings.theme.auto" = "Auto";
+/* Hour pickers bounding the iOS 12 scheduled dark mode */
+"settings.row.darkFrom" = "Mørkt tema fra";
+"settings.row.darkUntil" = "Mørkt tema til";
+
+/* Playback rows */
+"settings.row.defaultQuality" = "Standard kvalitet";
+/* The "Auto" entry of the default-quality picker (stored value stays English) */
+"settings.quality.auto" = "Auto";
+"settings.row.backgroundPlayback" = "Bakgrunnsavspilling";
+"settings.row.pip" = "Bilde-i-bilde";
+"settings.row.hideStatusBar" = "Skjul statuslinje i fullskjerm";
+"settings.row.zoomToFill" = "Zoom for å fylle i fullskjerm";
+"settings.row.showShorts" = "Vis YouTube Shorts i Abonnementer";
+
+/* Home layout row + option names */
+"settings.row.homeLayout" = "Hjemmelayout";
+"settings.homeLayout.grid" = "Enkelt rutenett";
+"settings.homeLayout.rails" = "Hylleskinner";
+
+/* Cache rows */
+"settings.row.feedCache" = "Feed-buffer";
+"settings.row.feedCacheDuration" = "Feed-buffer varighet";
+"settings.row.imageCache" = "Bildebuffer";
+"settings.row.imageCacheDuration" = "Bildebuffer varighet";
+"settings.row.clearCache" = "Tøm all buffer";
+/* Alert after clearing all caches */
+"settings.cache.clearedTitle" = "Buffer tømt";
+"settings.cache.clearedMessage" = "All buffer er tømt.";
+
+/* Integration rows */
+"settings.row.ryd" = "Return YouTube Dislike";
+"settings.row.sponsorblock" = "SponsorBlock";
+"settings.row.sponsorblockSettings" = "SponsorBlock-innstillinger";
+
+/* Debug rows (values stay technical/English) */
+"settings.row.playbackSource" = "Avspillingskilde";
+"settings.row.solverServer" = "Solver server";
+"settings.row.shareLog" = "Del feilsøkingslogg";
+/* Solver-server URL alert */
+"settings.solver.message" = "URL til løsertjeneren.";
+"settings.solver.reset" = "Tilbakestill til standard";
+/* Suffix shown after the solver URL when it is the built-in default */
+"settings.solver.defaultSuffix" = " (standard)";
+/* Alert when no debug logs exist yet */
+"settings.log.noneTitle" = "Ingen logger";
+"settings.log.noneMessage" = "Ingen feilsøkingslogger tilgjengelig ennå.";
+
+/* ===== Profile ===== */
+
+"profile.title" = "Profil";
+"profile.signOut" = "Logg ut";
+"profile.clearImageCache" = "Tøm bildebuffer";
+"profile.imageCacheCleared" = "Bildebuffer tømt.";
+
+/* ===== Search ===== */
+
+"search.title" = "Søk";
+/* Search bar placeholder */
+"search.placeholder" = "Søk på YouTube";
+/* Header above the recent-search list */
+"search.recent" = "Nylige søk";
+/* Filters toolbar button; the dotted variant marks active filters */
+"search.filters" = "Filtrer";
+"search.filters.active" = "Filtrer \u2022";
+/* Filters sheet title + reset action */
+"search.filters.title" = "Søkefiltre";
+"search.filters.reset" = "Tilbakestill filtre";
+/* Filter rows; %1$@ = the current value */
+"search.filters.sort" = "Sorter: %1$@";
+"search.filters.date" = "Dato: %1$@";
+"search.filters.type" = "Type: %1$@";
+"search.filters.duration" = "Varighet: %1$@";
+/* Sub-sheet titles */
+"search.filters.sortTitle" = "Sorter etter";
+"search.filters.dateTitle" = "Opplastingsdato";
+"search.filters.typeTitle" = "Type";
+"search.filters.durationTitle" = "Varighet";
+
+/* Filter option values */
+"search.sort.relevance" = "Relevans";
+"search.sort.rating" = "Vurdering";
+"search.sort.uploadDate" = "Opplastingsdato";
+"search.sort.viewCount" = "Visningstall";
+"search.date.any" = "Når som helst";
+"search.date.lastHour" = "Siste time";
+"search.date.today" = "I dag";
+"search.date.thisWeek" = "Denne uken";
+"search.date.thisMonth" = "Denne måneden";
+"search.date.thisYear" = "I år";
+"search.type.any" = "Alle typer";
+"search.type.video" = "Video";
+"search.type.channel" = "Kanal";
+"search.type.playlist" = "Spilleliste";
+"search.duration.any" = "Enhver varighet";
+"search.duration.short" = "Under 4 min";
+"search.duration.medium" = "4\u201320 min";
+"search.duration.long" = "Over 20 min";
+
+/* ===== Home ===== */
+
+"home.title" = "Hjem";
+/* Chip resetting to the unfiltered feed */
+"home.category.all" = "Alle";
+/* Static category chips (server shelf titles arrive already localized) */
+"home.category.live" = "Live";
+"home.category.news" = "Nyheter";
+"home.category.gaming" = "Gaming";
+"home.category.sports" = "Sport";
+"home.category.learning" = "Læring";
+"home.category.fashion" = "Mote";
+/* Error empty state (two lines) */
+"home.error.loadFailed" = "Kunne ikke laste strømmen\nDra ned for å prøve igjen";
+/* Signed-out empty state */
+"home.signIn" = "Logg inn for å se anbefalingene dine";
+
+/* ===== Channel ===== */
+
+/* Channel tab bar */
+"channel.tab.videos" = "Videoer";
+"channel.tab.live" = "Live";
+"channel.tab.playlists" = "Spillelister";
+/* About sheet */
+"channel.about.title" = "Om";
+"channel.about.close" = "Lukk";
+"channel.about.subscribers" = "Abonnenter";
+"channel.about.videos" = "Videoer";
+"channel.about.description" = "Beskrivelse";
+"channel.about.contact" = "Kontakt";
+
+/* ===== Library ===== */
+
+"library.history" = "Historikk";
+"library.downloads" = "Nedlastinger";
+"library.playlists" = "Spillelister";
+"library.downloads.comingSoon" = "Nedlastinger kommer snart";
+"library.history.signIn" = "Logg inn for å se seerhistorikken din";
+"library.history.empty" = "Ingen seerhistorikk funnet";
+"library.history.loadFailed" = "Kunne ikke laste historikk";
+"library.playlists.signIn" = "Logg inn for å se spillelistene dine";
+"library.playlists.loadFailed" = "Kunne ikke laste spillelister";
+"library.playlist.empty" = "Ingen videoer i denne spillelisten";
+"library.playlist.loadFailed" = "Kunne ikke laste spilleliste";
+
+/* ===== Subscriptions ===== */
+
+"subscriptions.title" = "Abonnementer";
+"subscriptions.all" = "Alle abonnementer";
+/* "All" button in the channel avatar bar */
+"subscriptions.allButton" = "Alle";
+"subscriptions.signIn" = "Logg inn for å se abonnementene dine";
+
+/* ===== Account (toolbar sheet) ===== */
+
+/* Fallback account name when the profile has none */
+"account.fallbackName" = "Konto";
+"account.signIn" = "Logg inn";
+"account.signOut" = "Logg ut";
+"account.notSignedIn" = "Ikke logget inn";
+
+/* Generic error alert title */
+"common.error" = "Feil";
+/* Channel screen failed to load */
+"channel.unavailable" = "Kanal utilgjengelig";
+
+/* ===== Settings: language section ===== */
+
+"settings.section.language" = "Språk";
+"settings.footer.language" = "Appspråk endrer grensesnittet. Innholdsspråk endrer titler, søk og strømmer (YouTube oversetter metadata på serversiden, som den offisielle appen). Endringer trer fullt i kraft etter omstart av appen.";
+/* Rows */
+"settings.row.appLanguage" = "Appspråk";
+"settings.row.contentLanguage" = "Innholdsspråk";
+"settings.row.region" = "Region";
+/* Picker option following the device language/region */
+"settings.language.system" = "System";
+/* Alert after changing a language setting */
+"settings.language.restartTitle" = "Omstart kreves";
+"settings.language.restartMessage" = "Endringer trer fullt i kraft etter omstart av appen.";
