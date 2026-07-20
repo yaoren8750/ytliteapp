@@ -12,6 +12,14 @@
       "subtitle": "YouTube client for iOS 12+",
       "versions": [
         {
+          "version": "1.6.1",
+          "date": "2026-07-20T23:32:46Z",
+          "localizedDescription": "## New Features\n- **New-video dot on subscriptions** (#13) — a channel's avatar gets a dot when the channel has a video from the last 7 days that you haven't watched yet. Watching any of the channel's recent videos clears the dot — and since it's driven by your synced watch history, watching on any device (phone, TV, youtube.com) clears it here too\n- **Italiano** — the interface now speaks Italian, bringing the total to 11 languages. As always, it follows your system language, with an override in Settings → Language\n\n## Improvements\n- **Auto-hiding top bar** — on all list screens the top bar slides away as you scroll down and returns the moment you scroll back up, leaving more room for content\n- **Re-tap the current tab** to go back: it pops to the root screen, or scrolls the list to the top if you're already there\n- Fixed the tab bar turning see-through over content on iOS 15+",
+          "downloadURL": "https://github.com/verback2308/ytlite/releases/download/1.6.1/YTLite_1.6.1.ipa",
+          "size": 4478680,
+          "minOSVersion": "12.0"
+        },
+        {
           "version": "1.6.0",
           "date": "2026-07-20T10:32:45Z",
           "localizedDescription": "## New Features\n- **Auto-dub** — videos in a foreign language start dubbed in yours automatically. If the original audio doesn't match your language and a dub exists, playback begins on it right away — no flash of the original. Configure in Settings → Dubbing: pick the dub language (follows the app language by default) or turn it off; AI-generated dubs are skipped by default with a toggle to allow them\n- **Audio tracks** — switch dubbed audio on multi-language videos from the player menu, on any playback source; AI auto-dubs are marked \"(AI)\"\n- **Localized interface** — YTLite now speaks 10 languages: English, Русский, Українська, Deutsch, Español, Français, 日本語, Português, Türkçe and 简体中文. Follows your system language, with an override in Settings → Language\n- **Content in your language** — video titles, search and feeds follow the app language (translated server-side by YouTube, like the official app); the region for trends and recommendations can be set separately\n\n## Improvements\n- Video tiles keep view counts and dates readable in every content language",
@@ -60,14 +68,14 @@
           "minOSVersion": "12.0"
         }
       ],
-      "version": "1.6.0",
-      "versionDate": "2026-07-20T10:32:45Z",
-      "versionDescription": "## New Features\n- **Auto-dub** — videos in a foreign language start dubbed in yours automatically. If the original audio doesn't match your language and a dub exists, playback begins on it right away — no flash of the original. Configure in Settings → Dubbing: pick the dub language (follows the app language by default) or turn it off; AI-generated dubs are skipped by default with a toggle to allow them\n- **Audio tracks** — switch dubbed audio on multi-language videos from the player menu, on any playback source; AI auto-dubs are marked \"(AI)\"\n- **Localized interface** — YTLite now speaks 10 languages: English, Русский, Українська, Deutsch, Español, Français, 日本語, Português, Türkçe and 简体中文. Follows your system language, with an override in Settings → Language\n- **Content in your language** — video titles, search and feeds follow the app language (translated server-side by YouTube, like the official app); the region for trends and recommendations can be set separately\n\n## Improvements\n- Video tiles keep view counts and dates readable in every content language",
-      "downloadURL": "https://github.com/verback2308/ytlite/releases/download/1.6.0/YTLite_1.6.0.ipa",
+      "version": "1.6.1",
+      "versionDate": "2026-07-20T23:32:46Z",
+      "versionDescription": "## New Features\n- **New-video dot on subscriptions** (#13) — a channel's avatar gets a dot when the channel has a video from the last 7 days that you haven't watched yet. Watching any of the channel's recent videos clears the dot — and since it's driven by your synced watch history, watching on any device (phone, TV, youtube.com) clears it here too\n- **Italiano** — the interface now speaks Italian, bringing the total to 11 languages. As always, it follows your system language, with an override in Settings → Language\n\n## Improvements\n- **Auto-hiding top bar** — on all list screens the top bar slides away as you scroll down and returns the moment you scroll back up, leaving more room for content\n- **Re-tap the current tab** to go back: it pops to the root screen, or scrolls the list to the top if you're already there\n- Fixed the tab bar turning see-through over content on iOS 15+",
+      "downloadURL": "https://github.com/verback2308/ytlite/releases/download/1.6.1/YTLite_1.6.1.ipa",
       "localizedDescription": "A lightweight YouTube client for iOS 12+. No ads, no tracking. Features: SponsorBlock, Return YouTube Dislike, 1080p playback, background audio, PiP, subtitles, and more.",
       "iconURL": "https://raw.githubusercontent.com/verback2308/YTLite/main/source/icon.png",
       "tintColor": "FF0000",
-      "size": 4449076,
+      "size": 4478680,
       "category": "entertainment",
       "minOSVersion": "12.0",
       "screenshots": [
@@ -90,6 +98,15 @@
   "iconURL": "https://raw.githubusercontent.com/verback2308/YTLite/main/source/icon.png",
   "tintColor": "FF0000",
   "news": [
+    {
+      "title": "YTLite 1.6.1 - New-video dot on subscriptions, auto-hiding top bar, Italiano",
+      "identifier": "release-1.6.1",
+      "caption": "New-video dot on subscriptions — a channel's avatar gets a dot when the channel has a video from the last 7 days that…",
+      "date": "2026-07-20T23:32:46Z",
+      "tintColor": "FF0000",
+      "appID": "com.verback.YTLite",
+      "url": "https://github.com/verback2308/ytlite/releases/tag/1.6.1"
+    },
     {
       "title": "YTLite 1.6.0 - Dubbed audio, interface localization",
       "identifier": "release-1.6.0",
