@@ -39,9 +39,17 @@ def release_url(download_url, version):
 
 
 def news_title(version, release_title):
-    """Use the GitHub release title as-is; fall back to 'YTLite <version>'."""
+    """The GitHub release title, prefixed with the app name (and the
+    version, when the author included neither); bare/empty titles fall
+    back to 'YTLite <version>'."""
     title = (release_title or "").strip()
-    return title if title else f"YTLite {version}"
+    if not title or title == version:
+        return f"YTLite {version}"
+    if title.lower().startswith("ytlite"):
+        return title
+    if title.startswith(version):
+        return f"YTLite {title}"
+    return f"YTLite {version} — {title}"
 
 
 def prepend_news(data, app, args, notes):

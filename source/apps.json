@@ -91,7 +91,7 @@
   "tintColor": "FF0000",
   "news": [
     {
-      "title": "1.6.0 - Dubbed audio, interface localization",
+      "title": "YTLite 1.6.0 - Dubbed audio, interface localization",
       "identifier": "release-1.6.0",
       "caption": "Auto-dub — videos in a foreign language start dubbed in yours automatically. If the original audio doesn't match your…",
       "date": "2026-07-20T10:32:45Z",
