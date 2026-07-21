@@ -19,6 +19,7 @@ enum AppLanguage: String, CaseIterable {
     case portuguese = "pt"
     case turkish = "tr"
     case chineseSimplified = "zh-Hans"
+    case chineseTraditional = "zh-Hant"
 
     /// The user's in-app override, nil = follow the system language.
     static var override: AppLanguage? {
@@ -87,6 +88,8 @@ extension AppLanguage {
             "Türkçe"
         case .chineseSimplified:
             "简体中文"
+        case .chineseTraditional:
+            "繁體中文"
         }
     }
 }

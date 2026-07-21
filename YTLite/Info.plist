@@ -17,6 +17,7 @@
 		<string>pt</string>
 		<string>tr</string>
 		<string>zh-Hans</string>
+		<string>zh-Hant</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>

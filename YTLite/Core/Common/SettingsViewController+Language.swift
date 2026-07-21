@@ -12,7 +12,7 @@ extension SettingsViewController {
     /// Curated `gl` options.
     private static let regions = [
         "US", "RU", "UA", "DE", "FR", "ES", "PT", "BR", "IT", "PL",
-        "TR", "JP", "KR", "IN", "ID", "VN", "SA", "TH", "GB", "CA"
+        "TR", "JP", "KR", "TW", "IN", "ID", "VN", "SA", "TH", "GB", "CA"
     ]
 
     /// Names come from iOS's built-in CLDR catalog, rendered in the APP's

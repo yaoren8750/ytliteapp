@@ -2,6 +2,13 @@ import AVFoundation
 import AVKit
 import UIKit
 
+/// State for the stall-recovery clock resync (issue #14).
+final class ClockResyncState {
+    var isStalled = false
+    var workItem: DispatchWorkItem?
+    var lastResync: CFTimeInterval = 0
+}
+
 // MARK: - Playback API
 
 extension VideoPlayerView {
@@ -33,6 +40,9 @@ extension VideoPlayerView {
     func detach() {
         removePeriodicObserver()
         removePlayerObservers()
+        clockResync.isStalled = false
+        clockResync.workItem?.cancel()
+        clockResync.workItem = nil
         playerLayer.isHidden = false
         playerLayer.player = nil
         player = nil
@@ -134,18 +144,80 @@ extension VideoPlayerView {
             options: [.new]
         ) { [weak self] observed, _ in
             DispatchQueue.main.async {
-                switch observed.timeControlStatus {
-                case .waitingToPlayAtSpecifiedRate:
-                    self?.spinner.startAnimating()
-                    self?.setCenter(hidden: true)
-                case .playing, .paused:
-                    self?.spinner.stopAnimating()
-                    self?.setCenter(hidden: false)
-                @unknown default:
-                    break
-                }
+                self?.handleTimeControlChange(on: observed)
             }
         }
+    }
+
+    private func handleTimeControlChange(on player: AVPlayer) {
+        switch player.timeControlStatus {
+        case .waitingToPlayAtSpecifiedRate:
+            spinner.startAnimating()
+            setCenter(hidden: true)
+            if CMTimeGetSeconds(player.currentTime()) > 1 {
+                clockResync.isStalled = true
+            }
+        case .playing:
+            spinner.stopAnimating()
+            setCenter(hidden: false)
+            if clockResync.isStalled {
+                clockResync.isStalled = false
+                scheduleClockResync()
+            }
+        case .paused:
+            spinner.stopAnimating()
+            setCenter(hidden: false)
+            clockResync.isStalled = false
+            clockResync.workItem?.cancel()
+        @unknown default:
+            break
+        }
+    }
+
+    // MARK: - Stall Clock Resync
+
+    /// A frame-accurate seek to the current position snaps the
+    /// player clock back to the rendered media. Only runs while
+    /// subtitles are active — nothing else is precise enough to
+    /// notice the drift, and the seek costs a brief hiccup.
+    private func scheduleClockResync() {
+        guard !subtitleCues.isEmpty else {
+            return
+        }
+        clockResync.workItem?.cancel()
+        let work = DispatchWorkItem { [weak self] in
+            self?.performClockResync()
+        }
+        clockResync.workItem = work
+        DispatchQueue.main.asyncAfter(
+            deadline: .now() + 1.0,
+            execute: work
+        )
+    }
+
+    private func performClockResync() {
+        guard let player,
+              player.timeControlStatus == .playing else {
+            return
+        }
+        let now = CACurrentMediaTime()
+        guard now - clockResync.lastResync > 10 else {
+            return
+        }
+        clockResync.lastResync = now
+        let time = player.currentTime()
+        AppLog.player(
+            "clock resync after stall at "
+                + String(
+                    format: "%.1fs",
+                    CMTimeGetSeconds(time)
+                )
+        )
+        player.seek(
+            to: time,
+            toleranceBefore: .zero,
+            toleranceAfter: .zero
+        )
     }
 
     private func observeDuration(on player: AVPlayer) {

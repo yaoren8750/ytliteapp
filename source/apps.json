@@ -12,6 +12,14 @@
       "subtitle": "YouTube client for iOS 12+",
       "versions": [
         {
+          "version": "1.6.2",
+          "date": "2026-07-21T12:02:37Z",
+          "localizedDescription": "## New Features\n- **繁體中文** (#25) — the interface now speaks Traditional Chinese, bringing the total to 12 languages, and Taiwan joins the region list for trends and recommendations. As always, it follows your system language, with an override in Settings → Language\n\n## Fixes\n- **Subtitle sync** (#14) — after a brief network hiccup mid-playback, subtitles could end up lagging a few seconds behind speech until you seeked manually. The player now realigns its clock automatically the moment playback recovers\n- The Done button in Settings now follows the in-app language",
+          "downloadURL": "https://github.com/verback2308/ytlite/releases/download/1.6.2/YTLite_1.6.2.ipa",
+          "size": 4485411,
+          "minOSVersion": "12.0"
+        },
+        {
           "version": "1.6.1",
           "date": "2026-07-20T23:32:46Z",
           "localizedDescription": "## New Features\n- **New-video dot on subscriptions** (#13) — a channel's avatar gets a dot when the channel has a video from the last 7 days that you haven't watched yet. Watching any of the channel's recent videos clears the dot — and since it's driven by your synced watch history, watching on any device (phone, TV, youtube.com) clears it here too\n- **Italiano** — the interface now speaks Italian, bringing the total to 11 languages. As always, it follows your system language, with an override in Settings → Language\n\n## Improvements\n- **Auto-hiding top bar** — on all list screens the top bar slides away as you scroll down and returns the moment you scroll back up, leaving more room for content\n- **Re-tap the current tab** to go back: it pops to the root screen, or scrolls the list to the top if you're already there\n- Fixed the tab bar turning see-through over content on iOS 15+",
@@ -68,14 +76,14 @@
           "minOSVersion": "12.0"
         }
       ],
-      "version": "1.6.1",
-      "versionDate": "2026-07-20T23:32:46Z",
-      "versionDescription": "## New Features\n- **New-video dot on subscriptions** (#13) — a channel's avatar gets a dot when the channel has a video from the last 7 days that you haven't watched yet. Watching any of the channel's recent videos clears the dot — and since it's driven by your synced watch history, watching on any device (phone, TV, youtube.com) clears it here too\n- **Italiano** — the interface now speaks Italian, bringing the total to 11 languages. As always, it follows your system language, with an override in Settings → Language\n\n## Improvements\n- **Auto-hiding top bar** — on all list screens the top bar slides away as you scroll down and returns the moment you scroll back up, leaving more room for content\n- **Re-tap the current tab** to go back: it pops to the root screen, or scrolls the list to the top if you're already there\n- Fixed the tab bar turning see-through over content on iOS 15+",
-      "downloadURL": "https://github.com/verback2308/ytlite/releases/download/1.6.1/YTLite_1.6.1.ipa",
+      "version": "1.6.2",
+      "versionDate": "2026-07-21T12:02:37Z",
+      "versionDescription": "## New Features\n- **繁體中文** (#25) — the interface now speaks Traditional Chinese, bringing the total to 12 languages, and Taiwan joins the region list for trends and recommendations. As always, it follows your system language, with an override in Settings → Language\n\n## Fixes\n- **Subtitle sync** (#14) — after a brief network hiccup mid-playback, subtitles could end up lagging a few seconds behind speech until you seeked manually. The player now realigns its clock automatically the moment playback recovers\n- The Done button in Settings now follows the in-app language",
+      "downloadURL": "https://github.com/verback2308/ytlite/releases/download/1.6.2/YTLite_1.6.2.ipa",
       "localizedDescription": "A lightweight YouTube client for iOS 12+. No ads, no tracking. Features: SponsorBlock, Return YouTube Dislike, 1080p playback, background audio, PiP, subtitles, and more.",
       "iconURL": "https://raw.githubusercontent.com/verback2308/YTLite/main/source/icon.png",
       "tintColor": "FF0000",
-      "size": 4478680,
+      "size": 4485411,
       "category": "entertainment",
       "minOSVersion": "12.0",
       "screenshots": [
@@ -98,6 +106,15 @@
   "iconURL": "https://raw.githubusercontent.com/verback2308/YTLite/main/source/icon.png",
   "tintColor": "FF0000",
   "news": [
+    {
+      "title": "YTLite 1.6.2 - subtitle sync fix, 繁體中文 and Taiwan region",
+      "identifier": "release-1.6.2",
+      "caption": "繁體中文 — the interface now speaks Traditional Chinese, bringing the total to 12 languages, and Taiwan joins the region…",
+      "date": "2026-07-21T12:02:37Z",
+      "tintColor": "FF0000",
+      "appID": "com.verback.YTLite",
+      "url": "https://github.com/verback2308/ytlite/releases/tag/1.6.2"
+    },
     {
       "title": "YTLite 1.6.1 - New-video dot on subscriptions, auto-hiding top bar, Italiano",
       "identifier": "release-1.6.1",
