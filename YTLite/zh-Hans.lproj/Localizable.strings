@@ -133,7 +133,7 @@
 "sponsorblock.behavior.disabled" = "禁用";
 
 /* Footer under the SponsorBlock section (project attribution) */
-"sponsorblock.attribution" = "Powered by SponsorBlock (sponsor.ajay.app) — an open community project.";
+"sponsorblock.attribution" = "由 SponsorBlock (sponsor.ajay.app) — 一个开放社区项目提供.";
 /* Header above the per-category skip settings */
 "sponsorblock.segmentCategories" = "片段分类";
 
@@ -231,7 +231,7 @@
 
 /* Debug rows (values stay technical/English) */
 "settings.row.playbackSource" = "播放源";
-"settings.row.solverServer" = "Solver server";
+"settings.row.solverServer" = "求解服务器";
 "settings.row.shareLog" = "分享调试日志";
 /* Solver-server URL alert */
 "settings.solver.message" = "求解器服务器的 URL。";
