@@ -179,7 +179,7 @@
 /* Section footers */
 "settings.footer.themeAutoSystem" = "Auto follows the system appearance.";
 "settings.footer.themeAutoHours" = "Auto switches to the dark theme between the hours above.";
-"settings.footer.playback" = "Zoom to Fill automatically scales the video in fullscreen so no black bars remain. Pinch in the player overrides it per video.";
+"settings.footer.playback" = "Zoom to Fill automatically scales the video in fullscreen so no black bars remain. Pinch in the player overrides it per video.\n\nAutoplay plays the next suggested video after a 5s countdown. The Mix toggle applies the same instantly to mix/playlist queues.";
 "settings.footer.autoDub" = "When a video's original language differs from the dub language, the matching audio track is selected automatically.";
 "settings.footer.home" = "How recommendation shelves are shown: one continuous grid or TV-style horizontal rails.";
 "settings.footer.ryd" = "Dislike counts are powered by Return YouTube Dislike (returnyoutubedislike.com) — an open community project.";
@@ -203,6 +203,9 @@
 "settings.row.hideStatusBar" = "Hide Status Bar in Fullscreen";
 "settings.row.zoomToFill" = "Zoom to Fill in Fullscreen";
 "settings.row.showShorts" = "Show YouTube Shorts in Subscriptions";
+"settings.row.autoplay" = "Autoplay";
+/* %1$@ = localized "Mix" term (player.related.mix) */
+"settings.row.autoplayMix" = "Autoplay (%1$@)";
 
 /* Auto-dub rows: master toggle, dub-language picker, AI-dub exclusion */
 "settings.row.autoDub" = "Start Videos Dubbed";

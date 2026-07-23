@@ -179,7 +179,7 @@
 /* Section footers */
 "settings.footer.themeAutoSystem" = "自动跟随系统外观。";
 "settings.footer.themeAutoHours" = "在上述时间段自动切换到深色主题。";
-"settings.footer.playback" = "缩放以填充会自动缩放全屏视频以消除黑边。在播放器中捏合可按视频覆盖。";
+"settings.footer.playback" = "缩放以填充会自动缩放全屏视频以消除黑边。在播放器中捏合可按视频覆盖。\n\n自动播放会在5秒倒计时后播放下一个推荐视频。混剪开关会立即将同样的行为应用于混剪/播放列表队列。";
 "settings.footer.autoDub" = "当视频的原始语言与配音语言不同时，会自动选择对应的音轨。";
 "settings.footer.home" = "推荐栏显示方式：连续网格或电视风格水平轨道。";
 "settings.footer.ryd" = "不喜欢次数由 Return YouTube Dislike (returnyoutubedislike.com) 提供 — 开放社区项目。";
@@ -203,6 +203,9 @@
 "settings.row.hideStatusBar" = "全屏时隐藏状态栏";
 "settings.row.zoomToFill" = "全屏时缩放以填充";
 "settings.row.showShorts" = "在订阅中显示 YouTube Shorts";
+"settings.row.autoplay" = "自动播放";
+/* %1$@ = localized "Mix" term (player.related.mix) */
+"settings.row.autoplayMix" = "自动播放（%1$@）";
 
 /* Auto-dub rows: master toggle, dub-language picker, AI-dub exclusion */
 "settings.row.autoDub" = "以配音播放视频";

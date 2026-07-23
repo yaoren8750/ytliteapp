@@ -179,7 +179,7 @@
 /* Section footers */
 "settings.footer.themeAutoSystem" = "システムの外観に自動で従います。";
 "settings.footer.themeAutoHours" = "上記の時間帯に暗いテーマに自動で切り替わります。";
-"settings.footer.playback" = "ズームでフィルはフルスクリーン時にビデオを自動的にスケーヱーし、黒いバーをなくします。プレーヤーでピンチすると、ビデオごとに上書きされます。";
+"settings.footer.playback" = "ズームでフィルはフルスクリーン時にビデオを自動的にスケーヱーし、黒いバーをなくします。プレーヤーでピンチすると、ビデオごとに上書きされます。\n\n自動再生は5秒のカウントダウン後に次のおすすめ動画を再生します。ミックスのスイッチは、ミックス/再生リストのキューに同じ動作を即座に適用します。";
 "settings.footer.autoDub" = "動画の元の言語が吹き替え言語と異なる場合、対応する音声トラックが自動的に選択されます。";
 "settings.footer.home" = "おすすめシェルフの表示方法: 連続したグリッドまたはTVスタイルの水平レール。";
 "settings.footer.ryd" = "低評価数は Return YouTube Dislike (returnyoutubedislike.com) によって提供されています — オープンコミュニティプロジェクト。";
@@ -203,6 +203,9 @@
 "settings.row.hideStatusBar" = "フルスクリーンでステータスバーを隠す";
 "settings.row.zoomToFill" = "フルスクリーンでズームしてフィル";
 "settings.row.showShorts" = "登録チャンネルでYouTube Shortsを表示";
+"settings.row.autoplay" = "自動再生";
+/* %1$@ = localized "Mix" term (player.related.mix) */
+"settings.row.autoplayMix" = "自動再生（%1$@）";
 
 /* Auto-dub rows: master toggle, dub-language picker, AI-dub exclusion */
 "settings.row.autoDub" = "動画を吹き替えで再生";

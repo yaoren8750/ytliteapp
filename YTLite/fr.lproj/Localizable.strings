@@ -175,7 +175,7 @@
 /* Section footers */
 "settings.footer.themeAutoSystem" = "Suit automatiquement l'apparence du système.";
 "settings.footer.themeAutoHours" = "Passe automatiquement au thème sombre entre les heures indiquées.";
-"settings.footer.playback" = "Zoom pour remplir met automatiquement la vidéo en plein écran pour qu'il n'y ait pas de barres noires. Le pincement dans le lecteur l'annule par vidéo.";
+"settings.footer.playback" = "Zoom pour remplir met automatiquement la vidéo en plein écran pour qu'il n'y ait pas de barres noires. Le pincement dans le lecteur l'annule par vidéo.\n\nLa lecture automatique lance la vidéo suggérée suivante après un compte à rebours de 5 s. Le bouton Mix applique la même chose instantanément aux files de mix/playlist.";
 "settings.footer.autoDub" = "Si la langue originale d'une vidéo diffère de la langue de doublage, la piste audio correspondante est sélectionnée automatiquement.";
 "settings.footer.home" = "Comment les étagères de recommandations sont affichées : une grille continue ou des rails horizontaux style TV.";
 "settings.footer.ryd" = "Les comptages de dislikes sont alimentés par Return YouTube Dislike (returnyoutubedislike.com) — un projet communautaire ouvert.";
@@ -199,6 +199,9 @@
 "settings.row.hideStatusBar" = "Masquer la barre d'état en plein écran";
 "settings.row.zoomToFill" = "Zoom pour remplir en plein écran";
 "settings.row.showShorts" = "Afficher YouTube Shorts dans les abonnements";
+"settings.row.autoplay" = "Lecture automatique";
+/* %1$@ = localized "Mix" term (player.related.mix) */
+"settings.row.autoplayMix" = "Lecture automatique (%1$@)";
 
 /* Auto-dub rows: master toggle, dub-language picker, AI-dub exclusion */
 "settings.row.autoDub" = "Lancer les vidéos doublées";

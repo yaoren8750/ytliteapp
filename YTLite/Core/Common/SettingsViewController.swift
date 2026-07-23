@@ -8,6 +8,7 @@ final class SettingsViewController: UIViewController {
         case appLanguage, region
         case quality, backgroundPlayback, pipEnabled, hideStatusBar, showShorts
         case autoZoomToFill
+        case autoplayEnabled, autoplayMixEnabled
         case autoDubEnabled, autoDubLanguage, autoDubIgnoreAI
         case homeLayout
         case persistCache, feedCacheDays
@@ -72,7 +73,8 @@ final class SettingsViewController: UIViewController {
                 footer: "settings.footer.playback".localized,
                 rows: [
                     .quality, .backgroundPlayback, .pipEnabled,
-                    .hideStatusBar, .autoZoomToFill, .showShorts
+                    .hideStatusBar, .autoZoomToFill, .showShorts,
+                    .autoplayEnabled, .autoplayMixEnabled
                 ]
             ),
             Section(
@@ -293,6 +295,23 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             }
         case .showShorts:
             return makeShowShortsCell()
+        case .autoplayEnabled:
+            return makeToggleCell(
+                "settings.row.autoplay".localized,
+                isOn: AutoplayPreference.isEnabled
+            ) {
+                AutoplayPreference.isEnabled = $0
+            }
+        case .autoplayMixEnabled:
+            let title = "settings.row.autoplayMix".localized(
+                with: "player.related.mix".localized
+            )
+            return makeToggleCell(
+                title,
+                isOn: AutoplayPreference.isMixEnabled
+            ) {
+                AutoplayPreference.isMixEnabled = $0
+            }
         case .autoDubEnabled:
             return makeAutoDubToggleCell()
         case .autoDubLanguage:

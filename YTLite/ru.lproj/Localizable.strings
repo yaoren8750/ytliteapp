@@ -69,7 +69,7 @@
 
 /* ===== Player: related section ===== */
 
-"player.related.mix" = "Микс";
+"player.related.mix" = "Джем";
 "player.related.title" = "Похожие";
 "player.error.withMessage" = "Ошибка воспроизведения: %1$@";
 
@@ -126,7 +126,7 @@
 
 "settings.footer.themeAutoSystem" = "«Авто» следует за оформлением системы.";
 "settings.footer.themeAutoHours" = "«Авто» включает тёмную тему в часы, указанные выше.";
-"settings.footer.playback" = "«Заполнять экран» автоматически масштабирует видео в полноэкранном режиме, убирая чёрные полосы. Жест щипка в плеере переопределяет это для конкретного видео.";
+"settings.footer.playback" = "«Заполнять экран» автоматически масштабирует видео в полноэкранном режиме, убирая чёрные полосы. Жест щипка в плеере переопределяет это для конкретного видео.\n\n«Автовоспроизведение» запускает следующее рекомендованное видео после 5-секундного отсчёта. Переключатель «Джем» применяет то же самое мгновенно к очереди джема или плейлиста.";
 "settings.footer.autoDub" = "Если язык оригинала видео отличается от языка дубляжа, подходящая аудиодорожка включается автоматически.";
 "settings.footer.home" = "Как показывать полки рекомендаций: единая сетка или горизонтальные ленты в стиле ТВ.";
 "settings.footer.ryd" = "Счётчики дизлайков работают через Return YouTube Dislike (returnyoutubedislike.com) — открытый проект сообщества.";
@@ -146,6 +146,9 @@
 "settings.row.hideStatusBar" = "Скрывать статус-бар в полноэкранном режиме";
 "settings.row.zoomToFill" = "Заполнять экран в полноэкранном режиме";
 "settings.row.showShorts" = "Показывать Shorts в подписках";
+"settings.row.autoplay" = "Автовоспроизведение";
+/* %1$@ = localized "Mix" term (player.related.mix) */
+"settings.row.autoplayMix" = "Автовоспроизведение (%1$@)";
 
 /* Auto-dub rows: master toggle, dub-language picker, AI-dub exclusion */
 "settings.row.autoDub" = "Запускать видео в дубляже";

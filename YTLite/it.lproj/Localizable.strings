@@ -175,7 +175,7 @@
 /* Section footers */
 "settings.footer.themeAutoSystem" = "Segue automaticamente l'aspetto del sistema.";
 "settings.footer.themeAutoHours" = "Passa automaticamente al tema scuro tra gli orari indicati.";
-"settings.footer.playback" = "Riempimento automatico scala il video a schermo intero in modo che non rimangano barre nere. Il pinch nel player lo sovrascrive per ogni video.";
+"settings.footer.playback" = "Riempimento automatico scala il video a schermo intero in modo che non rimangano barre nere. Il pinch nel player lo sovrascrive per ogni video.\n\nLa riproduzione automatica avvia il video successivo suggerito dopo un conto alla rovescia di 5 secondi. L'interruttore Mix applica lo stesso istantaneamente alle code di mix/playlist.";
 "settings.footer.autoDub" = "Quando la lingua originale di un video differisce dalla lingua di doppiaggio, viene selezionata automaticamente la traccia audio corrispondente.";
 "settings.footer.home" = "Come vengono mostrati i ripiani di raccomandazione: una griglia continua o corsie orizzontali stile TV.";
 "settings.footer.ryd" = "I conteggi dei dislike sono alimentati da Return YouTube Dislike (returnyoutubedislike.com) — un progetto comunitario open source.";
@@ -199,6 +199,9 @@
 "settings.row.hideStatusBar" = "Nascondi barra di stato a schermo intero";
 "settings.row.zoomToFill" = "Riempimento automatico a schermo intero";
 "settings.row.showShorts" = "Mostra YouTube Shorts negli abbonamenti";
+"settings.row.autoplay" = "Riproduzione automatica";
+/* %1$@ = localized "Mix" term (player.related.mix) */
+"settings.row.autoplayMix" = "Riproduzione automatica (%1$@)";
 
 /* Auto-dub rows: master toggle, dub-language picker, AI-dub exclusion */
 "settings.row.autoDub" = "Avvia i video doppiati";

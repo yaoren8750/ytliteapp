@@ -179,7 +179,7 @@
 /* Section footers */
 "settings.footer.themeAutoSystem" = "Otomatik olarak sistem görünümünü takip eder.";
 "settings.footer.themeAutoHours" = "Yukarıdaki saatler arasında otomatik olarak koyu temaya geçer.";
-"settings.footer.playback" = "Doldurma için yakınlaştırma, tam ekranda siyah çubuk kalmayacak şekilde videoyu otomatik olarak ölçekler. Oynatıcıda sıkıştırma her video için bunu geçersiz kılar.";
+"settings.footer.playback" = "Doldurma için yakınlaştırma, tam ekranda siyah çubuk kalmayacak şekilde videoyu otomatik olarak ölçekler. Oynatıcıda sıkıştırma her video için bunu geçersiz kılar.\n\nOtomatik oynatma, 5 saniyelik geri sayımdan sonra önerilen bir sonraki videoyu oynatır. Mix anahtarı bunu mix/oynatma listesi kuyruklarına anında uygular.";
 "settings.footer.autoDub" = "Videonun orijinal dili dublaj dilinden farklıysa uygun ses parçası otomatik olarak seçilir.";
 "settings.footer.home" = "Öneri rafları nasıl gösterilir: sürekli bir ızgara veya TV tarzı yatay raylar.";
 "settings.footer.ryd" = "Beğenmeme sayıları Return YouTube Dislike (returnyoutubedislike.com) tarafından desteklenmektedir — açık bir topluluk projesi.";
@@ -203,6 +203,9 @@
 "settings.row.hideStatusBar" = "Tam Ekranda Durum Çubuğunu Gizle";
 "settings.row.zoomToFill" = "Tam Ekranda Doldurma İçin Yakınlaştır";
 "settings.row.showShorts" = "Aboneliklerde YouTube Shorts Göster";
+"settings.row.autoplay" = "Otomatik Oynatma";
+/* %1$@ = localized "Mix" term (player.related.mix) */
+"settings.row.autoplayMix" = "Otomatik Oynatma (%1$@)";
 
 /* Auto-dub rows: master toggle, dub-language picker, AI-dub exclusion */
 "settings.row.autoDub" = "Videoları dublajlı başlat";

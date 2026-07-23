@@ -173,7 +173,7 @@
 /* Section footers */
 "settings.footer.themeAutoSystem" = "Folgt automatisch dem Systemdesign.";
 "settings.footer.themeAutoHours" = "Schaltet automatisch in das dunkle Design zwischen den oben angegebenen Stunden um.";
-"settings.footer.playback" = "Zoom zum Füllen skaliert das Video automatisch im Vollbild, sodass keine schwarzen Balken verbleiben. Das Kneifen im Player überschreibt dies pro Video.";
+"settings.footer.playback" = "Zoom zum Füllen skaliert das Video automatisch im Vollbild, sodass keine schwarzen Balken verbleiben. Das Kneifen im Player überschreibt dies pro Video.\n\nAutomatische Wiedergabe spielt nach einem 5-Sekunden-Countdown das nächste vorgeschlagene Video ab. Der Mix-Schalter wendet dasselbe sofort auf Mix-/Playlist-Warteschlangen an.";
 "settings.footer.autoDub" = "Wenn die Originalsprache eines Videos von der Synchronsprache abweicht, wird automatisch die passende Audiospur ausgewählt.";
 "settings.footer.home" = "Wie Empfehlungsbereiche angezeigt werden: ein durchgehendes Raster oder horizontale Schienen im TV-Stil.";
 "settings.footer.ryd" = "Dislike-Zähler werden von Return YouTube Dislike (returnyoutubedislike.com) bereitgestellt — ein offenes Gemeinschaftsprojekt.";
@@ -197,6 +197,9 @@
 "settings.row.hideStatusBar" = "Statusleiste im Vollbild ausblenden";
 "settings.row.zoomToFill" = "Zoom zum Füllen im Vollbild";
 "settings.row.showShorts" = "YouTube Shorts in Abonnements anzeigen";
+"settings.row.autoplay" = "Automatische Wiedergabe";
+/* %1$@ = localized "Mix" term (player.related.mix) */
+"settings.row.autoplayMix" = "Automatische Wiedergabe (%1$@)";
 
 /* Auto-dub rows: master toggle, dub-language picker, AI-dub exclusion */
 "settings.row.autoDub" = "Videos synchronisiert starten";

@@ -68,6 +68,13 @@ enum UserDefaultsKeys {
         static let language = "autoDub_language"
     }
 
+    enum Autoplay {
+        /// Suggestion ("Up Next") autoplay: 5s countdown overlay.
+        static let enabled = "autoplay_enabled"
+        /// Mix/playlist queue autoplay: instant, no overlay.
+        static let mixEnabled = "autoplay_mixEnabled"
+    }
+
     enum Innertube {
         static let visitorData = "innertube_visitorData"
         static let visitorDataDate = "innertube_visitorDataDate"

@@ -206,14 +206,19 @@ extension WatchViewController {
         // the countdown overlay is suggestion-autoplay only. The queue is
         // peeked, not advanced: navigation syncs it via seekTo.
         if let next = queue.nextVideo {
+            guard AutoplayPreference.isMixEnabled else {
+                AppLog.player("playToEnd: queue next=\(next.id) but mix autoplay disabled")
+                return
+            }
             AppLog.player("playToEnd: queue next=\(next.id)")
             DispatchQueue.main.async { [weak self] in
                 self?.navigateTo(next)
             }
             return
         }
-        guard let nextVideo = watchPage?.nextVideo else {
-            AppLog.player("playToEnd: no next video")
+        guard AutoplayPreference.isEnabled,
+              let nextVideo = watchPage?.nextVideo else {
+            AppLog.player("playToEnd: no next video or autoplay disabled")
             return
         }
         // applicationState is main-thread-only and this notification can
